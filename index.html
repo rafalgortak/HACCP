@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kitchen Control v9.27</title>
+<title>Kitchen Control v9.40</title>
 <style>
 body{margin:0;font-family:Arial,sans-serif;background:#eef3f8;color:#172033}header{background:linear-gradient(135deg,#dbeafe,#eff6ff);color:#172033;padding:12px 16px;position:sticky;top:0;z-index:5;border-bottom:1px solid #bfdbfe;cursor:pointer}h1{margin:0;font-size:22px}.small{color:#64748b}.appHeader{display:flex;align-items:center;justify-content:space-between;gap:10px}.headerLeft{display:flex;align-items:center;gap:10px}.headerLogo{width:42px;height:42px;border-radius:12px;background:#0f172a;color:white;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 2px 8px #0001}.powerBtn{border:0;background:white;color:#0f172a;border-radius:12px;width:44px;height:44px;font-size:22px;font-weight:900;box-shadow:0 1px 6px #0001}.userMenu{position:fixed;top:68px;right:14px;background:white;border:1px solid #d8dee8;border-radius:16px;box-shadow:0 10px 30px #0002;z-index:80;min-width:220px;padding:12px}.userMenuName{font-weight:900;font-size:17px}.userMenuRole{color:#64748b;margin:2px 0 10px}.userMenu button{width:100%;margin-top:8px}.menuBackdrop{position:fixed;inset:0;z-index:70;background:transparent}main{padding:14px;max-width:1200px;margin:auto}.nav{display:flex;gap:8px;overflow:auto;margin-bottom:10px}.nav button,.btn{border:0;border-radius:10px;padding:11px 14px;background:white;font-weight:700;box-shadow:0 1px 4px #0001}.nav button.active,.primary{background:#2563eb!important;color:white}.danger{background:#dc2626!important;color:white}.card{background:white;border-radius:14px;padding:14px;margin:10px 0;box-shadow:0 2px 10px #0001}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.loc{border:1px solid #d8dee8;border-radius:12px;padding:12px;background:#fafafa}.status{border-radius:99px;padding:4px 8px;font-size:12px;font-weight:800;display:inline-block}.ok{background:#dcfce7;color:#166534}.warn{background:#fef3c7;color:#92400e}.alarm{background:#fee2e2;color:#991b1b}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}select,input,textarea{border:1px solid #d8dee8;border-radius:10px;padding:10px;background:white;font-size:16px}textarea{width:100%;min-height:70px;margin-top:10px}table{border-collapse:collapse;width:100%;background:white}th,td{border:1px solid #111;padding:6px;text-align:center;font-size:13px;min-width:42px}th{background:#f3f4f6}.wrap{overflow:auto;border-radius:10px;border:1px solid #d8dee8}.vert{writing-mode:vertical-rl;transform:rotate(180deg);font-weight:800;white-space:nowrap}.pill{display:inline-flex;gap:6px;align-items:center;border:1px solid #d8dee8;padding:7px 9px;border-radius:99px;margin:4px;background:#f8fafc}.pill button{border:0;background:#fee2e2;border-radius:50%;width:22px;height:22px}.hidden{display:none}.filled-ok{background:#dcfce7}.filled-warn{background:#fef3c7}.filled-alarm{background:#fee2e2}.notice{padding:10px;border-radius:10px;background:#fef3c7;color:#92400e;font-weight:bold;margin-top:10px}.success{background:#dcfce7;color:#166534}.historyItem{border-bottom:1px solid #e5e7eb;padding:8px 0}.historyItem:last-child{border-bottom:0}.readonlyBadge{background:#e0e7ff;color:#3730a3;border-radius:99px;padding:4px 8px;font-size:12px;font-weight:800}.authorBadge{background:#eef2ff;color:#3730a3;border-radius:12px;padding:9px 11px;font-weight:800;display:inline-block}.sanepidHeader{display:none}.editBox{background:#f8fafc;border:1px solid #d8dee8;border-radius:12px;padding:10px;margin-top:10px}
 .userbar{display:none!important}
@@ -38,7 +38,7 @@ body{margin:0;font-family:Arial,sans-serif;background:#eef3f8;color:#172033}head
 .progressBar.pctAlarmBar{background:#ef4444}
 
 
-/* Login themes v9.27 */
+/* Login themes v9.40 */
 body.loginMode.theme-light{
   background:
     radial-gradient(circle at 50% 22%, rgba(37,99,235,.10), transparent 35%),
@@ -247,7 +247,7 @@ body.theme-dark .kcSecureLine span{background:rgba(148,163,184,.38)}
 }
 
 
-/* v9.27 login fixes */
+/* v9.40 login fixes */
 .kcLoginScreen.hidden{display:none!important}
 .kcSvgIcon svg,
 .kcEyeBtn svg,
@@ -266,7 +266,7 @@ body.theme-light .kcSecureBadge svg{color:#718096}
 body.theme-dark .kcSecureBadge svg{color:#94a3b8}
 
 
-/* v9.27 login layout fix */
+/* v9.40 login layout fix */
 body.loginMode{
   min-height:100vh;
   overflow-x:hidden;
@@ -378,7 +378,7 @@ body.theme-dark .kcThemeSwitch{
 }
 
 
-/* v9.27 hard login centering */
+/* v9.40 hard login centering */
 body.loginMode header{display:none!important}
 body.loginMode main{min-height:100vh!important;padding:0!important}
 body.loginMode #appArea{display:none!important}
@@ -413,7 +413,7 @@ body.loginMode .kcThemeSwitch{margin:0 auto!important}
 }
 
 
-/* v9.27 theme persistence + header logo + phone login fit */
+/* v9.40 theme persistence + header logo + phone login fit */
 .headerLogoImg{
   width:56px;
   height:56px;
@@ -538,22 +538,832 @@ body.theme-dark:not(.loginMode) .themeMiniBtn{
   body.loginMode .kcLoginBtn{min-height:50px!important}
 }
 
+
+/* v9.40 dark readability fix — jasnego motywu nie ruszamy */
+body.theme-dark:not(.loginMode){
+  --kc-bg:#071426;
+  --kc-panel:#0f2036;
+  --kc-panel2:#111c31;
+  --kc-card:#132238;
+  --kc-input:#111827;
+  --kc-border:#334155;
+  --kc-text:#f8fafc;
+  --kc-muted:#cbd5e1;
+  --kc-soft:#94a3b8;
+  background:linear-gradient(180deg,#020617 0%,#071426 55%,#0b1628 100%)!important;
+  color:var(--kc-text)!important;
+}
+body.theme-dark:not(.loginMode) main,
+body.theme-dark:not(.loginMode) #appArea{
+  background:transparent!important;
+  color:var(--kc-text)!important;
+}
+body.theme-dark:not(.loginMode) header{
+  background:rgba(2,6,23,.92)!important;
+  border-bottom:1px solid rgba(148,163,184,.22)!important;
+  box-shadow:0 10px 30px rgba(0,0,0,.34)!important;
+  backdrop-filter:blur(14px);
+}
+body.theme-dark:not(.loginMode) header h1,
+body.theme-dark:not(.loginMode) h1,
+body.theme-dark:not(.loginMode) h2,
+body.theme-dark:not(.loginMode) h3,
+body.theme-dark:not(.loginMode) h4,
+body.theme-dark:not(.loginMode) label,
+body.theme-dark:not(.loginMode) p,
+body.theme-dark:not(.loginMode) .muted,
+body.theme-dark:not(.loginMode) .small{
+  color:var(--kc-text)!important;
+}
+body.theme-dark:not(.loginMode) .muted,
+body.theme-dark:not(.loginMode) .small,
+body.theme-dark:not(.loginMode) .hint{
+  color:var(--kc-muted)!important;
+}
+
+/* główne sekcje i karty */
+body.theme-dark:not(.loginMode) section,
+body.theme-dark:not(.loginMode) .card,
+body.theme-dark:not(.loginMode) .panelCard,
+body.theme-dark:not(.loginMode) .locationCard,
+body.theme-dark:not(.loginMode) .adminCard,
+body.theme-dark:not(.loginMode) .logCard,
+body.theme-dark:not(.loginMode) .entryCard{
+  background:linear-gradient(180deg,var(--kc-card),#0d1b2f)!important;
+  border-color:rgba(148,163,184,.26)!important;
+  color:var(--kc-text)!important;
+  box-shadow:0 10px 28px rgba(0,0,0,.22)!important;
+}
+
+/* problem z białymi kafelkami w ciemnym motywie */
+body.theme-dark:not(.loginMode) [style*="background:#fff"],
+body.theme-dark:not(.loginMode) [style*="background: #fff"],
+body.theme-dark:not(.loginMode) [style*="background:white"],
+body.theme-dark:not(.loginMode) [style*="background: white"],
+body.theme-dark:not(.loginMode) [style*="background:#ffffff"],
+body.theme-dark:not(.loginMode) [style*="background: #ffffff"]{
+  background:linear-gradient(180deg,var(--kc-card),#0d1b2f)!important;
+  color:var(--kc-text)!important;
+}
+
+/* tekst w kartach */
+body.theme-dark:not(.loginMode) section *,
+body.theme-dark:not(.loginMode) .card *,
+body.theme-dark:not(.loginMode) .panelCard *,
+body.theme-dark:not(.loginMode) .locationCard *,
+body.theme-dark:not(.loginMode) .adminCard *,
+body.theme-dark:not(.loginMode) .logCard *,
+body.theme-dark:not(.loginMode) .entryCard *{
+  color:inherit;
+}
+
+/* pola formularzy */
+body.theme-dark:not(.loginMode) input,
+body.theme-dark:not(.loginMode) select,
+body.theme-dark:not(.loginMode) textarea{
+  background:var(--kc-input)!important;
+  color:var(--kc-text)!important;
+  border:1px solid var(--kc-border)!important;
+  box-shadow:none!important;
+}
+body.theme-dark:not(.loginMode) input::placeholder,
+body.theme-dark:not(.loginMode) textarea::placeholder{
+  color:#9ca3af!important;
+}
+
+/* checkboxy i listy */
+body.theme-dark:not(.loginMode) .checkRow,
+body.theme-dark:not(.loginMode) .taskRow,
+body.theme-dark:not(.loginMode) .doneRow,
+body.theme-dark:not(.loginMode) .panelRow{
+  background:rgba(15,23,42,.72)!important;
+  border-color:rgba(148,163,184,.24)!important;
+  color:var(--kc-text)!important;
+}
+body.theme-dark:not(.loginMode) .checkRow span,
+body.theme-dark:not(.loginMode) .taskRow span,
+body.theme-dark:not(.loginMode) .doneRow span,
+body.theme-dark:not(.loginMode) .panelRow span{
+  color:var(--kc-text)!important;
+}
+
+/* panel/dash — białe karty z poprzedniego motywu */
+body.theme-dark:not(.loginMode) .dashCard,
+body.theme-dark:not(.loginMode) .dashLocation,
+body.theme-dark:not(.loginMode) .dashSection,
+body.theme-dark:not(.loginMode) .summaryCard{
+  background:linear-gradient(180deg,#132238,#0d1b2f)!important;
+  border-color:rgba(148,163,184,.26)!important;
+  color:var(--kc-text)!important;
+}
+body.theme-dark:not(.loginMode) .percentBadge,
+body.theme-dark:not(.loginMode) .badge{
+  color:inherit!important;
+}
+body.theme-dark:not(.loginMode) .statusWarn,
+body.theme-dark:not(.loginMode) .statusBad,
+body.theme-dark:not(.loginMode) .statusOk{
+  color:inherit!important;
+}
+
+/* tabela miesiąca zostaje jasna, ale tekst musi być widoczny */
+body.theme-dark:not(.loginMode) table,
+body.theme-dark:not(.loginMode) th,
+body.theme-dark:not(.loginMode) td{
+  color:#0f172a!important;
+}
+body.theme-dark:not(.loginMode) table input,
+body.theme-dark:not(.loginMode) table select{
+  background:#fff!important;
+  color:#0f172a!important;
+}
+
+/* nav */
+body.theme-dark:not(.loginMode) .nav{
+  background:transparent!important;
+}
+body.theme-dark:not(.loginMode) .nav button{
+  background:rgba(15,23,42,.84)!important;
+  color:#dbeafe!important;
+  border-color:rgba(148,163,184,.18)!important;
+}
+body.theme-dark:not(.loginMode) .nav button.active{
+  background:#ef4444!important;
+  color:#fff!important;
+}
+
+/* główny pasek na telefonie — mniej zasłania treść */
+body.theme-dark:not(.loginMode) header{
+  position:sticky;
+  top:0;
+  z-index:40;
+}
+@media(max-width:520px){
+  .headerLogoImg{
+    width:48px!important;
+    height:48px!important;
+    border-radius:12px!important;
+  }
+  body.theme-dark:not(.loginMode) header h1{
+    font-size:28px!important;
+  }
+  .themeMiniBtn{
+    width:38px!important;
+    height:38px!important;
+    border-radius:12px!important;
+  }
+  .headerActions{
+    gap:6px!important;
+  }
+}
+
+/* nie rozjaśniaj czerwonych/kolorowych statusów */
+body.theme-dark:not(.loginMode) .pctAlarm,
+body.theme-dark:not(.loginMode) .pctWarn,
+body.theme-dark:not(.loginMode) .pctMid,
+body.theme-dark:not(.loginMode) .pctOk{
+  color:inherit!important;
+}
+
+
+/* v9.40 dark theme detail fixes — tylko ciemny motyw */
+body.theme-dark:not(.loginMode){
+  --kc-bg:#071426;
+  --kc-card:#102035;
+  --kc-card2:#132238;
+  --kc-input:#111827;
+  --kc-input2:#1f2937;
+  --kc-border:#334155;
+  --kc-text:#f8fafc;
+  --kc-muted:#cbd5e1;
+  --kc-darkText:#111827;
+  --kc-pill:#f8fafc;
+}
+
+/* NIE rób białego tekstu na jasnych elementach */
+body.theme-dark:not(.loginMode) .chip,
+body.theme-dark:not(.loginMode) .tag,
+body.theme-dark:not(.loginMode) .pill,
+body.theme-dark:not(.loginMode) .badge:not(.pctAlarm):not(.pctWarn):not(.pctMid):not(.pctOk),
+body.theme-dark:not(.loginMode) .locationChip,
+body.theme-dark:not(.loginMode) .adminChip,
+body.theme-dark:not(.loginMode) [class*="chip"],
+body.theme-dark:not(.loginMode) [class*="Chip"],
+body.theme-dark:not(.loginMode) [class*="pill"],
+body.theme-dark:not(.loginMode) [class*="Pill"]{
+  background:#f8fafc!important;
+  color:#111827!important;
+  border-color:#dbe4ef!important;
+}
+
+/* jasne kapsułki lokalizacji w adminie */
+body.theme-dark:not(.loginMode) .adminOnly span,
+body.theme-dark:not(.loginMode) .locations span,
+body.theme-dark:not(.loginMode) .locList span,
+body.theme-dark:not(.loginMode) .devList span,
+body.theme-dark:not(.loginMode) .cleanList span,
+body.theme-dark:not(.loginMode) .haccpList span{
+  color:#111827!important;
+}
+
+/* kafelki lokalizacji/panelu w ciemnym motywie: ciemne tło i jasny tekst */
+body.theme-dark:not(.loginMode) .dashLocation,
+body.theme-dark:not(.loginMode) .locationCard,
+body.theme-dark:not(.loginMode) .panelLocation,
+body.theme-dark:not(.loginMode) .overviewCard{
+  background:linear-gradient(180deg,#132238,#0d1b2f)!important;
+  color:#f8fafc!important;
+  border-color:rgba(148,163,184,.28)!important;
+}
+body.theme-dark:not(.loginMode) .dashLocation *,
+body.theme-dark:not(.loginMode) .locationCard *,
+body.theme-dark:not(.loginMode) .panelLocation *,
+body.theme-dark:not(.loginMode) .overviewCard *{
+  color:inherit;
+}
+
+/* ale jasne badge procentów/statusów mają mieć ciemny/czerwony tekst */
+body.theme-dark:not(.loginMode) .percentBadge,
+body.theme-dark:not(.loginMode) .pctAlarm,
+body.theme-dark:not(.loginMode) .pctWarn,
+body.theme-dark:not(.loginMode) .pctMid,
+body.theme-dark:not(.loginMode) .pctOk{
+  color:#991b1b!important;
+}
+body.theme-dark:not(.loginMode) .pctOk{color:#166534!important}
+body.theme-dark:not(.loginMode) .pctWarn{color:#92400e!important}
+body.theme-dark:not(.loginMode) .pctMid{color:#9a3412!important}
+
+/* pasek autora przy wpisach — wraca czytelny szary/niebieskawy */
+body.theme-dark:not(.loginMode) .authorBadge,
+body.theme-dark:not(.loginMode) [class*="author"]{
+  background:#e8eefb!important;
+  color:#3730a3!important;
+  border-color:#dbe4ff!important;
+}
+body.theme-dark:not(.loginMode) .authorBadge *,
+body.theme-dark:not(.loginMode) [class*="author"] *{
+  color:#3730a3!important;
+}
+
+/* okresowość/częstotliwość: codziennie, zostało 1 d itd. */
+body.theme-dark:not(.loginMode) .freqBadge,
+body.theme-dark:not(.loginMode) .dueBadge,
+body.theme-dark:not(.loginMode) .periodBadge,
+body.theme-dark:not(.loginMode) [class*="freq"],
+body.theme-dark:not(.loginMode) [class*="Freq"],
+body.theme-dark:not(.loginMode) [class*="due"],
+body.theme-dark:not(.loginMode) [class*="Due"],
+body.theme-dark:not(.loginMode) [class*="period"],
+body.theme-dark:not(.loginMode) [class*="Period"]{
+  background:#fff3bf!important;
+  color:#111827!important;
+  border-color:#fde68a!important;
+}
+
+/* komunikaty sukcesu/alerty */
+body.theme-dark:not(.loginMode) .success,
+body.theme-dark:not(.loginMode) .okMsg,
+body.theme-dark:not(.loginMode) .savedMsg,
+body.theme-dark:not(.loginMode) .notice.success,
+body.theme-dark:not(.loginMode) [class*="success"],
+body.theme-dark:not(.loginMode) [class*="saved"]{
+  background:#dcfce7!important;
+  color:#14532d!important;
+  border-color:#86efac!important;
+}
+body.theme-dark:not(.loginMode) .notice,
+body.theme-dark:not(.loginMode) .alert,
+body.theme-dark:not(.loginMode) .message{
+  color:#111827!important;
+}
+
+/* filtry historii, wygenerowane select/input */
+body.theme-dark:not(.loginMode) #history select,
+body.theme-dark:not(.loginMode) #history input,
+body.theme-dark:not(.loginMode) #history textarea,
+body.theme-dark:not(.loginMode) #historyResult select,
+body.theme-dark:not(.loginMode) #historyResult input,
+body.theme-dark:not(.loginMode) #historyResult textarea,
+body.theme-dark:not(.loginMode) .history select,
+body.theme-dark:not(.loginMode) .history input,
+body.theme-dark:not(.loginMode) .history textarea{
+  background:#111827!important;
+  color:#f8fafc!important;
+  border-color:#334155!important;
+}
+body.theme-dark:not(.loginMode) #historyResult .card,
+body.theme-dark:not(.loginMode) #historyResult .logCard,
+body.theme-dark:not(.loginMode) #historyResult [class*="card"]{
+  background:linear-gradient(180deg,#132238,#0d1b2f)!important;
+  color:#f8fafc!important;
+}
+
+/* raport miesięczny — przyciski drukuj/export */
+body.theme-dark:not(.loginMode) button:disabled,
+body.theme-dark:not(.loginMode) .btn:disabled,
+body.theme-dark:not(.loginMode) [disabled]{
+  background:#e5e7eb!important;
+  color:#374151!important;
+  opacity:1!important;
+  border-color:#d1d5db!important;
+}
+body.theme-dark:not(.loginMode) #month button,
+body.theme-dark:not(.loginMode) .month button,
+body.theme-dark:not(.loginMode) #month .btn,
+body.theme-dark:not(.loginMode) .month .btn{
+  color:#fff!important;
+}
+body.theme-dark:not(.loginMode) #month button:disabled,
+body.theme-dark:not(.loginMode) .month button:disabled,
+body.theme-dark:not(.loginMode) #month .btn:disabled,
+body.theme-dark:not(.loginMode) .month .btn:disabled{
+  color:#374151!important;
+}
+
+/* admin: dodawane elementy i formularze */
+body.theme-dark:not(.loginMode) #admin input,
+body.theme-dark:not(.loginMode) #admin select,
+body.theme-dark:not(.loginMode) #admin textarea,
+body.theme-dark:not(.loginMode) .admin input,
+body.theme-dark:not(.loginMode) .admin select,
+body.theme-dark:not(.loginMode) .admin textarea{
+  background:#111827!important;
+  color:#f8fafc!important;
+  border-color:#334155!important;
+}
+body.theme-dark:not(.loginMode) #admin .card,
+body.theme-dark:not(.loginMode) .admin .card,
+body.theme-dark:not(.loginMode) #admin [class*="Card"],
+body.theme-dark:not(.loginMode) .admin [class*="Card"]{
+  background:linear-gradient(180deg,#132238,#0d1b2f)!important;
+  color:#f8fafc!important;
+}
+
+/* jasne listy dodanych lokalizacji / urządzeń / czynności: czytelny tekst */
+body.theme-dark:not(.loginMode) #admin .tag,
+body.theme-dark:not(.loginMode) #admin .chip,
+body.theme-dark:not(.loginMode) #admin .pill,
+body.theme-dark:not(.loginMode) #admin [class*="tag"],
+body.theme-dark:not(.loginMode) #admin [class*="chip"],
+body.theme-dark:not(.loginMode) #admin [class*="pill"]{
+  background:#f8fafc!important;
+  color:#111827!important;
+}
+
+/* jeśli element ma inline jasne tło — wymuś ciemny tekst */
+body.theme-dark:not(.loginMode) [style*="background:#f"],
+body.theme-dark:not(.loginMode) [style*="background: #f"],
+body.theme-dark:not(.loginMode) [style*="background:white"],
+body.theme-dark:not(.loginMode) [style*="background: white"]{
+  color:#111827!important;
+}
+body.theme-dark:not(.loginMode) [style*="background:#f"] *,
+body.theme-dark:not(.loginMode) [style*="background: #f"] *,
+body.theme-dark:not(.loginMode) [style*="background:white"] *,
+body.theme-dark:not(.loginMode) [style*="background: white"] *{
+  color:#111827!important;
+}
+
+/* ale przy inline ciemnych tłach — jasny tekst */
+body.theme-dark:not(.loginMode) [style*="background:#0"],
+body.theme-dark:not(.loginMode) [style*="background: #0"],
+body.theme-dark:not(.loginMode) [style*="background:#1"],
+body.theme-dark:not(.loginMode) [style*="background: #1"]{
+  color:#f8fafc!important;
+}
+
+/* checkbox rows w panelu sprzątania */
+body.theme-dark:not(.loginMode) label,
+body.theme-dark:not(.loginMode) .checkboxLabel{
+  color:#f8fafc!important;
+}
+body.theme-dark:not(.loginMode) input[type="checkbox"]{
+  accent-color:#3b82f6;
+}
+
+/* karta dashboardu, która była biała */
+body.theme-dark:not(.loginMode) .dashLocation,
+body.theme-dark:not(.loginMode) .dashCard{
+  background:#132238!important;
+}
+body.theme-dark:not(.loginMode) .dashLocation h3,
+body.theme-dark:not(.loginMode) .dashLocation p,
+body.theme-dark:not(.loginMode) .dashLocation div:not(.percentBadge):not(.pctAlarm):not(.pctWarn):not(.pctMid):not(.pctOk),
+body.theme-dark:not(.loginMode) .dashCard h3,
+body.theme-dark:not(.loginMode) .dashCard p,
+body.theme-dark:not(.loginMode) .dashCard div:not(.percentBadge):not(.pctAlarm):not(.pctWarn):not(.pctMid):not(.pctOk){
+  color:#f8fafc!important;
+}
+
+
+/* v9.40 — tylko poprawka Panelu i Miesiąca w ciemnym motywie */
+
+/* PANEL: karty lokalizacji i rozwinięte szczegóły mają być ciemne i czytelne */
+body.theme-dark:not(.loginMode) #panel .dashLocation,
+body.theme-dark:not(.loginMode) #panel .dashCard,
+body.theme-dark:not(.loginMode) #panel .summaryCard,
+body.theme-dark:not(.loginMode) #panel .locationCard,
+body.theme-dark:not(.loginMode) #panel [class*="dash"],
+body.theme-dark:not(.loginMode) #panel [class*="Dash"]{
+  background:linear-gradient(180deg,#132238,#0d1b2f)!important;
+  color:#f8fafc!important;
+  border-color:rgba(148,163,184,.30)!important;
+}
+
+/* Wszystkie napisy w panelu — jasne, ale badge zostają własne */
+body.theme-dark:not(.loginMode) #panel .dashLocation *:not(.badge):not(.pctAlarm):not(.pctWarn):not(.pctMid):not(.pctOk):not(.percentBadge),
+body.theme-dark:not(.loginMode) #panel .dashCard *:not(.badge):not(.pctAlarm):not(.pctWarn):not(.pctMid):not(.pctOk):not(.percentBadge),
+body.theme-dark:not(.loginMode) #panel .summaryCard *:not(.badge):not(.pctAlarm):not(.pctWarn):not(.pctMid):not(.pctOk):not(.percentBadge),
+body.theme-dark:not(.loginMode) #panel .locationCard *:not(.badge):not(.pctAlarm):not(.pctWarn):not(.pctMid):not(.pctOk):not(.percentBadge){
+  color:#f8fafc!important;
+}
+
+/* Wymuszenie dla białych kafelków, które zostały z inline-style w panelu */
+body.theme-dark:not(.loginMode) #panel [style*="background:#fff"],
+body.theme-dark:not(.loginMode) #panel [style*="background: #fff"],
+body.theme-dark:not(.loginMode) #panel [style*="background:white"],
+body.theme-dark:not(.loginMode) #panel [style*="background: white"],
+body.theme-dark:not(.loginMode) #panel [style*="background:#ffffff"],
+body.theme-dark:not(.loginMode) #panel [style*="background: #ffffff"]{
+  background:linear-gradient(180deg,#132238,#0d1b2f)!important;
+  color:#f8fafc!important;
+  border-color:rgba(148,163,184,.30)!important;
+}
+body.theme-dark:not(.loginMode) #panel [style*="background:#fff"] *:not(.badge):not(.pctAlarm):not(.pctWarn):not(.pctMid):not(.pctOk):not(.percentBadge),
+body.theme-dark:not(.loginMode) #panel [style*="background: #fff"] *:not(.badge):not(.pctAlarm):not(.pctWarn):not(.pctMid):not(.pctOk):not(.percentBadge),
+body.theme-dark:not(.loginMode) #panel [style*="background:white"] *:not(.badge):not(.pctAlarm):not(.pctWarn):not(.pctMid):not(.pctOk):not(.percentBadge),
+body.theme-dark:not(.loginMode) #panel [style*="background: white"] *:not(.badge):not(.pctAlarm):not(.pctWarn):not(.pctMid):not(.pctOk):not(.percentBadge),
+body.theme-dark:not(.loginMode) #panel [style*="background:#ffffff"] *:not(.badge):not(.pctAlarm):not(.pctWarn):not(.pctMid):not(.pctOk):not(.percentBadge),
+body.theme-dark:not(.loginMode) #panel [style*="background: #ffffff"] *:not(.badge):not(.pctAlarm):not(.pctWarn):not(.pctMid):not(.pctOk):not(.percentBadge){
+  color:#f8fafc!important;
+}
+
+/* Rzędy w rozwinięciu panelu */
+body.theme-dark:not(.loginMode) #panel .panelRow,
+body.theme-dark:not(.loginMode) #panel .taskRow,
+body.theme-dark:not(.loginMode) #panel .doneRow,
+body.theme-dark:not(.loginMode) #panel .missingRow,
+body.theme-dark:not(.loginMode) #panel [class*="Row"]{
+  background:rgba(15,23,42,.72)!important;
+  color:#f8fafc!important;
+  border-color:rgba(148,163,184,.24)!important;
+}
+body.theme-dark:not(.loginMode) #panel .panelRow *,
+body.theme-dark:not(.loginMode) #panel .taskRow *,
+body.theme-dark:not(.loginMode) #panel .doneRow *,
+body.theme-dark:not(.loginMode) #panel .missingRow *,
+body.theme-dark:not(.loginMode) #panel [class*="Row"] *{
+  color:#f8fafc!important;
+}
+
+/* Badge/pigułki w panelu — czytelne */
+body.theme-dark:not(.loginMode) #panel .pctAlarm,
+body.theme-dark:not(.loginMode) #panel .percentBadge{
+  background:#fee2e2!important;
+  color:#991b1b!important;
+}
+body.theme-dark:not(.loginMode) #panel .pctWarn{
+  background:#fef3c7!important;
+  color:#92400e!important;
+}
+body.theme-dark:not(.loginMode) #panel .pctMid{
+  background:#ffedd5!important;
+  color:#9a3412!important;
+}
+body.theme-dark:not(.loginMode) #panel .pctOk{
+  background:#dcfce7!important;
+  color:#166534!important;
+}
+
+/* MIESIĄC: drukuj/export — czytelne paski */
+body.theme-dark:not(.loginMode) #month button,
+body.theme-dark:not(.loginMode) #month .btn,
+body.theme-dark:not(.loginMode) section#month button,
+body.theme-dark:not(.loginMode) section#month .btn{
+  background:#2563eb!important;
+  color:#ffffff!important;
+  border-color:#2563eb!important;
+  opacity:1!important;
+}
+body.theme-dark:not(.loginMode) #month button:disabled,
+body.theme-dark:not(.loginMode) #month .btn:disabled,
+body.theme-dark:not(.loginMode) section#month button:disabled,
+body.theme-dark:not(.loginMode) section#month .btn:disabled{
+  background:#e5e7eb!important;
+  color:#111827!important;
+  border-color:#d1d5db!important;
+  opacity:1!important;
+}
+
+/* tabela miesięczna zostaje jasna — tekst ciemny */
+body.theme-dark:not(.loginMode) #month table,
+body.theme-dark:not(.loginMode) #month th,
+body.theme-dark:not(.loginMode) #month td{
+  background:#ffffff!important;
+  color:#111827!important;
+}
+body.theme-dark:not(.loginMode) #month th{
+  background:#f3f4f6!important;
+  color:#111827!important;
+}
+
+
+/* =========================================================
+   v9.40 DARK THEME REFACTOR
+   cel: czytelność bez ruszania jasnego motywu
+   ========================================================= */
+
+body.theme-dark:not(.loginMode){
+  --kc-bg:#071426;
+  --kc-page:#081526;
+  --kc-section:#0d1b2f;
+  --kc-card:#122238;
+  --kc-card2:#172a44;
+  --kc-row:#55606f;
+  --kc-input:#111827;
+  --kc-border:#334155;
+  --kc-text:#f8fafc;
+  --kc-muted:#cbd5e1;
+  --kc-soft:#94a3b8;
+  --kc-blue:#2563eb;
+  --kc-red:#ef4444;
+  background:linear-gradient(180deg,#020617 0%,#071426 45%,#0b1628 100%)!important;
+  color:var(--kc-text)!important;
+}
+
+/* ogólne tło po zalogowaniu */
+body.theme-dark:not(.loginMode) main,
+body.theme-dark:not(.loginMode) #appArea{
+  background:transparent!important;
+  color:var(--kc-text)!important;
+}
+
+/* sekcje */
+body.theme-dark:not(.loginMode) section{
+  background:linear-gradient(180deg,var(--kc-section),#0a1728)!important;
+  color:var(--kc-text)!important;
+  border-color:rgba(148,163,184,.22)!important;
+}
+
+/* wszystkie główne karty dynamiczne */
+body.theme-dark:not(.loginMode) .card,
+body.theme-dark:not(.loginMode) .kcDarkCard,
+body.theme-dark:not(.loginMode) .dashLocation,
+body.theme-dark:not(.loginMode) .dashCard,
+body.theme-dark:not(.loginMode) .summaryCard,
+body.theme-dark:not(.loginMode) .locationCard,
+body.theme-dark:not(.loginMode) .panelCard,
+body.theme-dark:not(.loginMode) .logCard,
+body.theme-dark:not(.loginMode) .entryCard,
+body.theme-dark:not(.loginMode) .adminCard,
+body.theme-dark:not(.loginMode) [class*="Card"]:not(.kcLoginCard):not(.kcLoginCardLight),
+body.theme-dark:not(.loginMode) [class*="card"]:not(.kcLoginCard):not(.kcLoginCardLight){
+  background:linear-gradient(180deg,var(--kc-card),#0d1b2f)!important;
+  color:var(--kc-text)!important;
+  border-color:rgba(148,163,184,.26)!important;
+  box-shadow:0 12px 28px rgba(0,0,0,.22)!important;
+}
+
+/* tekst w kartach */
+body.theme-dark:not(.loginMode) .card h1,
+body.theme-dark:not(.loginMode) .card h2,
+body.theme-dark:not(.loginMode) .card h3,
+body.theme-dark:not(.loginMode) .card h4,
+body.theme-dark:not(.loginMode) .dashLocation h1,
+body.theme-dark:not(.loginMode) .dashLocation h2,
+body.theme-dark:not(.loginMode) .dashLocation h3,
+body.theme-dark:not(.loginMode) .dashLocation h4,
+body.theme-dark:not(.loginMode) section h1,
+body.theme-dark:not(.loginMode) section h2,
+body.theme-dark:not(.loginMode) section h3,
+body.theme-dark:not(.loginMode) section h4{
+  color:var(--kc-text)!important;
+}
+body.theme-dark:not(.loginMode) p,
+body.theme-dark:not(.loginMode) label,
+body.theme-dark:not(.loginMode) .muted,
+body.theme-dark:not(.loginMode) .small,
+body.theme-dark:not(.loginMode) .hint{
+  color:var(--kc-muted)!important;
+}
+
+/* PANEL — najważniejsze: zero białego tekstu na białym tle */
+body.theme-dark:not(.loginMode) #panel .dashLocation,
+body.theme-dark:not(.loginMode) #panel .dashCard,
+body.theme-dark:not(.loginMode) #panel .summaryCard,
+body.theme-dark:not(.loginMode) #panel .locationCard,
+body.theme-dark:not(.loginMode) #panel [class*="dash"],
+body.theme-dark:not(.loginMode) #panel [class*="Dash"],
+body.theme-dark:not(.loginMode) #panel [style*="background:#fff"],
+body.theme-dark:not(.loginMode) #panel [style*="background: #fff"],
+body.theme-dark:not(.loginMode) #panel [style*="background:white"],
+body.theme-dark:not(.loginMode) #panel [style*="background: white"],
+body.theme-dark:not(.loginMode) #panel [style*="background:#ffffff"],
+body.theme-dark:not(.loginMode) #panel [style*="background: #ffffff"]{
+  background:linear-gradient(180deg,#132238,#0d1b2f)!important;
+  color:var(--kc-text)!important;
+  border-color:rgba(148,163,184,.28)!important;
+}
+body.theme-dark:not(.loginMode) #panel .dashLocation *:not(.pctAlarm):not(.pctWarn):not(.pctMid):not(.pctOk):not(.percentBadge):not(.badge),
+body.theme-dark:not(.loginMode) #panel .dashCard *:not(.pctAlarm):not(.pctWarn):not(.pctMid):not(.pctOk):not(.percentBadge):not(.badge),
+body.theme-dark:not(.loginMode) #panel .summaryCard *:not(.pctAlarm):not(.pctWarn):not(.pctMid):not(.pctOk):not(.percentBadge):not(.badge),
+body.theme-dark:not(.loginMode) #panel .locationCard *:not(.pctAlarm):not(.pctWarn):not(.pctMid):not(.pctOk):not(.percentBadge):not(.badge){
+  color:var(--kc-text)!important;
+}
+
+/* PANEL — rzędy z Temperatura/Sprzątanie/HACCP */
+body.theme-dark:not(.loginMode) #panel .panelRow,
+body.theme-dark:not(.loginMode) #panel .taskRow,
+body.theme-dark:not(.loginMode) #panel .doneRow,
+body.theme-dark:not(.loginMode) #panel .missingRow,
+body.theme-dark:not(.loginMode) #panel [class*="Row"],
+body.theme-dark:not(.loginMode) .kcDarkRow{
+  background:var(--kc-row)!important;
+  color:#fff!important;
+  border-color:rgba(255,255,255,.20)!important;
+}
+body.theme-dark:not(.loginMode) #panel .panelRow *,
+body.theme-dark:not(.loginMode) #panel .taskRow *,
+body.theme-dark:not(.loginMode) #panel .doneRow *,
+body.theme-dark:not(.loginMode) #panel .missingRow *,
+body.theme-dark:not(.loginMode) .kcDarkRow *{
+  color:#fff!important;
+}
+
+/* Badge procentów i statusów zostają jasne, ale z ciemnym tekstem */
+body.theme-dark:not(.loginMode) #panel .percentBadge,
+body.theme-dark:not(.loginMode) #panel .pctAlarm{
+  background:#fee2e2!important;
+  color:#991b1b!important;
+}
+body.theme-dark:not(.loginMode) #panel .pctWarn{
+  background:#fef3c7!important;
+  color:#92400e!important;
+}
+body.theme-dark:not(.loginMode) #panel .pctMid{
+  background:#ffedd5!important;
+  color:#9a3412!important;
+}
+body.theme-dark:not(.loginMode) #panel .pctOk{
+  background:#dcfce7!important;
+  color:#166534!important;
+}
+
+/* formularze */
+body.theme-dark:not(.loginMode) input,
+body.theme-dark:not(.loginMode) select,
+body.theme-dark:not(.loginMode) textarea{
+  background:var(--kc-input)!important;
+  color:var(--kc-text)!important;
+  border-color:var(--kc-border)!important;
+  box-shadow:none!important;
+}
+body.theme-dark:not(.loginMode) input::placeholder,
+body.theme-dark:not(.loginMode) textarea::placeholder{
+  color:#9ca3af!important;
+}
+
+/* pasek autora ma zostać jasny/szary i czytelny */
+body.theme-dark:not(.loginMode) .authorBadge{
+  background:#e8eefb!important;
+  color:#3730a3!important;
+  border-color:#dbe4ff!important;
+}
+body.theme-dark:not(.loginMode) .authorBadge *{color:#3730a3!important}
+
+/* okresowość w sprzątaniu: jasna kapsułka, czarny tekst */
+body.theme-dark:not(.loginMode) .freqBadge,
+body.theme-dark:not(.loginMode) .dueBadge,
+body.theme-dark:not(.loginMode) .periodBadge,
+body.theme-dark:not(.loginMode) [class*="freq"],
+body.theme-dark:not(.loginMode) [class*="Freq"],
+body.theme-dark:not(.loginMode) [class*="due"],
+body.theme-dark:not(.loginMode) [class*="Due"],
+body.theme-dark:not(.loginMode) [class*="period"],
+body.theme-dark:not(.loginMode) [class*="Period"]{
+  background:#fff3bf!important;
+  color:#111827!important;
+  border-color:#fde68a!important;
+}
+
+/* komunikaty sukcesu */
+body.theme-dark:not(.loginMode) .success,
+body.theme-dark:not(.loginMode) .okMsg,
+body.theme-dark:not(.loginMode) .savedMsg,
+body.theme-dark:not(.loginMode) .notice.success,
+body.theme-dark:not(.loginMode) [class*="success"],
+body.theme-dark:not(.loginMode) [class*="saved"]{
+  background:#dcfce7!important;
+  color:#14532d!important;
+  border-color:#86efac!important;
+}
+
+/* ADMIN — dynamiczne dodane elementy */
+body.theme-dark:not(.loginMode) #admin .chip,
+body.theme-dark:not(.loginMode) #admin .tag,
+body.theme-dark:not(.loginMode) #admin .pill,
+body.theme-dark:not(.loginMode) #admin [class*="chip"],
+body.theme-dark:not(.loginMode) #admin [class*="Chip"],
+body.theme-dark:not(.loginMode) #admin [class*="pill"],
+body.theme-dark:not(.loginMode) #admin [class*="Pill"],
+body.theme-dark:not(.loginMode) #admin [style*="background:#fff"],
+body.theme-dark:not(.loginMode) #admin [style*="background: #fff"],
+body.theme-dark:not(.loginMode) #admin [style*="background:white"],
+body.theme-dark:not(.loginMode) #admin [style*="background: white"],
+body.theme-dark:not(.loginMode) .kcLightPill{
+  background:#f8fafc!important;
+  color:#111827!important;
+  border-color:#dbe4ef!important;
+}
+body.theme-dark:not(.loginMode) #admin .chip *,
+body.theme-dark:not(.loginMode) #admin .tag *,
+body.theme-dark:not(.loginMode) #admin .pill *,
+body.theme-dark:not(.loginMode) .kcLightPill *{
+  color:#111827!important;
+}
+
+/* HISTORIA — filtry i karty */
+body.theme-dark:not(.loginMode) #history input,
+body.theme-dark:not(.loginMode) #history select,
+body.theme-dark:not(.loginMode) #history textarea,
+body.theme-dark:not(.loginMode) #historyResult input,
+body.theme-dark:not(.loginMode) #historyResult select,
+body.theme-dark:not(.loginMode) #historyResult textarea{
+  background:#111827!important;
+  color:#f8fafc!important;
+  border-color:#334155!important;
+}
+body.theme-dark:not(.loginMode) #historyResult .card,
+body.theme-dark:not(.loginMode) #historyResult .logCard,
+body.theme-dark:not(.loginMode) #historyResult [style*="background:#fff"],
+body.theme-dark:not(.loginMode) #historyResult [style*="background:white"]{
+  background:linear-gradient(180deg,#132238,#0d1b2f)!important;
+  color:#f8fafc!important;
+}
+
+/* MIESIĄC — przyciski drukuj/export oraz tabela jasna */
+body.theme-dark:not(.loginMode) #month button,
+body.theme-dark:not(.loginMode) #month .btn,
+body.theme-dark:not(.loginMode) section#month button,
+body.theme-dark:not(.loginMode) section#month .btn{
+  background:#2563eb!important;
+  color:#fff!important;
+  border-color:#2563eb!important;
+  opacity:1!important;
+}
+body.theme-dark:not(.loginMode) #month button:disabled,
+body.theme-dark:not(.loginMode) #month .btn:disabled,
+body.theme-dark:not(.loginMode) section#month button:disabled,
+body.theme-dark:not(.loginMode) section#month .btn:disabled{
+  background:#e5e7eb!important;
+  color:#111827!important;
+  border-color:#d1d5db!important;
+  opacity:1!important;
+}
+body.theme-dark:not(.loginMode) #month table,
+body.theme-dark:not(.loginMode) #month th,
+body.theme-dark:not(.loginMode) #month td{
+  background:#fff!important;
+  color:#111827!important;
+}
+body.theme-dark:not(.loginMode) #month th{background:#f3f4f6!important}
+
+/* ogólne jasne inline elementy poza panelem/adminem — jeśli są jasne, tekst ciemny */
+body.theme-dark:not(.loginMode) [style*="background:#fff"]:not(#panel *):not(#admin *),
+body.theme-dark:not(.loginMode) [style*="background: #fff"]:not(#panel *):not(#admin *),
+body.theme-dark:not(.loginMode) [style*="background:white"]:not(#panel *):not(#admin *),
+body.theme-dark:not(.loginMode) [style*="background: white"]:not(#panel *):not(#admin *),
+body.theme-dark:not(.loginMode) [style*="background:#ffffff"]:not(#panel *):not(#admin *),
+body.theme-dark:not(.loginMode) [style*="background: #ffffff"]:not(#panel *):not(#admin *){
+  color:#111827!important;
+}
+
+/* górny pasek */
+body.theme-dark:not(.loginMode) header{
+  background:rgba(2,6,23,.94)!important;
+  border-bottom:1px solid rgba(148,163,184,.20)!important;
+}
+@media(max-width:520px){
+  body.theme-dark:not(.loginMode) header h1{font-size:30px!important;line-height:1.05!important}
+}
+
 </style>
-<link rel="manifest" href="./manifest.json?v=927">
-<link rel="apple-touch-icon" sizes="180x180" href="./icons/icon-180.png?v=927">
-<link rel="apple-touch-icon" href="./icons/icon-180.png?v=927">
-<link rel="icon" type="image/png" sizes="32x32" href="./icons/icon-32.png?v=927">
-<link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png?v=927">
+<link rel="manifest" href="./manifest.json?v=940">
+<link rel="apple-touch-icon" sizes="180x180" href="./icons/icon-180.png?v=940">
+<link rel="apple-touch-icon" href="./icons/icon-180.png?v=940">
+<link rel="icon" type="image/png" sizes="32x32" href="./icons/icon-32.png?v=940">
+<link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png?v=940">
 <meta name="theme-color" content="#dbeafe">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Kitchen Control">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
-</head><body><header class="appHeader"><div class="headerLeft" onclick="show('panel')"><img class="headerLogoImg" src="./icons/icon-180.png?v=927" alt="Kitchen Control"><h1>Kitchen Control</h1></div><div class="headerActions"><button type="button" class="themeMiniBtn" onclick="setAppTheme('light')" aria-label="Motyw jasny">☀️</button><button type="button" class="themeMiniBtn" onclick="setAppTheme('dark')" aria-label="Motyw ciemny">🌙</button><button id="headerMenuBtn" class="powerBtn hidden" onclick="toggleUserMenu(event)">⏻</button></div></header><main>
+</head><body><header class="appHeader"><div class="headerLeft" onclick="show('panel')"><img class="headerLogoImg" src="./icons/icon-180.png?v=940" alt="Kitchen Control"><h1>Kitchen Control</h1></div><div class="headerActions"><button type="button" class="themeMiniBtn" onclick="setAppTheme('light')" aria-label="Motyw jasny">☀️</button><button type="button" class="themeMiniBtn" onclick="setAppTheme('dark')" aria-label="Motyw ciemny">🌙</button><button id="headerMenuBtn" class="powerBtn hidden" onclick="toggleUserMenu(event)">⏻</button></div></header><main>
 
 <section id="loginScreen" class="loginBox kcLoginScreen">
   <div class="kcLoginCard">
-    <img class="kcLoginIcon" src="./icons/icon-512.png?v=927" alt="Kitchen Control">
+    <img class="kcLoginIcon" src="./icons/icon-512.png?v=940" alt="Kitchen Control">
     <h2>Kitchen Control</h2>
     <p class="kcLoginSub">SYSTEM MONITOROWANIA TEMPERATUR</p>
 
@@ -703,7 +1513,7 @@ body.theme-dark:not(.loginMode) .themeMiniBtn{
   <button class="btn adminOnly" onclick="exportBackup();closeUserMenu()">Backup JSON</button>
   <button class="btn danger" onclick="logout();closeUserMenu()">Wyloguj</button>
 </div>
-<div id="cellModal" class="hidden"></div><div class="versionFooter noPrint">v9.27</div></div></main><script>
+<div id="cellModal" class="hidden"></div><div class="versionFooter noPrint">v9.40</div></div></main><script>
 const defaults={locations:["Asian Street Food Mokotów","Asian Street Food Wola","Food Truck","Kuchnia Mokotów"],devices:{"Asian Street Food Mokotów":{chlodnie:["Chłodnia 1","Chłodnia 2","Chłodnia 3"],mroznie:["Mroźnia 1"]},"Asian Street Food Wola":{chlodnie:["Chłodnia 1","Chłodnia 2"],mroznie:["Mroźnia 1"]},"Food Truck":{chlodnie:["Chłodnia 1","Chłodnia 2"],mroznie:["Mroźnia 1"]},"Kuchnia Mokotów":{chlodnie:["Chłodnia 1","Chłodnia 2","Chłodnia 3","Chłodnia 4"],mroznie:["Mroźnia 1","Mroźnia 2"]}},cleaning:{Rano:["Obecność szkodników","Stan lodówek / brak wycieków","Czystość blatów startowa"],"W ciągu dnia":["Frytury","Wymiana frytury","Zlewy","Bieżące blaty"],Wieczór:["Pow. robocze / blaty","Kuchenki","Ściany i podłogi","Schładzarka","Chłodnie","Mroźnie","Mycie okapu"]},haccpItems:["Kontrola dat przydatności","Kontrola chłodni tygodniowa","Magazyn suchy miesięcznie","Zamrażarki miesięcznie"]};
 let state=JSON.parse(localStorage.getItem("kc_state_v7")||"null")||defaults;
 let logs=JSON.parse(localStorage.getItem("kc_logs_v7")||"[]");
@@ -744,7 +1554,7 @@ function setAppTheme(theme){
   document.body.classList.add("theme-"+t);
   const l=document.getElementById("themeLightBtn");
   const d=document.getElementById("themeDarkBtn");
-  if(l&&d){l.classList.toggle("active",t==="light");d.classList.toggle("active",t==="dark");}
+  if(l&&d){l.classList.toggle("active",t==="light");d.classList.toggle("active",t==="dark");} setTimeout(kcApplyDarkFix,0); setTimeout(kcApplyDarkFix,80);
 }
 function setLoginTheme(theme){ setAppTheme(theme); }
 function initLoginTheme(){ setAppTheme(localStorage.getItem("kc_login_theme") || "light"); }
@@ -1428,6 +2238,29 @@ function importBackup(event){
 }
 
 document.addEventListener("change",e=>{if(e.target.id==="tempLoc"){fillDev();renderAllLogs();}if(e.target.id==="tempDev"){fillVals();renderAllLogs();}if(e.target.id==="tempVal")status();if(e.target.id==="cleanShift"){renderCleanItems();renderAllLogs();}if(e.target.id==="shiftAdminLoc"){renderShiftAdmin();renderShiftSelects();renderCleanAdmin();}if(e.target.id==="cleanAdminLoc"){renderShiftSelects();renderCleanAdmin();}if(e.target.id==="cleanAdminShift")renderCleanAdmin();if(e.target.id==="haccpAdminLoc")renderHaccpAdmin();if(e.target.id==="cleanLoc"){renderShiftSelects();renderCleanItems();renderAllLogs();}if(e.target.id==="cleanDate")renderCleanItems();if(e.target.id==="panelDate")renderPanel();if(e.target.id==="haccpLoc"){renderHaccpItems();renderAllLogs();}if(["histLoc","histKind","histFrom","histTo"].includes(e.target.id))renderHistoryPage();if(e.target.id==="adminLoc")renderDevList();if(["monthLoc","monthType","monthPick"].includes(e.target.id))renderMonth();if(["sanLoc","sanType","sanMonth"].includes(e.target.id))renderSanepid()});
+
+function kcIsDark(){ return document.body.classList.contains("theme-dark") && !document.body.classList.contains("loginMode"); }
+function kcApplyDarkFix(){
+  if(!kcIsDark()) return;
+  document.querySelectorAll("#panel .dashLocation, #panel .dashCard, #panel .summaryCard, #panel .locationCard, #panel [data-kc-card]").forEach(el=>el.classList.add("kcDarkCard"));
+  document.querySelectorAll("#panel .panelRow, #panel .taskRow, #panel .doneRow, #panel .missingRow").forEach(el=>el.classList.add("kcDarkRow"));
+  document.querySelectorAll("#admin .chip, #admin .tag, #admin .pill, #admin [class*=chip], #admin [class*=Chip], #admin [class*=pill], #admin [class*=Pill]").forEach(el=>el.classList.add("kcLightPill"));
+  document.querySelectorAll("[style]").forEach(el=>{
+    const s=(el.getAttribute("style")||"").toLowerCase().replace(/\s/g,"");
+    if(s.includes("background:#fff")||s.includes("background:white")||s.includes("background:#ffffff")||s.includes("background-color:#fff")||s.includes("background-color:white")||s.includes("background-color:#ffffff")){
+      if(el.closest("#panel")) el.classList.add("kcDarkCard");
+      else if(el.closest("#admin")) el.classList.add("kcLightPill");
+      else if(el.closest("#history") || el.closest("#historyResult")) el.classList.add("kcDarkCard");
+    }
+  });
+}
+const kcOldShow = typeof show==="function" ? show : null;
+if(kcOldShow && !window.__kcShowPatched){
+  window.__kcShowPatched=true;
+  show=function(id){ kcOldShow(id); setTimeout(kcApplyDarkFix,0); setTimeout(kcApplyDarkFix,80); };
+}
+document.addEventListener("DOMContentLoaded",()=>setTimeout(kcApplyDarkFix,80));
+
 fillLogin();initLoginTheme();applyAccess();
 try{loginName.addEventListener("keydown",e=>{if(e.key==="Enter")login()});loginPin.addEventListener("keydown",e=>{if(e.key==="Enter")login()});}catch(e){}
 </script></body></html>
