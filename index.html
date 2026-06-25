@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kitchen Control v9.25</title>
+<title>Kitchen Control v9.26</title>
 <style>
 body{margin:0;font-family:Arial,sans-serif;background:#eef3f8;color:#172033}header{background:linear-gradient(135deg,#dbeafe,#eff6ff);color:#172033;padding:12px 16px;position:sticky;top:0;z-index:5;border-bottom:1px solid #bfdbfe;cursor:pointer}h1{margin:0;font-size:22px}.small{color:#64748b}.appHeader{display:flex;align-items:center;justify-content:space-between;gap:10px}.headerLeft{display:flex;align-items:center;gap:10px}.headerLogo{width:42px;height:42px;border-radius:12px;background:#0f172a;color:white;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 2px 8px #0001}.powerBtn{border:0;background:white;color:#0f172a;border-radius:12px;width:44px;height:44px;font-size:22px;font-weight:900;box-shadow:0 1px 6px #0001}.userMenu{position:fixed;top:68px;right:14px;background:white;border:1px solid #d8dee8;border-radius:16px;box-shadow:0 10px 30px #0002;z-index:80;min-width:220px;padding:12px}.userMenuName{font-weight:900;font-size:17px}.userMenuRole{color:#64748b;margin:2px 0 10px}.userMenu button{width:100%;margin-top:8px}.menuBackdrop{position:fixed;inset:0;z-index:70;background:transparent}main{padding:14px;max-width:1200px;margin:auto}.nav{display:flex;gap:8px;overflow:auto;margin-bottom:10px}.nav button,.btn{border:0;border-radius:10px;padding:11px 14px;background:white;font-weight:700;box-shadow:0 1px 4px #0001}.nav button.active,.primary{background:#2563eb!important;color:white}.danger{background:#dc2626!important;color:white}.card{background:white;border-radius:14px;padding:14px;margin:10px 0;box-shadow:0 2px 10px #0001}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.loc{border:1px solid #d8dee8;border-radius:12px;padding:12px;background:#fafafa}.status{border-radius:99px;padding:4px 8px;font-size:12px;font-weight:800;display:inline-block}.ok{background:#dcfce7;color:#166534}.warn{background:#fef3c7;color:#92400e}.alarm{background:#fee2e2;color:#991b1b}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}select,input,textarea{border:1px solid #d8dee8;border-radius:10px;padding:10px;background:white;font-size:16px}textarea{width:100%;min-height:70px;margin-top:10px}table{border-collapse:collapse;width:100%;background:white}th,td{border:1px solid #111;padding:6px;text-align:center;font-size:13px;min-width:42px}th{background:#f3f4f6}.wrap{overflow:auto;border-radius:10px;border:1px solid #d8dee8}.vert{writing-mode:vertical-rl;transform:rotate(180deg);font-weight:800;white-space:nowrap}.pill{display:inline-flex;gap:6px;align-items:center;border:1px solid #d8dee8;padding:7px 9px;border-radius:99px;margin:4px;background:#f8fafc}.pill button{border:0;background:#fee2e2;border-radius:50%;width:22px;height:22px}.hidden{display:none}.filled-ok{background:#dcfce7}.filled-warn{background:#fef3c7}.filled-alarm{background:#fee2e2}.notice{padding:10px;border-radius:10px;background:#fef3c7;color:#92400e;font-weight:bold;margin-top:10px}.success{background:#dcfce7;color:#166534}.historyItem{border-bottom:1px solid #e5e7eb;padding:8px 0}.historyItem:last-child{border-bottom:0}.readonlyBadge{background:#e0e7ff;color:#3730a3;border-radius:99px;padding:4px 8px;font-size:12px;font-weight:800}.authorBadge{background:#eef2ff;color:#3730a3;border-radius:12px;padding:9px 11px;font-weight:800;display:inline-block}.sanepidHeader{display:none}.editBox{background:#f8fafc;border:1px solid #d8dee8;border-radius:12px;padding:10px;margin-top:10px}
 .userbar{display:none!important}
@@ -38,7 +38,7 @@ body{margin:0;font-family:Arial,sans-serif;background:#eef3f8;color:#172033}head
 .progressBar.pctAlarmBar{background:#ef4444}
 
 
-/* Login themes v9.25 */
+/* Login themes v9.26 */
 body.loginMode.theme-light{
   background:
     radial-gradient(circle at 50% 22%, rgba(37,99,235,.10), transparent 35%),
@@ -247,7 +247,7 @@ body.theme-dark .kcSecureLine span{background:rgba(148,163,184,.38)}
 }
 
 
-/* v9.25 login fixes */
+/* v9.26 login fixes */
 .kcLoginScreen.hidden{display:none!important}
 .kcSvgIcon svg,
 .kcEyeBtn svg,
@@ -266,7 +266,7 @@ body.theme-light .kcSecureBadge svg{color:#718096}
 body.theme-dark .kcSecureBadge svg{color:#94a3b8}
 
 
-/* v9.25 login layout fix */
+/* v9.26 login layout fix */
 body.loginMode{
   min-height:100vh;
   overflow-x:hidden;
@@ -377,12 +377,47 @@ body.theme-dark .kcThemeSwitch{
   }
 }
 
+
+/* v9.26 hard login centering */
+body.loginMode header{display:none!important}
+body.loginMode main{min-height:100vh!important;padding:0!important}
+body.loginMode #appArea{display:none!important}
+body.loginMode #loginScreen.kcLoginScreen{
+  min-height:100vh!important;
+  height:100vh!important;
+  width:100vw!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:22px 16px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:18px!important;
+  box-sizing:border-box!important;
+  border:0!important;
+  box-shadow:none!important;
+  background:transparent!important;
+}
+body.loginMode #loginScreen.hidden{display:none!important}
+body.loginMode .kcLoginCard{margin:0 auto!important}
+body.loginMode .kcThemeSwitch{margin:0 auto!important}
+@media(orientation:landscape) and (max-height:620px){
+  body.loginMode #loginScreen.kcLoginScreen{
+    flex-direction:row!important;
+    justify-content:center!important;
+    align-items:center!important;
+    gap:18px!important;
+    padding:10px 14px!important;
+  }
+}
+
 </style>
-<link rel="manifest" href="./manifest.json?v=925">
-<link rel="apple-touch-icon" sizes="180x180" href="./icons/icon-180.png?v=925">
-<link rel="apple-touch-icon" href="./icons/icon-180.png?v=925">
-<link rel="icon" type="image/png" sizes="32x32" href="./icons/icon-32.png?v=925">
-<link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png?v=925">
+<link rel="manifest" href="./manifest.json?v=926">
+<link rel="apple-touch-icon" sizes="180x180" href="./icons/icon-180.png?v=926">
+<link rel="apple-touch-icon" href="./icons/icon-180.png?v=926">
+<link rel="icon" type="image/png" sizes="32x32" href="./icons/icon-32.png?v=926">
+<link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png?v=926">
 <meta name="theme-color" content="#dbeafe">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Kitchen Control">
@@ -392,7 +427,7 @@ body.theme-dark .kcThemeSwitch{
 
 <section id="loginScreen" class="loginBox kcLoginScreen">
   <div class="kcLoginCard">
-    <img class="kcLoginIcon" src="./icons/icon-512.png?v=925" alt="Kitchen Control">
+    <img class="kcLoginIcon" src="./icons/icon-512.png?v=926" alt="Kitchen Control">
     <h2>Kitchen Control</h2>
     <p class="kcLoginSub">SYSTEM MONITOROWANIA TEMPERATUR</p>
 
@@ -542,7 +577,7 @@ body.theme-dark .kcThemeSwitch{
   <button class="btn adminOnly" onclick="exportBackup();closeUserMenu()">Backup JSON</button>
   <button class="btn danger" onclick="logout();closeUserMenu()">Wyloguj</button>
 </div>
-<div id="cellModal" class="hidden"></div><div class="versionFooter noPrint">v9.25</div></div></main><script>
+<div id="cellModal" class="hidden"></div><div class="versionFooter noPrint">v9.26</div></div></main><script>
 const defaults={locations:["Asian Street Food Mokotów","Asian Street Food Wola","Food Truck","Kuchnia Mokotów"],devices:{"Asian Street Food Mokotów":{chlodnie:["Chłodnia 1","Chłodnia 2","Chłodnia 3"],mroznie:["Mroźnia 1"]},"Asian Street Food Wola":{chlodnie:["Chłodnia 1","Chłodnia 2"],mroznie:["Mroźnia 1"]},"Food Truck":{chlodnie:["Chłodnia 1","Chłodnia 2"],mroznie:["Mroźnia 1"]},"Kuchnia Mokotów":{chlodnie:["Chłodnia 1","Chłodnia 2","Chłodnia 3","Chłodnia 4"],mroznie:["Mroźnia 1","Mroźnia 2"]}},cleaning:{Rano:["Obecność szkodników","Stan lodówek / brak wycieków","Czystość blatów startowa"],"W ciągu dnia":["Frytury","Wymiana frytury","Zlewy","Bieżące blaty"],Wieczór:["Pow. robocze / blaty","Kuchenki","Ściany i podłogi","Schładzarka","Chłodnie","Mroźnie","Mycie okapu"]},haccpItems:["Kontrola dat przydatności","Kontrola chłodni tygodniowa","Magazyn suchy miesięcznie","Zamrażarki miesięcznie"]};
 let state=JSON.parse(localStorage.getItem("kc_state_v7")||"null")||defaults;
 let logs=JSON.parse(localStorage.getItem("kc_logs_v7")||"[]");
@@ -629,12 +664,12 @@ function login(){
 function logout(){localStorage.removeItem("kc_current_user_v9");currentUser=null;applyAccess()}
 function applyAccess(){
   if(currentUser){
-    loginScreen.classList.add("hidden");appArea.classList.remove("hidden");document.body.classList.remove("loginMode");
+    loginScreen.classList.add("hidden");appArea.classList.remove("hidden");document.body.classList.remove("loginMode","theme-light","theme-dark");
     currentUserName.innerText=currentUser.name;currentRole.innerText=currentUser.role;
     document.querySelectorAll(".adminOnly").forEach(x=>x.style.display=isAdmin()?"inline-block":"none");document.querySelectorAll(".managerOnly").forEach(x=>x.style.display=(currentUser.role==="Manager"||currentUser.role==="Admin")?"inline-block":"none");headerMenuBtn.classList.remove("hidden");
     fill();show("panel");
   }else{
-    appArea.classList.add("hidden");loginScreen.classList.remove("hidden");headerMenuBtn.classList.add("hidden");closeUserMenu();fillLogin();
+    appArea.classList.add("hidden");loginScreen.classList.remove("hidden");document.body.classList.add("loginMode");headerMenuBtn.classList.add("hidden");closeUserMenu();fillLogin();initLoginTheme();
   }
 }
 
