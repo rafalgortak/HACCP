@@ -27,7 +27,16 @@ body{margin:0;font-family:Arial,sans-serif;background:#eef3f8;color:#172033}head
 .percentBadge{font-size:20px;font-weight:900;background:#eef2ff;color:#3730a3;border-radius:12px;padding:8px 10px;min-width:58px;text-align:center}
 @media(min-width:900px){.metricGrid{grid-template-columns:repeat(3,1fr)}}
 
-</style></head><body><header class="appHeader"><div class="headerLeft" onclick="show('panel')"><div class="headerLogo">🌡️</div><h1>Kitchen Control</h1></div><button id="headerMenuBtn" class="powerBtn hidden" onclick="toggleUserMenu(event)">⏻</button></header><main>
+</style>
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32.png">
+<meta name="theme-color" content="#dbeafe">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Kitchen Control">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+</head><body><header class="appHeader"><div class="headerLeft" onclick="show('panel')"><div class="headerLogo">🌡️</div><h1>Kitchen Control</h1></div><button id="headerMenuBtn" class="powerBtn hidden" onclick="toggleUserMenu(event)">⏻</button></header><main>
 <section id="loginScreen" class="loginBox">
 <div class="loginLogo">🌡️</div><h2>Logowanie Kitchen Control</h2>
 <p>Wybierz użytkownika i wpisz PIN.</p>
