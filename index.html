@@ -1,50 +1,94 @@
 <!DOCTYPE html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kitchen Control HACCP v8</title>
+<title>Kitchen Control HACCP v9.15</title>
 <style>
-body{margin:0;font-family:Arial,sans-serif;background:#eef3f8;color:#172033}header{background:#0f172a;color:white;padding:14px 16px;position:sticky;top:0;z-index:5}h1{margin:0;font-size:22px}.small{color:#cbd5e1}main{padding:14px;max-width:1200px;margin:auto}.nav{display:flex;gap:8px;overflow:auto;margin-bottom:10px}.nav button,.btn{border:0;border-radius:10px;padding:11px 14px;background:white;font-weight:700;box-shadow:0 1px 4px #0001}.nav button.active,.primary{background:#2563eb!important;color:white}.danger{background:#dc2626!important;color:white}.card{background:white;border-radius:14px;padding:14px;margin:10px 0;box-shadow:0 2px 10px #0001}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.loc{border:1px solid #d8dee8;border-radius:12px;padding:12px;background:#fafafa}.status{border-radius:99px;padding:4px 8px;font-size:12px;font-weight:800;display:inline-block}.ok{background:#dcfce7;color:#166534}.warn{background:#fef3c7;color:#92400e}.alarm{background:#fee2e2;color:#991b1b}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}select,input,textarea{border:1px solid #d8dee8;border-radius:10px;padding:10px;background:white;font-size:16px}textarea{width:100%;min-height:70px;margin-top:10px}table{border-collapse:collapse;width:100%;background:white}th,td{border:1px solid #111;padding:6px;text-align:center;font-size:13px;min-width:42px}th{background:#f3f4f6}.wrap{overflow:auto;border-radius:10px;border:1px solid #d8dee8}.vert{writing-mode:vertical-rl;transform:rotate(180deg);font-weight:800;white-space:nowrap}.pill{display:inline-flex;gap:6px;align-items:center;border:1px solid #d8dee8;padding:7px 9px;border-radius:99px;margin:4px;background:#f8fafc}.pill button{border:0;background:#fee2e2;border-radius:50%;width:22px;height:22px}.hidden{display:none}.filled-ok{background:#dcfce7}.filled-warn{background:#fef3c7}.filled-alarm{background:#fee2e2}.notice{padding:10px;border-radius:10px;background:#fef3c7;color:#92400e;font-weight:bold;margin-top:10px}.success{background:#dcfce7;color:#166534}.historyItem{border-bottom:1px solid #e5e7eb;padding:8px 0}.historyItem:last-child{border-bottom:0}.readonlyBadge{background:#e0e7ff;color:#3730a3;border-radius:99px;padding:4px 8px;font-size:12px;font-weight:800}.sanepidHeader{display:none}.editBox{background:#f8fafc;border:1px solid #d8dee8;border-radius:12px;padding:10px;margin-top:10px}
-.userbar{background:#e0e7ff;color:#1e1b4b;padding:10px;border-radius:12px;margin-bottom:10px;font-weight:bold}
+body{margin:0;font-family:Arial,sans-serif;background:#eef3f8;color:#172033}header{background:linear-gradient(135deg,#dbeafe,#eff6ff);color:#172033;padding:12px 16px;position:sticky;top:0;z-index:5;border-bottom:1px solid #bfdbfe;cursor:pointer}h1{margin:0;font-size:22px}.small{color:#64748b}.appHeader{display:flex;align-items:center;justify-content:space-between;gap:10px}.headerLeft{display:flex;align-items:center;gap:10px}.headerLogo{width:42px;height:42px;border-radius:12px;background:#0f172a;color:white;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 2px 8px #0001}.powerBtn{border:0;background:white;color:#0f172a;border-radius:12px;width:44px;height:44px;font-size:22px;font-weight:900;box-shadow:0 1px 6px #0001}.userMenu{position:fixed;top:68px;right:14px;background:white;border:1px solid #d8dee8;border-radius:16px;box-shadow:0 10px 30px #0002;z-index:80;min-width:220px;padding:12px}.userMenuName{font-weight:900;font-size:17px}.userMenuRole{color:#64748b;margin:2px 0 10px}.userMenu button{width:100%;margin-top:8px}.menuBackdrop{position:fixed;inset:0;z-index:70;background:transparent}main{padding:14px;max-width:1200px;margin:auto}.nav{display:flex;gap:8px;overflow:auto;margin-bottom:10px}.nav button,.btn{border:0;border-radius:10px;padding:11px 14px;background:white;font-weight:700;box-shadow:0 1px 4px #0001}.nav button.active,.primary{background:#2563eb!important;color:white}.danger{background:#dc2626!important;color:white}.card{background:white;border-radius:14px;padding:14px;margin:10px 0;box-shadow:0 2px 10px #0001}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.loc{border:1px solid #d8dee8;border-radius:12px;padding:12px;background:#fafafa}.status{border-radius:99px;padding:4px 8px;font-size:12px;font-weight:800;display:inline-block}.ok{background:#dcfce7;color:#166534}.warn{background:#fef3c7;color:#92400e}.alarm{background:#fee2e2;color:#991b1b}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}select,input,textarea{border:1px solid #d8dee8;border-radius:10px;padding:10px;background:white;font-size:16px}textarea{width:100%;min-height:70px;margin-top:10px}table{border-collapse:collapse;width:100%;background:white}th,td{border:1px solid #111;padding:6px;text-align:center;font-size:13px;min-width:42px}th{background:#f3f4f6}.wrap{overflow:auto;border-radius:10px;border:1px solid #d8dee8}.vert{writing-mode:vertical-rl;transform:rotate(180deg);font-weight:800;white-space:nowrap}.pill{display:inline-flex;gap:6px;align-items:center;border:1px solid #d8dee8;padding:7px 9px;border-radius:99px;margin:4px;background:#f8fafc}.pill button{border:0;background:#fee2e2;border-radius:50%;width:22px;height:22px}.hidden{display:none}.filled-ok{background:#dcfce7}.filled-warn{background:#fef3c7}.filled-alarm{background:#fee2e2}.notice{padding:10px;border-radius:10px;background:#fef3c7;color:#92400e;font-weight:bold;margin-top:10px}.success{background:#dcfce7;color:#166534}.historyItem{border-bottom:1px solid #e5e7eb;padding:8px 0}.historyItem:last-child{border-bottom:0}.readonlyBadge{background:#e0e7ff;color:#3730a3;border-radius:99px;padding:4px 8px;font-size:12px;font-weight:800}.sanepidHeader{display:none}.editBox{background:#f8fafc;border:1px solid #d8dee8;border-radius:12px;padding:10px;margin-top:10px}
+.userbar{display:none!important}
 .locked{opacity:.45;pointer-events:none}
 .loginBox{max-width:520px;margin:30px auto;background:white;border-radius:18px;padding:18px;box-shadow:0 2px 14px #0002}
-.badge{display:inline-block;border-radius:99px;padding:4px 8px;background:#eef2ff;color:#3730a3;font-size:12px;font-weight:800;margin-left:6px}
+.badge{display:inline-block;border-radius:99px;padding:4px 8px;background:#eef2ff;color:#3730a3;font-size:12px;font-weight:800;margin-left:6px}.backupBox{border:1px solid #d8dee8;background:#f8fafc;border-radius:12px;padding:12px;margin-top:10px}.summaryLine{display:flex;justify-content:space-between;border-bottom:1px solid #e5e7eb;padding:8px 0}.summaryLine:last-child{border-bottom:0}.loginLogo{width:58px;height:58px;border-radius:16px;background:#0f172a;color:white;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:31px;margin-bottom:12px;letter-spacing:.5px}.clickableCell{cursor:pointer}.cellHint{font-size:11px;color:#64748b;margin-top:8px}.versionFooter{position:fixed;right:10px;bottom:10px;background:#dbeafe;color:#1e3a8a;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:800;z-index:20}.historyCount{font-size:13px;color:#64748b;margin:10px 0}.dueBox{border:1px solid #d8dee8;border-radius:12px;padding:10px;margin-top:10px;background:#f8fafc}.dueItem{display:flex;justify-content:space-between;gap:8px;border-bottom:1px solid #e5e7eb;padding:8px 0}.loc{cursor:pointer}.locSummary{display:block}.locDetails{display:none;margin-top:10px}.loc.open .locDetails{display:block}.loc.open{border-color:#2563eb;box-shadow:0 2px 12px #2563eb22}.toggleHint{font-size:12px;color:#64748b;margin-top:8px}.dueItem:last-child{border-bottom:0}.freqSelect{min-width:150px}.historyLayout{display:block}.checkGrid{display:grid;gap:8px;margin-top:8px}.checkEdit{display:flex;align-items:center;gap:8px;border:1px solid #d8dee8;border-radius:10px;padding:9px;background:white}@media (orientation:landscape) and (min-width:800px){#history .card{display:grid;grid-template-columns:320px 1fr;gap:14px;align-items:start}#history .historyFilters{position:sticky;top:82px}#history .historyFilters .row>*{width:100%}#historyResult{max-height:none;overflow:visible;padding-bottom:120px}}.modalOverlay{position:fixed;inset:0;background:#0008;z-index:99;display:flex;align-items:center;justify-content:center;padding:20px}.modalBox{background:white;border-radius:16px;padding:16px;max-width:420px;width:100%;box-shadow:0 10px 40px #0004}.modalBox h3{margin-top:0}.modalBox p{margin:6px 0}.modalBox button{margin-top:12px}
 @media(max-width:850px){.grid{grid-template-columns:1fr}.row>*{width:100%}th,td{font-size:12px;padding:5px;min-width:38px}}
 @media print{header,.nav,.controls,.noPrint{display:none!important}body{background:white}main{padding:0;max-width:none}.card{box-shadow:none;border-radius:0;margin:0;padding:0}.wrap{overflow:visible;border:0}th,td{font-size:9px;padding:3px;min-width:28px}.sanepidHeader{display:block;text-align:center;margin:8px 0;font-weight:bold}}
-</style></head><body><header><h1>Kitchen Control v8</h1><div class="small">Pełny Admin • edycja formularzy • obowiązki sprzątania i HACCP</div></header><main>
+
+.progressWrap{height:12px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin:8px 0}
+.progressBar{height:100%;background:#22c55e;border-radius:999px}
+.metricGrid{display:grid;grid-template-columns:1fr;gap:7px;margin-top:8px}
+.metricRow{display:flex;justify-content:space-between;align-items:center;border:1px solid #e5e7eb;background:white;border-radius:10px;padding:8px}
+.detailSection{border:1px solid #d8dee8;border-radius:12px;background:#fff;margin-top:10px;padding:10px}
+.detailSection h4{margin:0 0 8px 0}
+.taskLine{display:flex;justify-content:space-between;gap:8px;border-bottom:1px solid #f1f5f9;padding:7px 0}
+.taskLine:last-child{border-bottom:0}
+.taskLeft{min-width:0}
+.taskMeta{font-size:12px;color:#64748b}
+.doneText{color:#166534;font-weight:700}
+.missText{color:#991b1b;font-weight:700}
+.periodicList{display:grid;gap:6px}
+.locHeader{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.locHeader h3{margin:0}
+.percentBadge{font-size:20px;font-weight:900;background:#eef2ff;color:#3730a3;border-radius:12px;padding:8px 10px;min-width:58px;text-align:center}
+@media(min-width:900px){.metricGrid{grid-template-columns:repeat(3,1fr)}}
+
+</style></head><body><header class="appHeader"><div class="headerLeft" onclick="show('panel')"><div class="headerLogo">🌡️</div><h1>Kitchen Control</h1></div><button id="headerMenuBtn" class="powerBtn hidden" onclick="toggleUserMenu(event)">⏻</button></header><main>
 <section id="loginScreen" class="loginBox">
-<h2>Logowanie Kitchen Control</h2>
+<div class="loginLogo">🌡️</div><h2>Logowanie Kitchen Control</h2>
 <p>Wybierz użytkownika i wpisz PIN.</p>
 <div class="row"><select id="loginUser"></select><input id="loginPin" type="password" inputmode="numeric" placeholder="PIN"><button class="btn primary" onclick="login()">Zaloguj</button></div>
 <div id="loginMsg"></div>
-<p class="small" style="color:#6b7280">Domyślnie: Rafał / PIN 1111. Pracowników dodasz w panelu Admin.</p>
+
 </section>
 <div id="appArea" class="hidden">
-<div class="userbar controls">Zalogowany: <span id="currentUserName"></span> <span class="badge" id="currentRole"></span> <button class="btn" onclick="logout()">Wyloguj</button></div>
-<div class="nav controls"><button onclick="show('panel')" id="t-panel" class="active">Panel</button><button onclick="show('temp')" id="t-temp">Temperatury</button><button onclick="show('clean')" id="t-clean">Sprzątanie</button><button onclick="show('haccp')" id="t-haccp">HACCP / daty</button><button onclick="show('month')" id="t-month">Miesiąc</button><button onclick="show('sanepid')" id="t-sanepid">Sanepid</button><button onclick="show('admin')" id="t-admin" class="adminOnly">Admin</button></div>
+<div class="userbar controls hidden"><span id="currentUserName"></span><span id="currentRole"></span></div>
+<div class="nav controls"><button onclick="show('panel')" id="t-panel" class="active">Panel</button><button onclick="show('temp')" id="t-temp">Temperatury</button><button onclick="show('clean')" id="t-clean">Sprzątanie</button><button onclick="show('haccp')" id="t-haccp">HACCP / daty</button><button onclick="show('month')" id="t-month">Miesiąc</button><button onclick="show('sanepid')" id="t-sanepid">Sanepid</button><button onclick="show('admin')" id="t-admin" class="adminOnly">Admin</button><button onclick="show('history')" id="t-history" class="adminOnly">Historia wpisów</button></div>
 
-<section id="panel"><div class="grid" id="cards"></div></section>
+<section id="panel">
+<div class="card controls" id="panelControls">
+<div class="row">
+<label><b>Data podglądu:</b></label>
+<input type="date" id="panelDate">
+<button class="btn primary" onclick="renderPanel()">Pokaż</button>
+</div>
+</div>
+<div class="grid" id="cards"></div>
+</section>
 
-<section id="temp" class="hidden"><div class="card controls"><h2>Wpis temperatury</h2><div class="row"><select id="tempLoc"></select><select id="tempDev"></select><select id="tempVal"></select><input type="date" id="tempDate"><input type="time" id="tempTime"><input id="tempUser" required placeholder="Podpis / osoba — wymagane"><button class="btn primary" onclick="saveTemp()">Zapisz</button></div><p id="tempStatus"></p><textarea id="tempNote" placeholder="Uwagi / działanie korygujące"></textarea><div id="tempMsg"></div></div><div class="card"><h2>Historia temperatur</h2><div id="tempLog"></div></div></section>
+<section id="temp" class="hidden"><div class="card controls"><h2>Wpis temperatury</h2><div class="row"><select id="tempLoc"></select><select id="tempDev"></select><select id="tempVal"></select><input type="date" id="tempDate"><input type="time" id="tempTime"><input id="tempUser" required placeholder="Podpis / osoba — wymagane"><button class="btn primary" onclick="saveTemp()">Zapisz</button></div><p id="tempStatus"></p><textarea id="tempNote" placeholder="Uwagi / działanie korygujące"></textarea><div id="tempMsg"></div></div><div class="card"><h2>Historia temperatur</h2><p class="small" style="color:#6b7280">Historia dla wybranej lokalizacji i urządzenia.</p><div id="tempLog"></div></div></section>
 
-<section id="clean" class="hidden"><div class="card controls"><h2>Sprzątanie</h2><div class="row"><select id="cleanLoc"></select><select id="cleanShift"><option value="Rano">Rano</option><option value="W ciągu dnia">W ciągu dnia</option><option value="Wieczór">Wieczór</option></select><input type="date" id="cleanDate"><input type="time" id="cleanTime"><input id="cleanUser" required placeholder="Podpis / osoba — wymagane"><button class="btn primary" onclick="saveClean()">Zapisz</button></div><div id="cleanMsg"></div></div><div class="card"><div id="cleanItems"></div><textarea id="cleanNote" placeholder="Uwagi"></textarea></div><div class="card"><h2>Historia sprzątania</h2><div id="cleanLog"></div></div></section>
+<section id="clean" class="hidden"><div class="card controls"><h2>Sprzątanie</h2><div class="row"><select id="cleanLoc"></select><select id="cleanShift"></select><input type="date" id="cleanDate"><input type="time" id="cleanTime"><input id="cleanUser" required placeholder="Podpis / osoba — wymagane"><button class="btn primary" onclick="saveClean()">Zapisz</button></div><div id="cleanMsg"></div></div><div class="card"><div id="cleanItems"></div><textarea id="cleanNote" placeholder="Uwagi"></textarea></div><div class="card"><h2>Historia sprzątania</h2><p class="small" style="color:#6b7280">Historia dla wybranej lokalizacji i części dnia.</p><div id="cleanLog"></div></div></section>
 
 <section id="haccp" class="hidden"><div class="card controls"><h2>HACCP ogólne / daty</h2><div class="row"><select id="haccpLoc"></select><input type="date" id="haccpDate"><input type="time" id="haccpTime"><input id="haccpUser" required placeholder="Podpis / osoba — wymagane"><button class="btn primary" onclick="saveHaccp()">Zapisz</button></div><div id="haccpMsg"></div></div><div class="card">
-<div id="haccpItems"></div><textarea id="haccpNote" placeholder="Uwagi / produkty do usunięcia"></textarea></div><div class="card"><h2>Historia HACCP / dat</h2><div id="haccpLog"></div></div></section>
+<div id="haccpItems"></div><textarea id="haccpNote" placeholder="Uwagi / produkty do usunięcia"></textarea></div><div class="card"><h2>Historia HACCP / dat</h2><p class="small" style="color:#6b7280">Historia dla wybranej lokalizacji.</p><div id="haccpLog"></div></div></section>
 
-<section id="month" class="hidden"><div class="card controls"><h2>Raport miesięczny</h2><div class="row"><select id="monthLoc"></select><select id="monthType"><option value="temp">Temperatury</option><option value="clean">Sprzątanie</option><option value="haccp">HACCP / daty</option></select><input type="month" id="monthPick"><button class="btn primary" onclick="renderMonth()">Odśwież</button><button class="btn" onclick="printReport()">Drukuj / PDF</button><button class="btn" onclick="exportCSV()">Eksport CSV</button></div></div><div class="card"><div class="sanepidHeader" id="printTitle"></div><div class="wrap" id="monthTable"></div></div></section>
+<section id="month" class="hidden"><div class="card controls"><h2>Raport miesięczny</h2><div class="row"><select id="monthLoc"></select><select id="monthType"><option value="temp">Temperatury</option><option value="clean">Sprzątanie</option><option value="haccp">HACCP / daty</option></select><input type="month" id="monthPick"><button class="btn primary" onclick="renderMonth()">Odśwież</button><button class="btn" onclick="printReport()">Drukuj / PDF</button><button class="btn" onclick="exportCSV()">Eksport CSV</button></div></div><div class="card"><div class="sanepidHeader" id="printTitle"></div><div class="wrap" id="monthTable"></div><div class="cellHint noPrint">Kliknij temperaturę albo X, żeby zobaczyć szczegóły wpisu.</div></div></section>
 
-<section id="sanepid" class="hidden"><div class="card controls"><h2>Widok do pokazania Sanepidowi <span class="readonlyBadge">TYLKO PODGLĄD</span></h2><div class="row"><select id="sanLoc"></select><select id="sanType"><option value="temp">Temperatury</option><option value="clean">Sprzątanie</option><option value="haccp">HACCP / daty</option></select><input type="month" id="sanMonth"><button class="btn primary" onclick="renderSanepid()">Pokaż</button><button class="btn" onclick="printSanepid()">Drukuj / PDF</button></div></div><div class="card"><div class="sanepidHeader" id="sanTitle"></div><div class="wrap" id="sanTable"></div></div></section>
+<section id="sanepid" class="hidden"><div class="card controls"><h2>Widok do pokazania Sanepidowi <span class="readonlyBadge">TYLKO PODGLĄD</span></h2><div class="row"><select id="sanLoc"></select><select id="sanType"><option value="temp">Temperatury</option><option value="clean">Sprzątanie</option><option value="haccp">HACCP / daty</option></select><input type="month" id="sanMonth"><button class="btn primary" onclick="renderSanepid()">Pokaż</button><button class="btn" onclick="printSanepid()">Drukuj / PDF</button></div></div><div class="card"><div class="sanepidHeader" id="sanTitle"></div><div class="wrap" id="sanTable"></div><div class="cellHint noPrint">Kliknij temperaturę albo X, żeby zobaczyć szczegóły wpisu.</div></div></section>
 
 <section id="admin" class="hidden">
+<div class="card"><h2>Admin — lokalizacje</h2>
+<p>Dodajesz nowe lokale, kuchnie lub punkty sprzedaży. Po dodaniu lokalizacja pojawi się w formularzach, raportach i uprawnieniach pracowników.</p>
+<div class="row"><input id="newLocationName" placeholder="np. Asian Street Food Centrum"><button class="btn primary" onclick="addLocation()">Dodaj lokalizację</button></div>
+<div id="locationList"></div>
+</div>
+
 <div class="card"><h2>Admin — urządzenia</h2><p>Tu modyfikujesz listę chłodni i mroźni dla każdej lokalizacji.</p><div class="row"><select id="adminLoc"></select><select id="adminType"><option value="chlodnie">Chłodnia</option><option value="mroznie">Mroźnia</option></select><input id="adminName" placeholder="np. Chłodnia 4"><button class="btn primary" onclick="addDevice()">Dodaj</button></div><div id="devList"></div></div>
+
+<div class="card"><h2>Admin — pora dnia / etap zmiany</h2>
+<p>Dla każdej lokalizacji możesz dodać własne etapy, np. Otwarcie, W ciągu dnia, Zamknięcie zmiany.</p>
+<div class="row">
+<select id="shiftAdminLoc"></select>
+<input id="newShiftName" placeholder="np. Otwarcie / Zamknięcie zmiany">
+<button class="btn primary" onclick="addShift()">Dodaj porę dnia</button>
+</div>
+<div id="shiftAdminList"></div>
+</div>
 
 <div class="card"><h2>Admin — sprzątanie</h2>
 <p>Dodajesz i usuwasz obowiązki sprzątania osobno dla: rano / w ciągu dnia / wieczór.</p>
-<div class="row"><select id="cleanAdminShift"><option value="Rano">Rano</option><option value="W ciągu dnia">W ciągu dnia</option><option value="Wieczór">Wieczór</option></select><input id="newCleanItem" placeholder="Nowa czynność sprzątania"><button class="btn primary" onclick="addCleanItem()">Dodaj</button></div>
+<div class="row"><select id="cleanAdminLoc"></select><select id="cleanAdminShift"></select><input id="newCleanItem" placeholder="Nowa czynność sprzątania"><select id="newCleanFreq" class="freqSelect"><option value="daily">Codziennie</option><option value="7">Co 7 dni</option><option value="14">Co 14 dni</option><option value="30">Co 30 dni</option><option value="90">Co 90 dni</option><option value="asNeeded">Według potrzeb</option></select><button class="btn primary" onclick="addCleanItem()">Dodaj</button></div>
 <div id="cleanAdminList"></div>
 </div>
 
 <div class="card"><h2>Admin — HACCP / daty</h2>
 <p>Dodajesz nowe kontrole HACCP, gdy pojawią się nowe obowiązki.</p>
-<div class="row"><input id="newHaccpItem" placeholder="np. Kontrola etykiet / alergeny / chemia"><button class="btn primary" onclick="addHaccpItem()">Dodaj kontrolę</button></div>
+<div class="row"><select id="haccpAdminLoc"></select><input id="newHaccpItem" placeholder="np. Kontrola etykiet / alergeny / chemia"><button class="btn primary" onclick="addHaccpItem()">Dodaj kontrolę</button></div>
 <div id="haccpAdminList"></div>
 </div>
 
@@ -61,15 +105,52 @@ body{margin:0;font-family:Arial,sans-serif;background:#eef3f8;color:#172033}head
 <div id="userList"></div>
 </div>
 
-<div class="card"><h2>Edycja zapisanych wpisów — pełny dostęp Admin</h2>
-<p>Możesz poprawić datę, godzinę, lokalizację, urządzenie/część dnia, temperaturę, podpis, uwagi i wykonane pozycje.</p>
-<div class="row"><select id="editFilterKind"><option value="all">Wszystko</option><option value="temp">Temperatury</option><option value="clean">Sprzątanie</option><option value="haccp">HACCP</option></select><button class="btn" onclick="renderEditList()">Filtruj</button></div>
-<div id="editList"></div>
+<div class="card"><h2>Edycja zapisanych wpisów</h2>
+<p>Przegląd i edycja wpisów są teraz w osobnej zakładce, żeby panel Admin nie ładował długiej listy.</p>
+<button class="btn primary" onclick="show('history')">Otwórz historię wpisów</button>
+</div>
+
+<div class="card"><h2>Admin — backup i migracja do Firebase</h2>
+<p>Przed przejściem na Firebase zrób kopię danych. Ten plik będzie można później zaimportować do wersji chmurowej.</p>
+<div class="row">
+<button class="btn primary" onclick="exportBackup()">Pobierz backup JSON</button>
+<label class="btn">Importuj backup JSON<input type="file" accept=".json,application/json" style="display:none" onchange="importBackup(event)"></label>
+<button class="btn" onclick="exportCSV()">Eksport CSV</button>
+</div>
+<div class="backupBox" id="backupSummary"></div>
 </div>
 
 <div class="card"><h2>Zakresy</h2><p><b>Chłodnie:</b> 0–10°C. OK 0–4, UWAGA 5–7, ALARM 8–10.</p><p><b>Mroźnie:</b> -25 do -5°C. OK -25 do -18, UWAGA -17 do -15, ALARM -14 do -5.</p></div>
 </section>
-</div></main><script>
+
+<section id="history" class="hidden">
+<div class="card">
+<div class="historyFilters"><h2>Historia wpisów</h2>
+<p>Wybierz lokalizację, funkcję i zakres dat. Tu edytujesz lub usuwasz zapisane wpisy.</p>
+<div class="row">
+<select id="histLoc"></select>
+<select id="histKind">
+<option value="all">Wszystko</option>
+<option value="temp">Temperatury</option>
+<option value="clean">Sprzątanie</option>
+<option value="haccp">HACCP / daty</option>
+</select>
+<input type="date" id="histFrom">
+<input type="date" id="histTo">
+<button class="btn primary" onclick="renderHistoryPage()">Pokaż</button>
+</div></div>
+<div id="historyResult"></div>
+</div>
+</section>
+
+<div id="menuBackdrop" class="hidden menuBackdrop" onclick="closeUserMenu()"></div>
+<div id="userMenu" class="hidden userMenu">
+  <div class="userMenuName" id="menuUserName">Użytkownik</div>
+  <div class="userMenuRole" id="menuUserRole">Rola</div>
+  <button class="btn adminOnly" onclick="exportBackup();closeUserMenu()">Backup JSON</button>
+  <button class="btn danger" onclick="logout();closeUserMenu()">Wyloguj</button>
+</div>
+<div id="cellModal" class="hidden"></div><div class="versionFooter noPrint">v9.15</div></div></main><script>
 const defaults={locations:["Asian Street Food Mokotów","Asian Street Food Wola","Food Truck","Kuchnia Mokotów"],devices:{"Asian Street Food Mokotów":{chlodnie:["Chłodnia 1","Chłodnia 2","Chłodnia 3"],mroznie:["Mroźnia 1"]},"Asian Street Food Wola":{chlodnie:["Chłodnia 1","Chłodnia 2"],mroznie:["Mroźnia 1"]},"Food Truck":{chlodnie:["Chłodnia 1","Chłodnia 2"],mroznie:["Mroźnia 1"]},"Kuchnia Mokotów":{chlodnie:["Chłodnia 1","Chłodnia 2","Chłodnia 3","Chłodnia 4"],mroznie:["Mroźnia 1","Mroźnia 2"]}},cleaning:{Rano:["Obecność szkodników","Stan lodówek / brak wycieków","Czystość blatów startowa"],"W ciągu dnia":["Frytury","Wymiana frytury","Zlewy","Bieżące blaty"],Wieczór:["Pow. robocze / blaty","Kuchenki","Ściany i podłogi","Schładzarka","Chłodnie","Mroźnie","Mycie okapu"]},haccpItems:["Kontrola dat przydatności","Kontrola chłodni tygodniowa","Magazyn suchy miesięcznie","Zamrażarki miesięcznie"]};
 let state=JSON.parse(localStorage.getItem("kc_state_v7")||"null")||defaults;
 let logs=JSON.parse(localStorage.getItem("kc_logs_v7")||"[]");
@@ -77,60 +158,382 @@ let users=JSON.parse(localStorage.getItem("kc_users_v7")||"null")||[
 {id:"u1",name:"Rafał",pin:"1111",role:"Admin",locations:["Asian Street Food Mokotów","Asian Street Food Wola","Food Truck","Kuchnia Mokotów"]},
 {id:"u2",name:"Pracownik demo",pin:"1234",role:"Pracownik",locations:["Food Truck"]}
 ];
-let currentUser=JSON.parse(sessionStorage.getItem("kc_current_user")||"null");
+let currentUser=JSON.parse(localStorage.getItem("kc_current_user_v9")||"null");
 function save(){localStorage.setItem("kc_state_v7",JSON.stringify(state));localStorage.setItem("kc_logs_v7",JSON.stringify(logs));localStorage.setItem("kc_users_v7",JSON.stringify(users))}
 function pad(n){return String(n).padStart(2,"0")}function isoDate(d=new Date()){return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())}function plDate(iso){let [y,m,d]=iso.split("-");return d+"."+m+"."+y}function time(){return new Date().toLocaleTimeString("pl-PL",{hour:"2-digit",minute:"2-digit"})}function currentMonth(){let d=new Date();return d.getFullYear()+"-"+pad(d.getMonth()+1)}function daysInMonth(ym){let [y,m]=ym.split("-").map(Number);return new Date(y,m,0).getDate()}function monthLabel(ym){let [y,m]=ym.split("-").map(Number);return new Date(y,m-1,1).toLocaleDateString("pl-PL",{month:"long",year:"numeric"})}
-function msg(id,text,good=false){document.getElementById(id).innerHTML=`<div class="notice ${good?'success':''}">${text}</div>`;setTimeout(()=>document.getElementById(id).innerHTML="",4000)}function requireUser(id,msgId){let v=document.getElementById(id).value.trim();if(!v){msg(msgId,"Podpis jest wymagany — nie można zapisać pustego wpisu.");return null}return v}
+function msg(id,text,good=false){document.getElementById(id).innerHTML=`<div class="notice ${good?'success':''}">${text}</div>`;setTimeout(()=>document.getElementById(id).innerHTML="",4000)}function savedGoPanel(id,text){msg(id,text||"Zapisano ✅",true)}function requireUser(id,msgId){let v=document.getElementById(id).value.trim();if(!v){msg(msgId,"Podpis jest wymagany — nie można zapisać pustego wpisu.");return null}return v}
 function hasEntry(kind,loc,date,dev,shift){return logs.some(x=>x.kind===kind&&x.loc===loc&&x.date===date&&(!dev||x.dev===dev)&&(!shift||x.shift===shift))}
+
+
+function toggleUserMenu(e){
+  if(e) e.stopPropagation();
+  if(!currentUser) return;
+  menuUserName.innerText=currentUser.name;
+  menuUserRole.innerText=currentUser.role==="Admin"?"Administrator":currentUser.role;
+  const open=userMenu.classList.contains("hidden");
+  userMenu.classList.toggle("hidden",!open);
+  menuBackdrop.classList.toggle("hidden",!open);
+}
+function closeUserMenu(){
+  userMenu.classList.add("hidden");
+  menuBackdrop.classList.add("hidden");
+}
 
 function isAdmin(){return currentUser && currentUser.role==="Admin"}
 function isManager(){return currentUser && (currentUser.role==="Manager" || currentUser.role==="Admin")}
-function allowedLocs(){return currentUser?currentUser.locations:[]}
+function allowedLocs(){return currentUser?currentUser.locations:[]}function canViewAll(){return currentUser && (currentUser.role==="Admin" || currentUser.role==="Manager")}
 function fillLogin(){
-  loginUser.innerHTML=users.map(u=>`<option value="${u.id}">${u.name} — ${u.role}</option>`).join("");
+  loginUser.innerHTML=users.map(u=>`<option value="${u.id}">${u.name}</option>`).join("");
 }
 function login(){
   let u=users.find(x=>x.id===loginUser.value);
   if(!u || u.pin!==loginPin.value){loginMsg.innerHTML='<div class="notice">Błędny PIN.</div>';return}
   currentUser={id:u.id,name:u.name,role:u.role,locations:u.locations};
-  sessionStorage.setItem("kc_current_user",JSON.stringify(currentUser));
+  localStorage.setItem("kc_current_user_v9",JSON.stringify(currentUser));
   applyAccess();
 }
-function logout(){sessionStorage.removeItem("kc_current_user");currentUser=null;applyAccess()}
+function logout(){localStorage.removeItem("kc_current_user_v9");currentUser=null;applyAccess()}
 function applyAccess(){
   if(currentUser){
     loginScreen.classList.add("hidden");appArea.classList.remove("hidden");
     currentUserName.innerText=currentUser.name;currentRole.innerText=currentUser.role;
-    document.querySelectorAll(".adminOnly").forEach(x=>x.style.display=isAdmin()?"inline-block":"none");
+    document.querySelectorAll(".adminOnly").forEach(x=>x.style.display=isAdmin()?"inline-block":"none");headerMenuBtn.classList.remove("hidden");
     fill();show("panel");
   }else{
-    appArea.classList.add("hidden");loginScreen.classList.remove("hidden");fillLogin();
+    appArea.classList.add("hidden");loginScreen.classList.remove("hidden");headerMenuBtn.classList.add("hidden");closeUserMenu();fillLogin();
   }
 }
 function filterLocationsForSelect(id){
-  let locs=isAdmin()?state.locations:allowedLocs();
+  let locs=canViewAll()?state.locations:allowedLocs();
   document.getElementById(id).innerHTML=locs.map(l=>`<option>${l}</option>`).join("");
 }
 function denyAdmin(){alert("Brak uprawnień. Tylko Admin może to zrobić.");return false}
-function show(id){["panel","temp","clean","haccp","month","sanepid","admin"].forEach(x=>{document.getElementById(x).classList.toggle("hidden",x!==id);document.getElementById("t-"+x).classList.toggle("active",x===id)});if(id==="admin"&&!isAdmin()){alert("Panel Admin tylko dla administratora.");id="panel"}if(id==="month")renderMonth();if(id==="sanepid")renderSanepid();if(id==="admin"){renderDevList();renderEditList();renderUserAdmin();renderCleanAdmin();renderHaccpAdmin()}renderPanel();renderAllLogs()}
-function fill(){["tempLoc","cleanLoc","haccpLoc","monthLoc","sanLoc"].forEach(id=>filterLocationsForSelect(id)); if(isAdmin()) document.getElementById("adminLoc").innerHTML=state.locations.map(l=>`<option>${l}</option>`).join(""); renderUserAdmin();monthPick.value=currentMonth();sanMonth.value=currentMonth();tempDate.value=isoDate();cleanDate.value=isoDate();haccpDate.value=isoDate();tempTime.value=time();cleanTime.value=time();haccpTime.value=time(); if(currentUser){tempUser.value=currentUser.name;cleanUser.value=currentUser.name;haccpUser.value=currentUser.name;} fillDev();renderCleanItems();renderHaccpItems()}
+function show(id){["panel","temp","clean","haccp","month","sanepid","admin","history"].forEach(x=>{document.getElementById(x).classList.toggle("hidden",x!==id);document.getElementById("t-"+x).classList.toggle("active",x===id)});if(id==="admin"&&!isAdmin()){alert("Panel Admin tylko dla administratora.");id="panel"}if(id==="month")renderMonth();if(id==="sanepid")renderSanepid();if(id==="admin"){renderLocationAdmin();renderDevList();renderUserAdmin();renderShiftAdmin();renderCleanAdmin();renderHaccpAdmin();renderBackupSummary()}if(id==="history"){renderHistoryPage()}renderPanel();renderAllLogs()}
+function fill(){["tempLoc","cleanLoc","haccpLoc","monthLoc","sanLoc","histLoc"].forEach(id=>filterLocationsForSelect(id)); if(isAdmin()){document.getElementById("adminLoc").innerHTML=state.locations.map(l=>`<option>${l}</option>`).join("");if(document.getElementById("cleanAdminLoc"))cleanAdminLoc.innerHTML=state.locations.map(l=>`<option>${l}</option>`).join("");if(document.getElementById("haccpAdminLoc"))haccpAdminLoc.innerHTML=state.locations.map(l=>`<option>${l}</option>`).join("");if(document.getElementById("shiftAdminLoc"))shiftAdminLoc.innerHTML=state.locations.map(l=>`<option>${l}</option>`).join("");} renderUserAdmin();renderShiftSelects();monthPick.value=currentMonth();sanMonth.value=currentMonth();if(document.getElementById("histFrom"))histFrom.value=currentMonth()+"-01";if(document.getElementById("histTo"))histTo.value=isoDate();if(document.getElementById("panelDate")){panelDate.value=isoDate();panelControls.style.display=canViewAll()?"block":"none";}tempDate.value=isoDate();cleanDate.value=isoDate();haccpDate.value=isoDate();tempTime.value=time();cleanTime.value=time();haccpTime.value=time(); if(currentUser){tempUser.value=currentUser.name;cleanUser.value=currentUser.name;haccpUser.value=currentUser.name;} fillDev();renderCleanItems();renderHaccpItems()}
 function fillDev(){let l=tempLoc.value||state.locations[0],d=state.devices[l],a=[];d.chlodnie.forEach(x=>a.push([x,"chlodnia"]));d.mroznie.forEach(x=>a.push([x,"mroznia"]));tempDev.innerHTML=a.map(x=>`<option data-type="${x[1]}">${x[0]}</option>`).join("");fillVals()}
-function fillVals(){let type=tempDev.options[tempDev.selectedIndex]?.dataset.type||"chlodnia";let vals=type==="mroznia"?Array.from({length:21},(_,i)=>-25+i):Array.from({length:11},(_,i)=>i);tempVal.innerHTML=vals.map(v=>`<option>${v}</option>`).join("");status()}function status(){let v=parseInt(tempVal.value),type=tempDev.options[tempDev.selectedIndex]?.dataset.type||"chlodnia",s,c;if(type==="chlodnia"){if(v<=4){s="OK";c="ok"}else if(v<=7){s="UWAGA";c="warn"}else{s="ALARM";c="alarm"}}else{if(v<=-18){s="OK";c="ok"}else if(v<=-15){s="UWAGA";c="warn"}else{s="ALARM";c="alarm"}}tempStatus.innerHTML=`Status: <span class="status ${c}">${s}</span>`;return s}function statusClass(s){return s==="OK"?"filled-ok":s==="UWAGA"?"filled-warn":"filled-alarm"}
-function saveTemp(){let user=requireUser("tempUser","tempMsg");if(!user)return;let loc=tempLoc.value,dev=tempDev.value,dt=tempDate.value;if(hasEntry("temp",loc,dt,dev,null)){msg("tempMsg",`Ten dzień ma już wpis dla ${dev}. Poprawisz go w Admin → Edycja.`);return}logs.unshift({id:crypto.randomUUID(),kind:"temp",date:dt,time:tempTime.value||time(),loc,dev,val:tempVal.value,user,note:tempNote.value,status:status()});tempNote.value="";save();refresh();msg("tempMsg","Zapisano temperaturę.",true)}
-function renderHaccpItems(){haccpItems.innerHTML=(state.haccpItems||[]).map(x=>`<label><input type="checkbox" class="haccpCheck" value="${x}"> ${x}</label><br><br>`).join("")}
-function renderCleanItems(){let arr=state.cleaning[cleanShift.value]||[];cleanItems.innerHTML=`<h3>${cleanShift.value}</h3>`+arr.map(x=>`<label><input type="checkbox" class="cleanCheck" value="${x}"> ${x}</label><br><br>`).join("")}
-function saveClean(){let user=requireUser("cleanUser","cleanMsg");if(!user)return;let loc=cleanLoc.value,dt=cleanDate.value,shift=cleanShift.value;if(hasEntry("clean",loc,dt,null,shift)){msg("cleanMsg",`Ten dzień ma już wpis sprzątania: ${shift}. Poprawisz go w Admin → Edycja.`);return}logs.unshift({id:crypto.randomUUID(),kind:"clean",date:dt,time:cleanTime.value||time(),loc,shift,user,done:[...document.querySelectorAll(".cleanCheck:checked")].map(x=>x.value),note:cleanNote.value});document.querySelectorAll(".cleanCheck").forEach(x=>x.checked=false);cleanNote.value="";save();refresh();msg("cleanMsg","Zapisano sprzątanie.",true)}
-function saveHaccp(){let user=requireUser("haccpUser","haccpMsg");if(!user)return;let loc=haccpLoc.value,dt=haccpDate.value;if(hasEntry("haccp",loc,dt,null,null)){msg("haccpMsg",`Ten dzień ma już wpis HACCP/daty. Poprawisz go w Admin → Edycja.`);return}logs.unshift({id:crypto.randomUUID(),kind:"haccp",date:dt,time:haccpTime.value||time(),loc,user,done:[...document.querySelectorAll(".haccpCheck:checked")].map(x=>x.value),note:haccpNote.value});document.querySelectorAll(".haccpCheck").forEach(x=>x.checked=false);haccpNote.value="";save();refresh();msg("haccpMsg","Zapisano HACCP / daty.",true)}
-function refresh(){renderAllLogs();renderPanel();renderMonth();renderSanepid();renderEditList();renderCleanAdmin();renderHaccpAdmin();renderHaccpItems()}
-function logHtml(items){return items.slice(0,20).map(x=>`<div class="historyItem"><b>${plDate(x.date)} ${x.time}</b> — ${x.loc}${x.dev?", "+x.dev:""}${x.shift?", "+x.shift:""} ${x.val?": "+x.val+"°C":""} ${x.status?`<span class="status ${x.status==="OK"?"ok":x.status==="UWAGA"?"warn":"alarm"}">${x.status}</span>`:""}<br>Podpis: <b>${x.user}</b>${x.done?`<br>Wykonano: ${x.done.join(", ")}`:""}${x.note?`<br>Uwagi: ${x.note}`:""}</div>`).join("")||"Brak wpisów"}function renderAllLogs(){tempLog.innerHTML=logHtml(logs.filter(x=>x.kind==="temp"));cleanLog.innerHTML=logHtml(logs.filter(x=>x.kind==="clean"));haccpLog.innerHTML=logHtml(logs.filter(x=>x.kind==="haccp"))}
-function renderPanel(){cards.innerHTML=state.locations.map(l=>{let t=logs.find(x=>x.kind==="temp"&&x.loc===l&&x.date===isoDate()),c=logs.filter(x=>x.kind==="clean"&&x.loc===l&&x.date===isoDate()).length,h=logs.find(x=>x.kind==="haccp"&&x.loc===l&&x.date===isoDate());return `<div class="loc"><h3>${l}</h3><p>Temperatury: <span class="status ${t?'ok':'alarm'}">${t?'wpisane':'brak'}</span></p><p>Sprzątanie: <span class="status ${c===3?'ok':c?'warn':'alarm'}">${c}/3</span></p><p>HACCP/daty: <span class="status ${h?'ok':'warn'}">${h?'wpisane':'brak'}</span></p></div>`}).join("")}
+function fillVals(){let type=tempDev.options[tempDev.selectedIndex]?.dataset.type||"chlodnia";let vals=type==="mroznia"?Array.from({length:21},(_,i)=>-25+i):Array.from({length:11},(_,i)=>i);tempVal.innerHTML=`<option value="">Wybierz temperaturę</option>`+vals.map(v=>`<option value="${v}">${v}°C</option>`).join("");status()}function status(){if(tempVal.value===""){tempStatus.innerHTML=`Status: <span class="status warn">wybierz temperaturę</span>`;return ""}let v=parseInt(tempVal.value),type=tempDev.options[tempDev.selectedIndex]?.dataset.type||"chlodnia",s,c;if(type==="chlodnia"){if(v<=4){s="OK";c="ok"}else if(v<=7){s="UWAGA";c="warn"}else{s="ALARM";c="alarm"}}else{if(v<=-18){s="OK";c="ok"}else if(v<=-15){s="UWAGA";c="warn"}else{s="ALARM";c="alarm"}}tempStatus.innerHTML=`Status: <span class="status ${c}">${s}</span>`;return s}function statusClass(s){return s==="OK"?"filled-ok":s==="UWAGA"?"filled-warn":"filled-alarm"}
+function saveTemp(){let user=requireUser("tempUser","tempMsg");if(!user)return;if(tempVal.value===""){msg("tempMsg","Wybierz temperaturę przed zapisem.");return}let loc=tempLoc.value,dev=tempDev.value,dt=tempDate.value;if(hasEntry("temp",loc,dt,dev,null)){msg("tempMsg",`Ten dzień ma już wpis dla ${dev}. Poprawisz go w Admin → Edycja.`);return}logs.unshift({id:crypto.randomUUID(),kind:"temp",date:dt,time:tempTime.value||time(),loc,dev,val:tempVal.value,user,note:tempNote.value,status:status()});tempNote.value="";save();refresh();savedGoPanel("tempMsg","Zapisano temperaturę ✅")}
+
+
+
+function cleanKey(loc,shift,item){return loc+"||"+shift+"||"+item}
+function getCleanFreq(loc,shift,item){
+  const key=cleanKey(loc,shift,item);
+  if(state.cleaningFreq && state.cleaningFreq[key]) return state.cleaningFreq[key];
+  return "daily";
+}
+function setCleanFreq(loc,shift,item,freq){
+  if(!state.cleaningFreq) state.cleaningFreq={};
+  state.cleaningFreq[cleanKey(loc,shift,item)] = freq;
+}
+function freqLabel(freq){
+  return {"daily":"codziennie","7":"co 7 dni","14":"co 14 dni","30":"co 30 dni","90":"co 90 dni","asNeeded":"wg potrzeb"}[freq] || freq;
+}
+function freqDays(freq){
+  if(freq==="daily") return 1;
+  if(freq==="asNeeded") return null;
+  return parseInt(freq);
+}
+function dateDiffDays(a,b){
+  const A=new Date(a+"T00:00:00"), B=new Date(b+"T00:00:00");
+  return Math.floor((B-A)/(1000*60*60*24));
+}
+function lastDoneDate(loc,shift,item,upToDate){
+  const entries=logs.filter(x=>x.kind==="clean"&&x.loc===loc&&x.shift===shift&&x.date<=upToDate&&x.done?.includes(item)).sort((a,b)=>b.date.localeCompare(a.date));
+  return entries[0]?.date || null;
+}
+function dueStatus(loc,shift,item,date){
+  const freq=getCleanFreq(loc,shift,item);
+  const days=freqDays(freq);
+  const last=lastDoneDate(loc,shift,item,date);
+  if(freq==="asNeeded") return {cls:"ok",txt:"wg potrzeb",last};
+  if(!last) return {cls:"alarm",txt:"brak wpisu",last};
+  const diff=dateDiffDays(last,date);
+  const left=days-diff;
+  if(left < 0) return {cls:"alarm",txt:`po terminie ${Math.abs(left)} d`,last};
+  if(left === 0) return {cls:"warn",txt:"dziś termin",last};
+  if(left <= 2) return {cls:"warn",txt:`zostało ${left} d`,last};
+  return {cls:"ok",txt:`zostało ${left} d`,last};
+}
+
+function defaultShifts(){return ["Rano","W ciągu dnia","Wieczór"]}
+function getShifts(loc){
+  if(state.locationShifts && state.locationShifts[loc]) return state.locationShifts[loc];
+  if(state.cleaning) return Object.keys(state.cleaning);
+  return defaultShifts();
+}
+function setShifts(loc,shifts){
+  if(!state.locationShifts) state.locationShifts={};
+  state.locationShifts[loc]=shifts;
+}
+function ensureLocCleaning(loc){
+  if(!state.locationCleaning) state.locationCleaning={};
+  if(!state.locationCleaning[loc]){
+    state.locationCleaning[loc]=JSON.parse(JSON.stringify(state.cleaning||{}));
+  }
+}
+
+function getCleaning(loc,shift){
+  if(state.locationCleaning && state.locationCleaning[loc] && state.locationCleaning[loc][shift]) return state.locationCleaning[loc][shift];
+  return (state.cleaning && state.cleaning[shift]) ? state.cleaning[shift] : [];
+}
+function setCleaning(loc,shift,items){
+  ensureLocCleaning(loc);
+  state.locationCleaning[loc][shift]=items;
+}
+function getHaccpItemsForLoc(loc){
+  if(state.locationHaccpItems && state.locationHaccpItems[loc]) return state.locationHaccpItems[loc];
+  return state.haccpItems || [];
+}
+function setHaccpItemsForLoc(loc,items){
+  if(!state.locationHaccpItems) state.locationHaccpItems={};
+  state.locationHaccpItems[loc]=items;
+}
+
+function renderHaccpItems(){let loc=haccpLoc?.value||state.locations[0];haccpItems.innerHTML=getHaccpItemsForLoc(loc).map(x=>`<label><input type="checkbox" class="haccpCheck" value="${x}"> ${x}</label><br><br>`).join("")}
+
+function getDoneCleaningForDay(loc,shift,date){
+  return [...new Set(logs.filter(x=>x.kind==="clean"&&x.loc===loc&&x.shift===shift&&x.date===date).flatMap(x=>x.done||[]))];
+}
+
+function renderCleanItems(){
+  let loc=cleanLoc?.value||state.locations[0];
+  let arr=getCleaning(loc,cleanShift.value)||[];
+  let doneToday=getDoneCleaningForDay(loc,cleanShift.value,cleanDate?.value||isoDate());
+  cleanItems.innerHTML=`<h3>${cleanShift.value}</h3>`+arr.map(x=>{
+    const done=doneToday.includes(x);
+    const st=dueStatus(loc,cleanShift.value,x,cleanDate?.value||isoDate());
+    const freq=freqLabel(getCleanFreq(loc,cleanShift.value,x));
+    return `<label style="${done?'opacity:.55':''}"><input type="checkbox" class="cleanCheck" value="${x}" ${done?'checked disabled':''}> ${x}${done?' — już zapisane':''}</label> <span class="status ${st.cls}">${freq} • ${st.txt}</span><br><br>`;
+  }).join("");
+}
+function saveClean(){
+  let user=requireUser("cleanUser","cleanMsg");if(!user)return;
+  let loc=cleanLoc.value,dt=cleanDate.value,shift=cleanShift.value;
+  let selected=[...document.querySelectorAll(".cleanCheck:checked:not(:disabled)")].map(x=>x.value);
+  if(!selected.length){msg("cleanMsg","Zaznacz przynajmniej jedną nową czynność.");return}
+  let already=getDoneCleaningForDay(loc,shift,dt);
+  let newDone=selected.filter(x=>!already.includes(x));
+  if(!newDone.length){msg("cleanMsg","Te czynności są już zapisane na dziś. Wybierz inne.");return}
+  logs.unshift({id:crypto.randomUUID(),kind:"clean",date:dt,time:cleanTime.value||time(),loc,shift,user,done:newDone,note:cleanNote.value});
+  document.querySelectorAll(".cleanCheck").forEach(x=>x.checked=false);cleanNote.value="";
+  save();refresh();savedGoPanel("cleanMsg","Zapisano sprzątanie ✅")
+}
+function saveHaccp(){let user=requireUser("haccpUser","haccpMsg");if(!user)return;let loc=haccpLoc.value,dt=haccpDate.value;if(hasEntry("haccp",loc,dt,null,null)){msg("haccpMsg",`Ten dzień ma już wpis HACCP/daty. Poprawisz go w Admin → Edycja.`);return}let haccpDone=[...document.querySelectorAll(".haccpCheck:checked")].map(x=>x.value);if(!haccpDone.length){msg("haccpMsg","Zaznacz przynajmniej jedną kontrolę przed zapisem.");return}logs.unshift({id:crypto.randomUUID(),kind:"haccp",date:dt,time:haccpTime.value||time(),loc,user,done:haccpDone,note:haccpNote.value});document.querySelectorAll(".haccpCheck").forEach(x=>x.checked=false);haccpNote.value="";save();refresh();savedGoPanel("haccpMsg","Zapisano HACCP / daty ✅")}
+function refresh(){renderAllLogs();renderPanel();renderCleanItems();renderMonth();renderSanepid();renderLocationAdmin();renderShiftAdmin();renderShiftSelects();renderCleanAdmin();renderHaccpAdmin();renderHaccpItems();renderBackupSummary();renderHistoryPage()}
+function logHtml(items){return items.slice(0,20).map(x=>`<div class="historyItem"><b>${plDate(x.date)} ${x.time}</b> — ${x.loc}${x.dev?", "+x.dev:""}${x.shift?", "+x.shift:""} ${x.val?": "+x.val+"°C":""} ${x.status?`<span class="status ${x.status==="OK"?"ok":x.status==="UWAGA"?"warn":"alarm"}">${x.status}</span>`:""}<br>Podpis: <b>${x.user}</b>${x.done?`<br>Wykonano: ${x.done.join(", ")}`:""}${x.note?`<br>Uwagi: ${x.note}`:""}</div>`).join("")||"Brak wpisów"}function renderAllLogs(){
+  const tl=document.getElementById("tempLoc")?.value;
+  const td=document.getElementById("tempDev")?.value;
+  const cl=document.getElementById("cleanLoc")?.value;
+  const cs=document.getElementById("cleanShift")?.value;
+  const hl=document.getElementById("haccpLoc")?.value;
+  tempLog.innerHTML=logHtml(logs.filter(x=>x.kind==="temp"&&(!tl||x.loc===tl)&&(!td||x.dev===td)));
+  cleanLog.innerHTML=logHtml(logs.filter(x=>x.kind==="clean"&&(!cl||x.loc===cl)&&(!cs||x.shift===cs)));
+  haccpLog.innerHTML=logHtml(logs.filter(x=>x.kind==="haccp"&&(!hl||x.loc===hl)));
+}
+
+function togglePanelLocation(el){
+  el.classList.toggle("open");
+}
+
+
+function togglePanelLocation(el){
+  el.classList.toggle("open");
+}
+function uniq(arr){return [...new Set(arr)]}
+function dashStatus(done,total){
+  if(total===0) return "ok";
+  if(done>=total) return "ok";
+  if(done>0) return "warn";
+  return "alarm";
+}
+function dashTempData(loc,date){
+  let d=state.devices[loc]||{chlodnie:[],mroznie:[]};
+  let devs=[...(d.chlodnie||[]),...(d.mroznie||[])];
+  let rows=devs.map(dev=>{
+    let r=logs.find(x=>x.kind==="temp"&&x.loc===loc&&x.dev===dev&&x.date===date);
+    return {dev,r};
+  });
+  return {done:rows.filter(x=>x.r).length,total:devs.length,rows};
+}
+function dashCleanData(loc,date){
+  let shifts=getShifts(loc);
+  let sections=shifts.map(shift=>{
+    let items=getCleaning(loc,shift)||[];
+    let rows=items.map(item=>{
+      let entries=logs.filter(x=>x.kind==="clean"&&x.loc===loc&&x.shift===shift&&x.date===date&&x.done?.includes(item));
+      let r=entries[0]||null;
+      return {item,r};
+    });
+    return {shift,rows,done:rows.filter(x=>x.r).length,total:rows.length};
+  });
+  return {done:sections.reduce((a,s)=>a+s.done,0),total:sections.reduce((a,s)=>a+s.total,0),sections};
+}
+function dashHaccpData(loc,date){
+  let items=getHaccpItemsForLoc ? getHaccpItemsForLoc(loc) : (state.haccpItems||[]);
+  let rows=items.map(item=>{
+    let r=logs.find(x=>x.kind==="haccp"&&x.loc===loc&&x.date===date&&x.done?.includes(item));
+    return {item,r};
+  });
+  return {done:rows.filter(x=>x.r).length,total:rows.length,rows};
+}
+function dashPeriodicData(loc,date){
+  let rows=[];
+  getShifts(loc).forEach(shift=>{
+    (getCleaning(loc,shift)||[]).forEach(item=>{
+      let freq=getCleanFreq(loc,shift,item);
+      if(freq==="daily") return;
+      let st=dueStatus(loc,shift,item,date);
+      rows.push({shift,item,freq,st});
+    });
+  });
+  return rows;
+}
+function renderPanel(){
+  const locs = canViewAll() ? state.locations : allowedLocs();
+  const d = canViewAll() ? (document.getElementById("panelDate")?.value || isoDate()) : isoDate();
+
+  cards.innerHTML = locs.map(loc=>{
+    const temp=dashTempData(loc,d);
+    const clean=dashCleanData(loc,d);
+    const haccp=dashHaccpData(loc,d);
+    const periodic=dashPeriodicData(loc,d);
+
+    const total=temp.total+clean.total+haccp.total;
+    const done=temp.done+clean.done+haccp.done;
+    const pct=total?Math.round(done/total*100):100;
+    const cardStatus = periodic.some(x=>x.st.cls==="alarm") ? "alarm" : (done<total ? "warn" : "ok");
+
+    const tempHtml = temp.rows.map(x=> x.r
+      ? `<div class="taskLine"><div class="taskLeft doneText">✅ ${x.dev}<div class="taskMeta">${x.r.val}°C • ${x.r.time||""} • ${x.r.user||""}</div></div><span class="status ${x.r.status==="OK"?"ok":x.r.status==="UWAGA"?"warn":"alarm"}">${x.r.status}</span></div>`
+      : `<div class="taskLine"><div class="taskLeft missText">❌ ${x.dev}</div><span class="status alarm">brak</span></div>`
+    ).join("");
+
+    const cleanHtml = clean.sections.map(sec=>{
+      const rows=sec.rows.map(x=> x.r
+        ? `<div class="taskLine"><div class="taskLeft doneText">✅ ${x.item}<div class="taskMeta">${x.r.time||""} • ${x.r.user||""}</div></div><span class="status ok">wykonane</span></div>`
+        : `<div class="taskLine"><div class="taskLeft missText">❌ ${x.item}</div><span class="status alarm">brak</span></div>`
+      ).join("");
+      return `<div class="detailSection"><h4>🧹 ${sec.shift} <span class="status ${dashStatus(sec.done,sec.total)}">${sec.done}/${sec.total}</span></h4>${rows||'<p class="small" style="color:#64748b">Brak zadań.</p>'}</div>`;
+    }).join("");
+
+    const haccpHtml = haccp.rows.map(x=> x.r
+      ? `<div class="taskLine"><div class="taskLeft doneText">✅ ${x.item}<div class="taskMeta">${x.r.time||""} • ${x.r.user||""}</div></div><span class="status ok">wykonane</span></div>`
+      : `<div class="taskLine"><div class="taskLeft missText">❌ ${x.item}</div><span class="status alarm">brak</span></div>`
+    ).join("");
+
+    const periodicHtml = periodic.length ? periodic.map(x=>{
+      const last=x.st.last?plDate(x.st.last):"brak";
+      return `<div class="taskLine"><div class="taskLeft">${x.st.cls==="alarm"?"🔴":x.st.cls==="warn"?"🟡":"🟢"} ${x.item}<div class="taskMeta">${x.shift} • ${freqLabel(x.freq)} • ostatnio: ${last}</div></div><span class="status ${x.st.cls}">${x.st.txt}</span></div>`;
+    }).join("") : '<p class="small" style="color:#64748b">Brak zadań okresowych.</p>';
+
+    return `<div class="loc" onclick="togglePanelLocation(this)">
+      <div class="locHeader">
+        <div>
+          <h3><span class="status ${cardStatus}">${cardStatus==="ok"?"OK":cardStatus==="warn"?"UWAGA":"ALARM"}</span> ${loc}</h3>
+          <p>Data: <b>${plDate(d)}</b></p>
+        </div>
+        <div class="percentBadge">${pct}%</div>
+      </div>
+      <div class="progressWrap"><div class="progressBar" style="width:${pct}%"></div></div>
+      <p><b>${done}/${total}</b> obowiązków wykonane</p>
+      <div class="metricGrid">
+        <div class="metricRow">🌡️ Temperatury <span class="status ${dashStatus(temp.done,temp.total)}">${temp.done}/${temp.total}</span></div>
+        <div class="metricRow">🧹 Sprzątanie <span class="status ${dashStatus(clean.done,clean.total)}">${clean.done}/${clean.total}</span></div>
+        <div class="metricRow">📋 HACCP <span class="status ${dashStatus(haccp.done,haccp.total)}">${haccp.done}/${haccp.total}</span></div>
+      </div>
+      <div class="toggleHint">Kliknij, aby rozwinąć szczegóły</div>
+
+      <div class="locDetails" onclick="event.stopPropagation()">
+        <div class="detailSection"><h4>🌡️ Temperatury <span class="status ${dashStatus(temp.done,temp.total)}">${temp.done}/${temp.total}</span></h4>${tempHtml||'<p class="small" style="color:#64748b">Brak urządzeń.</p>'}</div>
+        ${cleanHtml}
+        <div class="detailSection"><h4>📋 HACCP / daty <span class="status ${dashStatus(haccp.done,haccp.total)}">${haccp.done}/${haccp.total}</span></h4>${haccpHtml||'<p class="small" style="color:#64748b">Brak kontroli HACCP.</p>'}</div>
+        <div class="detailSection"><h4>🧽 Sprzątanie okresowe</h4><div class="periodicList">${periodicHtml}</div></div>
+      </div>
+    </div>`;
+  }).join("");
+}
 function latestLog(kind,loc,dev,day,ym,shift){let dt=ym+"-"+pad(day);return logs.find(x=>x.kind===kind&&x.loc===loc&&x.date===dt&&(!dev||x.dev===dev)&&(!shift||x.shift===shift))}
-function buildTable(l,type,ym){let n=monthLabel(ym),days=daysInMonth(ym);if(type==="temp"){let d=state.devices[l],cols=[...d.chlodnie,...d.mroznie];return `<table><tr><th colspan="${cols.length+3}">KARTA TEMPERATUR — ${l} — ${n}</th></tr><tr><th>Data</th>${cols.map(c=>`<th>${c}</th>`).join("")}<th>Podpis</th><th>Uwagi</th></tr>${Array.from({length:days},(_,i)=>{let day=i+1;let dayLogs=logs.filter(x=>x.kind==="temp"&&x.loc===l&&x.date===ym+"-"+pad(day));let user=dayLogs.map(x=>x.user+" "+(x.time||"")).filter(Boolean).join(" / ");let note=dayLogs.map(x=>x.note).filter(Boolean).join("; ");return `<tr><th>${day}</th>${cols.map(c=>{let r=latestLog("temp",l,c,day,ym);return r?`<td class="${statusClass(r.status)}">${r.val}°C</td>`:`<td></td>`}).join("")}<td>${user}</td><td>${note}</td></tr>`}).join("")}</table>`}
-if(type==="clean"){let groups=["Rano","W ciągu dnia","Wieczór"];let cols=groups.flatMap(g=>(state.cleaning[g]||[]).map(x=>g+": "+x));return `<table><tr><th colspan="${cols.length+3}">KARTA KONTROLI CZYSTOŚCI — ${l} — ${n}</th></tr><tr><th>Data</th>${cols.map(c=>`<th><div class="vert">${c}</div></th>`).join("")}<th>Podpis</th><th>Uwagi</th></tr>${Array.from({length:days},(_,i)=>{let day=i+1;let dayLogs=logs.filter(x=>x.kind==="clean"&&x.loc===l&&x.date===ym+"-"+pad(day));let user=dayLogs.map(x=>x.user+" "+(x.time||"")).filter(Boolean).join(" / ");let note=dayLogs.map(x=>x.note).filter(Boolean).join("; ");return `<tr><th>${day}</th>${cols.map(c=>{let [g,...rest]=c.split(": ");let item=rest.join(": ");let r=latestLog("clean",l,null,day,ym,g);return `<td>${r?.done?.includes(item)?"X":""}</td>`}).join("")}<td>${user}</td><td>${note}</td></tr>`}).join("")}</table>`}
-let cols=state.haccpItems||[];return `<table><tr><th colspan="${cols.length+3}">HACCP OGÓLNE / DATY — ${l} — ${n}</th></tr><tr><th>Data</th>${cols.map(c=>`<th>${c}</th>`).join("")}<th>Podpis</th><th>Uwagi</th></tr>${Array.from({length:days},(_,i)=>{let day=i+1,r=latestLog("haccp",l,null,day,ym);return `<tr><th>${day}</th>${cols.map(c=>`<td>${r?.done?.includes(c)?"X":""}</td>`).join("")}<td>${r?(r.user+" "+(r.time||"")):""}</td><td>${r?.note||""}</td></tr>`}).join("")}</table>`}
-function renderMonth(){monthTable.innerHTML=buildTable(monthLoc.value||state.locations[0],monthType.value,monthPick.value||currentMonth())}function renderSanepid(){sanTable.innerHTML=buildTable(sanLoc.value||state.locations[0],sanType.value,sanMonth.value||currentMonth())}function printReport(){renderMonth();setTimeout(()=>window.print(),100)}function printSanepid(){renderSanepid();setTimeout(()=>window.print(),100)}
+
+function escapeHtml(s){return String(s??"").replace(/[&<>"']/g,function(m){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]})}
+function showCellInfoById(id,title){
+  const r=logs.find(x=>x.id===id);
+  if(!r)return;
+  const rows=[
+    ["Data",r.date?plDate(r.date):""],
+    ["Godzina",r.time||""],
+    ["Lokalizacja",r.loc||""],
+    ["Urządzenie / część",r.dev||r.shift||""],
+    ["Wartość",r.val?r.val+"°C":""],
+    ["Status",r.status||""],
+    ["Podpis",r.user||""],
+    ["Wykonano",r.done?r.done.join(", "):""],
+    ["Uwagi",r.note||""]
+  ].filter(x=>x[1]);
+  cellModal.className="modalOverlay";
+  cellModal.innerHTML='<div class="modalBox"><h3>'+escapeHtml(title||"Szczegóły wpisu")+'</h3>'+rows.map(x=>'<p><b>'+escapeHtml(x[0])+':</b> '+escapeHtml(x[1])+'</p>').join("")+'<button class="btn primary" onclick="closeCellInfo()">Zamknij</button></div>';
+}
+function closeCellInfo(){cellModal.className="hidden";cellModal.innerHTML=""}
+
+function buildTable(l,type,ym){let n=monthLabel(ym),days=daysInMonth(ym);if(type==="temp"){let d=state.devices[l],cols=[...d.chlodnie,...d.mroznie];return `<table><tr><th colspan="${cols.length+3}">KARTA TEMPERATUR — ${l} — ${n}</th></tr><tr><th>Data</th>${cols.map(c=>`<th>${c}</th>`).join("")}<th>Podpis</th><th>Uwagi</th></tr>${Array.from({length:days},(_,i)=>{let day=i+1;let dayLogs=logs.filter(x=>x.kind==="temp"&&x.loc===l&&x.date===ym+"-"+pad(day));let user=dayLogs.map(x=>x.user).filter(Boolean).filter((v,i,a)=>a.indexOf(v)===i).join(" / ");let note=dayLogs.map(x=>x.note).filter(Boolean).join("; ");return `<tr><th>${day}</th>${cols.map(c=>{let r=latestLog("temp",l,c,day,ym);return r?`<td class="${statusClass(r.status)} clickableCell" onclick="showCellInfoById('${r.id}','${c}')">${r.val}°C</td>`:`<td></td>`}).join("")}<td>${user}</td><td>${note?`<span class="clickableCell" onclick="showCellInfoById('${dayLogs[0]?.id}','Uwagi')">Uwagi</span>`:""}</td></tr>`}).join("")}</table>`}
+if(type==="clean"){let groups=getShifts(l);let cols=groups.flatMap(g=>getCleaning(l,g).map(x=>g+": "+x+" ["+freqLabel(getCleanFreq(l,g,x))+"]"));return `<table><tr><th colspan="${cols.length+3}">KARTA KONTROLI CZYSTOŚCI — ${l} — ${n}</th></tr><tr><th>Data</th>${cols.map(c=>`<th><div class="vert">${c}</div></th>`).join("")}<th>Podpis</th><th>Uwagi</th></tr>${Array.from({length:days},(_,i)=>{let day=i+1;let dayLogs=logs.filter(x=>x.kind==="clean"&&x.loc===l&&x.date===ym+"-"+pad(day));let user=dayLogs.map(x=>x.user).filter(Boolean).filter((v,i,a)=>a.indexOf(v)===i).join(" / ");let note=dayLogs.map(x=>x.note).filter(Boolean).join("; ");return `<tr><th>${day}</th>${cols.map(c=>{let [g,...rest]=c.split(": ");let raw=rest.join(": ");let item=raw.replace(/ \[.*\]$/,"");let rs=logs.filter(x=>x.kind==="clean"&&x.loc===l&&x.date===ym+"-"+pad(day)&&x.shift===g);let r=rs.find(x=>x.done?.includes(item));return r?`<td class="clickableCell" onclick="showCellInfoById('${r.id}','${item}')">X</td>`:`<td></td>`}).join("")}<td>${user}</td><td>${note?`<span class="clickableCell" onclick="showCellInfoById('${dayLogs[0]?.id}','Uwagi')">Uwagi</span>`:""}</td></tr>`}).join("")}</table>`}
+let cols=getHaccpItemsForLoc(l);return `<table><tr><th colspan="${cols.length+3}">HACCP OGÓLNE / DATY — ${l} — ${n}</th></tr><tr><th>Data</th>${cols.map(c=>`<th>${c}</th>`).join("")}<th>Podpis</th><th>Uwagi</th></tr>${Array.from({length:days},(_,i)=>{let day=i+1,r=latestLog("haccp",l,null,day,ym);return `<tr><th>${day}</th>${cols.map(c=>`${r?.done?.includes(c)?`<td class="clickableCell" onclick="showCellInfoById('${r.id}','${c}')">X</td>`:`<td></td>`}`).join("")}<td>${r?r.user:""}</td><td>${r?.note?`<span class="clickableCell" onclick="showCellInfoById('${r.id}','Uwagi')">Uwagi</span>`:""}</td></tr>`}).join("")}</table>`}
+function renderMonth(){monthTable.innerHTML=buildTable(monthLoc.value||state.locations[0],monthType.value,monthPick.value||currentMonth())}function renderSanepid(){sanTable.innerHTML=buildTable(sanLoc.value||state.locations[0],sanType.value,sanMonth.value||currentMonth())}function printReport(){renderMonth();const old=document.title;document.title=`Kitchen Control - ${monthLoc.value} - ${monthType.value} - ${monthPick.value}`;setTimeout(()=>{window.print();document.title=old},100)}function printSanepid(){renderSanepid();const old=document.title;document.title=`Kitchen Control Sanepid - ${sanLoc.value} - ${sanType.value} - ${sanMonth.value}`;setTimeout(()=>{window.print();document.title=old},100)}
 function exportCSV(){let csv="typ;data;godzina;lokalizacja;czesc;urzadzenie;wartosc;status;osoba;uwagi;wykonano\n"+logs.map(x=>[x.kind,x.date,x.time,x.loc,x.shift||"",x.dev||"",x.val||"",x.status||"",x.user||"",x.note||"",x.done?x.done.join(", "):""].map(v=>`"${String(v).replaceAll('"','""')}"`).join(";")).join("\n");let blob=new Blob([csv],{type:"text/csv;charset=utf-8"});let a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="kitchen-control-eksport.csv";a.click()}
 function addDevice(){if(!isAdmin())return denyAdmin();let l=adminLoc.value,t=adminType.value,n=adminName.value.trim();if(!n)return;state.devices[l][t].push(n);adminName.value="";save();fillDev();renderDevList();renderMonth();renderSanepid()}function renderDevList(){let l=adminLoc.value||state.locations[0],d=state.devices[l];devList.innerHTML=`<h3>${l}</h3><h4>Chłodnie</h4>${d.chlodnie.map((x,i)=>`<span class="pill">${x}<button onclick="removeDev('${l}','chlodnie',${i})">×</button></span>`).join("")}<h4>Mroźnie</h4>${d.mroznie.map((x,i)=>`<span class="pill">${x}<button onclick="removeDev('${l}','mroznie',${i})">×</button></span>`).join("")}`}function removeDev(l,t,i){if(!isAdmin())return denyAdmin();state.devices[l][t].splice(i,1);save();fillDev();renderDevList();renderMonth();renderSanepid()}
+
+
+function renderDoneCheckboxes(id, kind, shift){
+  const x=logs.find(a=>a.id===id);
+  if(!x)return "";
+  let items=[];
+  if(kind==="clean"){
+    items = (state.cleaning && state.cleaning[shift||x.shift]) ? state.cleaning[shift||x.shift] : [];
+  } else if(kind==="haccp"){
+    items = state.haccpItems || [];
+  }
+  return `<div class="checkGrid">`+items.map(item=>`<label class="checkEdit"><input type="checkbox" ${x.done?.includes(item)?"checked":""} onchange="editDoneItem('${id}','${item.replace(/'/g,"&#39;")}',this.checked)"> ${item}</label>`).join("")+`</div>`;
+}
+function editDoneItem(id,item,checked){
+  if(!isAdmin())return denyAdmin();
+  let x=logs.find(a=>a.id===id); if(!x)return;
+  if(!Array.isArray(x.done))x.done=[];
+  if(checked && !x.done.includes(item))x.done.push(item);
+  if(!checked)x.done=x.done.filter(v=>v!==item);
+  save();refresh();
+}
+
+function renderHistoryPage(){
+  if(!document.getElementById("historyResult")) return;
+  if(!isAdmin()) return;
+  const loc = histLoc?.value || "";
+  const kind = histKind?.value || "all";
+  const from = histFrom?.value || "0000-01-01";
+  const to = histTo?.value || "9999-12-31";
+  let list = logs.filter(x =>
+    (!loc || x.loc===loc) &&
+    (kind==="all" || x.kind===kind) &&
+    (!from || x.date>=from) &&
+    (!to || x.date<=to)
+  ).slice(0,200);
+  historyResult.innerHTML = `<div class="historyCount">Znaleziono: ${list.length} wpisów</div>` + list.map(x=>{
+    let locSelect=`<select onchange="editLog('${x.id}','loc',this.value)">${state.locations.map(l=>`<option ${x.loc===l?"selected":""}>${l}</option>`).join("")}</select>`;
+    let extra="";
+    if(x.kind==="temp"){
+      let d=state.devices[x.loc]||{chlodnie:[],mroznie:[]};
+      let devs=[...d.chlodnie,...d.mroznie];
+      extra=`<select onchange="editLog('${x.id}','dev',this.value)">${devs.map(dv=>`<option ${x.dev===dv?"selected":""}>${dv}</option>`).join("")}</select><input type="number" value="${x.val||""}" onchange="editLog('${x.id}','val',this.value,true)">`;
+    }
+    if(x.kind==="clean"){
+      extra=`<select onchange="editLog('${x.id}','shift',this.value)">${getShifts(x.loc).map(s=>`<option ${x.shift===s?"selected":""}>${s}</option>`).join("")}</select>${renderDoneCheckboxes(x.id,"clean",x.shift)}`;
+    }
+    if(x.kind==="haccp"){
+      extra=`${renderDoneCheckboxes(x.id,"haccp",null)}`;
+    }
+    return `<div class="editBox"><b>${x.kind}</b> — ${x.loc} ${x.dev||""} ${x.shift||""}<div class="row"><input type="date" value="${x.date}" onchange="editLog('${x.id}','date',this.value)"><input type="time" value="${x.time||''}" onchange="editLog('${x.id}','time',this.value)">${locSelect}${extra}<input value="${x.user||""}" placeholder="podpis" onchange="editLog('${x.id}','user',this.value)"><input value="${x.note||""}" placeholder="uwagi" onchange="editLog('${x.id}','note',this.value)"><button class="btn danger" onclick="deleteLog('${x.id}')">Usuń</button></div></div>`;
+  }).join("") || "Brak wpisów";
+}
+
 function renderEditList(){
   if(!document.getElementById("editList")) return;
   let kind=editFilterKind?.value||"all";
@@ -144,10 +547,10 @@ function renderEditList(){
       extra=`<select onchange="editLog('${x.id}','dev',this.value)">${devs.map(dv=>`<option ${x.dev===dv?"selected":""}>${dv}</option>`).join("")}</select><input type="number" value="${x.val||""}" onchange="editLog('${x.id}','val',this.value,true)">`;
     }
     if(x.kind==="clean"){
-      extra=`<select onchange="editLog('${x.id}','shift',this.value)">${["Rano","W ciągu dnia","Wieczór"].map(s=>`<option ${x.shift===s?"selected":""}>${s}</option>`).join("")}</select><textarea placeholder="Wykonane pozycje, oddzielone przecinkami" onchange="editDone('${x.id}',this.value)">${(x.done||[]).join(", ")}</textarea>`;
+      extra=`<select onchange="editLog('${x.id}','shift',this.value)">${getShifts(x.loc).map(s=>`<option ${x.shift===s?"selected":""}>${s}</option>`).join("")}</select>${renderDoneCheckboxes(x.id,"clean",x.shift)}`;
     }
     if(x.kind==="haccp"){
-      extra=`<textarea placeholder="Wykonane pozycje HACCP, oddzielone przecinkami" onchange="editDone('${x.id}',this.value)">${(x.done||[]).join(", ")}</textarea>`;
+      extra=`${renderDoneCheckboxes(x.id,"haccp",null)}`;
     }
     return `<div class="editBox"><b>${x.kind}</b> — ${x.loc} ${x.dev||""} ${x.shift||""}<div class="row"><input type="date" value="${x.date}" onchange="editLog('${x.id}','date',this.value)"><input type="time" value="${x.time||''}" onchange="editLog('${x.id}','time',this.value)">${locSelect}${extra}<input value="${x.user||""}" placeholder="podpis" onchange="editLog('${x.id}','user',this.value)"><input value="${x.note||""}" placeholder="uwagi" onchange="editLog('${x.id}','note',this.value)"><button class="btn danger" onclick="deleteLog('${x.id}')">Usuń</button></div></div>`;
   }).join("")||"Brak wpisów";
@@ -163,48 +566,155 @@ function editLog(id,field,value,isTemp=false){if(!isAdmin())return denyAdmin();l
 function deleteLog(id){if(!isAdmin())return denyAdmin();if(confirm("Usunąć wpis?")){logs=logs.filter(x=>x.id!==id);save();refresh()}}
 
 
+
+function renderLocationAdmin(){
+  if(!document.getElementById("locationList")) return;
+  locationList.innerHTML = state.locations.map((l,i)=>`<span class="pill">${l}<button onclick="removeLocation(${i})">×</button></span>`).join("");
+}
+function addLocation(){
+  if(!isAdmin())return denyAdmin();
+  let name = newLocationName.value.trim();
+  if(!name)return;
+  if(state.locations.includes(name)){alert("Taka lokalizacja już istnieje.");return}
+  state.locations.push(name);
+  state.devices[name] = {chlodnie:["Chłodnia 1"], mroznie:["Mroźnia 1"]}; if(!state.locationShifts)state.locationShifts={}; state.locationShifts[name]=defaultShifts(); if(!state.locationCleaning)state.locationCleaning={}; state.locationCleaning[name]=JSON.parse(JSON.stringify(state.cleaning||{}));
+  users = users.map(u => u.role==="Admin" ? {...u, locations:[...new Set([...u.locations, name])]} : u);
+  newLocationName.value="";
+  save();
+  fill();
+  renderLocationAdmin();
+  renderUserAdmin();
+  renderDevList();
+  renderPanel();
+  renderMonth();
+  renderSanepid();
+}
+function removeLocation(i){
+  if(!isAdmin())return denyAdmin();
+  const name = state.locations[i];
+  if(!confirm("Usunąć lokalizację: "+name+"? Wpisy historyczne zostaną w historii, ale lokalizacja zniknie z formularzy."))return;
+  state.locations.splice(i,1);
+  delete state.devices[name]; if(state.locationShifts)delete state.locationShifts[name]; if(state.locationCleaning)delete state.locationCleaning[name]; if(state.locationHaccpItems)delete state.locationHaccpItems[name];
+  users = users.map(u => ({...u, locations:u.locations.filter(l=>l!==name)}));
+  save();
+  fill();
+  renderLocationAdmin();
+  renderUserAdmin();
+  renderDevList();
+  renderPanel();
+  renderMonth();
+  renderSanepid();
+}
+
+
+function renderShiftSelects(){
+  const loc=cleanLoc?.value || state.locations[0];
+  if(document.getElementById("cleanShift")){
+    cleanShift.innerHTML=getShifts(loc).map(s=>`<option value="${s}">${s}</option>`).join("");
+  }
+  const adminLoc=cleanAdminLoc?.value || shiftAdminLoc?.value || state.locations[0];
+  if(document.getElementById("cleanAdminShift")){
+    cleanAdminShift.innerHTML=getShifts(adminLoc).map(s=>`<option value="${s}">${s}</option>`).join("");
+  }
+}
+function renderShiftAdmin(){
+  if(!document.getElementById("shiftAdminList")) return;
+  let loc=shiftAdminLoc?.value || state.locations[0];
+  shiftAdminList.innerHTML=`<h3>${loc}</h3>`+getShifts(loc).map((s,i)=>`<div class="editBox"><div class="row"><input value="${s}" onchange="renameShift('${loc}',${i},this.value)"><button class="btn danger" onclick="removeShift('${loc}',${i})">Usuń</button></div></div>`).join("");
+}
+function addShift(){
+  if(!isAdmin())return denyAdmin();
+  let loc=shiftAdminLoc?.value || state.locations[0];
+  let name=newShiftName.value.trim();
+  if(!name)return;
+  let shifts=[...getShifts(loc)];
+  if(shifts.includes(name)){alert("Taka pora dnia już istnieje.");return}
+  shifts.push(name);
+  setShifts(loc,shifts);
+  setCleaning(loc,name,[]);
+  newShiftName.value="";
+  save();renderShiftAdmin();renderShiftSelects();renderCleanAdmin();renderCleanItems();renderMonth();renderSanepid();
+}
+function renameShift(loc,i,newName){
+  if(!isAdmin())return denyAdmin();
+  newName=newName.trim();
+  if(!newName)return;
+  let shifts=[...getShifts(loc)];
+  let oldName=shifts[i];
+  if(oldName===newName)return;
+  shifts[i]=newName;
+  setShifts(loc,shifts);
+  ensureLocCleaning(loc);
+  state.locationCleaning[loc][newName]=state.locationCleaning[loc][oldName]||[];
+  delete state.locationCleaning[loc][oldName];
+  logs.forEach(x=>{if(x.kind==="clean"&&x.loc===loc&&x.shift===oldName)x.shift=newName});
+  save();renderShiftAdmin();renderShiftSelects();renderCleanAdmin();renderCleanItems();renderMonth();renderSanepid();renderAllLogs();
+}
+function removeShift(loc,i){
+  if(!isAdmin())return denyAdmin();
+  let shifts=[...getShifts(loc)];
+  if(shifts.length<=1){alert("Musi zostać przynajmniej jedna pora dnia.");return}
+  let name=shifts[i];
+  if(!confirm("Usunąć porę dnia: "+name+"?"))return;
+  shifts.splice(i,1);
+  setShifts(loc,shifts);
+  if(state.locationCleaning && state.locationCleaning[loc]) delete state.locationCleaning[loc][name];
+  save();renderShiftAdmin();renderShiftSelects();renderCleanAdmin();renderCleanItems();renderMonth();renderSanepid();
+}
+
 function renderCleanAdmin(){
   if(!document.getElementById("cleanAdminList")) return;
+  let loc=cleanAdminLoc?.value||state.locations[0];
   let shift=cleanAdminShift.value;
-  cleanAdminList.innerHTML=`<h3>${shift}</h3>`+(state.cleaning[shift]||[]).map((x,i)=>`<span class="pill">${x}<button onclick="removeCleanItem('${shift}',${i})">×</button></span>`).join("");
+  cleanAdminList.innerHTML=`<h3>${loc} — ${shift}</h3>`+getCleaning(loc,shift).map((x,i)=>`<div class="editBox"><div class="row"><b>${x}</b><select class="freqSelect" onchange="setCleanFreq('${loc}','${shift}','${x.replace(/'/g,"&#39;")}',this.value);save();renderCleanAdmin();renderPanel();"><option value="daily" ${getCleanFreq(loc,shift,x)==="daily"?"selected":""}>Codziennie</option><option value="7" ${getCleanFreq(loc,shift,x)==="7"?"selected":""}>Co 7 dni</option><option value="14" ${getCleanFreq(loc,shift,x)==="14"?"selected":""}>Co 14 dni</option><option value="30" ${getCleanFreq(loc,shift,x)==="30"?"selected":""}>Co 30 dni</option><option value="90" ${getCleanFreq(loc,shift,x)==="90"?"selected":""}>Co 90 dni</option><option value="asNeeded" ${getCleanFreq(loc,shift,x)==="asNeeded"?"selected":""}>Według potrzeb</option></select><button class="btn danger" onclick="removeCleanItem('${loc}','${shift}',${i})">Usuń</button></div></div>`).join("");
 }
 function addCleanItem(){
   if(!isAdmin())return denyAdmin();
-  let shift=cleanAdminShift.value, name=newCleanItem.value.trim();
+  let loc=cleanAdminLoc?.value||state.locations[0], shift=cleanAdminShift.value, name=newCleanItem.value.trim();
   if(!name)return;
-  if(!state.cleaning[shift])state.cleaning[shift]=[];
-  state.cleaning[shift].push(name);
+  let arr=[...getCleaning(loc,shift)];
+  arr.push(name);
+  setCleaning(loc,shift,arr);
+  setCleanFreq(loc,shift,name,newCleanFreq?.value||"daily");
   newCleanItem.value="";
   save();renderCleanAdmin();renderCleanItems();renderMonth();renderSanepid();
 }
-function removeCleanItem(shift,i){
+function removeCleanItem(loc,shift,i){
   if(!isAdmin())return denyAdmin();
-  state.cleaning[shift].splice(i,1);
+  let arr=[...getCleaning(loc,shift)];
+  let removed=arr[i];
+  arr.splice(i,1);
+  setCleaning(loc,shift,arr);
+  if(state.cleaningFreq) delete state.cleaningFreq[cleanKey(loc,shift,removed)];
   save();renderCleanAdmin();renderCleanItems();renderMonth();renderSanepid();
 }
 function renderHaccpAdmin(){
   if(!document.getElementById("haccpAdminList")) return;
-  haccpAdminList.innerHTML=(state.haccpItems||[]).map((x,i)=>`<span class="pill">${x}<button onclick="removeHaccpItem(${i})">×</button></span>`).join("");
+  let loc=haccpAdminLoc?.value||state.locations[0];
+  haccpAdminList.innerHTML=`<h3>${loc}</h3>`+getHaccpItemsForLoc(loc).map((x,i)=>`<span class="pill">${x}<button onclick="removeHaccpItem('${loc}',${i})">×</button></span>`).join("");
 }
 function addHaccpItem(){
   if(!isAdmin())return denyAdmin();
-  let name=newHaccpItem.value.trim();
+  let loc=haccpAdminLoc?.value||state.locations[0], name=newHaccpItem.value.trim();
   if(!name)return;
-  if(!state.haccpItems)state.haccpItems=[];
-  state.haccpItems.push(name);
+  let arr=[...getHaccpItemsForLoc(loc)];
+  arr.push(name);
+  setHaccpItemsForLoc(loc,arr);
   newHaccpItem.value="";
   save();renderHaccpAdmin();renderHaccpItems();renderMonth();renderSanepid();
 }
-function removeHaccpItem(i){
+function removeHaccpItem(loc,i){
   if(!isAdmin())return denyAdmin();
-  state.haccpItems.splice(i,1);
+  let arr=[...getHaccpItemsForLoc(loc)];
+  arr.splice(i,1);
+  setHaccpItemsForLoc(loc,arr);
   save();renderHaccpAdmin();renderHaccpItems();renderMonth();renderSanepid();
 }
 
 function renderUserAdmin(){
   if(!document.getElementById("newUserLocs")) return;
   newUserLocs.innerHTML=state.locations.map(l=>`<label><input type="checkbox" class="newUserLoc" value="${l}" checked> ${l}</label><br>`).join("");
-  userList.innerHTML="<h3>Użytkownicy</h3>"+users.map(u=>`<div class="editBox"><b>${u.name}</b> <span class="badge">${u.role}</span><br>Lokalizacje: ${u.locations.join(", ")}<div class="row"><input value="${u.name}" onchange="editUser('${u.id}','name',this.value)"><input value="${u.pin}" onchange="editUser('${u.id}','pin',this.value)"><select onchange="editUser('${u.id}','role',this.value)"><option ${u.role==="Pracownik"?"selected":""}>Pracownik</option><option ${u.role==="Manager"?"selected":""}>Manager</option><option ${u.role==="Admin"?"selected":""}>Admin</option></select><button class="btn danger" onclick="deleteUser('${u.id}')">Usuń</button></div></div>`).join("");
+  userList.innerHTML="<h3>Użytkownicy</h3>"+users.map(u=>`<div class="editBox"><b>${u.name}</b> <span class="badge">${u.role}</span><br>Lokalizacje:<br>${state.locations.map(l=>`<label><input type="checkbox" ${u.locations.includes(l)?"checked":""} onchange="editUserLocation('${u.id}','${l}',this.checked)"> ${l}</label><br>`).join("")}<div class="row"><input value="${u.name}" onchange="editUser('${u.id}','name',this.value)"><input value="${u.pin}" onchange="editUser('${u.id}','pin',this.value)"><select onchange="editUser('${u.id}','role',this.value)"><option ${u.role==="Pracownik"?"selected":""}>Pracownik</option><option ${u.role==="Manager"?"selected":""}>Manager</option><option ${u.role==="Admin"?"selected":""}>Admin</option></select><button class="btn danger" onclick="deleteUser('${u.id}')">Usuń</button></div></div>`).join("");
 }
 function addUser(){
   if(!isAdmin())return denyAdmin();
@@ -219,12 +729,60 @@ function editUser(id,field,value){
   let u=users.find(x=>x.id===id); if(!u)return;
   u[field]=value; save(); fillLogin(); renderUserAdmin();
 }
+function editUserLocation(id,loc,checked){
+  if(!isAdmin())return denyAdmin();
+  let u=users.find(x=>x.id===id); if(!u)return;
+  if(checked && !u.locations.includes(loc)) u.locations.push(loc);
+  if(!checked) u.locations=u.locations.filter(l=>l!==loc);
+  save(); renderUserAdmin();
+}
 function deleteUser(id){
   if(!isAdmin())return denyAdmin();
   if(users.length<=1){alert("Musi zostać przynajmniej jeden użytkownik.");return}
   users=users.filter(x=>x.id!==id); save(); fillLogin(); renderUserAdmin();
 }
 
-document.addEventListener("change",e=>{if(e.target.id==="tempLoc")fillDev();if(e.target.id==="tempDev")fillVals();if(e.target.id==="tempVal")status();if(e.target.id==="cleanShift")renderCleanItems();if(e.target.id==="cleanAdminShift")renderCleanAdmin();if(e.target.id==="adminLoc")renderDevList();if(["monthLoc","monthType","monthPick"].includes(e.target.id))renderMonth();if(["sanLoc","sanType","sanMonth"].includes(e.target.id))renderSanepid()});
+
+function renderBackupSummary(){
+  if(!document.getElementById("backupSummary")) return;
+  const temp=logs.filter(x=>x.kind==="temp").length;
+  const clean=logs.filter(x=>x.kind==="clean").length;
+  const haccp=logs.filter(x=>x.kind==="haccp").length;
+  backupSummary.innerHTML=`
+  <div class="summaryLine"><b>Temperatury</b><span>${temp}</span></div>
+  <div class="summaryLine"><b>Sprzątanie</b><span>${clean}</span></div>
+  <div class="summaryLine"><b>HACCP / daty</b><span>${haccp}</span></div>
+  <div class="summaryLine"><b>Użytkownicy</b><span>${users.length}</span></div>
+  <div class="summaryLine"><b>Lokalizacje</b><span>${state.locations.length}</span></div>
+  <p class="small" style="color:#6b7280;margin-top:10px">Backup zawiera konfigurację, użytkowników, urządzenia, checklisty i historię wpisów.</p>`;
+}
+function exportBackup(){
+  if(!isAdmin())return denyAdmin();
+  const backup={version:"v9",exportedAt:new Date().toISOString(),state,logs,users};
+  const blob=new Blob([JSON.stringify(backup,null,2)],{type:"application/json;charset=utf-8"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download="kitchen-control-backup-v9-"+isoDate()+".json";
+  a.click();
+}
+function importBackup(event){
+  if(!isAdmin())return denyAdmin();
+  const file=event.target.files[0];
+  if(!file)return;
+  const reader=new FileReader();
+  reader.onload=()=>{
+    try{
+      const data=JSON.parse(reader.result);
+      if(!data.state||!data.logs||!data.users){alert("To nie wygląda jak poprawny backup Kitchen Control.");return}
+      if(!confirm("Import zastąpi obecne dane w tej przeglądarce. Kontynuować?"))return;
+      state=data.state; logs=data.logs; users=data.users;
+      save(); fillLogin(); applyAccess(); refresh(); renderBackupSummary();
+      alert("Backup zaimportowany.");
+    }catch(e){alert("Nie udało się wczytać pliku JSON.");}
+  };
+  reader.readAsText(file);
+}
+
+document.addEventListener("change",e=>{if(e.target.id==="tempLoc"){fillDev();renderAllLogs();}if(e.target.id==="tempDev"){fillVals();renderAllLogs();}if(e.target.id==="tempVal")status();if(e.target.id==="cleanShift"){renderCleanItems();renderAllLogs();}if(e.target.id==="shiftAdminLoc"){renderShiftAdmin();renderShiftSelects();renderCleanAdmin();}if(e.target.id==="cleanAdminLoc"){renderShiftSelects();renderCleanAdmin();}if(e.target.id==="cleanAdminShift")renderCleanAdmin();if(e.target.id==="haccpAdminLoc")renderHaccpAdmin();if(e.target.id==="cleanLoc"){renderShiftSelects();renderCleanItems();renderAllLogs();}if(e.target.id==="cleanDate")renderCleanItems();if(e.target.id==="panelDate")renderPanel();if(e.target.id==="haccpLoc"){renderHaccpItems();renderAllLogs();}if(["histLoc","histKind","histFrom","histTo"].includes(e.target.id))renderHistoryPage();if(e.target.id==="adminLoc")renderDevList();if(["monthLoc","monthType","monthPick"].includes(e.target.id))renderMonth();if(["sanLoc","sanType","sanMonth"].includes(e.target.id))renderSanepid()});
 fillLogin();applyAccess();
 </script></body></html>
