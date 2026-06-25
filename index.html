@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kitchen Control HACCP v9.15</title>
+<title>Kitchen Control v9.16</title>
 <style>
 body{margin:0;font-family:Arial,sans-serif;background:#eef3f8;color:#172033}header{background:linear-gradient(135deg,#dbeafe,#eff6ff);color:#172033;padding:12px 16px;position:sticky;top:0;z-index:5;border-bottom:1px solid #bfdbfe;cursor:pointer}h1{margin:0;font-size:22px}.small{color:#64748b}.appHeader{display:flex;align-items:center;justify-content:space-between;gap:10px}.headerLeft{display:flex;align-items:center;gap:10px}.headerLogo{width:42px;height:42px;border-radius:12px;background:#0f172a;color:white;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 2px 8px #0001}.powerBtn{border:0;background:white;color:#0f172a;border-radius:12px;width:44px;height:44px;font-size:22px;font-weight:900;box-shadow:0 1px 6px #0001}.userMenu{position:fixed;top:68px;right:14px;background:white;border:1px solid #d8dee8;border-radius:16px;box-shadow:0 10px 30px #0002;z-index:80;min-width:220px;padding:12px}.userMenuName{font-weight:900;font-size:17px}.userMenuRole{color:#64748b;margin:2px 0 10px}.userMenu button{width:100%;margin-top:8px}.menuBackdrop{position:fixed;inset:0;z-index:70;background:transparent}main{padding:14px;max-width:1200px;margin:auto}.nav{display:flex;gap:8px;overflow:auto;margin-bottom:10px}.nav button,.btn{border:0;border-radius:10px;padding:11px 14px;background:white;font-weight:700;box-shadow:0 1px 4px #0001}.nav button.active,.primary{background:#2563eb!important;color:white}.danger{background:#dc2626!important;color:white}.card{background:white;border-radius:14px;padding:14px;margin:10px 0;box-shadow:0 2px 10px #0001}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.loc{border:1px solid #d8dee8;border-radius:12px;padding:12px;background:#fafafa}.status{border-radius:99px;padding:4px 8px;font-size:12px;font-weight:800;display:inline-block}.ok{background:#dcfce7;color:#166534}.warn{background:#fef3c7;color:#92400e}.alarm{background:#fee2e2;color:#991b1b}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}select,input,textarea{border:1px solid #d8dee8;border-radius:10px;padding:10px;background:white;font-size:16px}textarea{width:100%;min-height:70px;margin-top:10px}table{border-collapse:collapse;width:100%;background:white}th,td{border:1px solid #111;padding:6px;text-align:center;font-size:13px;min-width:42px}th{background:#f3f4f6}.wrap{overflow:auto;border-radius:10px;border:1px solid #d8dee8}.vert{writing-mode:vertical-rl;transform:rotate(180deg);font-weight:800;white-space:nowrap}.pill{display:inline-flex;gap:6px;align-items:center;border:1px solid #d8dee8;padding:7px 9px;border-radius:99px;margin:4px;background:#f8fafc}.pill button{border:0;background:#fee2e2;border-radius:50%;width:22px;height:22px}.hidden{display:none}.filled-ok{background:#dcfce7}.filled-warn{background:#fef3c7}.filled-alarm{background:#fee2e2}.notice{padding:10px;border-radius:10px;background:#fef3c7;color:#92400e;font-weight:bold;margin-top:10px}.success{background:#dcfce7;color:#166534}.historyItem{border-bottom:1px solid #e5e7eb;padding:8px 0}.historyItem:last-child{border-bottom:0}.readonlyBadge{background:#e0e7ff;color:#3730a3;border-radius:99px;padding:4px 8px;font-size:12px;font-weight:800}.sanepidHeader{display:none}.editBox{background:#f8fafc;border:1px solid #d8dee8;border-radius:12px;padding:10px;margin-top:10px}
 .userbar{display:none!important}
@@ -27,16 +27,17 @@ body{margin:0;font-family:Arial,sans-serif;background:#eef3f8;color:#172033}head
 .percentBadge{font-size:20px;font-weight:900;background:#eef2ff;color:#3730a3;border-radius:12px;padding:8px 10px;min-width:58px;text-align:center}
 @media(min-width:900px){.metricGrid{grid-template-columns:repeat(3,1fr)}}
 
-</style>
-<link rel="manifest" href="manifest.json">
-<link rel="apple-touch-icon" href="icons/icon-180.png">
-<link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32.png">
-<meta name="theme-color" content="#dbeafe">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Kitchen Control">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
 
-</head><body><header class="appHeader"><div class="headerLeft" onclick="show('panel')"><div class="headerLogo">🌡️</div><h1>Kitchen Control</h1></div><button id="headerMenuBtn" class="powerBtn hidden" onclick="toggleUserMenu(event)">⏻</button></header><main>
+.pctOk{background:#dcfce7!important;color:#166534!important}
+.pctWarn{background:#fef3c7!important;color:#92400e!important}
+.pctMid{background:#ffedd5!important;color:#9a3412!important}
+.pctAlarm{background:#fee2e2!important;color:#991b1b!important}
+.progressBar.pctOkBar{background:#22c55e}
+.progressBar.pctWarnBar{background:#eab308}
+.progressBar.pctMidBar{background:#f97316}
+.progressBar.pctAlarmBar{background:#ef4444}
+
+</style></head><body><header class="appHeader"><div class="headerLeft" onclick="show('panel')"><div class="headerLogo">🌡️</div><h1>Kitchen Control</h1></div><button id="headerMenuBtn" class="powerBtn hidden" onclick="toggleUserMenu(event)">⏻</button></header><main>
 <section id="loginScreen" class="loginBox">
 <div class="loginLogo">🌡️</div><h2>Logowanie Kitchen Control</h2>
 <p>Wybierz użytkownika i wpisz PIN.</p>
@@ -46,7 +47,7 @@ body{margin:0;font-family:Arial,sans-serif;background:#eef3f8;color:#172033}head
 </section>
 <div id="appArea" class="hidden">
 <div class="userbar controls hidden"><span id="currentUserName"></span><span id="currentRole"></span></div>
-<div class="nav controls"><button onclick="show('panel')" id="t-panel" class="active">Panel</button><button onclick="show('temp')" id="t-temp">Temperatury</button><button onclick="show('clean')" id="t-clean">Sprzątanie</button><button onclick="show('haccp')" id="t-haccp">HACCP / daty</button><button onclick="show('month')" id="t-month">Miesiąc</button><button onclick="show('sanepid')" id="t-sanepid">Sanepid</button><button onclick="show('admin')" id="t-admin" class="adminOnly">Admin</button><button onclick="show('history')" id="t-history" class="adminOnly">Historia wpisów</button></div>
+<div class="nav controls"><button onclick="show('panel')" id="t-panel" class="active">Panel</button><button onclick="show('temp')" id="t-temp">Temperatury</button><button onclick="show('clean')" id="t-clean">Sprzątanie</button><button onclick="show('haccp')" id="t-haccp">HACCP / daty</button><button onclick="show('month')" id="t-month">Miesiąc</button><button onclick="show('admin')" id="t-admin" class="adminOnly">Admin</button><button onclick="show('history')" id="t-history" class="managerOnly">Historia wpisów</button></div>
 
 <section id="panel">
 <div class="card controls" id="panelControls">
@@ -66,7 +67,7 @@ body{margin:0;font-family:Arial,sans-serif;background:#eef3f8;color:#172033}head
 <section id="haccp" class="hidden"><div class="card controls"><h2>HACCP ogólne / daty</h2><div class="row"><select id="haccpLoc"></select><input type="date" id="haccpDate"><input type="time" id="haccpTime"><input id="haccpUser" required placeholder="Podpis / osoba — wymagane"><button class="btn primary" onclick="saveHaccp()">Zapisz</button></div><div id="haccpMsg"></div></div><div class="card">
 <div id="haccpItems"></div><textarea id="haccpNote" placeholder="Uwagi / produkty do usunięcia"></textarea></div><div class="card"><h2>Historia HACCP / dat</h2><p class="small" style="color:#6b7280">Historia dla wybranej lokalizacji.</p><div id="haccpLog"></div></div></section>
 
-<section id="month" class="hidden"><div class="card controls"><h2>Raport miesięczny</h2><div class="row"><select id="monthLoc"></select><select id="monthType"><option value="temp">Temperatury</option><option value="clean">Sprzątanie</option><option value="haccp">HACCP / daty</option></select><input type="month" id="monthPick"><button class="btn primary" onclick="renderMonth()">Odśwież</button><button class="btn" onclick="printReport()">Drukuj / PDF</button><button class="btn" onclick="exportCSV()">Eksport CSV</button></div></div><div class="card"><div class="sanepidHeader" id="printTitle"></div><div class="wrap" id="monthTable"></div><div class="cellHint noPrint">Kliknij temperaturę albo X, żeby zobaczyć szczegóły wpisu.</div></div></section>
+<section id="month" class="hidden"><div class="card controls"><h2>Raport miesięczny</h2><div class="row"><select id="monthLoc"></select><select id="monthType"><option value="temp">Temperatury</option><option value="clean">Sprzątanie</option><option value="haccp">HACCP / daty</option></select><input type="month" id="monthPick"><button class="btn primary" onclick="renderMonth()">Odśwież</button><button class="btn" onclick="printReport()">Drukuj / PDF</button><button class="btn managerOnly" onclick="exportCSV()">Eksport CSV</button></div></div><div class="card"><div class="sanepidHeader" id="printTitle"></div><div class="wrap" id="monthTable"></div><div class="cellHint noPrint">Kliknij temperaturę albo X, żeby zobaczyć szczegóły wpisu.</div></div></section>
 
 <section id="sanepid" class="hidden"><div class="card controls"><h2>Widok do pokazania Sanepidowi <span class="readonlyBadge">TYLKO PODGLĄD</span></h2><div class="row"><select id="sanLoc"></select><select id="sanType"><option value="temp">Temperatury</option><option value="clean">Sprzątanie</option><option value="haccp">HACCP / daty</option></select><input type="month" id="sanMonth"><button class="btn primary" onclick="renderSanepid()">Pokaż</button><button class="btn" onclick="printSanepid()">Drukuj / PDF</button></div></div><div class="card"><div class="sanepidHeader" id="sanTitle"></div><div class="wrap" id="sanTable"></div><div class="cellHint noPrint">Kliknij temperaturę albo X, żeby zobaczyć szczegóły wpisu.</div></div></section>
 
@@ -124,7 +125,7 @@ body{margin:0;font-family:Arial,sans-serif;background:#eef3f8;color:#172033}head
 <div class="row">
 <button class="btn primary" onclick="exportBackup()">Pobierz backup JSON</button>
 <label class="btn">Importuj backup JSON<input type="file" accept=".json,application/json" style="display:none" onchange="importBackup(event)"></label>
-<button class="btn" onclick="exportCSV()">Eksport CSV</button>
+<button class="btn managerOnly" onclick="exportCSV()">Eksport CSV</button>
 </div>
 <div class="backupBox" id="backupSummary"></div>
 </div>
@@ -159,7 +160,7 @@ body{margin:0;font-family:Arial,sans-serif;background:#eef3f8;color:#172033}head
   <button class="btn adminOnly" onclick="exportBackup();closeUserMenu()">Backup JSON</button>
   <button class="btn danger" onclick="logout();closeUserMenu()">Wyloguj</button>
 </div>
-<div id="cellModal" class="hidden"></div><div class="versionFooter noPrint">v9.15</div></div></main><script>
+<div id="cellModal" class="hidden"></div><div class="versionFooter noPrint">v9.16</div></div></main><script>
 const defaults={locations:["Asian Street Food Mokotów","Asian Street Food Wola","Food Truck","Kuchnia Mokotów"],devices:{"Asian Street Food Mokotów":{chlodnie:["Chłodnia 1","Chłodnia 2","Chłodnia 3"],mroznie:["Mroźnia 1"]},"Asian Street Food Wola":{chlodnie:["Chłodnia 1","Chłodnia 2"],mroznie:["Mroźnia 1"]},"Food Truck":{chlodnie:["Chłodnia 1","Chłodnia 2"],mroznie:["Mroźnia 1"]},"Kuchnia Mokotów":{chlodnie:["Chłodnia 1","Chłodnia 2","Chłodnia 3","Chłodnia 4"],mroznie:["Mroźnia 1","Mroźnia 2"]}},cleaning:{Rano:["Obecność szkodników","Stan lodówek / brak wycieków","Czystość blatów startowa"],"W ciągu dnia":["Frytury","Wymiana frytury","Zlewy","Bieżące blaty"],Wieczór:["Pow. robocze / blaty","Kuchenki","Ściany i podłogi","Schładzarka","Chłodnie","Mroźnie","Mycie okapu"]},haccpItems:["Kontrola dat przydatności","Kontrola chłodni tygodniowa","Magazyn suchy miesięcznie","Zamrażarki miesięcznie"]};
 let state=JSON.parse(localStorage.getItem("kc_state_v7")||"null")||defaults;
 let logs=JSON.parse(localStorage.getItem("kc_logs_v7")||"[]");
@@ -189,7 +190,7 @@ function closeUserMenu(){
 }
 
 function isAdmin(){return currentUser && currentUser.role==="Admin"}
-function isManager(){return currentUser && (currentUser.role==="Manager" || currentUser.role==="Admin")}
+function isManager(){return currentUser && currentUser.role==="Manager"}function canEditEntries(){return currentUser && (currentUser.role==="Manager" || currentUser.role==="Admin")}
 function allowedLocs(){return currentUser?currentUser.locations:[]}function canViewAll(){return currentUser && (currentUser.role==="Admin" || currentUser.role==="Manager")}
 function fillLogin(){
   loginUser.innerHTML=users.map(u=>`<option value="${u.id}">${u.name}</option>`).join("");
@@ -206,19 +207,38 @@ function applyAccess(){
   if(currentUser){
     loginScreen.classList.add("hidden");appArea.classList.remove("hidden");
     currentUserName.innerText=currentUser.name;currentRole.innerText=currentUser.role;
-    document.querySelectorAll(".adminOnly").forEach(x=>x.style.display=isAdmin()?"inline-block":"none");headerMenuBtn.classList.remove("hidden");
+    document.querySelectorAll(".adminOnly").forEach(x=>x.style.display=isAdmin()?"inline-block":"none");document.querySelectorAll(".managerOnly").forEach(x=>x.style.display=(currentUser.role==="Manager"||currentUser.role==="Admin")?"inline-block":"none");headerMenuBtn.classList.remove("hidden");
     fill();show("panel");
   }else{
     appArea.classList.add("hidden");loginScreen.classList.remove("hidden");headerMenuBtn.classList.add("hidden");closeUserMenu();fillLogin();
   }
 }
+
+function applyRoleRestrictions(){
+  const worker = currentUser && currentUser.role==="Pracownik";
+  ["tempDate","tempTime","cleanDate","cleanTime","haccpDate","haccpTime"].forEach(id=>{
+    const el=document.getElementById(id);
+    if(!el)return;
+    if(worker){
+      el.value = id.includes("Time") ? time() : isoDate();
+      el.style.display="none";
+      el.disabled=true;
+    }else{
+      el.style.display="";
+      el.disabled=false;
+    }
+  });
+  const ml=document.getElementById("monthLoc");
+  if(ml) ml.disabled=worker;
+}
+
 function filterLocationsForSelect(id){
   let locs=canViewAll()?state.locations:allowedLocs();
   document.getElementById(id).innerHTML=locs.map(l=>`<option>${l}</option>`).join("");
 }
 function denyAdmin(){alert("Brak uprawnień. Tylko Admin może to zrobić.");return false}
-function show(id){["panel","temp","clean","haccp","month","sanepid","admin","history"].forEach(x=>{document.getElementById(x).classList.toggle("hidden",x!==id);document.getElementById("t-"+x).classList.toggle("active",x===id)});if(id==="admin"&&!isAdmin()){alert("Panel Admin tylko dla administratora.");id="panel"}if(id==="month")renderMonth();if(id==="sanepid")renderSanepid();if(id==="admin"){renderLocationAdmin();renderDevList();renderUserAdmin();renderShiftAdmin();renderCleanAdmin();renderHaccpAdmin();renderBackupSummary()}if(id==="history"){renderHistoryPage()}renderPanel();renderAllLogs()}
-function fill(){["tempLoc","cleanLoc","haccpLoc","monthLoc","sanLoc","histLoc"].forEach(id=>filterLocationsForSelect(id)); if(isAdmin()){document.getElementById("adminLoc").innerHTML=state.locations.map(l=>`<option>${l}</option>`).join("");if(document.getElementById("cleanAdminLoc"))cleanAdminLoc.innerHTML=state.locations.map(l=>`<option>${l}</option>`).join("");if(document.getElementById("haccpAdminLoc"))haccpAdminLoc.innerHTML=state.locations.map(l=>`<option>${l}</option>`).join("");if(document.getElementById("shiftAdminLoc"))shiftAdminLoc.innerHTML=state.locations.map(l=>`<option>${l}</option>`).join("");} renderUserAdmin();renderShiftSelects();monthPick.value=currentMonth();sanMonth.value=currentMonth();if(document.getElementById("histFrom"))histFrom.value=currentMonth()+"-01";if(document.getElementById("histTo"))histTo.value=isoDate();if(document.getElementById("panelDate")){panelDate.value=isoDate();panelControls.style.display=canViewAll()?"block":"none";}tempDate.value=isoDate();cleanDate.value=isoDate();haccpDate.value=isoDate();tempTime.value=time();cleanTime.value=time();haccpTime.value=time(); if(currentUser){tempUser.value=currentUser.name;cleanUser.value=currentUser.name;haccpUser.value=currentUser.name;} fillDev();renderCleanItems();renderHaccpItems()}
+function show(id){["panel","temp","clean","haccp","month","admin","history"].forEach(x=>{document.getElementById(x).classList.toggle("hidden",x!==id);document.getElementById("t-"+x).classList.toggle("active",x===id)});if(id==="admin"&&!isAdmin()){alert("Panel Admin tylko dla administratora.");id="panel"}if(id==="history"&&!canEditEntries()){alert("Historia tylko dla Managera lub Admina.");id="panel"}if(id==="sanepid"){id="month"}if(id==="month")renderMonth();if(id==="admin"){renderLocationAdmin();renderDevList();renderUserAdmin();renderShiftAdmin();renderCleanAdmin();renderHaccpAdmin();renderBackupSummary()}if(id==="history"){renderHistoryPage()}renderPanel();renderAllLogs()}
+function fill(){["tempLoc","cleanLoc","haccpLoc","monthLoc","sanLoc","histLoc"].forEach(id=>filterLocationsForSelect(id)); if(isAdmin()){document.getElementById("adminLoc").innerHTML=state.locations.map(l=>`<option>${l}</option>`).join("");if(document.getElementById("cleanAdminLoc"))cleanAdminLoc.innerHTML=state.locations.map(l=>`<option>${l}</option>`).join("");if(document.getElementById("haccpAdminLoc"))haccpAdminLoc.innerHTML=state.locations.map(l=>`<option>${l}</option>`).join("");if(document.getElementById("shiftAdminLoc"))shiftAdminLoc.innerHTML=state.locations.map(l=>`<option>${l}</option>`).join("");} renderUserAdmin();renderShiftSelects();monthPick.value=currentMonth();sanMonth.value=currentMonth();if(document.getElementById("histFrom"))histFrom.value=currentMonth()+"-01";if(document.getElementById("histTo"))histTo.value=isoDate();if(document.getElementById("panelDate")){panelDate.value=isoDate();panelControls.style.display=canViewAll()?"block":"none";}tempDate.value=isoDate();cleanDate.value=isoDate();haccpDate.value=isoDate();tempTime.value=time();cleanTime.value=time();haccpTime.value=time(); if(currentUser){tempUser.value=currentUser.name;cleanUser.value=currentUser.name;haccpUser.value=currentUser.name;} fillDev();renderCleanItems();renderHaccpItems();applyRoleRestrictions()}
 function fillDev(){let l=tempLoc.value||state.locations[0],d=state.devices[l],a=[];d.chlodnie.forEach(x=>a.push([x,"chlodnia"]));d.mroznie.forEach(x=>a.push([x,"mroznia"]));tempDev.innerHTML=a.map(x=>`<option data-type="${x[1]}">${x[0]}</option>`).join("");fillVals()}
 function fillVals(){let type=tempDev.options[tempDev.selectedIndex]?.dataset.type||"chlodnia";let vals=type==="mroznia"?Array.from({length:21},(_,i)=>-25+i):Array.from({length:11},(_,i)=>i);tempVal.innerHTML=`<option value="">Wybierz temperaturę</option>`+vals.map(v=>`<option value="${v}">${v}°C</option>`).join("");status()}function status(){if(tempVal.value===""){tempStatus.innerHTML=`Status: <span class="status warn">wybierz temperaturę</span>`;return ""}let v=parseInt(tempVal.value),type=tempDev.options[tempDev.selectedIndex]?.dataset.type||"chlodnia",s,c;if(type==="chlodnia"){if(v<=4){s="OK";c="ok"}else if(v<=7){s="UWAGA";c="warn"}else{s="ALARM";c="alarm"}}else{if(v<=-18){s="OK";c="ok"}else if(v<=-15){s="UWAGA";c="warn"}else{s="ALARM";c="alarm"}}tempStatus.innerHTML=`Status: <span class="status ${c}">${s}</span>`;return s}function statusClass(s){return s==="OK"?"filled-ok":s==="UWAGA"?"filled-warn":"filled-alarm"}
 function saveTemp(){let user=requireUser("tempUser","tempMsg");if(!user)return;if(tempVal.value===""){msg("tempMsg","Wybierz temperaturę przed zapisem.");return}let loc=tempLoc.value,dev=tempDev.value,dt=tempDate.value;if(hasEntry("temp",loc,dt,dev,null)){msg("tempMsg",`Ten dzień ma już wpis dla ${dev}. Poprawisz go w Admin → Edycja.`);return}logs.unshift({id:crypto.randomUUID(),kind:"temp",date:dt,time:tempTime.value||time(),loc,dev,val:tempVal.value,user,note:tempNote.value,status:status()});tempNote.value="";save();refresh();savedGoPanel("tempMsg","Zapisano temperaturę ✅")}
@@ -341,10 +361,28 @@ function logHtml(items){return items.slice(0,20).map(x=>`<div class="historyItem
   haccpLog.innerHTML=logHtml(logs.filter(x=>x.kind==="haccp"&&(!hl||x.loc===hl)));
 }
 
+
+function pctClass(pct){
+  if(pct>=100)return "pctOk";
+  if(pct>=60)return "pctWarn";
+  if(pct>=20)return "pctMid";
+  return "pctAlarm";
+}
+function pctBarClass(pct){return pctClass(pct)+"Bar"}
+
 function togglePanelLocation(el){
   el.classList.toggle("open");
 }
 
+
+
+function pctClass(pct){
+  if(pct>=100)return "pctOk";
+  if(pct>=60)return "pctWarn";
+  if(pct>=20)return "pctMid";
+  return "pctAlarm";
+}
+function pctBarClass(pct){return pctClass(pct)+"Bar"}
 
 function togglePanelLocation(el){
   el.classList.toggle("open");
@@ -442,9 +480,9 @@ function renderPanel(){
           <h3><span class="status ${cardStatus}">${cardStatus==="ok"?"OK":cardStatus==="warn"?"UWAGA":"ALARM"}</span> ${loc}</h3>
           <p>Data: <b>${plDate(d)}</b></p>
         </div>
-        <div class="percentBadge">${pct}%</div>
+        <div class="percentBadge ${pctClass(pct)}">${pct}%</div>
       </div>
-      <div class="progressWrap"><div class="progressBar" style="width:${pct}%"></div></div>
+      <div class="progressWrap"><div class="progressBar ${pctBarClass(pct)}" style="width:${pct}%"></div></div>
       <p><b>${done}/${total}</b> obowiązków wykonane</p>
       <div class="metricGrid">
         <div class="metricRow">🌡️ Temperatury <span class="status ${dashStatus(temp.done,temp.total)}">${temp.done}/${temp.total}</span></div>
@@ -504,7 +542,7 @@ function renderDoneCheckboxes(id, kind, shift){
   return `<div class="checkGrid">`+items.map(item=>`<label class="checkEdit"><input type="checkbox" ${x.done?.includes(item)?"checked":""} onchange="editDoneItem('${id}','${item.replace(/'/g,"&#39;")}',this.checked)"> ${item}</label>`).join("")+`</div>`;
 }
 function editDoneItem(id,item,checked){
-  if(!isAdmin())return denyAdmin();
+  if(!canEditEntries())return denyAdmin();
   let x=logs.find(a=>a.id===id); if(!x)return;
   if(!Array.isArray(x.done))x.done=[];
   if(checked && !x.done.includes(item))x.done.push(item);
@@ -565,14 +603,14 @@ function renderEditList(){
   }).join("")||"Brak wpisów";
 }
 function editDone(id,value){
-  if(!isAdmin())return denyAdmin();
+  if(!canEditEntries())return denyAdmin();
   let x=logs.find(a=>a.id===id); if(!x)return;
   x.done=value.split(",").map(v=>v.trim()).filter(Boolean);
   save();refresh();
 }
 function calcStatusForLog(x){let devType="chlodnia";for(const loc of state.locations){let d=state.devices[loc];if(d.mroznie.includes(x.dev))devType="mroznia"}let v=parseInt(x.val);if(devType==="chlodnia")return v<=4?"OK":v<=7?"UWAGA":"ALARM";return v<=-18?"OK":v<=-15?"UWAGA":"ALARM"}
-function editLog(id,field,value,isTemp=false){if(!isAdmin())return denyAdmin();let x=logs.find(a=>a.id===id);if(!x)return;x[field]=value;if(isTemp){x.status=calcStatusForLog(x)}save();refresh()}
-function deleteLog(id){if(!isAdmin())return denyAdmin();if(confirm("Usunąć wpis?")){logs=logs.filter(x=>x.id!==id);save();refresh()}}
+function editLog(id,field,value,isTemp=false){if(!canEditEntries())return denyAdmin();let x=logs.find(a=>a.id===id);if(!x)return;x[field]=value;if(isTemp){x.status=calcStatusForLog(x)}save();refresh()}
+function deleteLog(id){if(!canEditEntries())return denyAdmin();if(confirm("Usunąć wpis?")){logs=logs.filter(x=>x.id!==id);save();refresh()}}
 
 
 
