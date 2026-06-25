@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kitchen Control v9.20</title>
+<title>Kitchen Control v9.23</title>
 <style>
 body{margin:0;font-family:Arial,sans-serif;background:#eef3f8;color:#172033}header{background:linear-gradient(135deg,#dbeafe,#eff6ff);color:#172033;padding:12px 16px;position:sticky;top:0;z-index:5;border-bottom:1px solid #bfdbfe;cursor:pointer}h1{margin:0;font-size:22px}.small{color:#64748b}.appHeader{display:flex;align-items:center;justify-content:space-between;gap:10px}.headerLeft{display:flex;align-items:center;gap:10px}.headerLogo{width:42px;height:42px;border-radius:12px;background:#0f172a;color:white;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 2px 8px #0001}.powerBtn{border:0;background:white;color:#0f172a;border-radius:12px;width:44px;height:44px;font-size:22px;font-weight:900;box-shadow:0 1px 6px #0001}.userMenu{position:fixed;top:68px;right:14px;background:white;border:1px solid #d8dee8;border-radius:16px;box-shadow:0 10px 30px #0002;z-index:80;min-width:220px;padding:12px}.userMenuName{font-weight:900;font-size:17px}.userMenuRole{color:#64748b;margin:2px 0 10px}.userMenu button{width:100%;margin-top:8px}.menuBackdrop{position:fixed;inset:0;z-index:70;background:transparent}main{padding:14px;max-width:1200px;margin:auto}.nav{display:flex;gap:8px;overflow:auto;margin-bottom:10px}.nav button,.btn{border:0;border-radius:10px;padding:11px 14px;background:white;font-weight:700;box-shadow:0 1px 4px #0001}.nav button.active,.primary{background:#2563eb!important;color:white}.danger{background:#dc2626!important;color:white}.card{background:white;border-radius:14px;padding:14px;margin:10px 0;box-shadow:0 2px 10px #0001}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.loc{border:1px solid #d8dee8;border-radius:12px;padding:12px;background:#fafafa}.status{border-radius:99px;padding:4px 8px;font-size:12px;font-weight:800;display:inline-block}.ok{background:#dcfce7;color:#166534}.warn{background:#fef3c7;color:#92400e}.alarm{background:#fee2e2;color:#991b1b}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}select,input,textarea{border:1px solid #d8dee8;border-radius:10px;padding:10px;background:white;font-size:16px}textarea{width:100%;min-height:70px;margin-top:10px}table{border-collapse:collapse;width:100%;background:white}th,td{border:1px solid #111;padding:6px;text-align:center;font-size:13px;min-width:42px}th{background:#f3f4f6}.wrap{overflow:auto;border-radius:10px;border:1px solid #d8dee8}.vert{writing-mode:vertical-rl;transform:rotate(180deg);font-weight:800;white-space:nowrap}.pill{display:inline-flex;gap:6px;align-items:center;border:1px solid #d8dee8;padding:7px 9px;border-radius:99px;margin:4px;background:#f8fafc}.pill button{border:0;background:#fee2e2;border-radius:50%;width:22px;height:22px}.hidden{display:none}.filled-ok{background:#dcfce7}.filled-warn{background:#fef3c7}.filled-alarm{background:#fee2e2}.notice{padding:10px;border-radius:10px;background:#fef3c7;color:#92400e;font-weight:bold;margin-top:10px}.success{background:#dcfce7;color:#166534}.historyItem{border-bottom:1px solid #e5e7eb;padding:8px 0}.historyItem:last-child{border-bottom:0}.readonlyBadge{background:#e0e7ff;color:#3730a3;border-radius:99px;padding:4px 8px;font-size:12px;font-weight:800}.authorBadge{background:#eef2ff;color:#3730a3;border-radius:12px;padding:9px 11px;font-weight:800;display:inline-block}.sanepidHeader{display:none}.editBox{background:#f8fafc;border:1px solid #d8dee8;border-radius:12px;padding:10px;margin-top:10px}
 .userbar{display:none!important}
@@ -37,25 +37,262 @@ body{margin:0;font-family:Arial,sans-serif;background:#eef3f8;color:#172033}head
 .progressBar.pctMidBar{background:#f97316}
 .progressBar.pctAlarmBar{background:#ef4444}
 
+
+/* Login themes v9.23 */
+body.loginMode.theme-light{
+  background:
+    radial-gradient(circle at 50% 22%, rgba(37,99,235,.10), transparent 35%),
+    linear-gradient(180deg,#f8fbff 0%,#eef4fb 52%,#e8f0f8 100%) !important;
+}
+body.loginMode.theme-dark{
+  background:
+    radial-gradient(circle at 50% 10%, rgba(59,130,246,.18), transparent 34%),
+    radial-gradient(circle at 50% 88%, rgba(239,68,68,.10), transparent 42%),
+    linear-gradient(135deg,#020617 0%,#071426 46%,#0f172a 100%) !important;
+}
+body.loginMode header{
+  backdrop-filter:blur(14px);
+}
+body.loginMode.theme-light header{
+  background:rgba(248,251,255,.88)!important;
+  color:#0f172a!important;
+  border-bottom:1px solid rgba(203,213,225,.78)!important;
+  box-shadow:0 6px 26px rgba(15,23,42,.06)!important;
+}
+body.loginMode.theme-dark header{
+  background:rgba(2,6,23,.74)!important;
+  color:#f8fafc!important;
+  border-bottom:1px solid rgba(148,163,184,.18)!important;
+  box-shadow:0 12px 32px rgba(0,0,0,.28)!important;
+}
+body.loginMode.theme-light header h1{color:#0f172a!important;text-shadow:none!important}
+body.loginMode.theme-dark header h1{color:#f8fafc!important;text-shadow:0 2px 8px rgba(0,0,0,.35)}
+body.loginMode .headerLogo{background:#0f172a!important;box-shadow:0 12px 26px rgba(15,23,42,.18)}
+
+.kcLoginScreen{
+  min-height:calc(100vh - 118px);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:28px 18px 72px;
+  background:transparent!important;
+  box-shadow:none!important;
+  border:0!important;
+}
+.kcThemeSwitch{
+  display:flex;
+  gap:8px;
+  padding:6px;
+  border-radius:16px;
+  margin-bottom:18px;
+  backdrop-filter:blur(12px);
+}
+body.theme-light .kcThemeSwitch{background:rgba(255,255,255,.74);border:1px solid rgba(203,213,225,.75)}
+body.theme-dark .kcThemeSwitch{background:rgba(15,23,42,.72);border:1px solid rgba(148,163,184,.24)}
+.kcThemeSwitch button{
+  border:0;
+  border-radius:12px;
+  padding:10px 18px;
+  font-weight:900;
+  font-size:15px;
+  background:transparent;
+}
+body.theme-light .kcThemeSwitch button{color:#64748b}
+body.theme-dark .kcThemeSwitch button{color:#94a3b8}
+body.theme-light .kcThemeSwitch button.active{background:#0f172a;color:#fff}
+body.theme-dark .kcThemeSwitch button.active{background:#ef4444;color:#fff}
+
+.kcLoginCard{
+  width:min(540px,100%);
+  border-radius:34px;
+  padding:34px 32px 30px;
+  text-align:center;
+  backdrop-filter:blur(14px);
+}
+body.theme-light .kcLoginCard{
+  background:rgba(255,255,255,.88);
+  border:1px solid rgba(203,213,225,.78);
+  box-shadow:0 28px 70px rgba(15,23,42,.12), inset 0 1px 0 rgba(255,255,255,.9);
+  color:#0f172a;
+}
+body.theme-dark .kcLoginCard{
+  background:linear-gradient(180deg,rgba(15,35,61,.86),rgba(5,14,28,.92));
+  border:1px solid rgba(148,163,184,.34);
+  box-shadow:0 28px 80px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.08);
+  color:#f8fafc;
+}
+.kcLoginIcon{
+  width:136px;
+  height:136px;
+  border-radius:31px;
+  object-fit:cover;
+  margin:0 auto 20px;
+  display:block;
+}
+body.theme-light .kcLoginIcon{box-shadow:0 18px 42px rgba(15,23,42,.18)}
+body.theme-dark .kcLoginIcon{box-shadow:0 18px 45px rgba(0,0,0,.42)}
+.kcLoginCard h2{
+  margin:0;
+  font-size:clamp(34px,6.2vw,50px);
+  line-height:1.02;
+  letter-spacing:-1.2px;
+  font-weight:950;
+}
+body.theme-light .kcLoginCard h2{color:#0f172a}
+body.theme-dark .kcLoginCard h2{color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.35)}
+.kcLoginSub{
+  margin:10px 0 26px;
+  font-weight:900;
+  letter-spacing:1.7px;
+  font-size:13px;
+}
+body.theme-light .kcLoginSub{color:#718096}
+body.theme-dark .kcLoginSub{color:#94a3b8}
+
+.kcInputWrap{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin:13px 0;
+  padding:0 15px;
+  height:60px;
+  border-radius:16px;
+}
+body.theme-light .kcInputWrap{
+  background:rgba(255,255,255,.78);
+  border:1px solid #cfd8e6;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7), 0 6px 16px rgba(15,23,42,.035);
+}
+body.theme-dark .kcInputWrap{
+  background:rgba(15,23,42,.72);
+  border:1px solid rgba(148,163,184,.32);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.05);
+}
+.kcInputIcon{
+  width:34px;
+  font-size:22px;
+  display:flex;
+  justify-content:center;
+  opacity:.78;
+}
+.kcInputWrap input{
+  flex:1;
+  height:100%;
+  border:0!important;
+  outline:none!important;
+  background:transparent!important;
+  font-size:21px!important;
+  box-shadow:none!important;
+  padding:0!important;
+}
+body.theme-light .kcInputWrap input{color:#0f172a!important}
+body.theme-dark .kcInputWrap input{color:#f8fafc!important}
+body.theme-light .kcInputWrap input::placeholder{color:#8ba0bb}
+body.theme-dark .kcInputWrap input::placeholder{color:#94a3b8}
+.kcEyeBtn{
+  border:0;
+  background:transparent;
+  font-size:22px;
+  padding:8px;
+}
+body.theme-light .kcEyeBtn{color:#64748b}
+body.theme-dark .kcEyeBtn{color:#cbd5e1}
+
+.kcLoginBtn{
+  width:100%;
+  margin-top:18px;
+  min-height:64px;
+  border-radius:16px!important;
+  background:linear-gradient(180deg,#ff3131,#d71920)!important;
+  border:1px solid rgba(185,28,28,.28)!important;
+  box-shadow:0 18px 28px rgba(215,25,32,.22), inset 0 1px 0 rgba(255,255,255,.20)!important;
+  font-size:24px!important;
+  font-weight:950!important;
+  letter-spacing:2px;
+}
+.kcLoginScreen .notice{
+  margin-top:16px;
+  border-radius:14px;
+  padding:12px;
+  font-weight:800;
+}
+body.theme-light .kcLoginScreen .notice{background:#fee2e2;border:1px solid #fecaca;color:#991b1b}
+body.theme-dark .kcLoginScreen .notice{background:rgba(127,29,29,.85);border:1px solid rgba(248,113,113,.45);color:#fecaca}
+.kcSecureLine{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-top:26px;
+  justify-content:center;
+}
+body.theme-light .kcSecureLine{color:#718096}
+body.theme-dark .kcSecureLine{color:#94a3b8}
+.kcSecureLine span{
+  height:1px;
+  width:120px;
+}
+body.theme-light .kcSecureLine span{background:#cfd8e6}
+body.theme-dark .kcSecureLine span{background:rgba(148,163,184,.38)}
+.kcSecureLine b{white-space:nowrap;font-size:16px}
+@media(max-width:520px){
+  .kcLoginScreen{align-items:flex-start;padding-top:24px}
+  .kcThemeSwitch{align-self:center}
+  .kcLoginCard{padding:28px 22px;border-radius:28px}
+  .kcLoginIcon{width:110px;height:110px;border-radius:26px}
+  .kcInputWrap{height:56px}
+  .kcInputWrap input{font-size:19px!important}
+  .kcLoginSub{font-size:11px;letter-spacing:1.2px}
+  .kcSecureLine span{width:72px}
+}
+
 </style>
-<link rel="manifest" href="./manifest.json?v=920">
-<link rel="apple-touch-icon" sizes="180x180" href="./icons/icon-180.png?v=920">
-<link rel="apple-touch-icon" href="./icons/icon-180.png?v=920">
-<link rel="icon" type="image/png" sizes="32x32" href="./icons/icon-32.png?v=920">
-<link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png?v=920">
+<link rel="manifest" href="./manifest.json?v=923">
+<link rel="apple-touch-icon" sizes="180x180" href="./icons/icon-180.png?v=923">
+<link rel="apple-touch-icon" href="./icons/icon-180.png?v=923">
+<link rel="icon" type="image/png" sizes="32x32" href="./icons/icon-32.png?v=923">
+<link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png?v=923">
 <meta name="theme-color" content="#dbeafe">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Kitchen Control">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
 </head><body><header class="appHeader"><div class="headerLeft" onclick="show('panel')"><div class="headerLogo">🌡️</div><h1>Kitchen Control</h1></div><button id="headerMenuBtn" class="powerBtn hidden" onclick="toggleUserMenu(event)">⏻</button></header><main>
-<section id="loginScreen" class="loginBox">
-<div class="loginLogo">🌡️</div><h2>Logowanie Kitchen Control</h2>
-<p>Wpisz login i PIN.</p>
-<div class="row"><input id="loginName" autocomplete="username" placeholder="Login / imię użytkownika"><input id="loginPin" type="password" inputmode="numeric" placeholder="PIN"><button class="btn primary" onclick="login()">Zaloguj</button></div>
-<div id="loginMsg"></div>
 
+<section id="loginScreen" class="loginBox kcLoginScreen">
+  <div class="kcThemeSwitch" aria-label="Wybór motywu">
+    <button type="button" id="themeLightBtn" onclick="setLoginTheme('light')">Jasny</button>
+    <button type="button" id="themeDarkBtn" onclick="setLoginTheme('dark')">Ciemny</button>
+  </div>
+
+  <div class="kcLoginCard">
+    <img class="kcLoginIcon" src="./icons/icon-512.png?v=923" alt="Kitchen Control">
+    <h2>Kitchen Control</h2>
+    <p class="kcLoginSub">SYSTEM MONITOROWANIA TEMPERATUR</p>
+
+    <div class="kcInputWrap">
+      <span class="kcInputIcon">👤</span>
+      <input id="loginName" autocomplete="username" placeholder="Login">
+    </div>
+
+    <div class="kcInputWrap">
+      <span class="kcInputIcon">🔒</span>
+      <input id="loginPin" type="password" inputmode="numeric" placeholder="Hasło / PIN">
+      <button type="button" class="kcEyeBtn" onclick="toggleLoginPin()" aria-label="Pokaż PIN">👁</button>
+    </div>
+
+    <button class="btn primary kcLoginBtn" onclick="login()">↪ ZALOGUJ</button>
+
+    <div id="loginMsg"></div>
+
+    <div class="kcSecureLine">
+      <span></span>
+      <b>🛡️ Bezpieczny dostęp</b>
+      <span></span>
+    </div>
+  </div>
 </section>
+
 <div id="appArea" class="hidden">
 <div class="userbar controls hidden"><span id="currentUserName"></span><span id="currentRole"></span></div>
 <div class="nav controls"><button onclick="show('panel')" id="t-panel" class="active">Panel</button><button onclick="show('temp')" id="t-temp">Temperatury</button><button onclick="show('clean')" id="t-clean">Sprzątanie</button><button onclick="show('haccp')" id="t-haccp">HACCP / daty</button><button onclick="show('month')" id="t-month">Miesiąc</button><button onclick="show('admin')" id="t-admin" class="adminOnly">Admin</button><button onclick="show('history')" id="t-history" class="managerOnly">Historia wpisów</button></div>
@@ -171,7 +408,7 @@ body{margin:0;font-family:Arial,sans-serif;background:#eef3f8;color:#172033}head
   <button class="btn adminOnly" onclick="exportBackup();closeUserMenu()">Backup JSON</button>
   <button class="btn danger" onclick="logout();closeUserMenu()">Wyloguj</button>
 </div>
-<div id="cellModal" class="hidden"></div><div class="versionFooter noPrint">v9.20</div></div></main><script>
+<div id="cellModal" class="hidden"></div><div class="versionFooter noPrint">v9.23</div></div></main><script>
 const defaults={locations:["Asian Street Food Mokotów","Asian Street Food Wola","Food Truck","Kuchnia Mokotów"],devices:{"Asian Street Food Mokotów":{chlodnie:["Chłodnia 1","Chłodnia 2","Chłodnia 3"],mroznie:["Mroźnia 1"]},"Asian Street Food Wola":{chlodnie:["Chłodnia 1","Chłodnia 2"],mroznie:["Mroźnia 1"]},"Food Truck":{chlodnie:["Chłodnia 1","Chłodnia 2"],mroznie:["Mroźnia 1"]},"Kuchnia Mokotów":{chlodnie:["Chłodnia 1","Chłodnia 2","Chłodnia 3","Chłodnia 4"],mroznie:["Mroźnia 1","Mroźnia 2"]}},cleaning:{Rano:["Obecność szkodników","Stan lodówek / brak wycieków","Czystość blatów startowa"],"W ciągu dnia":["Frytury","Wymiana frytury","Zlewy","Bieżące blaty"],Wieczór:["Pow. robocze / blaty","Kuchenki","Ściany i podłogi","Schładzarka","Chłodnie","Mroźnie","Mycie okapu"]},haccpItems:["Kontrola dat przydatności","Kontrola chłodni tygodniowa","Magazyn suchy miesięcznie","Zamrażarki miesięcznie"]};
 let state=JSON.parse(localStorage.getItem("kc_state_v7")||"null")||defaults;
 let logs=JSON.parse(localStorage.getItem("kc_logs_v7")||"[]");
@@ -203,6 +440,25 @@ function closeUserMenu(){
 function isAdmin(){return currentUser && currentUser.role==="Admin"}
 function isManager(){return currentUser && currentUser.role==="Manager"}function canEditEntries(){return currentUser && (currentUser.role==="Manager" || currentUser.role==="Admin")}
 function allowedLocs(){return currentUser?currentUser.locations:[]}function canViewAll(){return currentUser && (currentUser.role==="Admin" || currentUser.role==="Manager")}
+
+function setLoginTheme(theme){
+  const t = theme==="dark" ? "dark" : "light";
+  localStorage.setItem("kc_login_theme", t);
+  document.body.classList.remove("theme-light","theme-dark");
+  document.body.classList.add("theme-"+t);
+  const l=document.getElementById("themeLightBtn");
+  const d=document.getElementById("themeDarkBtn");
+  if(l&&d){l.classList.toggle("active",t==="light");d.classList.toggle("active",t==="dark");}
+}
+function initLoginTheme(){
+  setLoginTheme(localStorage.getItem("kc_login_theme") || "light");
+}
+
+function toggleLoginPin(){
+  const el=document.getElementById("loginPin");
+  if(!el)return;
+  el.type = el.type==="password" ? "text" : "password";
+}
 function normLogin(v){
   return String(v||"")
     .trim()
@@ -239,7 +495,7 @@ function login(){
 function logout(){localStorage.removeItem("kc_current_user_v9");currentUser=null;applyAccess()}
 function applyAccess(){
   if(currentUser){
-    loginScreen.classList.add("hidden");appArea.classList.remove("hidden");
+    loginScreen.classList.add("hidden");appArea.classList.remove("hidden");document.body.classList.remove("loginMode");
     currentUserName.innerText=currentUser.name;currentRole.innerText=currentUser.role;
     document.querySelectorAll(".adminOnly").forEach(x=>x.style.display=isAdmin()?"inline-block":"none");document.querySelectorAll(".managerOnly").forEach(x=>x.style.display=(currentUser.role==="Manager"||currentUser.role==="Admin")?"inline-block":"none");headerMenuBtn.classList.remove("hidden");
     fill();show("panel");
@@ -876,6 +1132,6 @@ function importBackup(event){
 }
 
 document.addEventListener("change",e=>{if(e.target.id==="tempLoc"){fillDev();renderAllLogs();}if(e.target.id==="tempDev"){fillVals();renderAllLogs();}if(e.target.id==="tempVal")status();if(e.target.id==="cleanShift"){renderCleanItems();renderAllLogs();}if(e.target.id==="shiftAdminLoc"){renderShiftAdmin();renderShiftSelects();renderCleanAdmin();}if(e.target.id==="cleanAdminLoc"){renderShiftSelects();renderCleanAdmin();}if(e.target.id==="cleanAdminShift")renderCleanAdmin();if(e.target.id==="haccpAdminLoc")renderHaccpAdmin();if(e.target.id==="cleanLoc"){renderShiftSelects();renderCleanItems();renderAllLogs();}if(e.target.id==="cleanDate")renderCleanItems();if(e.target.id==="panelDate")renderPanel();if(e.target.id==="haccpLoc"){renderHaccpItems();renderAllLogs();}if(["histLoc","histKind","histFrom","histTo"].includes(e.target.id))renderHistoryPage();if(e.target.id==="adminLoc")renderDevList();if(["monthLoc","monthType","monthPick"].includes(e.target.id))renderMonth();if(["sanLoc","sanType","sanMonth"].includes(e.target.id))renderSanepid()});
-fillLogin();applyAccess();
+fillLogin();initLoginTheme();applyAccess();
 try{loginName.addEventListener("keydown",e=>{if(e.key==="Enter")login()});loginPin.addEventListener("keydown",e=>{if(e.key==="Enter")login()});}catch(e){}
 </script></body></html>
