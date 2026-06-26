@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kitchen Control v9.40</title>
+<title>Kitchen Control v9.39</title>
 <style>
 body{margin:0;font-family:Arial,sans-serif;background:#eef3f8;color:#172033}header{background:linear-gradient(135deg,#dbeafe,#eff6ff);color:#172033;padding:12px 16px;position:sticky;top:0;z-index:5;border-bottom:1px solid #bfdbfe;cursor:pointer}h1{margin:0;font-size:22px}.small{color:#64748b}.appHeader{display:flex;align-items:center;justify-content:space-between;gap:10px}.headerLeft{display:flex;align-items:center;gap:10px}.headerLogo{width:42px;height:42px;border-radius:12px;background:#0f172a;color:white;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 2px 8px #0001}.powerBtn{border:0;background:white;color:#0f172a;border-radius:12px;width:44px;height:44px;font-size:22px;font-weight:900;box-shadow:0 1px 6px #0001}.userMenu{position:fixed;top:68px;right:14px;background:white;border:1px solid #d8dee8;border-radius:16px;box-shadow:0 10px 30px #0002;z-index:80;min-width:220px;padding:12px}.userMenuName{font-weight:900;font-size:17px}.userMenuRole{color:#64748b;margin:2px 0 10px}.userMenu button{width:100%;margin-top:8px}.menuBackdrop{position:fixed;inset:0;z-index:70;background:transparent}main{padding:14px;max-width:1200px;margin:auto}.nav{display:flex;gap:8px;overflow:auto;margin-bottom:10px}.nav button,.btn{border:0;border-radius:10px;padding:11px 14px;background:white;font-weight:700;box-shadow:0 1px 4px #0001}.nav button.active,.primary{background:#2563eb!important;color:white}.danger{background:#dc2626!important;color:white}.card{background:white;border-radius:14px;padding:14px;margin:10px 0;box-shadow:0 2px 10px #0001}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.loc{border:1px solid #d8dee8;border-radius:12px;padding:12px;background:#fafafa}.status{border-radius:99px;padding:4px 8px;font-size:12px;font-weight:800;display:inline-block}.ok{background:#dcfce7;color:#166534}.warn{background:#fef3c7;color:#92400e}.alarm{background:#fee2e2;color:#991b1b}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}select,input,textarea{border:1px solid #d8dee8;border-radius:10px;padding:10px;background:white;font-size:16px}textarea{width:100%;min-height:70px;margin-top:10px}table{border-collapse:collapse;width:100%;background:white}th,td{border:1px solid #111;padding:6px;text-align:center;font-size:13px;min-width:42px}th{background:#f3f4f6}.wrap{overflow:auto;border-radius:10px;border:1px solid #d8dee8}.vert{writing-mode:vertical-rl;transform:rotate(180deg);font-weight:800;white-space:nowrap}.pill{display:inline-flex;gap:6px;align-items:center;border:1px solid #d8dee8;padding:7px 9px;border-radius:99px;margin:4px;background:#f8fafc}.pill button{border:0;background:#fee2e2;border-radius:50%;width:22px;height:22px}.hidden{display:none}.filled-ok{background:#dcfce7}.filled-warn{background:#fef3c7}.filled-alarm{background:#fee2e2}.notice{padding:10px;border-radius:10px;background:#fef3c7;color:#92400e;font-weight:bold;margin-top:10px}.success{background:#dcfce7;color:#166534}.historyItem{border-bottom:1px solid #e5e7eb;padding:8px 0}.historyItem:last-child{border-bottom:0}.readonlyBadge{background:#e0e7ff;color:#3730a3;border-radius:99px;padding:4px 8px;font-size:12px;font-weight:800}.authorBadge{background:#eef2ff;color:#3730a3;border-radius:12px;padding:9px 11px;font-weight:800;display:inline-block}.sanepidHeader{display:none}.editBox{background:#f8fafc;border:1px solid #d8dee8;border-radius:12px;padding:10px;margin-top:10px}
 .userbar{display:none!important}
@@ -38,7 +38,7 @@ body{margin:0;font-family:Arial,sans-serif;background:#eef3f8;color:#172033}head
 .progressBar.pctAlarmBar{background:#ef4444}
 
 
-/* Login themes v9.40 */
+/* Login themes v9.39 */
 body.loginMode.theme-light{
   background:
     radial-gradient(circle at 50% 22%, rgba(37,99,235,.10), transparent 35%),
@@ -247,7 +247,7 @@ body.theme-dark .kcSecureLine span{background:rgba(148,163,184,.38)}
 }
 
 
-/* v9.40 login fixes */
+/* v9.39 login fixes */
 .kcLoginScreen.hidden{display:none!important}
 .kcSvgIcon svg,
 .kcEyeBtn svg,
@@ -266,7 +266,7 @@ body.theme-light .kcSecureBadge svg{color:#718096}
 body.theme-dark .kcSecureBadge svg{color:#94a3b8}
 
 
-/* v9.40 login layout fix */
+/* v9.39 login layout fix */
 body.loginMode{
   min-height:100vh;
   overflow-x:hidden;
@@ -378,7 +378,7 @@ body.theme-dark .kcThemeSwitch{
 }
 
 
-/* v9.40 hard login centering */
+/* v9.39 hard login centering */
 body.loginMode header{display:none!important}
 body.loginMode main{min-height:100vh!important;padding:0!important}
 body.loginMode #appArea{display:none!important}
@@ -413,7 +413,7 @@ body.loginMode .kcThemeSwitch{margin:0 auto!important}
 }
 
 
-/* v9.40 theme persistence + header logo + phone login fit */
+/* v9.39 theme persistence + header logo + phone login fit */
 .headerLogoImg{
   width:56px;
   height:56px;
@@ -539,7 +539,7 @@ body.theme-dark:not(.loginMode) .themeMiniBtn{
 }
 
 
-/* v9.40 dark readability fix — jasnego motywu nie ruszamy */
+/* v9.39 dark readability fix — jasnego motywu nie ruszamy */
 body.theme-dark:not(.loginMode){
   --kc-bg:#071426;
   --kc-panel:#0f2036;
@@ -726,7 +726,7 @@ body.theme-dark:not(.loginMode) .pctOk{
 }
 
 
-/* v9.40 dark theme detail fixes — tylko ciemny motyw */
+/* v9.39 dark theme detail fixes — tylko ciemny motyw */
 body.theme-dark:not(.loginMode){
   --kc-bg:#071426;
   --kc-card:#102035;
@@ -957,7 +957,7 @@ body.theme-dark:not(.loginMode) .dashCard div:not(.percentBadge):not(.pctAlarm):
 }
 
 
-/* v9.40 — tylko poprawka Panelu i Miesiąca w ciemnym motywie */
+/* v9.39 — tylko poprawka Panelu i Miesiąca w ciemnym motywie */
 
 /* PANEL: karty lokalizacji i rozwinięte szczegóły mają być ciemne i czytelne */
 body.theme-dark:not(.loginMode) #panel .dashLocation,
@@ -1070,7 +1070,7 @@ body.theme-dark:not(.loginMode) #month th{
 
 
 /* =========================================================
-   v9.40 DARK THEME REFACTOR
+   v9.39 DARK THEME REFACTOR
    cel: czytelność bez ruszania jasnego motywu
    ========================================================= */
 
@@ -1348,22 +1348,863 @@ body.theme-dark:not(.loginMode) header{
   body.theme-dark:not(.loginMode) header h1{font-size:30px!important;line-height:1.05!important}
 }
 
+
+/* v9.39 — PANEL + chmurka wylogowania, tylko ciemny motyw */
+
+/* PANEL: granatowe kafelki lokalizacji */
+body.theme-dark:not(.loginMode) #panel .kcPanelNavy,
+body.theme-dark:not(.loginMode) #panel .loc,
+body.theme-dark:not(.loginMode) #panel .location,
+body.theme-dark:not(.loginMode) #panel .locationCard,
+body.theme-dark:not(.loginMode) #panel .dashLocation,
+body.theme-dark:not(.loginMode) #panel .dashCard,
+body.theme-dark:not(.loginMode) #panel .summaryCard,
+body.theme-dark:not(.loginMode) #panel > div:not(.controls):not(.row),
+body.theme-dark:not(.loginMode) #panel [style*="background:#fff"],
+body.theme-dark:not(.loginMode) #panel [style*="background: #fff"],
+body.theme-dark:not(.loginMode) #panel [style*="background:white"],
+body.theme-dark:not(.loginMode) #panel [style*="background: white"],
+body.theme-dark:not(.loginMode) #panel [style*="background:#ffffff"],
+body.theme-dark:not(.loginMode) #panel [style*="background: #ffffff"]{
+  background:linear-gradient(180deg,#10233b 0%,#0b1a2e 100%)!important;
+  color:#f8fafc!important;
+  border:1px solid rgba(148,163,184,.28)!important;
+  box-shadow:0 14px 32px rgba(0,0,0,.28)!important;
+}
+
+/* PANEL: tekst w kafelkach */
+body.theme-dark:not(.loginMode) #panel .kcPanelNavy h1,
+body.theme-dark:not(.loginMode) #panel .kcPanelNavy h2,
+body.theme-dark:not(.loginMode) #panel .kcPanelNavy h3,
+body.theme-dark:not(.loginMode) #panel .kcPanelNavy h4,
+body.theme-dark:not(.loginMode) #panel .kcPanelNavy p,
+body.theme-dark:not(.loginMode) #panel .kcPanelNavy div:not(.percentBadge):not(.pctAlarm):not(.pctWarn):not(.pctMid):not(.pctOk):not(.badge):not(.status),
+body.theme-dark:not(.loginMode) #panel .kcPanelNavy span:not(.percentBadge):not(.pctAlarm):not(.pctWarn):not(.pctMid):not(.pctOk):not(.badge):not(.status){
+  color:#f8fafc!important;
+}
+
+/* PANEL: rozwinięte sekcje i rzędy */
+body.theme-dark:not(.loginMode) #panel .kcPanelRowNavy,
+body.theme-dark:not(.loginMode) #panel .detailSection,
+body.theme-dark:not(.loginMode) #panel .dueBox,
+body.theme-dark:not(.loginMode) #panel .dueItem,
+body.theme-dark:not(.loginMode) #panel .taskLine,
+body.theme-dark:not(.loginMode) #panel .metricRow{
+  background:rgba(15,23,42,.74)!important;
+  color:#f8fafc!important;
+  border:1px solid rgba(148,163,184,.22)!important;
+}
+body.theme-dark:not(.loginMode) #panel .kcPanelRowNavy *,
+body.theme-dark:not(.loginMode) #panel .detailSection *,
+body.theme-dark:not(.loginMode) #panel .dueBox *,
+body.theme-dark:not(.loginMode) #panel .dueItem *,
+body.theme-dark:not(.loginMode) #panel .taskLine *,
+body.theme-dark:not(.loginMode) #panel .metricRow *{
+  color:#f8fafc!important;
+}
+
+/* PANEL: zostaw kolorowe badge czytelne */
+body.theme-dark:not(.loginMode) #panel .percentBadge,
+body.theme-dark:not(.loginMode) #panel .pctAlarm,
+body.theme-dark:not(.loginMode) #panel .status.alarm{
+  background:#fee2e2!important;
+  color:#991b1b!important;
+}
+body.theme-dark:not(.loginMode) #panel .pctWarn,
+body.theme-dark:not(.loginMode) #panel .status.warn{
+  background:#fef3c7!important;
+  color:#92400e!important;
+}
+body.theme-dark:not(.loginMode) #panel .pctMid{
+  background:#ffedd5!important;
+  color:#9a3412!important;
+}
+body.theme-dark:not(.loginMode) #panel .pctOk,
+body.theme-dark:not(.loginMode) #panel .status.ok{
+  background:#dcfce7!important;
+  color:#166534!important;
+}
+
+/* Chmurka wylogowania/użytkownika */
+body.theme-dark:not(.loginMode) .kcDarkUserBubble,
+body.theme-dark:not(.loginMode) #userMenu,
+body.theme-dark:not(.loginMode) .userMenu,
+body.theme-dark:not(.loginMode) .userDropdown,
+body.theme-dark:not(.loginMode) .dropdown,
+body.theme-dark:not(.loginMode) .popover,
+body.theme-dark:not(.loginMode) .menuPopover,
+body.theme-dark:not(.loginMode) [class*="userMenu"],
+body.theme-dark:not(.loginMode) [class*="UserMenu"]{
+  background:linear-gradient(180deg,#10233b,#071426)!important;
+  color:#f8fafc!important;
+  border:1px solid rgba(148,163,184,.30)!important;
+  box-shadow:0 20px 44px rgba(0,0,0,.44)!important;
+}
+body.theme-dark:not(.loginMode) .kcDarkUserBubble *,
+body.theme-dark:not(.loginMode) #userMenu *,
+body.theme-dark:not(.loginMode) .userMenu *,
+body.theme-dark:not(.loginMode) .userDropdown *,
+body.theme-dark:not(.loginMode) .dropdown *,
+body.theme-dark:not(.loginMode) .popover *,
+body.theme-dark:not(.loginMode) .menuPopover *{
+  color:#f8fafc!important;
+}
+body.theme-dark:not(.loginMode) #userMenu button,
+body.theme-dark:not(.loginMode) .kcDarkUserBubble button{
+  background:#ef4444!important;
+  color:#fff!important;
+  border-color:#ef4444!important;
+}
+
+
+/* v9.39 — PANEL badge colors + okresowe info readability */
+
+/* Sprzątanie okresowe: tekst "brak czynności okresowych" / informacyjne pigułki */
+body.theme-dark:not(.loginMode) #panel .dueBox .small,
+body.theme-dark:not(.loginMode) #panel .dueBox .muted,
+body.theme-dark:not(.loginMode) #panel .dueBox p,
+body.theme-dark:not(.loginMode) #panel .dueBox em,
+body.theme-dark:not(.loginMode) #panel .dueBox [class*="empty"],
+body.theme-dark:not(.loginMode) #panel .dueBox [class*="Empty"]{
+  background:#fef3c7!important;
+  color:#111827!important;
+  border:1px solid #facc15!important;
+  border-radius:12px!important;
+  padding:8px 10px!important;
+  display:inline-block!important;
+  font-weight:800!important;
+}
+
+/* Panel — wszystkie statusy mają mieć mocniejszy kolor i czarną czcionkę */
+body.theme-dark:not(.loginMode) #panel .percentBadge,
+body.theme-dark:not(.loginMode) #panel .status,
+body.theme-dark:not(.loginMode) #panel .badge,
+body.theme-dark:not(.loginMode) #panel .pctAlarm,
+body.theme-dark:not(.loginMode) #panel .pctWarn,
+body.theme-dark:not(.loginMode) #panel .pctMid,
+body.theme-dark:not(.loginMode) #panel .pctOk{
+  color:#111827!important;
+  font-weight:950!important;
+  border:1px solid rgba(0,0,0,.16)!important;
+  text-shadow:none!important;
+}
+
+/* zielony: OK / wykonane / 100% */
+body.theme-dark:not(.loginMode) #panel .pctOk,
+body.theme-dark:not(.loginMode) #panel .status.ok,
+body.theme-dark:not(.loginMode) #panel .ok,
+body.theme-dark:not(.loginMode) #panel [class*="ok"],
+body.theme-dark:not(.loginMode) #panel [class*="Ok"]{
+  background:#22c55e!important;
+  color:#111827!important;
+}
+
+/* żółty: uwaga / częściowo / dziś termin */
+body.theme-dark:not(.loginMode) #panel .pctWarn,
+body.theme-dark:not(.loginMode) #panel .status.warn,
+body.theme-dark:not(.loginMode) #panel .warn,
+body.theme-dark:not(.loginMode) #panel [class*="warn"],
+body.theme-dark:not(.loginMode) #panel [class*="Warn"]{
+  background:#facc15!important;
+  color:#111827!important;
+}
+
+/* pomarańczowy dla średnich procentów, jeżeli występuje */
+body.theme-dark:not(.loginMode) #panel .pctMid{
+  background:#fb923c!important;
+  color:#111827!important;
+}
+
+/* czerwony: brak / alarm / 0% */
+body.theme-dark:not(.loginMode) #panel .pctAlarm,
+body.theme-dark:not(.loginMode) #panel .status.alarm,
+body.theme-dark:not(.loginMode) #panel .alarm,
+body.theme-dark:not(.loginMode) #panel [class*="alarm"],
+body.theme-dark:not(.loginMode) #panel [class*="Alarm"]{
+  background:#ef4444!important;
+  color:#111827!important;
+}
+
+/* jeśli status jest zwykłym spanem bez klasy ok/warn/alarm, zostaw go jako jasny czytelny */
+body.theme-dark:not(.loginMode) #panel .metricRow span,
+body.theme-dark:not(.loginMode) #panel .dueItem span:last-child,
+body.theme-dark:not(.loginMode) #panel .taskLine span:last-child{
+  color:#111827!important;
+}
+
+/* metryki 4/7, 0/3 itd. */
+body.theme-dark:not(.loginMode) #panel .metricRow .status,
+body.theme-dark:not(.loginMode) #panel .metricRow .badge,
+body.theme-dark:not(.loginMode) #panel .metricRow span:last-child{
+  border-radius:999px!important;
+  padding:4px 9px!important;
+  font-weight:950!important;
+}
+
+/* pasek postępu — mocniejsze kolory */
+body.theme-dark:not(.loginMode) #panel .progressBar.pctOkBar,
+body.theme-dark:not(.loginMode) #panel .pctOkBar{background:#22c55e!important}
+body.theme-dark:not(.loginMode) #panel .progressBar.pctWarnBar,
+body.theme-dark:not(.loginMode) #panel .pctWarnBar{background:#facc15!important}
+body.theme-dark:not(.loginMode) #panel .progressBar.pctMidBar,
+body.theme-dark:not(.loginMode) #panel .pctMidBar{background:#fb923c!important}
+body.theme-dark:not(.loginMode) #panel .progressBar.pctAlarmBar,
+body.theme-dark:not(.loginMode) #panel .pctAlarmBar{background:#ef4444!important}
+
+
+/* v9.39 — finalne statusy panelu w jasnym i ciemnym motywie */
+
+/* Statusy w PANELU — oba motywy */
+#panel .percentBadge,
+#panel .status,
+#panel .badge,
+#panel .pctAlarm,
+#panel .pctWarn,
+#panel .pctMid,
+#panel .pctOk{
+  color:#111827!important;
+  font-weight:950!important;
+  border:1px solid rgba(0,0,0,.16)!important;
+  text-shadow:none!important;
+}
+
+/* zielony: OK / wykonane / 100% */
+#panel .pctOk,
+#panel .status.ok,
+#panel .ok{
+  background:#22c55e!important;
+  color:#111827!important;
+}
+
+/* żółty: uwaga / częściowo / dziś termin */
+#panel .pctWarn,
+#panel .status.warn,
+#panel .warn{
+  background:#facc15!important;
+  color:#111827!important;
+}
+
+/* pomarańczowy: średnie wykonanie */
+#panel .pctMid{
+  background:#fb923c!important;
+  color:#111827!important;
+}
+
+/* czerwony: brak / alarm / 0% */
+#panel .pctAlarm,
+#panel .status.alarm,
+#panel .alarm{
+  background:#ef4444!important;
+  color:#111827!important;
+}
+
+/* Metryki 4/7, 0/3 itd. */
+#panel .metricRow .status,
+#panel .metricRow .badge,
+#panel .metricRow span:last-child{
+  border-radius:999px!important;
+  padding:4px 9px!important;
+  font-weight:950!important;
+  color:#111827!important;
+}
+
+/* Pasek postępu — mocniejsze kolory */
+#panel .progressBar.pctOkBar,
+#panel .pctOkBar{background:#22c55e!important}
+#panel .progressBar.pctWarnBar,
+#panel .pctWarnBar{background:#facc15!important}
+#panel .progressBar.pctMidBar,
+#panel .pctMidBar{background:#fb923c!important}
+#panel .progressBar.pctAlarmBar,
+#panel .pctAlarmBar{background:#ef4444!important}
+
+/* Sprzątanie okresowe — brak zadań = informacja, nie ostrzeżenie */
+#panel .dueBox .small,
+#panel .dueBox .muted,
+#panel .dueBox p,
+#panel .dueBox em,
+#panel .dueBox [class*="empty"],
+#panel .dueBox [class*="Empty"]{
+  background:#0f2036!important;
+  color:#f8fafc!important;
+  border:1px solid rgba(148,163,184,.32)!important;
+  border-radius:12px!important;
+  padding:8px 10px!important;
+  display:inline-block!important;
+  font-weight:850!important;
+}
+
+/* W ciemnym motywie wymuś ten sam wygląd informacji */
+body.theme-dark:not(.loginMode) #panel .dueBox .small,
+body.theme-dark:not(.loginMode) #panel .dueBox .muted,
+body.theme-dark:not(.loginMode) #panel .dueBox p,
+body.theme-dark:not(.loginMode) #panel .dueBox em,
+body.theme-dark:not(.loginMode) #panel .dueBox [class*="empty"],
+body.theme-dark:not(.loginMode) #panel .dueBox [class*="Empty"]{
+  background:#0f2036!important;
+  color:#f8fafc!important;
+  border:1px solid rgba(148,163,184,.32)!important;
+}
+
+/* Nie pozwól dziedziczyć białej czcionki do statusów */
+body.theme-dark:not(.loginMode) #panel .percentBadge,
+body.theme-dark:not(.loginMode) #panel .status,
+body.theme-dark:not(.loginMode) #panel .badge,
+body.theme-dark:not(.loginMode) #panel .pctAlarm,
+body.theme-dark:not(.loginMode) #panel .pctWarn,
+body.theme-dark:not(.loginMode) #panel .pctMid,
+body.theme-dark:not(.loginMode) #panel .pctOk{
+  color:#111827!important;
+}
+
+
+/* v9.39 — final panel cleanup */
+
+/* Sprzątanie okresowe — informacja "Brak zadań okresowych" zawsze granat + biały tekst */
+#panel .dueBox .small,
+#panel .dueBox .muted,
+#panel .dueBox p,
+#panel .dueBox em,
+#panel .dueBox [class*="empty"],
+#panel .dueBox [class*="Empty"],
+body.theme-dark:not(.loginMode) #panel .dueBox .small,
+body.theme-dark:not(.loginMode) #panel .dueBox .muted,
+body.theme-dark:not(.loginMode) #panel .dueBox p,
+body.theme-dark:not(.loginMode) #panel .dueBox em,
+body.theme-dark:not(.loginMode) #panel .dueBox [class*="empty"],
+body.theme-dark:not(.loginMode) #panel .dueBox [class*="Empty"]{
+  background:#0f2036!important;
+  color:#f8fafc!important;
+  border:1px solid rgba(148,163,184,.34)!important;
+  border-radius:14px!important;
+  padding:10px 12px!important;
+  display:block!important;
+  font-weight:850!important;
+  text-shadow:none!important;
+}
+
+/* Jeżeli komunikat jest w inline style, też wymuś granat */
+#panel .dueBox [style*="background"],
+body.theme-dark:not(.loginMode) #panel .dueBox [style*="background"]{
+  background:#0f2036!important;
+  color:#f8fafc!important;
+}
+
+/* Usuwamy dublujące statusy "brak / wykonane / ok" po prawej w rozwiniętych szczegółach.
+   Liczniki 0/7, 4/4 i procenty zostają. */
+#panel .dueItem .status,
+#panel .dueItem .badge,
+#panel .taskLine .status,
+#panel .taskLine .badge,
+#panel .doneRow .status,
+#panel .doneRow .badge,
+#panel .missingRow .status,
+#panel .missingRow .badge,
+#panel .detailSection .status:not(.percentBadge):not(.pctAlarm):not(.pctWarn):not(.pctMid):not(.pctOk),
+#panel .detailSection .badge:not(.percentBadge):not(.pctAlarm):not(.pctWarn):not(.pctMid):not(.pctOk),
+body.theme-dark:not(.loginMode) #panel .dueItem .status,
+body.theme-dark:not(.loginMode) #panel .dueItem .badge,
+body.theme-dark:not(.loginMode) #panel .taskLine .status,
+body.theme-dark:not(.loginMode) #panel .taskLine .badge,
+body.theme-dark:not(.loginMode) #panel .doneRow .status,
+body.theme-dark:not(.loginMode) #panel .doneRow .badge,
+body.theme-dark:not(.loginMode) #panel .missingRow .status,
+body.theme-dark:not(.loginMode) #panel .missingRow .badge{
+  display:none!important;
+}
+
+/* Nie chowaj liczników 0/3, 5/14 ani procentów */
+#panel .metricRow .status,
+#panel .metricRow .badge,
+#panel .percentBadge,
+#panel .pctAlarm,
+#panel .pctWarn,
+#panel .pctMid,
+#panel .pctOk{
+  display:inline-flex!important;
+}
+
+/* Statusy/liczniki w panelu: mocne kolory + czarny tekst w obu motywach */
+#panel .percentBadge,
+#panel .pctAlarm,
+#panel .pctWarn,
+#panel .pctMid,
+#panel .pctOk,
+#panel .metricRow .status,
+#panel .metricRow .badge{
+  color:#111827!important;
+  font-weight:950!important;
+  border:1px solid rgba(0,0,0,.16)!important;
+  text-shadow:none!important;
+}
+#panel .pctOk{background:#22c55e!important}
+#panel .pctWarn{background:#facc15!important}
+#panel .pctMid{background:#fb923c!important}
+#panel .pctAlarm,
+#panel .percentBadge{background:#ef4444!important}
+
+/* Wiersze szczegółów bez statusu po prawej wyglądają czyściej */
+#panel .dueItem,
+#panel .taskLine,
+#panel .doneRow,
+#panel .missingRow{
+  padding-right:14px!important;
+}
+
+
+#panel .kcHideDuplicateStatus{display:none!important}
+#panel .kcPeriodEmptyInfo,
+body.theme-dark:not(.loginMode) #panel .kcPeriodEmptyInfo{
+  background:#0f2036!important;
+  color:#f8fafc!important;
+  border:1px solid rgba(148,163,184,.34)!important;
+  border-radius:14px!important;
+  padding:10px 12px!important;
+  display:block!important;
+  font-weight:850!important;
+}
+
+
+/* v9.39 — panel cleanup */
+#panel .kcHideLocationStatus{
+  display:none!important;
+}
+
+/* Sprzątanie okresowe — kafelek z brakiem i kafelek z pozycją */
+#panel .kcPeriodTile,
+body.theme-dark:not(.loginMode) #panel .kcPeriodTile,
+#panel .dueBox .kcPeriodTile,
+body.theme-dark:not(.loginMode) #panel .dueBox .kcPeriodTile{
+  background:#0f2036!important;
+  color:#f8fafc!important;
+  border:1px solid rgba(148,163,184,.34)!important;
+  border-radius:14px!important;
+  padding:10px 12px!important;
+  display:block!important;
+  font-weight:850!important;
+  text-shadow:none!important;
+}
+
+/* Wszystko wewnątrz kafelka okresowego ma być czytelne */
+#panel .kcPeriodTile *,
+body.theme-dark:not(.loginMode) #panel .kcPeriodTile *{
+  color:#f8fafc!important;
+}
+
+/* Czerwona kropka/status w kafelku okresowym może zostać czerwony */
+#panel .kcPeriodTile .dot,
+#panel .kcPeriodTile [class*="dot"],
+#panel .kcPeriodTile [class*="Dot"]{
+  color:#ef4444!important;
+}
+
+/* usuń wymuszenie żółtego tła z wcześniejszych wersji */
+#panel .dueBox .small,
+#panel .dueBox .muted,
+#panel .dueBox p,
+#panel .dueBox em,
+#panel .dueBox [class*="empty"],
+#panel .dueBox [class*="Empty"],
+body.theme-dark:not(.loginMode) #panel .dueBox .small,
+body.theme-dark:not(.loginMode) #panel .dueBox .muted,
+body.theme-dark:not(.loginMode) #panel .dueBox p,
+body.theme-dark:not(.loginMode) #panel .dueBox em,
+body.theme-dark:not(.loginMode) #panel .dueBox [class*="empty"],
+body.theme-dark:not(.loginMode) #panel .dueBox [class*="Empty"]{
+  background:#0f2036!important;
+  color:#f8fafc!important;
+  border:1px solid rgba(148,163,184,.34)!important;
+}
+
+
+/* v9.39 — sprzątanie okresowe final */
+
+/* W panelu pozycje sprzątania okresowego BEZ dodatkowego tła */
+#panel .kcPeriodPlainLine,
+body.theme-dark:not(.loginMode) #panel .kcPeriodPlainLine{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  padding:0!important;
+  margin:8px 0!important;
+  color:inherit!important;
+  display:block!important;
+  font-weight:inherit!important;
+}
+
+/* W środku tekst pozostaje czytelny na tle głównego kafelka */
+#panel .kcPeriodPlainLine *,
+body.theme-dark:not(.loginMode) #panel .kcPeriodPlainLine *{
+  background:transparent!important;
+  color:inherit!important;
+}
+
+/* Nadpisz wcześniejsze tła kafelka okresowego dla pozycji z zadaniem */
+#panel .dueBox .kcPeriodPlainLine,
+body.theme-dark:not(.loginMode) #panel .dueBox .kcPeriodPlainLine,
+#panel .dueBox [class*="kcPeriodPlainLine"],
+body.theme-dark:not(.loginMode) #panel .dueBox [class*="kcPeriodPlainLine"]{
+  background:transparent!important;
+  border:0!important;
+  color:#f8fafc!important;
+}
+
+/* Brak zadań okresowych może zostać informacyjnie granatowy */
+#panel .dueBox .kcPeriodEmptyInfo,
+body.theme-dark:not(.loginMode) #panel .dueBox .kcPeriodEmptyInfo{
+  background:#0f2036!important;
+  color:#f8fafc!important;
+  border:1px solid rgba(148,163,184,.34)!important;
+  border-radius:14px!important;
+  padding:10px 12px!important;
+}
+
+/* Usuń efekt szarych/żółtych bloków spod zadania okresowego */
+#panel .dueBox [style*="background"] .kcPeriodPlainLine,
+body.theme-dark:not(.loginMode) #panel .dueBox [style*="background"] .kcPeriodPlainLine{
+  background:transparent!important;
+}
+
+
+/* v9.39 — Sprzątanie w panelu: codziennie + 7/14/30 w jednej liście */
+#panel .periodicIntegrated,
+body.theme-dark:not(.loginMode) #panel .periodicIntegrated{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+
+#panel .periodicIntegrated .taskLeft,
+body.theme-dark:not(.loginMode) #panel .periodicIntegrated .taskLeft{
+  color:inherit!important;
+  font-weight:900!important;
+}
+
+#panel .periodicIntegrated .taskMeta,
+#panel .taskLine .taskMeta{
+  color:#64748b!important;
+  font-size:13px!important;
+  font-weight:700!important;
+}
+
+body.theme-dark:not(.loginMode) #panel .periodicIntegrated .taskMeta,
+body.theme-dark:not(.loginMode) #panel .taskLine .taskMeta{
+  color:#cbd5e1!important;
+}
+
+/* stare osobne okresowe, jeśli zostało gdzieś w DOM, jest ukryte */
+#panel .periodicList,
+#panel .dueBox{
+  display:none!important;
+}
+
+
+/* v9.39 — Admin czytelność, bez zmiany logiki */
+
+/* Admin: sekcje i karty */
+#admin section,
+#admin .card,
+#admin .adminCard,
+#admin [class*="card"],
+#admin [class*="Card"]{
+  border-radius:22px!important;
+}
+
+/* Ciemny motyw — admin */
+body.theme-dark:not(.loginMode) #admin,
+body.theme-dark:not(.loginMode) #admin section{
+  color:#f8fafc!important;
+}
+
+body.theme-dark:not(.loginMode) #admin section,
+body.theme-dark:not(.loginMode) #admin .card,
+body.theme-dark:not(.loginMode) #admin .adminCard,
+body.theme-dark:not(.loginMode) #admin [class*="card"],
+body.theme-dark:not(.loginMode) #admin [class*="Card"]{
+  background:linear-gradient(180deg,#132238,#0d1b2f)!important;
+  border:1px solid rgba(148,163,184,.26)!important;
+  color:#f8fafc!important;
+  box-shadow:0 12px 28px rgba(0,0,0,.20)!important;
+}
+
+/* Nagłówki i opisy w Admin */
+body.theme-dark:not(.loginMode) #admin h1,
+body.theme-dark:not(.loginMode) #admin h2,
+body.theme-dark:not(.loginMode) #admin h3,
+body.theme-dark:not(.loginMode) #admin h4,
+body.theme-dark:not(.loginMode) #admin label{
+  color:#f8fafc!important;
+}
+
+body.theme-dark:not(.loginMode) #admin p,
+body.theme-dark:not(.loginMode) #admin .small,
+body.theme-dark:not(.loginMode) #admin .muted,
+body.theme-dark:not(.loginMode) #admin .hint{
+  color:#cbd5e1!important;
+}
+
+/* Pola formularzy w Admin */
+body.theme-dark:not(.loginMode) #admin input,
+body.theme-dark:not(.loginMode) #admin select,
+body.theme-dark:not(.loginMode) #admin textarea{
+  background:#111827!important;
+  color:#f8fafc!important;
+  border:1px solid #334155!important;
+  box-shadow:none!important;
+}
+
+body.theme-dark:not(.loginMode) #admin input::placeholder,
+body.theme-dark:not(.loginMode) #admin textarea::placeholder{
+  color:#9ca3af!important;
+}
+
+/* Dodane lokalizacje / urządzenia / czynności — jasne kapsułki z ciemnym tekstem */
+body.theme-dark:not(.loginMode) #admin .chip,
+body.theme-dark:not(.loginMode) #admin .tag,
+body.theme-dark:not(.loginMode) #admin .pill,
+body.theme-dark:not(.loginMode) #admin [class*="chip"],
+body.theme-dark:not(.loginMode) #admin [class*="Chip"],
+body.theme-dark:not(.loginMode) #admin [class*="tag"],
+body.theme-dark:not(.loginMode) #admin [class*="Tag"],
+body.theme-dark:not(.loginMode) #admin [class*="pill"],
+body.theme-dark:not(.loginMode) #admin [class*="Pill"],
+body.theme-dark:not(.loginMode) #admin [style*="background:#fff"],
+body.theme-dark:not(.loginMode) #admin [style*="background: #fff"],
+body.theme-dark:not(.loginMode) #admin [style*="background:white"],
+body.theme-dark:not(.loginMode) #admin [style*="background: white"],
+body.theme-dark:not(.loginMode) #admin [style*="background:#ffffff"],
+body.theme-dark:not(.loginMode) #admin [style*="background: #ffffff"]{
+  background:#f8fafc!important;
+  color:#111827!important;
+  border:1px solid #dbe4ef!important;
+}
+
+/* Tekst wewnątrz jasnych kapsułek */
+body.theme-dark:not(.loginMode) #admin .chip *,
+body.theme-dark:not(.loginMode) #admin .tag *,
+body.theme-dark:not(.loginMode) #admin .pill *,
+body.theme-dark:not(.loginMode) #admin [class*="chip"] *,
+body.theme-dark:not(.loginMode) #admin [class*="Chip"] *,
+body.theme-dark:not(.loginMode) #admin [class*="tag"] *,
+body.theme-dark:not(.loginMode) #admin [class*="Tag"] *,
+body.theme-dark:not(.loginMode) #admin [class*="pill"] *,
+body.theme-dark:not(.loginMode) #admin [class*="Pill"] *,
+body.theme-dark:not(.loginMode) #admin [style*="background:#fff"] *,
+body.theme-dark:not(.loginMode) #admin [style*="background: #fff"] *,
+body.theme-dark:not(.loginMode) #admin [style*="background:white"] *,
+body.theme-dark:not(.loginMode) #admin [style*="background: white"] *{
+  color:#111827!important;
+}
+
+/* Małe przyciski X/usuwania w kapsułkach */
+body.theme-dark:not(.loginMode) #admin button,
+body.theme-dark:not(.loginMode) #admin .btn{
+  font-weight:800!important;
+}
+
+body.theme-dark:not(.loginMode) #admin .chip button,
+body.theme-dark:not(.loginMode) #admin .tag button,
+body.theme-dark:not(.loginMode) #admin .pill button,
+body.theme-dark:not(.loginMode) #admin [class*="chip"] button,
+body.theme-dark:not(.loginMode) #admin [class*="tag"] button,
+body.theme-dark:not(.loginMode) #admin [class*="pill"] button{
+  background:#fee2e2!important;
+  color:#2563eb!important;
+  border:0!important;
+}
+
+/* Karty pracowników — czytelne w ciemnym */
+body.theme-dark:not(.loginMode) #admin .userCard,
+body.theme-dark:not(.loginMode) #admin [class*="user"],
+body.theme-dark:not(.loginMode) #admin [class*="User"]{
+  color:#f8fafc!important;
+}
+
+/* Checkboxy / listy uprawnień */
+body.theme-dark:not(.loginMode) #admin input[type="checkbox"]{
+  accent-color:#3b82f6;
+}
+
+body.theme-dark:not(.loginMode) #admin label span,
+body.theme-dark:not(.loginMode) #admin label div{
+  color:inherit;
+}
+
+/* Jasny motyw — tylko delikatne poprawienie czytelności Admin */
+body:not(.theme-dark) #admin .chip,
+body:not(.theme-dark) #admin .tag,
+body:not(.theme-dark) #admin .pill,
+body:not(.theme-dark) #admin [class*="chip"],
+body:not(.theme-dark) #admin [class*="Chip"],
+body:not(.theme-dark) #admin [class*="tag"],
+body:not(.theme-dark) #admin [class*="Tag"],
+body:not(.theme-dark) #admin [class*="pill"],
+body:not(.theme-dark) #admin [class*="Pill"]{
+  color:#111827!important;
+  font-weight:750!important;
+}
+
+/* Administrator/Pracownik badge czytelne */
+#admin .role,
+#admin [class*="role"],
+#admin [class*="Role"]{
+  font-weight:900!important;
+}
+
+
+/* v9.39 — Admin dark mode concrete fix */
+body.theme-dark:not(.loginMode) #admin{
+  color:#f8fafc!important;
+}
+
+/* top-level admin cards/sections */
+body.theme-dark:not(.loginMode) #admin > div,
+body.theme-dark:not(.loginMode) #admin > section,
+body.theme-dark:not(.loginMode) #admin .box,
+body.theme-dark:not(.loginMode) #admin .card,
+body.theme-dark:not(.loginMode) #admin .panel,
+body.theme-dark:not(.loginMode) #admin .adminBox,
+body.theme-dark:not(.loginMode) #admin .adminSection{
+  background:linear-gradient(180deg,#132238,#0d1b2f)!important;
+  color:#f8fafc!important;
+  border-color:rgba(148,163,184,.28)!important;
+}
+
+/* Admin dynamic items: locations/devices/tasks/users */
+body.theme-dark:not(.loginMode) #admin .kcAdminItem,
+body.theme-dark:not(.loginMode) #admin .adminItem,
+body.theme-dark:not(.loginMode) #admin .item,
+body.theme-dark:not(.loginMode) #admin .listItem,
+body.theme-dark:not(.loginMode) #admin .rowItem,
+body.theme-dark:not(.loginMode) #admin .deviceItem,
+body.theme-dark:not(.loginMode) #admin .locItem,
+body.theme-dark:not(.loginMode) #admin .taskItem,
+body.theme-dark:not(.loginMode) #admin .userItem{
+  background:#f8fafc!important;
+  color:#111827!important;
+  border:1px solid #dbe4ef!important;
+  border-radius:14px!important;
+}
+
+/* text inside dynamic light items */
+body.theme-dark:not(.loginMode) #admin .kcAdminItem *,
+body.theme-dark:not(.loginMode) #admin .adminItem *,
+body.theme-dark:not(.loginMode) #admin .item *,
+body.theme-dark:not(.loginMode) #admin .listItem *,
+body.theme-dark:not(.loginMode) #admin .rowItem *,
+body.theme-dark:not(.loginMode) #admin .deviceItem *,
+body.theme-dark:not(.loginMode) #admin .locItem *,
+body.theme-dark:not(.loginMode) #admin .taskItem *,
+body.theme-dark:not(.loginMode) #admin .userItem *{
+  color:#111827!important;
+}
+
+/* Any white inline background in admin becomes readable */
+body.theme-dark:not(.loginMode) #admin .kcAdminLightChip,
+body.theme-dark:not(.loginMode) #admin [style*="background:#fff"],
+body.theme-dark:not(.loginMode) #admin [style*="background: #fff"],
+body.theme-dark:not(.loginMode) #admin [style*="background:white"],
+body.theme-dark:not(.loginMode) #admin [style*="background: white"],
+body.theme-dark:not(.loginMode) #admin [style*="background:#ffffff"],
+body.theme-dark:not(.loginMode) #admin [style*="background: #ffffff"]{
+  background:#f8fafc!important;
+  color:#111827!important;
+  border-color:#dbe4ef!important;
+}
+body.theme-dark:not(.loginMode) #admin .kcAdminLightChip *,
+body.theme-dark:not(.loginMode) #admin [style*="background:#fff"] *,
+body.theme-dark:not(.loginMode) #admin [style*="background: #fff"] *,
+body.theme-dark:not(.loginMode) #admin [style*="background:white"] *,
+body.theme-dark:not(.loginMode) #admin [style*="background: white"] *,
+body.theme-dark:not(.loginMode) #admin [style*="background:#ffffff"] *,
+body.theme-dark:not(.loginMode) #admin [style*="background: #ffffff"] *{
+  color:#111827!important;
+}
+
+/* Admin forms */
+body.theme-dark:not(.loginMode) #admin .kcAdminInput,
+body.theme-dark:not(.loginMode) #admin input,
+body.theme-dark:not(.loginMode) #admin select,
+body.theme-dark:not(.loginMode) #admin textarea{
+  background:#111827!important;
+  color:#f8fafc!important;
+  border:1px solid #334155!important;
+  box-shadow:none!important;
+}
+body.theme-dark:not(.loginMode) #admin input::placeholder,
+body.theme-dark:not(.loginMode) #admin textarea::placeholder{
+  color:#9ca3af!important;
+}
+
+/* Admin labels/headings */
+body.theme-dark:not(.loginMode) #admin h1,
+body.theme-dark:not(.loginMode) #admin h2,
+body.theme-dark:not(.loginMode) #admin h3,
+body.theme-dark:not(.loginMode) #admin h4,
+body.theme-dark:not(.loginMode) #admin label{
+  color:#f8fafc!important;
+}
+body.theme-dark:not(.loginMode) #admin p,
+body.theme-dark:not(.loginMode) #admin .small,
+body.theme-dark:not(.loginMode) #admin .muted{
+  color:#cbd5e1!important;
+}
+
+/* Buttons */
+body.theme-dark:not(.loginMode) #admin .kcAdminBtn,
+body.theme-dark:not(.loginMode) #admin button:not(.kcAdminDeleteBtn){
+  background:#2563eb!important;
+  color:#fff!important;
+  border-color:#2563eb!important;
+  font-weight:850!important;
+}
+body.theme-dark:not(.loginMode) #admin .kcAdminDeleteBtn{
+  background:#fee2e2!important;
+  color:#b91c1c!important;
+  border:1px solid #fecaca!important;
+  font-weight:950!important;
+}
+
+/* Checkbox area should not become white-on-white */
+body.theme-dark:not(.loginMode) #admin input[type="checkbox"]{
+  accent-color:#3b82f6;
+}
+body.theme-dark:not(.loginMode) #admin input[type="checkbox"] + span,
+body.theme-dark:not(.loginMode) #admin input[type="checkbox"] + label{
+  color:#f8fafc!important;
+}
+
+/* If item is light, checkbox text dark */
+body.theme-dark:not(.loginMode) #admin .kcAdminItem input[type="checkbox"] + span,
+body.theme-dark:not(.loginMode) #admin .kcAdminItem label{
+  color:#111827!important;
+}
+
+/* Tables if any */
+body.theme-dark:not(.loginMode) #admin table,
+body.theme-dark:not(.loginMode) #admin th,
+body.theme-dark:not(.loginMode) #admin td{
+  background:#0f2036!important;
+  color:#f8fafc!important;
+  border-color:rgba(148,163,184,.26)!important;
+}
+
 </style>
-<link rel="manifest" href="./manifest.json?v=940">
-<link rel="apple-touch-icon" sizes="180x180" href="./icons/icon-180.png?v=940">
-<link rel="apple-touch-icon" href="./icons/icon-180.png?v=940">
-<link rel="icon" type="image/png" sizes="32x32" href="./icons/icon-32.png?v=940">
-<link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png?v=940">
+<link rel="manifest" href="./manifest.json?v=939">
+<link rel="apple-touch-icon" sizes="180x180" href="./icons/icon-180.png?v=939">
+<link rel="apple-touch-icon" href="./icons/icon-180.png?v=939">
+<link rel="icon" type="image/png" sizes="32x32" href="./icons/icon-32.png?v=939">
+<link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png?v=939">
 <meta name="theme-color" content="#dbeafe">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Kitchen Control">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
-</head><body><header class="appHeader"><div class="headerLeft" onclick="show('panel')"><img class="headerLogoImg" src="./icons/icon-180.png?v=940" alt="Kitchen Control"><h1>Kitchen Control</h1></div><div class="headerActions"><button type="button" class="themeMiniBtn" onclick="setAppTheme('light')" aria-label="Motyw jasny">☀️</button><button type="button" class="themeMiniBtn" onclick="setAppTheme('dark')" aria-label="Motyw ciemny">🌙</button><button id="headerMenuBtn" class="powerBtn hidden" onclick="toggleUserMenu(event)">⏻</button></div></header><main>
+</head><body><header class="appHeader"><div class="headerLeft" onclick="show('panel')"><img class="headerLogoImg" src="./icons/icon-180.png?v=939" alt="Kitchen Control"><h1>Kitchen Control</h1></div><div class="headerActions"><button type="button" class="themeMiniBtn" onclick="setAppTheme('light')" aria-label="Motyw jasny">☀️</button><button type="button" class="themeMiniBtn" onclick="setAppTheme('dark')" aria-label="Motyw ciemny">🌙</button><button id="headerMenuBtn" class="powerBtn hidden" onclick="toggleUserMenu(event)">⏻</button></div></header><main>
 
 <section id="loginScreen" class="loginBox kcLoginScreen">
   <div class="kcLoginCard">
-    <img class="kcLoginIcon" src="./icons/icon-512.png?v=940" alt="Kitchen Control">
+    <img class="kcLoginIcon" src="./icons/icon-512.png?v=939" alt="Kitchen Control">
     <h2>Kitchen Control</h2>
     <p class="kcLoginSub">SYSTEM MONITOROWANIA TEMPERATUR</p>
 
@@ -1445,7 +2286,7 @@ body.theme-dark:not(.loginMode) header{
 
 <div class="card"><h2>Admin — sprzątanie</h2>
 <p>Dodajesz i usuwasz obowiązki sprzątania osobno dla: rano / w ciągu dnia / wieczór.</p>
-<div class="row"><select id="cleanAdminLoc"></select><select id="cleanAdminShift"></select><input id="newCleanItem" placeholder="Nowa czynność sprzątania"><select id="newCleanFreq" class="freqSelect"><option value="daily">Codziennie</option><option value="7">Co 7 dni</option><option value="14">Co 14 dni</option><option value="30">Co 30 dni</option><option value="90">Co 90 dni</option><option value="asNeeded">Według potrzeb</option></select><button class="btn primary" onclick="addCleanItem()">Dodaj</button></div>
+<div class="row"><select id="cleanAdminLoc"></select><select id="cleanAdminShift"></select><input id="newCleanItem" placeholder="Nowa czynność sprzątania"><select id="newCleanFreq" class="freqSelect"><option value="daily">Codziennie</option><option value="7">Co 7 dni</option><option value="14">Co 14 dni</option><option value="30">Co 30 dni</option></select><button class="btn primary" onclick="addCleanItem()">Dodaj</button></div>
 <div id="cleanAdminList"></div>
 </div>
 
@@ -1513,7 +2354,7 @@ body.theme-dark:not(.loginMode) header{
   <button class="btn adminOnly" onclick="exportBackup();closeUserMenu()">Backup JSON</button>
   <button class="btn danger" onclick="logout();closeUserMenu()">Wyloguj</button>
 </div>
-<div id="cellModal" class="hidden"></div><div class="versionFooter noPrint">v9.40</div></div></main><script>
+<div id="cellModal" class="hidden"></div><div class="versionFooter noPrint">v9.39</div></div></main><script>
 const defaults={locations:["Asian Street Food Mokotów","Asian Street Food Wola","Food Truck","Kuchnia Mokotów"],devices:{"Asian Street Food Mokotów":{chlodnie:["Chłodnia 1","Chłodnia 2","Chłodnia 3"],mroznie:["Mroźnia 1"]},"Asian Street Food Wola":{chlodnie:["Chłodnia 1","Chłodnia 2"],mroznie:["Mroźnia 1"]},"Food Truck":{chlodnie:["Chłodnia 1","Chłodnia 2"],mroznie:["Mroźnia 1"]},"Kuchnia Mokotów":{chlodnie:["Chłodnia 1","Chłodnia 2","Chłodnia 3","Chłodnia 4"],mroznie:["Mroźnia 1","Mroźnia 2"]}},cleaning:{Rano:["Obecność szkodników","Stan lodówek / brak wycieków","Czystość blatów startowa"],"W ciągu dnia":["Frytury","Wymiana frytury","Zlewy","Bieżące blaty"],Wieczór:["Pow. robocze / blaty","Kuchenki","Ściany i podłogi","Schładzarka","Chłodnie","Mroźnie","Mycie okapu"]},haccpItems:["Kontrola dat przydatności","Kontrola chłodni tygodniowa","Magazyn suchy miesięcznie","Zamrażarki miesięcznie"]};
 let state=JSON.parse(localStorage.getItem("kc_state_v7")||"null")||defaults;
 let logs=JSON.parse(localStorage.getItem("kc_logs_v7")||"[]");
@@ -1554,7 +2395,7 @@ function setAppTheme(theme){
   document.body.classList.add("theme-"+t);
   const l=document.getElementById("themeLightBtn");
   const d=document.getElementById("themeDarkBtn");
-  if(l&&d){l.classList.toggle("active",t==="light");d.classList.toggle("active",t==="dark");} setTimeout(kcApplyDarkFix,0); setTimeout(kcApplyDarkFix,80);
+  if(l&&d){l.classList.toggle("active",t==="light");d.classList.toggle("active",t==="dark");} setTimeout(kcApplyDarkFix,0); setTimeout(kcApplyDarkFix,80); setTimeout(kcAdminDarkNormalize,120); setTimeout(kcPanelFinalCleanup,120); setTimeout(kcPeriodFinalCleanup,160); setTimeout(kcPanelLocationCleanup,160); setTimeout(kcPeriodFinalCleanup,180);
 }
 function setLoginTheme(theme){ setAppTheme(theme); }
 function initLoginTheme(){ setAppTheme(localStorage.getItem("kc_login_theme") || "light"); }
@@ -1604,7 +2445,7 @@ function applyAccess(){
     loginScreen.classList.add("hidden");appArea.classList.remove("hidden");document.body.classList.remove("loginMode");initLoginTheme();initLoginTheme();
     currentUserName.innerText=currentUser.name;currentRole.innerText=currentUser.role;
     document.querySelectorAll(".adminOnly").forEach(x=>x.style.display=isAdmin()?"inline-block":"none");document.querySelectorAll(".managerOnly").forEach(x=>x.style.display=(currentUser.role==="Manager"||currentUser.role==="Admin")?"inline-block":"none");headerMenuBtn.classList.remove("hidden");
-    fill();show("panel");
+    fill();show("panel"); setTimeout(kcAdminDarkNormalize,120);
   }else{
     appArea.classList.add("hidden");loginScreen.classList.remove("hidden");document.body.classList.add("loginMode");headerMenuBtn.classList.add("hidden");closeUserMenu();fillLogin();initLoginTheme();
   }
@@ -1843,6 +2684,20 @@ function dashPeriodicData(loc,date){
   });
   return rows;
 }
+
+function panelFreqOrder(freq){
+  if(freq==="daily") return 1;
+  if(freq==="7") return 7;
+  if(freq==="14") return 14;
+  if(freq==="30") return 30;
+  return 999;
+}
+function panelStatusOrder(cls){
+  if(cls==="alarm") return 1;
+  if(cls==="warn") return 2;
+  return 3;
+}
+
 function renderPanel(){
   const locs = canViewAll() ? state.locations : allowedLocs();
   const d = canViewAll() ? (document.getElementById("panelDate")?.value || isoDate()) : isoDate();
@@ -1863,13 +2718,25 @@ function renderPanel(){
       : `<div class="taskLine"><div class="taskLeft missText">❌ ${x.dev}</div><span class="status alarm">brak</span></div>`
     ).join("");
 
-    const cleanHtml = clean.sections.map(sec=>{
-      const rows=sec.rows.map(x=> x.r
-        ? `<div class="taskLine"><div class="taskLeft doneText">✅ ${x.item}<div class="taskMeta">${x.r.time||""} • ${x.r.user||""}</div></div><span class="status ok">wykonane</span></div>`
-        : `<div class="taskLine"><div class="taskLeft missText">❌ ${x.item}</div><span class="status alarm">brak</span></div>`
-      ).join("");
-      return `<div class="detailSection"><h4>🧹 ${sec.shift} <span class="status ${dashStatus(sec.done,sec.total)}">${sec.done}/${sec.total}</span></h4>${rows||'<p class="small" style="color:#64748b">Brak zadań.</p>'}</div>`;
-    }).join("");
+    const cleanFlat = clean.sections.flatMap(sec=>sec.rows.map(x=>{
+      const freq=getCleanFreq(loc,sec.shift,x.item);
+      const st=dueStatus(loc,sec.shift,x.item,d);
+      return {...x,shift:sec.shift,freq,st};
+    }));
+    const cleanRows = cleanFlat
+      .sort((a,b)=>panelFreqOrder(a.freq)-panelFreqOrder(b.freq) || panelStatusOrder(a.st.cls)-panelStatusOrder(b.st.cls) || a.item.localeCompare(b.item))
+      .map(x=>{
+        const daily=x.freq==="daily";
+        if(daily){
+          return x.r
+            ? `<div class="taskLine"><div class="taskLeft doneText">✅ ${x.item}<div class="taskMeta">${x.shift} • codziennie</div></div></div>`
+            : `<div class="taskLine"><div class="taskLeft missText">❌ ${x.item}<div class="taskMeta">${x.shift} • codziennie</div></div></div>`;
+        }
+        const last=x.st.last?plDate(x.st.last):"brak";
+        const dot=x.st.cls==="alarm"?"🔴":x.st.cls==="warn"?"🟡":"🟢";
+        return `<div class="taskLine periodicIntegrated"><div class="taskLeft">${dot} ${x.item}<div class="taskMeta">${x.shift} • ${freqLabel(x.freq)} • ostatnio: ${last}</div></div></div>`;
+      }).join("");
+    const cleanHtml = `<div class="detailSection"><h4>🧹 Sprzątanie <span class="status ${dashStatus(clean.done,clean.total)}">${clean.done}/${clean.total}</span></h4>${cleanRows||'<p class="small" style="color:#64748b">Brak zadań.</p>'}</div>`;
 
     const haccpHtml = haccp.rows.map(x=> x.r
       ? `<div class="taskLine"><div class="taskLeft doneText">✅ ${x.item}<div class="taskMeta">${x.r.time||""} • ${x.r.user||""}</div></div><span class="status ok">wykonane</span></div>`
@@ -1902,7 +2769,6 @@ function renderPanel(){
         <div class="detailSection"><h4>🌡️ Temperatury <span class="status ${dashStatus(temp.done,temp.total)}">${temp.done}/${temp.total}</span></h4>${tempHtml||'<p class="small" style="color:#64748b">Brak urządzeń.</p>'}</div>
         ${cleanHtml}
         <div class="detailSection"><h4>📋 HACCP / daty <span class="status ${dashStatus(haccp.done,haccp.total)}">${haccp.done}/${haccp.total}</span></h4>${haccpHtml||'<p class="small" style="color:#64748b">Brak kontroli HACCP.</p>'}</div>
-        <div class="detailSection"><h4>🧽 Sprzątanie okresowe</h4><div class="periodicList">${periodicHtml}</div></div>
       </div>
     </div>`;
   }).join("");
@@ -2120,7 +2986,7 @@ function renderCleanAdmin(){
   if(!document.getElementById("cleanAdminList")) return;
   let loc=cleanAdminLoc?.value||state.locations[0];
   let shift=cleanAdminShift.value;
-  cleanAdminList.innerHTML=`<h3>${loc} — ${shift}</h3>`+getCleaning(loc,shift).map((x,i)=>`<div class="editBox"><div class="row"><b>${x}</b><select class="freqSelect" onchange="setCleanFreq('${loc}','${shift}','${x.replace(/'/g,"&#39;")}',this.value);save();renderCleanAdmin();renderPanel();"><option value="daily" ${getCleanFreq(loc,shift,x)==="daily"?"selected":""}>Codziennie</option><option value="7" ${getCleanFreq(loc,shift,x)==="7"?"selected":""}>Co 7 dni</option><option value="14" ${getCleanFreq(loc,shift,x)==="14"?"selected":""}>Co 14 dni</option><option value="30" ${getCleanFreq(loc,shift,x)==="30"?"selected":""}>Co 30 dni</option><option value="90" ${getCleanFreq(loc,shift,x)==="90"?"selected":""}>Co 90 dni</option><option value="asNeeded" ${getCleanFreq(loc,shift,x)==="asNeeded"?"selected":""}>Według potrzeb</option></select><button class="btn danger" onclick="removeCleanItem('${loc}','${shift}',${i})">Usuń</button></div></div>`).join("");
+  cleanAdminList.innerHTML=`<h3>${loc} — ${shift}</h3>`+getCleaning(loc,shift).map((x,i)=>`<div class="editBox"><div class="row"><b>${x}</b><select class="freqSelect" onchange="setCleanFreq('${loc}','${shift}','${x.replace(/'/g,"&#39;")}',this.value);save();renderCleanAdmin();renderPanel();"><option value="daily" ${getCleanFreq(loc,shift,x)==="daily"?"selected":""}>Codziennie</option><option value="7" ${getCleanFreq(loc,shift,x)==="7"?"selected":""}>Co 7 dni</option><option value="14" ${getCleanFreq(loc,shift,x)==="14"?"selected":""}>Co 14 dni</option><option value="30" ${getCleanFreq(loc,shift,x)==="30"?"selected":""}>Co 30 dni</option></select><button class="btn danger" onclick="removeCleanItem('${loc}','${shift}',${i})">Usuń</button></div></div>`).join("");
 }
 function addCleanItem(){
   if(!isAdmin())return denyAdmin();
@@ -2257,10 +3123,171 @@ function kcApplyDarkFix(){
 const kcOldShow = typeof show==="function" ? show : null;
 if(kcOldShow && !window.__kcShowPatched){
   window.__kcShowPatched=true;
-  show=function(id){ kcOldShow(id); setTimeout(kcApplyDarkFix,0); setTimeout(kcApplyDarkFix,80); };
+  show=function(id){ kcOldShow(id); setTimeout(kcApplyDarkFix,0); setTimeout(kcApplyDarkFix,80); setTimeout(kcAdminDarkNormalize,120); setTimeout(kcPanelFinalCleanup,120); setTimeout(kcPeriodFinalCleanup,160); setTimeout(kcPanelLocationCleanup,160); setTimeout(kcPeriodFinalCleanup,180); };
 }
 document.addEventListener("DOMContentLoaded",()=>setTimeout(kcApplyDarkFix,80));
 
 fillLogin();initLoginTheme();applyAccess();
 try{loginName.addEventListener("keydown",e=>{if(e.key==="Enter")login()});loginPin.addEventListener("keydown",e=>{if(e.key==="Enter")login()});}catch(e){}
+
+function kcFixPanelAndMenu(){
+  if(!document.body.classList.contains("theme-dark") || document.body.classList.contains("loginMode")) return;
+
+  // Panel cards / location tiles / expanded details
+  document.querySelectorAll("#panel > div, #panel .card, #panel .loc, #panel .location, #panel .locationCard, #panel .dashLocation, #panel .dashCard, #panel .summaryCard, #panel [class*='loc'], #panel [class*='Loc'], #panel [class*='dash'], #panel [class*='Dash']").forEach(el=>{
+    if(el && el.tagName !== "BUTTON") el.classList.add("kcPanelNavy");
+  });
+
+  // Expanded section rows/cards inside panel
+  document.querySelectorAll("#panel .detailSection, #panel .dueBox, #panel .dueItem, #panel .taskLine, #panel .metricRow, #panel [class*='detail'], #panel [class*='Detail'], #panel [class*='metric'], #panel [class*='Metric']").forEach(el=>{
+    if(el && el.tagName !== "BUTTON") el.classList.add("kcPanelRowNavy");
+  });
+
+  // Light inline blocks in panel
+  document.querySelectorAll("#panel [style]").forEach(el=>{
+    const s=(el.getAttribute("style")||"").toLowerCase().replace(/\s/g,"");
+    if(s.includes("background:#fff") || s.includes("background:white") || s.includes("background:#ffffff") || s.includes("background-color:#fff") || s.includes("background-color:white") || s.includes("background-color:#ffffff")){
+      el.classList.add("kcPanelNavy");
+    }
+  });
+
+  // User/logout bubble
+  document.querySelectorAll("#userMenu, .userMenu, .userDropdown, .dropdown, .popover, .menuPopover, [class*='userMenu'], [class*='UserMenu']").forEach(el=>{
+    el.classList.add("kcDarkUserBubble");
+  });
+}
+const kcOldApplyDarkFix = typeof kcApplyDarkFix==="function" ? kcApplyDarkFix : null;
+if(kcOldApplyDarkFix && !window.__kcPanelMenuPatched){
+  window.__kcPanelMenuPatched=true;
+  kcApplyDarkFix=function(){ kcOldApplyDarkFix(); kcFixPanelAndMenu(); };
+}
+document.addEventListener("click",()=>setTimeout(kcFixPanelAndMenu,30));
+document.addEventListener("DOMContentLoaded",()=>setTimeout(kcFixPanelAndMenu,120));
+
+
+function kcPanelFinalCleanup(){
+  document.querySelectorAll("#panel .dueItem span, #panel .taskLine span, #panel .doneRow span, #panel .missingRow span, #panel .detailSection span").forEach(el=>{
+    const t=(el.textContent||"").trim().toLowerCase();
+    if(t==="brak" || t==="wykonane" || t==="ok"){
+      // Nie usuwaj liczników 0/3 itp.
+      el.classList.add("kcHideDuplicateStatus");
+    }
+  });
+  document.querySelectorAll("#panel .dueBox *").forEach(el=>{
+    const t=(el.textContent||"").trim().toLowerCase();
+    if(t.includes("brak zadań okresowych") || t.includes("brak czynności okresowych")){
+      el.classList.add("kcPeriodEmptyInfo");
+    }
+  });
+}
+document.addEventListener("click",()=>setTimeout(kcPanelFinalCleanup,50));
+document.addEventListener("DOMContentLoaded",()=>setTimeout(kcPanelFinalCleanup,150));
+
+
+function kcPanelLocationCleanup(){
+  document.querySelectorAll("#panel .dashLocation, #panel .dashCard, #panel .summaryCard, #panel .locationCard, #panel .kcPanelNavy").forEach(card=>{
+    // usuń tylko badge tekstowe przy nazwie lokalizacji: UWAGA / OK / WYKONANE
+    card.querySelectorAll(".status, .badge, .tag, .pill, span, div").forEach(el=>{
+      const txt=(el.textContent||"").trim().toLowerCase();
+      if((txt==="uwaga" || txt==="ok" || txt==="wykonane") && !el.closest(".metricRow") && !el.className.includes("pct") && !el.className.includes("percent")){
+        el.classList.add("kcHideLocationStatus");
+      }
+    });
+  });
+
+  // Usuń ewentualne opcje 90 dni w selectach po renderze.
+  document.querySelectorAll("select option").forEach(opt=>{
+    const t=(opt.textContent||"").toLowerCase();
+    const v=(opt.value||"").toLowerCase();
+    if(t.includes("90") || v==="90" || v==="90d") opt.remove();
+  });
+
+  // Sprzątanie okresowe: pozycja i brak — kafelki mają być granatowe/czytelne.
+  document.querySelectorAll("#panel .dueBox > div, #panel .dueBox p, #panel .dueBox .small, #panel .dueBox .muted, #panel .dueBox [style]").forEach(el=>{
+    const t=(el.textContent||"").trim().toLowerCase();
+    if(t.includes("brak zadań okresowych") || t.includes("brak czynności okresowych") || t.includes("co 30 dni") || t.includes("ostatnio")){
+      el.classList.add("kcPeriodTile");
+    }
+  });
+}
+document.addEventListener("click",()=>setTimeout(kcPanelLocationCleanup,60));
+document.addEventListener("DOMContentLoaded",()=>setTimeout(kcPanelLocationCleanup,160));
+
+
+function kcPeriodFinalCleanup(){
+  const allowedTexts = ["codziennie","co 7 dni","co 14 dni","co 30 dni"];
+  document.querySelectorAll("select option").forEach(opt=>{
+    const t=(opt.textContent||"").trim().toLowerCase();
+    const v=(opt.value||"").trim().toLowerCase();
+    const bad = t.includes("według potrzeb") || t.includes("w razie potrzeby") || t.includes("potrzeb") ||
+                t.includes("co 60") || t.includes("co 90") || t.includes("co 180") || t.includes("co 365") ||
+                ["60","90","180","365","60d","90d","180d","365d"].includes(v);
+    const looksFreq = t.includes("codziennie") || t.includes("co 7") || t.includes("co 14") || t.includes("co 30") || bad;
+    if(bad) opt.remove();
+  });
+
+  // Sprzątanie okresowe w panelu: tylko tekst na oryginalnym tle kafelka, bez dodatkowego tła
+  document.querySelectorAll("#panel .dueBox > div, #panel .dueBox p, #panel .dueBox .small, #panel .dueBox .muted, #panel .dueBox [style]").forEach(el=>{
+    const t=(el.textContent||"").trim().toLowerCase();
+    if(t.includes("co 30 dni") || t.includes("co 14 dni") || t.includes("co 7 dni") || t.includes("codziennie") || t.includes("ostatnio")){
+      el.classList.add("kcPeriodPlainLine");
+      el.classList.remove("kcPeriodTile");
+    }
+  });
+}
+document.addEventListener("click",()=>setTimeout(kcPeriodFinalCleanup,60));
+document.addEventListener("DOMContentLoaded",()=>setTimeout(kcPeriodFinalCleanup,160));
+
+
+function kcV937OptionCleanup(){
+  document.querySelectorAll("select option").forEach(opt=>{
+    const t=(opt.textContent||"").trim().toLowerCase();
+    const v=(opt.value||"").trim().toLowerCase();
+    if(t.includes("według potrzeb") || t.includes("w razie potrzeby") || t.includes("potrzeb") ||
+       t.includes("co 60") || t.includes("co 90") || t.includes("co 180") || t.includes("co 365") ||
+       ["60","90","180","365","60d","90d","180d","365d","need","asneeded"].includes(v)){
+      opt.remove();
+    }
+  });
+}
+document.addEventListener("click",()=>setTimeout(kcV937OptionCleanup,50));
+document.addEventListener("DOMContentLoaded",()=>setTimeout(kcV937OptionCleanup,150));
+
+
+function kcAdminDarkNormalize(){
+  if(!document.body.classList.contains("theme-dark") || document.body.classList.contains("loginMode")) return;
+  const admin=document.getElementById("admin");
+  if(!admin) return;
+
+  // Dynamic blocks / list items / rows in admin
+  admin.querySelectorAll("div, li, label").forEach(el=>{
+    const txt=(el.textContent||"").trim();
+    const st=(el.getAttribute("style")||"").toLowerCase().replace(/\s/g,"");
+    if(st.includes("background:#fff") || st.includes("background:white") || st.includes("background:#ffffff") ||
+       st.includes("background-color:#fff") || st.includes("background-color:white") || st.includes("background-color:#ffffff")){
+      el.classList.add("kcAdminLightChip");
+    }
+
+    // Items with delete buttons are usually added location/device/task chips.
+    if(el.querySelector("button") && txt.length>0 && txt.length<160 && !el.closest(".controls") && !el.classList.contains("row")){
+      el.classList.add("kcAdminItem");
+    }
+  });
+
+  // Inputs/selects/textareas
+  admin.querySelectorAll("input,select,textarea").forEach(el=>el.classList.add("kcAdminInput"));
+
+  // Buttons
+  admin.querySelectorAll("button").forEach(btn=>{
+    const t=(btn.textContent||"").trim();
+    if(t==="✕" || t==="×" || t==="X" || t==="x" || t.includes("Usuń")){
+      btn.classList.add("kcAdminDeleteBtn");
+    }else{
+      btn.classList.add("kcAdminBtn");
+    }
+  });
+}
+document.addEventListener("click",()=>setTimeout(kcAdminDarkNormalize,80));
+document.addEventListener("DOMContentLoaded",()=>setTimeout(kcAdminDarkNormalize,180));
+
 </script></body></html>
