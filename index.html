@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kitchen Control v9.39</title>
+<title>Kitchen Control v9.59</title>
 <style>
 body{margin:0;font-family:Arial,sans-serif;background:#eef3f8;color:#172033}header{background:linear-gradient(135deg,#dbeafe,#eff6ff);color:#172033;padding:12px 16px;position:sticky;top:0;z-index:5;border-bottom:1px solid #bfdbfe;cursor:pointer}h1{margin:0;font-size:22px}.small{color:#64748b}.appHeader{display:flex;align-items:center;justify-content:space-between;gap:10px}.headerLeft{display:flex;align-items:center;gap:10px}.headerLogo{width:42px;height:42px;border-radius:12px;background:#0f172a;color:white;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 2px 8px #0001}.powerBtn{border:0;background:white;color:#0f172a;border-radius:12px;width:44px;height:44px;font-size:22px;font-weight:900;box-shadow:0 1px 6px #0001}.userMenu{position:fixed;top:68px;right:14px;background:white;border:1px solid #d8dee8;border-radius:16px;box-shadow:0 10px 30px #0002;z-index:80;min-width:220px;padding:12px}.userMenuName{font-weight:900;font-size:17px}.userMenuRole{color:#64748b;margin:2px 0 10px}.userMenu button{width:100%;margin-top:8px}.menuBackdrop{position:fixed;inset:0;z-index:70;background:transparent}main{padding:14px;max-width:1200px;margin:auto}.nav{display:flex;gap:8px;overflow:auto;margin-bottom:10px}.nav button,.btn{border:0;border-radius:10px;padding:11px 14px;background:white;font-weight:700;box-shadow:0 1px 4px #0001}.nav button.active,.primary{background:#2563eb!important;color:white}.danger{background:#dc2626!important;color:white}.card{background:white;border-radius:14px;padding:14px;margin:10px 0;box-shadow:0 2px 10px #0001}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.loc{border:1px solid #d8dee8;border-radius:12px;padding:12px;background:#fafafa}.status{border-radius:99px;padding:4px 8px;font-size:12px;font-weight:800;display:inline-block}.ok{background:#dcfce7;color:#166534}.warn{background:#fef3c7;color:#92400e}.alarm{background:#fee2e2;color:#991b1b}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}select,input,textarea{border:1px solid #d8dee8;border-radius:10px;padding:10px;background:white;font-size:16px}textarea{width:100%;min-height:70px;margin-top:10px}table{border-collapse:collapse;width:100%;background:white}th,td{border:1px solid #111;padding:6px;text-align:center;font-size:13px;min-width:42px}th{background:#f3f4f6}.wrap{overflow:auto;border-radius:10px;border:1px solid #d8dee8}.vert{writing-mode:vertical-rl;transform:rotate(180deg);font-weight:800;white-space:nowrap}.pill{display:inline-flex;gap:6px;align-items:center;border:1px solid #d8dee8;padding:7px 9px;border-radius:99px;margin:4px;background:#f8fafc}.pill button{border:0;background:#fee2e2;border-radius:50%;width:22px;height:22px}.hidden{display:none}.filled-ok{background:#dcfce7}.filled-warn{background:#fef3c7}.filled-alarm{background:#fee2e2}.notice{padding:10px;border-radius:10px;background:#fef3c7;color:#92400e;font-weight:bold;margin-top:10px}.success{background:#dcfce7;color:#166534}.historyItem{border-bottom:1px solid #e5e7eb;padding:8px 0}.historyItem:last-child{border-bottom:0}.readonlyBadge{background:#e0e7ff;color:#3730a3;border-radius:99px;padding:4px 8px;font-size:12px;font-weight:800}.authorBadge{background:#eef2ff;color:#3730a3;border-radius:12px;padding:9px 11px;font-weight:800;display:inline-block}.sanepidHeader{display:none}.editBox{background:#f8fafc;border:1px solid #d8dee8;border-radius:12px;padding:10px;margin-top:10px}
 .userbar{display:none!important}
@@ -38,7 +38,7 @@ body{margin:0;font-family:Arial,sans-serif;background:#eef3f8;color:#172033}head
 .progressBar.pctAlarmBar{background:#ef4444}
 
 
-/* Login themes v9.39 */
+/* Login themes v9.51 */
 body.loginMode.theme-light{
   background:
     radial-gradient(circle at 50% 22%, rgba(37,99,235,.10), transparent 35%),
@@ -247,7 +247,7 @@ body.theme-dark .kcSecureLine span{background:rgba(148,163,184,.38)}
 }
 
 
-/* v9.39 login fixes */
+/* v9.45 login fixes */
 .kcLoginScreen.hidden{display:none!important}
 .kcSvgIcon svg,
 .kcEyeBtn svg,
@@ -266,7 +266,7 @@ body.theme-light .kcSecureBadge svg{color:#718096}
 body.theme-dark .kcSecureBadge svg{color:#94a3b8}
 
 
-/* v9.39 login layout fix */
+/* v9.45 login layout fix */
 body.loginMode{
   min-height:100vh;
   overflow-x:hidden;
@@ -378,7 +378,7 @@ body.theme-dark .kcThemeSwitch{
 }
 
 
-/* v9.39 hard login centering */
+/* v9.45 hard login centering */
 body.loginMode header{display:none!important}
 body.loginMode main{min-height:100vh!important;padding:0!important}
 body.loginMode #appArea{display:none!important}
@@ -413,7 +413,7 @@ body.loginMode .kcThemeSwitch{margin:0 auto!important}
 }
 
 
-/* v9.39 theme persistence + header logo + phone login fit */
+/* v9.45 theme persistence + header logo + phone login fit */
 .headerLogoImg{
   width:56px;
   height:56px;
@@ -539,7 +539,7 @@ body.theme-dark:not(.loginMode) .themeMiniBtn{
 }
 
 
-/* v9.39 dark readability fix — jasnego motywu nie ruszamy */
+/* v9.45 dark readability fix — jasnego motywu nie ruszamy */
 body.theme-dark:not(.loginMode){
   --kc-bg:#071426;
   --kc-panel:#0f2036;
@@ -726,7 +726,7 @@ body.theme-dark:not(.loginMode) .pctOk{
 }
 
 
-/* v9.39 dark theme detail fixes — tylko ciemny motyw */
+/* v9.45 dark theme detail fixes — tylko ciemny motyw */
 body.theme-dark:not(.loginMode){
   --kc-bg:#071426;
   --kc-card:#102035;
@@ -957,7 +957,7 @@ body.theme-dark:not(.loginMode) .dashCard div:not(.percentBadge):not(.pctAlarm):
 }
 
 
-/* v9.39 — tylko poprawka Panelu i Miesiąca w ciemnym motywie */
+/* v9.45 — tylko poprawka Panelu i Miesiąca w ciemnym motywie */
 
 /* PANEL: karty lokalizacji i rozwinięte szczegóły mają być ciemne i czytelne */
 body.theme-dark:not(.loginMode) #panel .dashLocation,
@@ -1070,7 +1070,7 @@ body.theme-dark:not(.loginMode) #month th{
 
 
 /* =========================================================
-   v9.39 DARK THEME REFACTOR
+   v9.45 DARK THEME REFACTOR
    cel: czytelność bez ruszania jasnego motywu
    ========================================================= */
 
@@ -1283,6 +1283,9 @@ body.theme-dark:not(.loginMode) .kcLightPill *{
   color:#111827!important;
 }
 
+
+body.theme-dark:not(.loginMode) #historyResult{background:#111827;color:#e5e7eb;border-radius:14px;padding:12px;}
+body.theme-dark:not(.loginMode) #historyResult .historyItem{background:#1f2937;border:1px solid #374151;border-radius:10px;padding:10px;margin-bottom:10px;}
 /* HISTORIA — filtry i karty */
 body.theme-dark:not(.loginMode) #history input,
 body.theme-dark:not(.loginMode) #history select,
@@ -1349,7 +1352,7 @@ body.theme-dark:not(.loginMode) header{
 }
 
 
-/* v9.39 — PANEL + chmurka wylogowania, tylko ciemny motyw */
+/* v9.45 — PANEL + chmurka wylogowania, tylko ciemny motyw */
 
 /* PANEL: granatowe kafelki lokalizacji */
 body.theme-dark:not(.loginMode) #panel .kcPanelNavy,
@@ -1457,7 +1460,7 @@ body.theme-dark:not(.loginMode) .kcDarkUserBubble button{
 }
 
 
-/* v9.39 — PANEL badge colors + okresowe info readability */
+/* v9.45 — PANEL badge colors + okresowe info readability */
 
 /* Sprzątanie okresowe: tekst "brak czynności okresowych" / informacyjne pigułki */
 body.theme-dark:not(.loginMode) #panel .dueBox .small,
@@ -1552,7 +1555,7 @@ body.theme-dark:not(.loginMode) #panel .progressBar.pctAlarmBar,
 body.theme-dark:not(.loginMode) #panel .pctAlarmBar{background:#ef4444!important}
 
 
-/* v9.39 — finalne statusy panelu w jasnym i ciemnym motywie */
+/* v9.45 — finalne statusy panelu w jasnym i ciemnym motywie */
 
 /* Statusy w PANELU — oba motywy */
 #panel .percentBadge,
@@ -1658,7 +1661,7 @@ body.theme-dark:not(.loginMode) #panel .pctOk{
 }
 
 
-/* v9.39 — final panel cleanup */
+/* v9.45 — final panel cleanup */
 
 /* Sprzątanie okresowe — informacja "Brak zadań okresowych" zawsze granat + biały tekst */
 #panel .dueBox .small,
@@ -1765,7 +1768,7 @@ body.theme-dark:not(.loginMode) #panel .kcPeriodEmptyInfo{
 }
 
 
-/* v9.39 — panel cleanup */
+/* v9.45 — panel cleanup */
 #panel .kcHideLocationStatus{
   display:none!important;
 }
@@ -1817,7 +1820,7 @@ body.theme-dark:not(.loginMode) #panel .dueBox [class*="Empty"]{
 }
 
 
-/* v9.39 — sprzątanie okresowe final */
+/* v9.45 — sprzątanie okresowe final */
 
 /* W panelu pozycje sprzątania okresowego BEZ dodatkowego tła */
 #panel .kcPeriodPlainLine,
@@ -1866,7 +1869,7 @@ body.theme-dark:not(.loginMode) #panel .dueBox [style*="background"] .kcPeriodPl
 }
 
 
-/* v9.39 — Sprzątanie w panelu: codziennie + 7/14/30 w jednej liście */
+/* v9.45 — Sprzątanie w panelu: codziennie + 7/14/30 w jednej liście */
 #panel .periodicIntegrated,
 body.theme-dark:not(.loginMode) #panel .periodicIntegrated{
   background:transparent!important;
@@ -1899,7 +1902,7 @@ body.theme-dark:not(.loginMode) #panel .taskLine .taskMeta{
 }
 
 
-/* v9.39 — Admin czytelność, bez zmiany logiki */
+/* v9.45 — Admin czytelność, bez zmiany logiki */
 
 /* Admin: sekcje i karty */
 #admin section,
@@ -2052,159 +2055,659 @@ body:not(.theme-dark) #admin [class*="Pill"]{
 }
 
 
-/* v9.39 — Admin dark mode concrete fix */
-body.theme-dark:not(.loginMode) #admin{
+/* v9.45 — Sekcja 3: Pory dnia. Tylko biały kafelek pod spodem na grafitowy */
+body.theme-dark:not(.loginMode) #shiftAdminList .editBox{
+  background:#1f2937!important;
+  background-color:#1f2937!important;
+  border:1px solid #374151!important;
   color:#f8fafc!important;
 }
 
-/* top-level admin cards/sections */
-body.theme-dark:not(.loginMode) #admin > div,
-body.theme-dark:not(.loginMode) #admin > section,
-body.theme-dark:not(.loginMode) #admin .box,
-body.theme-dark:not(.loginMode) #admin .card,
-body.theme-dark:not(.loginMode) #admin .panel,
-body.theme-dark:not(.loginMode) #admin .adminBox,
-body.theme-dark:not(.loginMode) #admin .adminSection{
-  background:linear-gradient(180deg,#132238,#0d1b2f)!important;
-  color:#f8fafc!important;
-  border-color:rgba(148,163,184,.28)!important;
+body.theme-dark:not(.loginMode) #shiftAdminList .editBox .row{
+  background:transparent!important;
 }
 
-/* Admin dynamic items: locations/devices/tasks/users */
-body.theme-dark:not(.loginMode) #admin .kcAdminItem,
-body.theme-dark:not(.loginMode) #admin .adminItem,
-body.theme-dark:not(.loginMode) #admin .item,
-body.theme-dark:not(.loginMode) #admin .listItem,
-body.theme-dark:not(.loginMode) #admin .rowItem,
-body.theme-dark:not(.loginMode) #admin .deviceItem,
-body.theme-dark:not(.loginMode) #admin .locItem,
-body.theme-dark:not(.loginMode) #admin .taskItem,
-body.theme-dark:not(.loginMode) #admin .userItem{
-  background:#f8fafc!important;
-  color:#111827!important;
-  border:1px solid #dbe4ef!important;
-  border-radius:14px!important;
-}
-
-/* text inside dynamic light items */
-body.theme-dark:not(.loginMode) #admin .kcAdminItem *,
-body.theme-dark:not(.loginMode) #admin .adminItem *,
-body.theme-dark:not(.loginMode) #admin .item *,
-body.theme-dark:not(.loginMode) #admin .listItem *,
-body.theme-dark:not(.loginMode) #admin .rowItem *,
-body.theme-dark:not(.loginMode) #admin .deviceItem *,
-body.theme-dark:not(.loginMode) #admin .locItem *,
-body.theme-dark:not(.loginMode) #admin .taskItem *,
-body.theme-dark:not(.loginMode) #admin .userItem *{
-  color:#111827!important;
-}
-
-/* Any white inline background in admin becomes readable */
-body.theme-dark:not(.loginMode) #admin .kcAdminLightChip,
-body.theme-dark:not(.loginMode) #admin [style*="background:#fff"],
-body.theme-dark:not(.loginMode) #admin [style*="background: #fff"],
-body.theme-dark:not(.loginMode) #admin [style*="background:white"],
-body.theme-dark:not(.loginMode) #admin [style*="background: white"],
-body.theme-dark:not(.loginMode) #admin [style*="background:#ffffff"],
-body.theme-dark:not(.loginMode) #admin [style*="background: #ffffff"]{
-  background:#f8fafc!important;
-  color:#111827!important;
-  border-color:#dbe4ef!important;
-}
-body.theme-dark:not(.loginMode) #admin .kcAdminLightChip *,
-body.theme-dark:not(.loginMode) #admin [style*="background:#fff"] *,
-body.theme-dark:not(.loginMode) #admin [style*="background: #fff"] *,
-body.theme-dark:not(.loginMode) #admin [style*="background:white"] *,
-body.theme-dark:not(.loginMode) #admin [style*="background: white"] *,
-body.theme-dark:not(.loginMode) #admin [style*="background:#ffffff"] *,
-body.theme-dark:not(.loginMode) #admin [style*="background: #ffffff"] *{
-  color:#111827!important;
-}
-
-/* Admin forms */
-body.theme-dark:not(.loginMode) #admin .kcAdminInput,
-body.theme-dark:not(.loginMode) #admin input,
-body.theme-dark:not(.loginMode) #admin select,
-body.theme-dark:not(.loginMode) #admin textarea{
+body.theme-dark:not(.loginMode) #shiftAdminList .editBox input{
   background:#111827!important;
   color:#f8fafc!important;
-  border:1px solid #334155!important;
-  box-shadow:none!important;
-}
-body.theme-dark:not(.loginMode) #admin input::placeholder,
-body.theme-dark:not(.loginMode) #admin textarea::placeholder{
-  color:#9ca3af!important;
+  border-color:#475569!important;
 }
 
-/* Admin labels/headings */
-body.theme-dark:not(.loginMode) #admin h1,
-body.theme-dark:not(.loginMode) #admin h2,
-body.theme-dark:not(.loginMode) #admin h3,
-body.theme-dark:not(.loginMode) #admin h4,
-body.theme-dark:not(.loginMode) #admin label{
+
+/* v9.45 — Sekcja 4 i 6: tylko biały editBox na grafitowy w ciemnym motywie */
+
+/* Sekcja 3 — zostaje z v9.45 */
+body.theme-dark:not(.loginMode) #shiftAdminList .editBox,
+/* Sekcja 4 — Czynności / sprzątanie */
+body.theme-dark:not(.loginMode) #cleanAdminList .editBox,
+/* Sekcja 6 — Pracownicy */
+body.theme-dark:not(.loginMode) #userList .editBox{
+  background:#1f2937!important;
+  background-color:#1f2937!important;
+  border:1px solid #374151!important;
   color:#f8fafc!important;
 }
-body.theme-dark:not(.loginMode) #admin p,
-body.theme-dark:not(.loginMode) #admin .small,
-body.theme-dark:not(.loginMode) #admin .muted{
-  color:#cbd5e1!important;
+
+/* wnętrze kafelków zostaje bez białego tła */
+body.theme-dark:not(.loginMode) #shiftAdminList .editBox .row,
+body.theme-dark:not(.loginMode) #cleanAdminList .editBox .row,
+body.theme-dark:not(.loginMode) #userList .editBox .row{
+  background:transparent!important;
 }
 
-/* Buttons */
-body.theme-dark:not(.loginMode) #admin .kcAdminBtn,
-body.theme-dark:not(.loginMode) #admin button:not(.kcAdminDeleteBtn){
-  background:#2563eb!important;
-  color:#fff!important;
-  border-color:#2563eb!important;
-  font-weight:850!important;
+/* inputy/selecty w tych kafelkach — czytelne, bez ruszania przycisków */
+body.theme-dark:not(.loginMode) #shiftAdminList .editBox input,
+body.theme-dark:not(.loginMode) #cleanAdminList .editBox input,
+body.theme-dark:not(.loginMode) #cleanAdminList .editBox select,
+body.theme-dark:not(.loginMode) #userList .editBox input,
+body.theme-dark:not(.loginMode) #userList .editBox select{
+  background:#111827!important;
+  color:#f8fafc!important;
+  border-color:#475569!important;
 }
-body.theme-dark:not(.loginMode) #admin .kcAdminDeleteBtn{
-  background:#fee2e2!important;
-  color:#b91c1c!important;
-  border:1px solid #fecaca!important;
+
+/* tekst w pracownikach i przydziałach lokalizacji */
+body.theme-dark:not(.loginMode) #userList .editBox,
+body.theme-dark:not(.loginMode) #userList .editBox *,
+body.theme-dark:not(.loginMode) #cleanAdminList .editBox,
+body.theme-dark:not(.loginMode) #cleanAdminList .editBox *{
+  color:#f8fafc!important;
+}
+
+/* ale przyciski zostają jak były */
+body.theme-dark:not(.loginMode) #cleanAdminList .editBox button,
+body.theme-dark:not(.loginMode) #userList .editBox button,
+body.theme-dark:not(.loginMode) #shiftAdminList .editBox button{
+  color:inherit;
+}
+
+
+/* v9.45 — Sekcja 7 Backup / Import / Eksport: tylko grafitowy kafelek w ciemnym motywie */
+body.theme-dark:not(.loginMode) #admin .card:has(button[onclick*="backup"]),
+body.theme-dark:not(.loginMode) #admin .card:has(button[onclick*="Backup"]),
+body.theme-dark:not(.loginMode) #admin .card:has(button[onclick*="export"]),
+body.theme-dark:not(.loginMode) #admin .card:has(button[onclick*="Export"]),
+body.theme-dark:not(.loginMode) #admin .card:has(button[onclick*="import"]),
+body.theme-dark:not(.loginMode) #admin .card:has(button[onclick*="Import"]){
+  background:#1f2937!important;
+  background-color:#1f2937!important;
+  border:1px solid #374151!important;
+  color:#f8fafc!important;
+}
+
+/* fallback: klasa dodawana JS */
+body.theme-dark:not(.loginMode) #admin .kcBackupCardDark{
+  background:#1f2937!important;
+  background-color:#1f2937!important;
+  border:1px solid #374151!important;
+  color:#f8fafc!important;
+}
+
+body.theme-dark:not(.loginMode) #admin .kcBackupCardDark h2,
+body.theme-dark:not(.loginMode) #admin .kcBackupCardDark p,
+body.theme-dark:not(.loginMode) #admin .kcBackupCardDark label,
+body.theme-dark:not(.loginMode) #admin .kcBackupCardDark div{
+  color:#f8fafc!important;
+}
+
+/* przyciski zostają jak były */
+
+
+/* v9.45 — Sekcja 7 Backup: grafitowe tło jak sekcje 3/4/6 */
+
+/* konkretna karta backupu oznaczona przez JS */
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup,
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup .editBox,
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup .backupBox,
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup .importBox,
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup .exportBox{
+  background:#1f2937!important;
+  background-color:#1f2937!important;
+  border-color:#374151!important;
+  color:#f8fafc!important;
+}
+
+/* białe/grafikowe wewnętrzne kontenery w sekcji 7 */
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup [style*="background:#fff"],
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup [style*="background: #fff"],
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup [style*="background:white"],
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup [style*="background: white"],
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup [style*="background:#ffffff"],
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup [style*="background: #ffffff"]{
+  background:#1f2937!important;
+  background-color:#1f2937!important;
+  border-color:#374151!important;
+  color:#f8fafc!important;
+}
+
+/* tekst w sekcji 7 */
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup,
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup h2,
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup h3,
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup p,
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup div,
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup span,
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup label{
+  color:#f8fafc!important;
+}
+
+/* inputy w sekcji 7, jeśli występują */
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup input,
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup select,
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup textarea{
+  background:#111827!important;
+  color:#f8fafc!important;
+  border-color:#475569!important;
+}
+
+/* przyciski bez zmian funkcjonalnych i układowych */
+
+
+/* v9.45 — Sekcja 7: paski import/eksport czytelne + sekcja 6 rola pracownika */
+
+/* Sekcja 7 Backup: przyciski/paski import/export/CSV/JSON */
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup button,
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup .btn,
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup label,
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup input[type="file"]::file-selector-button{
+  background:#111827!important;
+  background-color:#111827!important;
+  color:#f8fafc!important;
+  border:1px solid #475569!important;
+  border-radius:14px!important;
+  min-height:42px!important;
+  padding:10px 14px!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-align:center!important;
+  font-weight:900!important;
+  white-space:normal!important;
+  box-shadow:none!important;
+}
+
+/* Wymuś biały tekst wewnątrz przycisków sekcji 7 */
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup button *,
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup .btn *,
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup label *{
+  color:#f8fafc!important;
+}
+
+/* Przyciski w rzędzie backupu mają zajmować normalny pasek i napis na środku */
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup .row button,
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup .row .btn,
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup button[onclick*="import"],
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup button[onclick*="Import"],
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup button[onclick*="export"],
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup button[onclick*="Export"],
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup button[onclick*="csv"],
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup button[onclick*="CSV"],
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup button[onclick*="json"],
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup button[onclick*="JSON"]{
+  width:auto!important;
+  min-width:150px!important;
+  color:#f8fafc!important;
+  text-align:center!important;
+  justify-content:center!important;
+}
+
+/* Sekcja 6 Pracownicy: rola/funkcja przy imieniu ma być widoczna */
+body.theme-dark:not(.loginMode) #userList .editBox .role,
+body.theme-dark:not(.loginMode) #userList .editBox [class*="role"],
+body.theme-dark:not(.loginMode) #userList .editBox [class*="Role"],
+body.theme-dark:not(.loginMode) #userList .editBox .badge,
+body.theme-dark:not(.loginMode) #userList .editBox [class*="badge"],
+body.theme-dark:not(.loginMode) #userList .editBox [class*="Badge"]{
+  background:#e0e7ff!important;
+  color:#312e81!important;
+  border:1px solid #c7d2fe!important;
+  border-radius:999px!important;
+  padding:4px 10px!important;
+  font-weight:950!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+
+/* Jeśli funkcja/rola jest zwykłym selectem albo tekstem przy nazwie */
+body.theme-dark:not(.loginMode) #userList .editBox select,
+body.theme-dark:not(.loginMode) #userList .editBox option{
+  background:#111827!important;
+  color:#f8fafc!important;
+}
+
+/* Teksty lokalizacji/przydziałów w pracownikach zostają białe */
+body.theme-dark:not(.loginMode) #userList .editBox label,
+body.theme-dark:not(.loginMode) #userList .editBox label *,
+body.theme-dark:not(.loginMode) #userList .editBox p,
+body.theme-dark:not(.loginMode) #userList .editBox span{
+  color:#f8fafc!important;
+}
+
+
+body.theme-dark:not(.loginMode) #admin .kcBackupActionButton{
+  background:#111827!important;
+  color:#f8fafc!important;
+  border:1px solid #475569!important;
+  text-align:center!important;
+  justify-content:center!important;
+}
+body.theme-dark:not(.loginMode) #userList .kcUserRoleBadge{
+  background:#e0e7ff!important;
+  color:#312e81!important;
+  border:1px solid #c7d2fe!important;
+  border-radius:999px!important;
+  padding:4px 10px!important;
   font-weight:950!important;
 }
 
-/* Checkbox area should not become white-on-white */
-body.theme-dark:not(.loginMode) #admin input[type="checkbox"]{
-  accent-color:#3b82f6;
+
+/* v9.46 — Sekcja 7 Backup: układ pasków jeden pod drugim */
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup .row{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:stretch!important;
+  gap:10px!important;
+  background:transparent!important;
 }
-body.theme-dark:not(.loginMode) #admin input[type="checkbox"] + span,
-body.theme-dark:not(.loginMode) #admin input[type="checkbox"] + label{
+
+/* przyciski/paski w backupie pełna szerokość, jeden pod drugim */
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup button,
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup .btn,
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup .kcBackupActionButton,
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup label{
+  width:100%!important;
+  min-width:0!important;
+  max-width:none!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-align:center!important;
+  margin:0!important;
+  box-sizing:border-box!important;
+}
+
+/* input file / backup controls też niech nie rozbijają układu */
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup input[type="file"]{
+  width:100%!important;
+  box-sizing:border-box!important;
+}
+
+/* jeśli przeglądarka tworzy przycisk pliku, też pełny pasek */
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup input[type="file"]::file-selector-button{
+  width:100%!important;
+  text-align:center!important;
+}
+
+
+/* v9.46 - niebieskie przyciski w sekcji Backup */
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup button,
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup .btn,
+body.theme-dark:not(.loginMode) #admin .kcSection7Backup .kcBackupActionButton{
+  background:#2563eb!important;
+  color:#fff!important;
+  border:1px solid #2563eb!important;
+  font-weight:900!important;
+}
+
+
+/* v9.46 — jasny motyw: Admin / Backup wraca do jasnego tła */
+body.theme-light:not(.loginMode) #admin .kcSection7Backup,
+body.theme-light:not(.loginMode) #admin .kcSection7Backup .backupBox,
+body.theme-light:not(.loginMode) #admin .kcBackupCardDark{
+  background:#fff!important;
+  background-color:#fff!important;
+  border-color:#d8dee8!important;
+  color:#0f172a!important;
+}
+
+body.theme-light:not(.loginMode) #admin .kcSection7Backup h2,
+body.theme-light:not(.loginMode) #admin .kcSection7Backup p,
+body.theme-light:not(.loginMode) #admin .kcSection7Backup div,
+body.theme-light:not(.loginMode) #admin .kcSection7Backup span,
+body.theme-light:not(.loginMode) #admin .kcSection7Backup label{
+  color:#0f172a!important;
+}
+
+body.theme-light:not(.loginMode) #admin .kcSection7Backup .backupBox{
+  background:#f8fafc!important;
+}
+
+body.theme-light:not(.loginMode) #admin .kcSection7Backup .row{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:stretch!important;
+  gap:10px!important;
+  background:transparent!important;
+}
+
+body.theme-light:not(.loginMode) #admin .kcSection7Backup button,
+body.theme-light:not(.loginMode) #admin .kcSection7Backup .btn,
+body.theme-light:not(.loginMode) #admin .kcSection7Backup .kcBackupActionButton,
+body.theme-light:not(.loginMode) #admin .kcSection7Backup label{
+  width:100%!important;
+  min-width:0!important;
+  max-width:none!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-align:center!important;
+  margin:0!important;
+  box-sizing:border-box!important;
+  background:#2563eb!important;
+  color:#fff!important;
+  border:1px solid #2563eb!important;
+  font-weight:900!important;
+}
+
+
+
+/* v9.48 — Historia wpisów 1:1: ciemne karty samych wpisów */
+body.theme-dark:not(.loginMode) #historyResult{
+  background:linear-gradient(180deg,#111827,#0b1220)!important;
+  color:#e5e7eb!important;
+  border-radius:16px!important;
+  padding:14px!important;
+}
+body.theme-dark:not(.loginMode) #historyResult .historyCount{
+  color:#e5e7eb!important;
+  font-size:16px!important;
+  margin:0 0 14px!important;
+}
+body.theme-dark:not(.loginMode) #historyResult .editBox,
+body.theme-dark:not(.loginMode) #historyResult .kcHistoryEditBox{
+  background:linear-gradient(180deg,#182337,#111827)!important;
+  color:#f8fafc!important;
+  border:1px solid rgba(148,163,184,.34)!important;
+  border-radius:16px!important;
+  padding:14px!important;
+  margin:12px 0!important;
+  box-shadow:0 12px 30px rgba(0,0,0,.24)!important;
+}
+body.theme-dark:not(.loginMode) #historyResult .editBox b,
+body.theme-dark:not(.loginMode) #historyResult .kcHistoryEditBox b{
+  color:#3b82f6!important;
+  font-weight:900!important;
+}
+body.theme-dark:not(.loginMode) #historyResult .editBox .row,
+body.theme-dark:not(.loginMode) #historyResult .kcHistoryEditBox .row{
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  gap:10px!important;
+  margin-top:12px!important;
+}
+body.theme-dark:not(.loginMode) #historyResult .editBox input,
+body.theme-dark:not(.loginMode) #historyResult .editBox select,
+body.theme-dark:not(.loginMode) #historyResult .editBox textarea,
+body.theme-dark:not(.loginMode) #historyResult .kcHistoryEditBox input,
+body.theme-dark:not(.loginMode) #historyResult .kcHistoryEditBox select,
+body.theme-dark:not(.loginMode) #historyResult .kcHistoryEditBox textarea{
+  background:#111827!important;
+  color:#f8fafc!important;
+  border:1px solid #334155!important;
+  border-radius:12px!important;
+  min-height:48px!important;
+  width:100%!important;
+  box-sizing:border-box!important;
+}
+body.theme-dark:not(.loginMode) #historyResult .checkGrid{
+  gap:10px!important;
+  margin-top:0!important;
+}
+body.theme-dark:not(.loginMode) #historyResult .checkEdit{
+  background:#111827!important;
+  color:#cbd5e1!important;
+  border:1px solid #334155!important;
+  border-radius:12px!important;
+  padding:12px!important;
+  min-height:48px!important;
+}
+body.theme-dark:not(.loginMode) #historyResult .checkEdit input[type="checkbox"]{
+  width:24px!important;
+  height:24px!important;
+  min-height:24px!important;
+  flex:0 0 24px!important;
+}
+body.theme-dark:not(.loginMode) #historyResult .btn.danger{
+  background:#dc2626!important;
+  color:#fff!important;
+}
+body.theme-dark:not(.loginMode) #historyResult [style*="background:#f"],
+body.theme-dark:not(.loginMode) #historyResult [style*="background: #f"],
+body.theme-dark:not(.loginMode) #historyResult [style*="background:white"],
+body.theme-dark:not(.loginMode) #historyResult [style*="background: white"],
+body.theme-dark:not(.loginMode) #historyResult [style*="background:#fff"],
+body.theme-dark:not(.loginMode) #historyResult [style*="background: #fff"]{
+  background:#111827!important;
+  color:#f8fafc!important;
+  border-color:#334155!important;
+}
+body.theme-dark:not(.loginMode) #historyResult [style*="background:#f"] *,
+body.theme-dark:not(.loginMode) #historyResult [style*="background: #f"] *,
+body.theme-dark:not(.loginMode) #historyResult [style*="background:white"] *,
+body.theme-dark:not(.loginMode) #historyResult [style*="background: white"] *,
+body.theme-dark:not(.loginMode) #historyResult [style*="background:#fff"] *,
+body.theme-dark:not(.loginMode) #historyResult [style*="background: #fff"] *{
   color:#f8fafc!important;
 }
-
-/* If item is light, checkbox text dark */
-body.theme-dark:not(.loginMode) #admin .kcAdminItem input[type="checkbox"] + span,
-body.theme-dark:not(.loginMode) #admin .kcAdminItem label{
-  color:#111827!important;
+@media(max-width:520px){
+  body.theme-dark:not(.loginMode) #historyResult{padding:12px!important;border-radius:16px!important;}
+  body.theme-dark:not(.loginMode) #historyResult .editBox,
+  body.theme-dark:not(.loginMode) #historyResult .kcHistoryEditBox{padding:12px!important;border-radius:14px!important;}
 }
 
-/* Tables if any */
-body.theme-dark:not(.loginMode) #admin table,
-body.theme-dark:not(.loginMode) #admin th,
-body.theme-dark:not(.loginMode) #admin td{
+
+
+/* v9.51 — MIESIĄC: ciemne tło raportu i tabel w ciemnym motywie */
+body.theme-dark:not(.loginMode) #month,
+body.theme-dark:not(.loginMode) section#month{
+  background:transparent!important;
+  color:#f8fafc!important;
+}
+body.theme-dark:not(.loginMode) #month .card{
+  background:linear-gradient(180deg,#132238 0%,#0d1b2f 100%)!important;
+  color:#f8fafc!important;
+  border:1px solid rgba(148,163,184,.28)!important;
+  box-shadow:0 14px 32px rgba(0,0,0,.26)!important;
+}
+body.theme-dark:not(.loginMode) #month .card h2,
+body.theme-dark:not(.loginMode) #month .cellHint,
+body.theme-dark:not(.loginMode) #month .sanepidHeader{
+  color:#f8fafc!important;
+}
+body.theme-dark:not(.loginMode) #month .row select,
+body.theme-dark:not(.loginMode) #month .row input,
+body.theme-dark:not(.loginMode) #month select,
+body.theme-dark:not(.loginMode) #month input{
+  background:#111827!important;
+  color:#f8fafc!important;
+  border:1px solid #334155!important;
+}
+body.theme-dark:not(.loginMode) #month .wrap,
+body.theme-dark:not(.loginMode) #monthTable{
+  background:#0b1526!important;
+  border:1px solid rgba(148,163,184,.30)!important;
+  border-radius:14px!important;
+  overflow:auto!important;
+}
+body.theme-dark:not(.loginMode) #month table{
+  background:#0b1526!important;
+  color:#f8fafc!important;
+  border-collapse:collapse!important;
+}
+body.theme-dark:not(.loginMode) #month th,
+body.theme-dark:not(.loginMode) #month td{
+  background:#111c31!important;
+  color:#f8fafc!important;
+  border:1px solid #334155!important;
+}
+body.theme-dark:not(.loginMode) #month th{
   background:#0f2036!important;
   color:#f8fafc!important;
-  border-color:rgba(148,163,184,.26)!important;
+  font-weight:900!important;
+}
+body.theme-dark:not(.loginMode) #month tr:first-child th{
+  background:#081526!important;
+  color:#ffffff!important;
+  font-size:15px!important;
+}
+body.theme-dark:not(.loginMode) #month td:empty{
+  background:#0b1526!important;
+}
+body.theme-dark:not(.loginMode) #month .clickableCell{
+  color:#ffffff!important;
+  font-weight:900!important;
+}
+body.theme-dark:not(.loginMode) #month .filled-ok,
+body.theme-dark:not(.loginMode) #month .ok{
+  background:#14532d!important;
+  color:#dcfce7!important;
+}
+body.theme-dark:not(.loginMode) #month .filled-warn,
+body.theme-dark:not(.loginMode) #month .warn{
+  background:#713f12!important;
+  color:#fef3c7!important;
+}
+body.theme-dark:not(.loginMode) #month .filled-alarm,
+body.theme-dark:not(.loginMode) #month .alarm{
+  background:#7f1d1d!important;
+  color:#fee2e2!important;
+}
+body.theme-dark:not(.loginMode) #month button,
+body.theme-dark:not(.loginMode) #month .btn{
+  background:#2563eb!important;
+  color:#fff!important;
+  border:1px solid #2563eb!important;
+}
+body.theme-dark:not(.loginMode) #month button:not(.primary):not(:disabled),
+body.theme-dark:not(.loginMode) #month .btn:not(.primary):not(:disabled){
+  background:#111827!important;
+  color:#f8fafc!important;
+  border:1px solid #334155!important;
+}
+body.theme-dark:not(.loginMode) #month button:disabled,
+body.theme-dark:not(.loginMode) #month .btn:disabled{
+  background:#1f2937!important;
+  color:#94a3b8!important;
+  border-color:#374151!important;
+}
+@media print{
+  body.theme-dark:not(.loginMode) #month table,
+  body.theme-dark:not(.loginMode) #month th,
+  body.theme-dark:not(.loginMode) #month td{
+    background:#fff!important;
+    color:#111!important;
+    border-color:#111!important;
+  }
 }
 
+
+
+/* v9.51 — okienko szczegółów komórki: w ciemnym motywie identyczne jak w jasnym */
+body.theme-dark:not(.loginMode) .modalOverlay{
+  background:#0008!important;
+}
+body.theme-dark:not(.loginMode) .modalBox{
+  background:#ffffff!important;
+  color:#172033!important;
+  border:0!important;
+  box-shadow:0 10px 40px #0004!important;
+}
+body.theme-dark:not(.loginMode) .modalBox h1,
+body.theme-dark:not(.loginMode) .modalBox h2,
+body.theme-dark:not(.loginMode) .modalBox h3,
+body.theme-dark:not(.loginMode) .modalBox h4,
+body.theme-dark:not(.loginMode) .modalBox p,
+body.theme-dark:not(.loginMode) .modalBox b,
+body.theme-dark:not(.loginMode) .modalBox span,
+body.theme-dark:not(.loginMode) .modalBox div{
+  color:#172033!important;
+}
+body.theme-dark:not(.loginMode) .modalBox .btn.primary,
+body.theme-dark:not(.loginMode) .modalBox button.primary{
+  background:#2563eb!important;
+  color:#ffffff!important;
+  border-color:#2563eb!important;
+}
+
+
+/* v9.53 — Miesiąc: przyciski Drukuj/PDF 70:30 */
+.printPdfActions{display:grid;gap:8px;min-width:320px;flex:1 1 420px}
+.printPdfRow{display:grid;grid-template-columns:7fr 3fr;gap:8px;width:100%}
+.printPdfRow .btn{width:100%;margin:0}
+.printPdfRow .pdfBtn{background:#2563eb!important;color:#fff!important;border-color:#2563eb!important}
+body.theme-dark:not(.loginMode) #month .printPdfRow .pdfBtn{background:#2563eb!important;color:#fff!important;border-color:#2563eb!important}
+@media(max-width:520px){.printPdfActions{min-width:100%;width:100%}.printPdfRow{grid-template-columns:7fr 3fr}}
+
+
+/* v9.52 — profesjonalny wydruk rejestru i raport uwag */
+.printMeta{font-size:10px;color:#374151;line-height:1.15;margin-top:2px;white-space:nowrap}
+#printNotesBox,#printEntriesBox{display:none}
+@media print{
+  body{background:#fff!important;color:#000!important}
+  body.kcPrintEntries #monthTable,
+  body.kcPrintEntries #printNotesBox,
+  body.kcPrintEntries .cellHint{display:none!important}
+  body.kcPrintEntries #printEntriesBox{display:block!important}
+  body:not(.kcPrintEntries) #printEntriesBox{display:none!important}
+  body:not(.kcPrintEntries) #printNotesBox{display:block!important}
+  #month .card{background:#fff!important;color:#000!important;box-shadow:none!important;border:0!important}
+  #month table{border-collapse:collapse!important;width:100%!important;background:#fff!important;color:#000!important}
+  #month th,#month td{border:1px solid #9ca3af!important;background:#fff!important;color:#000!important}
+  #month th{background:#f3f4f6!important;font-weight:800!important}
+  #month .filled-ok{background:#fff!important;color:#000!important}
+  #month .filled-warn{background:#f3f4f6!important;color:#000!important;font-weight:800!important}
+  #month .filled-alarm{background:#fff!important;color:#000!important;font-weight:900!important;border:2px solid #111!important}
+  #month .printMeta{display:block!important;color:#374151!important;font-size:8px!important;line-height:1.05!important;margin-top:1px!important}
+  .kcPrintSection{page-break-before:auto;margin-top:12px;font-size:11px}
+  .kcPrintSection h3{font-size:14px;margin:10px 0 6px;color:#000!important}
+}
+
+
+/* v9.55 — poprawka po v9.54: jeden przełącznik motywu, bez ikon/kwadratów w selectach */
+#themeToggleBtn{font-size:19px;line-height:1}
+.kcSelectWrap{position:relative;display:inline-flex;align-items:center;max-width:100%}
+.kcSelectWrap select{width:100%;padding-left:10px!important;padding-right:34px!important;appearance:auto;-webkit-appearance:auto;color:#172033!important}
+body.theme-dark:not(.loginMode) .kcSelectWrap select{color:#f8fafc!important}
+@media(max-width:850px){.row>.kcSelectWrap{width:100%}}
+
+
+/* v9.63 — uporządkowany Admin */
+.adminIntro{margin-bottom:12px}
+.adminSection{padding:13px 14px!important;margin:9px 0!important}
+.adminSection h2{font-size:18px;margin:0 0 6px 0}
+.adminSection p{margin:0 0 10px 0;line-height:1.35}
+.adminSection details{margin-top:8px}
+.adminSection summary{list-style:none;cursor:pointer;border-radius:12px;padding:12px 14px;font-weight:900;background:#2563eb;color:#fff;box-shadow:0 2px 8px #0001;display:flex;justify-content:space-between;align-items:center}
+.adminSection summary::-webkit-details-marker{display:none}
+.adminSection summary:after{content:'⌄';font-size:18px;line-height:1;opacity:.95}
+.adminSection details[open] summary:after{content:'⌃'}
+.adminAddRow{margin:12px 0}
+.adminListRow{display:flex;align-items:center;gap:8px;justify-content:space-between;border:1px solid #d8dee8;background:#f8fafc;border-radius:12px;padding:10px;margin:8px 0}
+.adminListRow b{font-size:15px}.adminListRow .row{flex:1}.adminListTitle{margin:14px 0 6px;font-weight:900}.adminListSub{margin:10px 0 4px;font-weight:900;color:#475569}
+.adminListRow input{flex:1;min-width:160px}
+body.theme-dark:not(.loginMode) .adminSection summary{background:#2563eb!important;color:#fff!important;border:1px solid rgba(96,165,250,.35)!important}
+body.theme-dark:not(.loginMode) .adminListRow{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
+body.theme-dark:not(.loginMode) .adminListRow *:not(button){color:#f8fafc!important}
+body.theme-dark:not(.loginMode) .adminListSub{color:#cbd5e1!important}
+body.theme-dark:not(.loginMode) #rangeAdminBox .btn:not(.danger){background:#2563eb!important;color:#fff!important;border-color:#2563eb!important}
+@media(max-width:520px){.adminSection h2{font-size:17px}.adminListRow{align-items:stretch;flex-direction:column}.adminListRow .row>*{width:100%}}
 </style>
-<link rel="manifest" href="./manifest.json?v=939">
-<link rel="apple-touch-icon" sizes="180x180" href="./icons/icon-180.png?v=939">
-<link rel="apple-touch-icon" href="./icons/icon-180.png?v=939">
-<link rel="icon" type="image/png" sizes="32x32" href="./icons/icon-32.png?v=939">
-<link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png?v=939">
+<link rel="manifest" href="./manifest.json?v=946">
+<link rel="apple-touch-icon" sizes="180x180" href="./icons/icon-180.png?v=946">
+<link rel="apple-touch-icon" href="./icons/icon-180.png?v=946">
+<link rel="icon" type="image/png" sizes="32x32" href="./icons/icon-32.png?v=946">
+<link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png?v=946">
 <meta name="theme-color" content="#dbeafe">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Kitchen Control">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
-</head><body><header class="appHeader"><div class="headerLeft" onclick="show('panel')"><img class="headerLogoImg" src="./icons/icon-180.png?v=939" alt="Kitchen Control"><h1>Kitchen Control</h1></div><div class="headerActions"><button type="button" class="themeMiniBtn" onclick="setAppTheme('light')" aria-label="Motyw jasny">☀️</button><button type="button" class="themeMiniBtn" onclick="setAppTheme('dark')" aria-label="Motyw ciemny">🌙</button><button id="headerMenuBtn" class="powerBtn hidden" onclick="toggleUserMenu(event)">⏻</button></div></header><main>
+</head><body><header class="appHeader"><div class="headerLeft" onclick="show('panel')"><img class="headerLogoImg" src="./icons/icon-180.png?v=946" alt="Kitchen Control"><h1>Kitchen Control</h1></div><div class="headerActions"><button type="button" id="themeToggleBtn" class="themeMiniBtn" onclick="toggleAppTheme()" aria-label="Zmień motyw">🌙</button><button id="headerMenuBtn" class="powerBtn hidden" onclick="toggleUserMenu(event)">⏻</button></div></header><main>
 
 <section id="loginScreen" class="loginBox kcLoginScreen">
   <div class="kcLoginCard">
-    <img class="kcLoginIcon" src="./icons/icon-512.png?v=939" alt="Kitchen Control">
+    <img class="kcLoginIcon" src="./icons/icon-512.png?v=946" alt="Kitchen Control">
     <h2>Kitchen Control</h2>
     <p class="kcLoginSub">SYSTEM MONITOROWANIA TEMPERATUR</p>
 
@@ -2241,7 +2744,7 @@ body.theme-dark:not(.loginMode) #admin td{
 
 <div id="appArea" class="hidden">
 <div class="userbar controls hidden"><span id="currentUserName"></span><span id="currentRole"></span></div>
-<div class="nav controls"><button onclick="show('panel')" id="t-panel" class="active">Panel</button><button onclick="show('temp')" id="t-temp">Temperatury</button><button onclick="show('clean')" id="t-clean">Sprzątanie</button><button onclick="show('haccp')" id="t-haccp">HACCP / daty</button><button onclick="show('month')" id="t-month">Miesiąc</button><button onclick="show('admin')" id="t-admin" class="adminOnly">Admin</button><button onclick="show('history')" id="t-history" class="managerOnly">Historia wpisów</button></div>
+<div class="nav controls"><button onclick="show('panel')" id="t-panel" class="active">Panel</button><button onclick="show('temp')" id="t-temp">Temperatury</button><button onclick="show('clean')" id="t-clean">Sprzątanie</button><button onclick="show('haccp')" id="t-haccp">HACCP</button><button onclick="show('month')" id="t-month">Miesiąc</button><button onclick="show('admin')" id="t-admin" class="adminOnly">Admin</button><button onclick="show('history')" id="t-history" class="managerOnly">Historia wpisów</button></div>
 
 <section id="panel">
 <div class="card controls" id="panelControls">
@@ -2258,47 +2761,63 @@ body.theme-dark:not(.loginMode) #admin td{
 
 <section id="clean" class="hidden"><div class="card controls"><h2>Sprzątanie</h2><div class="row"><select id="cleanLoc"></select><select id="cleanShift"></select><input type="date" id="cleanDate"><input type="time" id="cleanTime"><span class="authorBadge">👤 <span id="cleanUserLabel"></span></span><input id="cleanUser" type="hidden"><button class="btn primary" onclick="saveClean()">Zapisz</button></div><div id="cleanMsg"></div></div><div class="card"><div id="cleanItems"></div><textarea id="cleanNote" placeholder="Uwagi"></textarea></div><div class="card"><h2>Historia sprzątania</h2><p class="small" style="color:#6b7280">Historia dla wybranej lokalizacji i części dnia.</p><div id="cleanLog"></div></div></section>
 
-<section id="haccp" class="hidden"><div class="card controls"><h2>HACCP ogólne / daty</h2><div class="row"><select id="haccpLoc"></select><input type="date" id="haccpDate"><input type="time" id="haccpTime"><span class="authorBadge">👤 <span id="haccpUserLabel"></span></span><input id="haccpUser" type="hidden"><button class="btn primary" onclick="saveHaccp()">Zapisz</button></div><div id="haccpMsg"></div></div><div class="card">
-<div id="haccpItems"></div><textarea id="haccpNote" placeholder="Uwagi / produkty do usunięcia"></textarea></div><div class="card"><h2>Historia HACCP / dat</h2><p class="small" style="color:#6b7280">Historia dla wybranej lokalizacji.</p><div id="haccpLog"></div></div></section>
+<section id="haccp" class="hidden"><div class="card controls"><h2>HACCP</h2><div class="row"><select id="haccpLoc"></select><input type="date" id="haccpDate"><input type="time" id="haccpTime"><span class="authorBadge">👤 <span id="haccpUserLabel"></span></span><input id="haccpUser" type="hidden"><button class="btn primary" onclick="saveHaccp()">Zapisz</button></div><div id="haccpMsg"></div></div><div class="card">
+<div id="haccpItems"></div><textarea id="haccpNote" placeholder="Uwagi / produkty do usunięcia"></textarea></div><div class="card"><h2>Historia HACCP</h2><p class="small" style="color:#6b7280">Historia dla wybranej lokalizacji.</p><div id="haccpLog"></div></div></section>
 
-<section id="month" class="hidden"><div class="card controls"><h2>Raport miesięczny</h2><div class="row"><select id="monthLoc"></select><select id="monthType"><option value="temp">Temperatury</option><option value="clean">Sprzątanie</option><option value="haccp">HACCP / daty</option></select><input type="month" id="monthPick"><button class="btn primary" onclick="renderMonth()">Odśwież</button><button class="btn" onclick="printReport()">Drukuj / PDF</button><button class="btn managerOnly" onclick="exportCSV()">Eksport CSV</button></div></div><div class="card"><div class="sanepidHeader" id="printTitle"></div><div class="wrap" id="monthTable"></div><div class="cellHint noPrint">Kliknij temperaturę albo X, żeby zobaczyć szczegóły wpisu.</div></div></section>
+<section id="month" class="hidden"><div class="card controls"><h2>Raport miesięczny</h2><div class="row"><select id="monthLoc"></select><select id="monthType"><option value="temp">Temperatury</option><option value="clean">Sprzątanie</option><option value="haccp">HACCP</option></select><input type="month" id="monthPick"><button class="btn primary" onclick="renderMonth()">Odśwież</button><div class="printPdfActions"><div class="printPdfRow"><button class="btn" onclick="printReport()">Drukuj rejestr</button><button class="btn pdfBtn" onclick="pdfReport()">PDF</button></div><div class="printPdfRow"><button class="btn" onclick="printEntriesReport()">Drukuj raport wpisów</button><button class="btn pdfBtn" onclick="pdfEntriesReport()">PDF</button></div></div><button class="btn managerOnly" onclick="exportCSV()">Eksport CSV</button></div></div><div class="card"><div class="sanepidHeader" id="printTitle"></div><div class="wrap" id="monthTable"></div><div id="printNotesBox" class="kcPrintSection"></div><div id="printEntriesBox" class="kcPrintSection"></div><div class="cellHint noPrint">Kliknij temperaturę albo X, żeby zobaczyć szczegóły wpisu.</div></div></section>
 
-<section id="sanepid" class="hidden"><div class="card controls"><h2>Widok do pokazania Sanepidowi <span class="readonlyBadge">TYLKO PODGLĄD</span></h2><div class="row"><select id="sanLoc"></select><select id="sanType"><option value="temp">Temperatury</option><option value="clean">Sprzątanie</option><option value="haccp">HACCP / daty</option></select><input type="month" id="sanMonth"><button class="btn primary" onclick="renderSanepid()">Pokaż</button><button class="btn" onclick="printSanepid()">Drukuj / PDF</button></div></div><div class="card"><div class="sanepidHeader" id="sanTitle"></div><div class="wrap" id="sanTable"></div><div class="cellHint noPrint">Kliknij temperaturę albo X, żeby zobaczyć szczegóły wpisu.</div></div></section>
+<section id="sanepid" class="hidden"><div class="card controls"><h2>Widok do pokazania Sanepidowi <span class="readonlyBadge">TYLKO PODGLĄD</span></h2><div class="row"><select id="sanLoc"></select><select id="sanType"><option value="temp">Temperatury</option><option value="clean">Sprzątanie</option><option value="haccp">HACCP</option></select><input type="month" id="sanMonth"><button class="btn primary" onclick="renderSanepid()">Pokaż</button><button class="btn" onclick="printSanepid()">Drukuj / PDF</button></div></div><div class="card"><div class="sanepidHeader" id="sanTitle"></div><div class="wrap" id="sanTable"></div><div class="cellHint noPrint">Kliknij temperaturę albo X, żeby zobaczyć szczegóły wpisu.</div></div></section>
 
 <section id="admin" class="hidden">
-<div class="card"><h2>Admin — lokalizacje</h2>
+<div class="card adminIntro"><h2>Admin</h2><p>Konfiguracja aplikacji. Sekcje są zwinięte, żeby panel był krótszy i wygodniejszy na telefonie.</p></div>
+
+<div class="card adminSection"><h2>Admin — lokalizacje</h2>
 <p>Dodajesz nowe lokale, kuchnie lub punkty sprzedaży. Po dodaniu lokalizacja pojawi się w formularzach, raportach i uprawnieniach pracowników.</p>
-<div class="row"><input id="newLocationName" placeholder="np. Asian Street Food Centrum"><button class="btn primary" onclick="addLocation()">Dodaj lokalizację</button></div>
+<details><summary>Dodaj / Edytuj</summary>
+<div class="row adminAddRow"><input id="newLocationName" placeholder="np. Asian Street Food Centrum"><button class="btn primary" onclick="addLocation()">Dodaj lokalizację</button></div>
 <div id="locationList"></div>
+</details>
 </div>
 
-<div class="card"><h2>Admin — urządzenia</h2><p>Tu modyfikujesz listę chłodni i mroźni dla każdej lokalizacji.</p><div class="row"><select id="adminLoc"></select><select id="adminType"><option value="chlodnie">Chłodnia</option><option value="mroznie">Mroźnia</option></select><input id="adminName" placeholder="np. Chłodnia 4"><button class="btn primary" onclick="addDevice()">Dodaj</button></div><div id="devList"></div></div>
+<div class="card adminSection"><h2>Admin — urządzenia</h2>
+<p>Dodajesz i edytujesz chłodnie oraz mroźnie przypisane do konkretnej lokalizacji.</p>
+<details><summary>Dodaj / Edytuj</summary>
+<div class="row adminAddRow"><select id="adminLoc"></select><select id="adminType"><option value="chlodnie">Chłodnia</option><option value="mroznie">Mroźnia</option></select><input id="adminName" placeholder="np. Chłodnia 4"><button class="btn primary" onclick="addDevice()">Dodaj</button></div><div id="devList"></div>
+</details>
+</div>
 
-<div class="card"><h2>Admin — pora dnia / etap zmiany</h2>
-<p>Dla każdej lokalizacji możesz dodać własne etapy, np. Otwarcie, W ciągu dnia, Zamknięcie zmiany.</p>
-<div class="row">
+<div class="card adminSection"><h2>Admin — pory dnia</h2>
+<p>Ustawiasz etapy pracy dla lokalizacji, np. otwarcie, w ciągu dnia lub zamknięcie zmiany.</p>
+<details><summary>Dodaj / Edytuj</summary>
+<div class="row adminAddRow">
 <select id="shiftAdminLoc"></select>
 <input id="newShiftName" placeholder="np. Otwarcie / Zamknięcie zmiany">
 <button class="btn primary" onclick="addShift()">Dodaj porę dnia</button>
 </div>
 <div id="shiftAdminList"></div>
+</details>
 </div>
 
-<div class="card"><h2>Admin — sprzątanie</h2>
-<p>Dodajesz i usuwasz obowiązki sprzątania osobno dla: rano / w ciągu dnia / wieczór.</p>
-<div class="row"><select id="cleanAdminLoc"></select><select id="cleanAdminShift"></select><input id="newCleanItem" placeholder="Nowa czynność sprzątania"><select id="newCleanFreq" class="freqSelect"><option value="daily">Codziennie</option><option value="7">Co 7 dni</option><option value="14">Co 14 dni</option><option value="30">Co 30 dni</option></select><button class="btn primary" onclick="addCleanItem()">Dodaj</button></div>
+<div class="card adminSection"><h2>Admin — sprzątanie</h2>
+<p>Dodajesz czynności sprzątania osobno dla lokalizacji i pory dnia oraz ustawiasz częstotliwość wykonania.</p>
+<details><summary>Dodaj / Edytuj</summary>
+<div class="row adminAddRow"><select id="cleanAdminLoc"></select><select id="cleanAdminShift"></select><input id="newCleanItem" placeholder="Nowa czynność sprzątania"><select id="newCleanFreq" class="freqSelect"><option value="daily">Codziennie</option><option value="7">Co 7 dni</option><option value="14">Co 14 dni</option><option value="30">Co 30 dni</option></select><button class="btn primary" onclick="addCleanItem()">Dodaj</button></div>
 <div id="cleanAdminList"></div>
+</details>
 </div>
 
-<div class="card"><h2>Admin — HACCP / daty</h2>
-<p>Dodajesz nowe kontrole HACCP, gdy pojawią się nowe obowiązki.</p>
-<div class="row"><select id="haccpAdminLoc"></select><input id="newHaccpItem" placeholder="np. Kontrola etykiet / alergeny / chemia"><button class="btn primary" onclick="addHaccpItem()">Dodaj kontrolę</button></div>
+<div class="card adminSection"><h2>Admin — HACCP</h2>
+<p>Dodajesz kontrole HACCP, które pracownicy będą zaznaczać w codziennych wpisach.</p>
+<details><summary>Dodaj / Edytuj</summary>
+<div class="row adminAddRow"><select id="haccpAdminLoc"></select><input id="newHaccpItem" placeholder="np. Kontrola etykiet / alergeny / chemia"><button class="btn primary" onclick="addHaccpItem()">Dodaj kontrolę</button></div>
 <div id="haccpAdminList"></div>
+</details>
 </div>
 
-<div class="card"><h2>Admin — pracownicy i dostęp</h2>
-<p>Dodajesz pracownika, PIN, rolę i lokalizacje.</p>
-<div class="row">
+<div class="card adminSection"><h2>Admin — pracownicy</h2>
+<p>Dodajesz pracownika, PIN, rolę oraz dostęp do wybranych lokalizacji.</p>
+<details><summary>Dodaj / Edytuj</summary>
+<div class="row adminAddRow">
 <input id="newUserName" placeholder="Imię / nazwa">
 <input id="newUserPin" placeholder="PIN" inputmode="numeric">
 <select id="newUserRole"><option>Pracownik</option><option>Manager</option><option>Admin</option></select>
@@ -2307,24 +2826,30 @@ body.theme-dark:not(.loginMode) #admin td{
 <p>Przypisanie lokalizacji:</p>
 <div id="newUserLocs"></div>
 <div id="userList"></div>
+</details>
 </div>
 
-<div class="card"><h2>Edycja zapisanych wpisów</h2>
-<p>Przegląd i edycja wpisów są teraz w osobnej zakładce, żeby panel Admin nie ładował długiej listy.</p>
+<div class="card adminSection"><h2>Admin — edycja wpisów</h2>
+<p>Przegląd i edycja zapisanych wpisów są w osobnej zakładce, żeby panel Admin działał szybciej.</p>
 <button class="btn primary" onclick="show('history')">Otwórz historię wpisów</button>
 </div>
 
-<div class="card"><h2>Admin — backup i migracja do Firebase</h2>
-<p>Przed przejściem na Firebase zrób kopię danych. Ten plik będzie można później zaimportować do wersji chmurowej.</p>
-<div class="row">
+<div class="card adminSection"><h2>Admin — backup</h2>
+<p>Tworzysz kopię danych i eksportujesz historię przed większymi zmianami albo migracją do Firebase.</p>
+<details><summary>Dodaj / Edytuj</summary>
+<div class="row adminAddRow">
 <button class="btn primary" onclick="exportBackup()">Pobierz backup JSON</button>
-<label class="btn">Importuj backup JSON<input type="file" accept=".json,application/json" style="display:none" onchange="importBackup(event)"></label>
-<button class="btn managerOnly" onclick="exportCSV()">Eksport CSV</button>
+<label class="btn primary">Importuj backup JSON<input type="file" accept=".json,application/json" style="display:none" onchange="importBackup(event)"></label>
+<button class="btn primary managerOnly" onclick="exportCSV()">Eksport CSV</button>
 </div>
 <div class="backupBox" id="backupSummary"></div>
+</details>
 </div>
 
-<div class="card"><h2>Zakresy</h2><p><b>Chłodnie:</b> 0–10°C. OK 0–4, UWAGA 5–7, ALARM 8–10.</p><p><b>Mroźnie:</b> -25 do -5°C. OK -25 do -18, UWAGA -17 do -15, ALARM -14 do -5.</p></div>
+<div class="card adminSection"><h2>Admin — zakresy temperatur</h2>
+<p>Ręcznie ustawiasz zakresy dla chłodni i mroźni. Zmiana przelicza statusy zapisanych temperatur.</p>
+<details><summary>Dodaj / Edytuj</summary><div id="rangeAdminBox"></div></details>
+</div>
 </section>
 
 <section id="history" class="hidden">
@@ -2337,7 +2862,7 @@ body.theme-dark:not(.loginMode) #admin td{
 <option value="all">Wszystko</option>
 <option value="temp">Temperatury</option>
 <option value="clean">Sprzątanie</option>
-<option value="haccp">HACCP / daty</option>
+<option value="haccp">HACCP</option>
 </select>
 <input type="date" id="histFrom">
 <input type="date" id="histTo">
@@ -2354,7 +2879,7 @@ body.theme-dark:not(.loginMode) #admin td{
   <button class="btn adminOnly" onclick="exportBackup();closeUserMenu()">Backup JSON</button>
   <button class="btn danger" onclick="logout();closeUserMenu()">Wyloguj</button>
 </div>
-<div id="cellModal" class="hidden"></div><div class="versionFooter noPrint">v9.39</div></div></main><script>
+<div id="cellModal" class="hidden"></div><div class="versionFooter noPrint">v9.61</div></div></main><script>
 const defaults={locations:["Asian Street Food Mokotów","Asian Street Food Wola","Food Truck","Kuchnia Mokotów"],devices:{"Asian Street Food Mokotów":{chlodnie:["Chłodnia 1","Chłodnia 2","Chłodnia 3"],mroznie:["Mroźnia 1"]},"Asian Street Food Wola":{chlodnie:["Chłodnia 1","Chłodnia 2"],mroznie:["Mroźnia 1"]},"Food Truck":{chlodnie:["Chłodnia 1","Chłodnia 2"],mroznie:["Mroźnia 1"]},"Kuchnia Mokotów":{chlodnie:["Chłodnia 1","Chłodnia 2","Chłodnia 3","Chłodnia 4"],mroznie:["Mroźnia 1","Mroźnia 2"]}},cleaning:{Rano:["Obecność szkodników","Stan lodówek / brak wycieków","Czystość blatów startowa"],"W ciągu dnia":["Frytury","Wymiana frytury","Zlewy","Bieżące blaty"],Wieczór:["Pow. robocze / blaty","Kuchenki","Ściany i podłogi","Schładzarka","Chłodnie","Mroźnie","Mycie okapu"]},haccpItems:["Kontrola dat przydatności","Kontrola chłodni tygodniowa","Magazyn suchy miesięcznie","Zamrażarki miesięcznie"]};
 let state=JSON.parse(localStorage.getItem("kc_state_v7")||"null")||defaults;
 let logs=JSON.parse(localStorage.getItem("kc_logs_v7")||"[]");
@@ -2363,6 +2888,24 @@ let users=JSON.parse(localStorage.getItem("kc_users_v7")||"null")||[
 {id:"u2",name:"Pracownik demo",pin:"1234",role:"Pracownik",locations:["Food Truck"]}
 ];
 let currentUser=JSON.parse(localStorage.getItem("kc_current_user_v9")||"null");
+
+function ensureTempRanges(){
+  const def={chlodnia:{min:0,max:10,okMax:4,warnMax:7},mroznia:{min:-25,max:-5,okMax:-18,warnMax:-15}};
+  if(!state.tempRanges) state.tempRanges=JSON.parse(JSON.stringify(def));
+  ["chlodnia","mroznia"].forEach(t=>{
+    if(!state.tempRanges[t]) state.tempRanges[t]=JSON.parse(JSON.stringify(def[t]));
+    ["min","max","okMax","warnMax"].forEach(k=>{
+      if(state.tempRanges[t][k]===undefined || state.tempRanges[t][k]==="") state.tempRanges[t][k]=def[t][k];
+      state.tempRanges[t][k]=parseInt(state.tempRanges[t][k]);
+    });
+  });
+}
+ensureTempRanges();
+function getTempRange(type){ensureTempRanges();return state.tempRanges[type]||state.tempRanges.chlodnia}
+function tempValuesForType(type){let r=getTempRange(type);let min=Math.min(r.min,r.max),max=Math.max(r.min,r.max);return Array.from({length:max-min+1},(_,i)=>min+i)}
+function tempStatusName(value,type){let v=parseInt(value),r=getTempRange(type);if(isNaN(v))return "";return v<=r.okMax?"OK":v<=r.warnMax?"UWAGA":"ALARM"}
+function tempStatusChipClass(name){return name==="OK"?"ok":name==="UWAGA"?"warn":"alarm"}
+function deviceTypeFor(loc,dev){let d=(state.devices&&state.devices[loc])||{chlodnie:[],mroznie:[]};return (d.mroznie||[]).includes(dev)?"mroznia":"chlodnia"}
 function save(){localStorage.setItem("kc_state_v7",JSON.stringify(state));localStorage.setItem("kc_logs_v7",JSON.stringify(logs));localStorage.setItem("kc_users_v7",JSON.stringify(users))}
 function pad(n){return String(n).padStart(2,"0")}function isoDate(d=new Date()){return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())}function plDate(iso){let [y,m,d]=iso.split("-");return d+"."+m+"."+y}function time(){return new Date().toLocaleTimeString("pl-PL",{hour:"2-digit",minute:"2-digit"})}function currentMonth(){let d=new Date();return d.getFullYear()+"-"+pad(d.getMonth()+1)}function daysInMonth(ym){let [y,m]=ym.split("-").map(Number);return new Date(y,m,0).getDate()}function monthLabel(ym){let [y,m]=ym.split("-").map(Number);return new Date(y,m-1,1).toLocaleDateString("pl-PL",{month:"long",year:"numeric"})}
 function msg(id,text,good=false){document.getElementById(id).innerHTML=`<div class="notice ${good?'success':''}">${text}</div>`;setTimeout(()=>document.getElementById(id).innerHTML="",4000)}function savedGoPanel(id,text){msg(id,text||"Zapisano ✅",true)}function requireUser(id,msgId){let v=document.getElementById(id).value.trim();if(!v){msg(msgId,"Podpis jest wymagany — nie można zapisać pustego wpisu.");return null}return v}
@@ -2388,18 +2931,79 @@ function isManager(){return currentUser && currentUser.role==="Manager"}function
 function allowedLocs(){return currentUser?currentUser.locations:[]}function canViewAll(){return currentUser && (currentUser.role==="Admin" || currentUser.role==="Manager")}
 
 
+function kcResetBackupLightTheme(){
+  const admin=document.getElementById("admin");
+  if(!admin) return;
+  admin.querySelectorAll(".card").forEach(card=>{
+    const title=(card.querySelector("h2")?.textContent || card.textContent || "").toLowerCase();
+    if(title.includes("backup") || title.includes("migracja") || title.includes("import") || title.includes("eksport")){
+      card.classList.add("kcSection7Backup");
+      if(document.body.classList.contains("theme-light") && !document.body.classList.contains("loginMode")){
+        card.classList.remove("kcBackupCardDark");
+        card.style.background="";
+        card.style.backgroundColor="";
+        card.style.borderColor="";
+        card.style.color="";
+        card.querySelectorAll("div").forEach(el=>{
+          el.style.background="";
+          el.style.backgroundColor="";
+          el.style.borderColor="";
+          el.style.color="";
+        });
+      }
+    }
+  });
+}
+
+function kcEnhanceSelects(){
+  document.querySelectorAll('select').forEach(sel=>{
+    if(sel.closest('.kcSelectWrap')) return;
+    if(sel.closest('table') || sel.closest('.kcPrintArea')) return;
+    const wrap=document.createElement('span');
+    wrap.className='kcSelectWrap';
+    sel.parentNode.insertBefore(wrap, sel);
+    wrap.appendChild(sel);
+  });
+}
+
+function updateThemeToggleIcon(t){
+  const b=document.getElementById("themeToggleBtn");
+  if(!b)return;
+  if(t==="dark"){
+    b.textContent="☀️";
+    b.setAttribute("aria-label","Włącz jasny motyw");
+    b.title="Włącz jasny motyw";
+  }else{
+    b.textContent="🌙";
+    b.setAttribute("aria-label","Włącz ciemny motyw");
+    b.title="Włącz ciemny motyw";
+  }
+}
+function toggleAppTheme(){
+  const isDark=document.body.classList.contains("theme-dark");
+  setAppTheme(isDark ? "light" : "dark");
+}
 function setAppTheme(theme){
   const t = theme==="dark" ? "dark" : "light";
   localStorage.setItem("kc_login_theme", t);
   document.body.classList.remove("theme-light","theme-dark");
   document.body.classList.add("theme-"+t);
+  updateThemeToggleIcon(t);
   const l=document.getElementById("themeLightBtn");
   const d=document.getElementById("themeDarkBtn");
-  if(l&&d){l.classList.toggle("active",t==="light");d.classList.toggle("active",t==="dark");} setTimeout(kcApplyDarkFix,0); setTimeout(kcApplyDarkFix,80); setTimeout(kcAdminDarkNormalize,120); setTimeout(kcPanelFinalCleanup,120); setTimeout(kcPeriodFinalCleanup,160); setTimeout(kcPanelLocationCleanup,160); setTimeout(kcPeriodFinalCleanup,180);
+  if(l&&d){l.classList.toggle("active",t==="light");d.classList.toggle("active",t==="dark");} kcResetBackupLightTheme(); setTimeout(kcResetBackupLightTheme,30); setTimeout(kcApplyDarkFix,0); setTimeout(kcApplyDarkFix,80); setTimeout(kcPanelFinalCleanup,120); setTimeout(kcPeriodFinalCleanup,160); setTimeout(kcPanelLocationCleanup,160); setTimeout(kcPeriodFinalCleanup,180); setTimeout(kcEnhanceSelects,0);
 }
 function setLoginTheme(theme){ setAppTheme(theme); }
 function initLoginTheme(){ setAppTheme(localStorage.getItem("kc_login_theme") || "light"); }
 
+
+
+(function(){
+  const run=()=>kcEnhanceSelects();
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', run); else run();
+  setTimeout(run,300);
+  setTimeout(run,1000);
+})();
 
 function toggleLoginPin(){
   const el=document.getElementById("loginPin");
@@ -2445,7 +3049,7 @@ function applyAccess(){
     loginScreen.classList.add("hidden");appArea.classList.remove("hidden");document.body.classList.remove("loginMode");initLoginTheme();initLoginTheme();
     currentUserName.innerText=currentUser.name;currentRole.innerText=currentUser.role;
     document.querySelectorAll(".adminOnly").forEach(x=>x.style.display=isAdmin()?"inline-block":"none");document.querySelectorAll(".managerOnly").forEach(x=>x.style.display=(currentUser.role==="Manager"||currentUser.role==="Admin")?"inline-block":"none");headerMenuBtn.classList.remove("hidden");
-    fill();show("panel"); setTimeout(kcAdminDarkNormalize,120);
+    fill();show("panel");
   }else{
     appArea.classList.add("hidden");loginScreen.classList.remove("hidden");document.body.classList.add("loginMode");headerMenuBtn.classList.add("hidden");closeUserMenu();fillLogin();initLoginTheme();
   }
@@ -2485,10 +3089,10 @@ function filterLocationsForSelect(id){
   document.getElementById(id).innerHTML=locs.map(l=>`<option>${l}</option>`).join("");
 }
 function denyAdmin(){alert("Brak uprawnień. Tylko Admin może to zrobić.");return false}
-function show(id){["panel","temp","clean","haccp","month","admin","history"].forEach(x=>{document.getElementById(x).classList.toggle("hidden",x!==id);document.getElementById("t-"+x).classList.toggle("active",x===id)});if(id==="admin"&&!isAdmin()){alert("Panel Admin tylko dla administratora.");id="panel"}if(id==="history"&&!canEditEntries()){alert("Historia tylko dla Managera lub Admina.");id="panel"}if(id==="sanepid"){id="month"}if(id==="month")renderMonth();if(id==="admin"){renderLocationAdmin();renderDevList();renderUserAdmin();renderShiftAdmin();renderCleanAdmin();renderHaccpAdmin();renderBackupSummary()}if(id==="history"){renderHistoryPage()}renderPanel();renderAllLogs()}
-function fill(){["tempLoc","cleanLoc","haccpLoc","monthLoc","sanLoc","histLoc"].forEach(id=>filterLocationsForSelect(id)); if(isAdmin()){document.getElementById("adminLoc").innerHTML=state.locations.map(l=>`<option>${l}</option>`).join("");if(document.getElementById("cleanAdminLoc"))cleanAdminLoc.innerHTML=state.locations.map(l=>`<option>${l}</option>`).join("");if(document.getElementById("haccpAdminLoc"))haccpAdminLoc.innerHTML=state.locations.map(l=>`<option>${l}</option>`).join("");if(document.getElementById("shiftAdminLoc"))shiftAdminLoc.innerHTML=state.locations.map(l=>`<option>${l}</option>`).join("");} renderUserAdmin();renderShiftSelects();monthPick.value=currentMonth();sanMonth.value=currentMonth();if(document.getElementById("histFrom"))histFrom.value=currentMonth()+"-01";if(document.getElementById("histTo"))histTo.value=isoDate();if(document.getElementById("panelDate")){panelDate.value=isoDate();panelControls.style.display=canViewAll()?"block":"none";}tempDate.value=isoDate();cleanDate.value=isoDate();haccpDate.value=isoDate();tempTime.value=time();cleanTime.value=time();haccpTime.value=time(); if(currentUser){tempUser.value=currentUser.name;cleanUser.value=currentUser.name;haccpUser.value=currentUser.name;if(document.getElementById("tempUserLabel"))tempUserLabel.innerText=currentUser.name;if(document.getElementById("cleanUserLabel"))cleanUserLabel.innerText=currentUser.name;if(document.getElementById("haccpUserLabel"))haccpUserLabel.innerText=currentUser.name;} fillDev();renderCleanItems();renderHaccpItems();applyRoleRestrictions()}
+function show(id){["panel","temp","clean","haccp","month","admin","history"].forEach(x=>{document.getElementById(x).classList.toggle("hidden",x!==id);document.getElementById("t-"+x).classList.toggle("active",x===id)});if(id==="admin"&&!isAdmin()){alert("Panel Admin tylko dla administratora.");id="panel"}if(id==="history"&&!canEditEntries()){alert("Historia tylko dla Managera lub Admina.");id="panel"}if(id==="sanepid"){id="month"}if(id==="month")renderMonth();if(id==="admin"){renderLocationAdmin();renderDevList();renderUserAdmin();renderShiftAdmin();renderCleanAdmin();renderHaccpAdmin();renderRangeAdmin();renderBackupSummary()}if(id==="history"){renderHistoryPage()}renderPanel();renderAllLogs()}
+function fill(){["tempLoc","cleanLoc","haccpLoc","monthLoc","sanLoc","histLoc"].forEach(id=>filterLocationsForSelect(id)); if(isAdmin()){document.getElementById("adminLoc").innerHTML=state.locations.map(l=>`<option>${l}</option>`).join("");if(document.getElementById("cleanAdminLoc"))cleanAdminLoc.innerHTML=state.locations.map(l=>`<option>${l}</option>`).join("");if(document.getElementById("haccpAdminLoc"))haccpAdminLoc.innerHTML=state.locations.map(l=>`<option>${l}</option>`).join("");if(document.getElementById("shiftAdminLoc"))shiftAdminLoc.innerHTML=state.locations.map(l=>`<option>${l}</option>`).join("");} renderUserAdmin();renderShiftSelects();monthPick.value=currentMonth();sanMonth.value=currentMonth();if(document.getElementById("histFrom"))histFrom.value=currentMonth()+"-01";if(document.getElementById("histTo"))histTo.value=isoDate();if(document.getElementById("panelDate")){panelDate.value=isoDate();panelControls.style.display=canViewAll()?"block":"none";}tempDate.value=isoDate();cleanDate.value=isoDate();haccpDate.value=isoDate();tempTime.value=time();cleanTime.value=time();haccpTime.value=time(); if(currentUser){tempUser.value=currentUser.name;cleanUser.value=currentUser.name;haccpUser.value=currentUser.name;if(document.getElementById("tempUserLabel"))tempUserLabel.innerText=currentUser.name;if(document.getElementById("cleanUserLabel"))cleanUserLabel.innerText=currentUser.name;if(document.getElementById("haccpUserLabel"))haccpUserLabel.innerText=currentUser.name;} fillDev();renderCleanItems();renderHaccpItems();renderRangeAdmin();applyRoleRestrictions()}
 function fillDev(){let l=tempLoc.value||state.locations[0],d=state.devices[l],a=[];d.chlodnie.forEach(x=>a.push([x,"chlodnia"]));d.mroznie.forEach(x=>a.push([x,"mroznia"]));tempDev.innerHTML=a.map(x=>`<option data-type="${x[1]}">${x[0]}</option>`).join("");fillVals()}
-function fillVals(){let type=tempDev.options[tempDev.selectedIndex]?.dataset.type||"chlodnia";let vals=type==="mroznia"?Array.from({length:21},(_,i)=>-25+i):Array.from({length:11},(_,i)=>i);tempVal.innerHTML=`<option value="">Wybierz temperaturę</option>`+vals.map(v=>`<option value="${v}">${v}°C</option>`).join("");status()}function status(){if(tempVal.value===""){tempStatus.innerHTML=`Status: <span class="status warn">wybierz temperaturę</span>`;return ""}let v=parseInt(tempVal.value),type=tempDev.options[tempDev.selectedIndex]?.dataset.type||"chlodnia",s,c;if(type==="chlodnia"){if(v<=4){s="OK";c="ok"}else if(v<=7){s="UWAGA";c="warn"}else{s="ALARM";c="alarm"}}else{if(v<=-18){s="OK";c="ok"}else if(v<=-15){s="UWAGA";c="warn"}else{s="ALARM";c="alarm"}}tempStatus.innerHTML=`Status: <span class="status ${c}">${s}</span>`;return s}function statusClass(s){return s==="OK"?"filled-ok":s==="UWAGA"?"filled-warn":"filled-alarm"}
+function fillVals(){let type=tempDev.options[tempDev.selectedIndex]?.dataset.type||"chlodnia";let vals=tempValuesForType(type);tempVal.innerHTML=`<option value="">Wybierz temperaturę</option>`+vals.map(v=>`<option value="${v}">${v}°C</option>`).join("");status()}function status(){if(tempVal.value===""){tempStatus.innerHTML=`Status: <span class="status warn">wybierz temperaturę</span>`;return ""}let type=tempDev.options[tempDev.selectedIndex]?.dataset.type||"chlodnia",s=tempStatusName(tempVal.value,type),c=tempStatusChipClass(s);tempStatus.innerHTML=`Status: <span class="status ${c}">${s}</span>`;return s}function statusClass(s){return s==="OK"?"filled-ok":s==="UWAGA"?"filled-warn":"filled-alarm"}
 function saveTemp(){let user=requireUser("tempUser","tempMsg");if(!user)return;if(tempVal.value===""){msg("tempMsg","Wybierz temperaturę przed zapisem.");return}let loc=tempLoc.value,dev=tempDev.value,dt=tempDate.value;if(hasEntry("temp",loc,dt,dev,null)){msg("tempMsg",`Ten dzień ma już wpis dla ${dev}. Poprawisz go w Admin → Edycja.`);return}logs.unshift({id:crypto.randomUUID(),kind:"temp",date:dt,time:tempTime.value||time(),loc,dev,val:tempVal.value,user,note:tempNote.value,status:status()});tempNote.value="";save();refresh();savedGoPanel("tempMsg","Zapisano temperaturę ✅")}
 
 
@@ -2596,8 +3200,8 @@ function saveClean(){
   document.querySelectorAll(".cleanCheck").forEach(x=>x.checked=false);cleanNote.value="";
   save();refresh();savedGoPanel("cleanMsg","Zapisano sprzątanie ✅")
 }
-function saveHaccp(){let user=requireUser("haccpUser","haccpMsg");if(!user)return;let loc=haccpLoc.value,dt=haccpDate.value;if(hasEntry("haccp",loc,dt,null,null)){msg("haccpMsg",`Ten dzień ma już wpis HACCP/daty. Poprawisz go w Admin → Edycja.`);return}let haccpDone=[...document.querySelectorAll(".haccpCheck:checked")].map(x=>x.value);if(!haccpDone.length){msg("haccpMsg","Zaznacz przynajmniej jedną kontrolę przed zapisem.");return}logs.unshift({id:crypto.randomUUID(),kind:"haccp",date:dt,time:haccpTime.value||time(),loc,user,done:haccpDone,note:haccpNote.value});document.querySelectorAll(".haccpCheck").forEach(x=>x.checked=false);haccpNote.value="";save();refresh();savedGoPanel("haccpMsg","Zapisano HACCP / daty ✅")}
-function refresh(){renderAllLogs();renderPanel();renderCleanItems();renderMonth();renderSanepid();renderLocationAdmin();renderShiftAdmin();renderShiftSelects();renderCleanAdmin();renderHaccpAdmin();renderHaccpItems();renderBackupSummary();renderHistoryPage()}
+function saveHaccp(){let user=requireUser("haccpUser","haccpMsg");if(!user)return;let loc=haccpLoc.value,dt=haccpDate.value;if(hasEntry("haccp",loc,dt,null,null)){msg("haccpMsg",`Ten dzień ma już wpis HACCP. Poprawisz go w historii wpisów.`);return}let haccpDone=[...document.querySelectorAll(".haccpCheck:checked")].map(x=>x.value);if(!haccpDone.length){msg("haccpMsg","Zaznacz przynajmniej jedną kontrolę przed zapisem.");return}logs.unshift({id:crypto.randomUUID(),kind:"haccp",date:dt,time:haccpTime.value||time(),loc,user,done:haccpDone,note:haccpNote.value});document.querySelectorAll(".haccpCheck").forEach(x=>x.checked=false);haccpNote.value="";save();refresh();savedGoPanel("haccpMsg","Zapisano HACCP ✅")}
+function refresh(){ensureTempRanges();renderAllLogs();renderPanel();renderCleanItems();renderMonth();renderSanepid();renderLocationAdmin();renderShiftAdmin();renderShiftSelects();renderCleanAdmin();renderHaccpAdmin();renderHaccpItems();renderRangeAdmin();renderBackupSummary();renderHistoryPage()}
 function logHtml(items){return items.slice(0,20).map(x=>`<div class="historyItem"><b>${plDate(x.date)} ${x.time}</b> — ${x.loc}${x.dev?", "+x.dev:""}${x.shift?", "+x.shift:""} ${x.val?": "+x.val+"°C":""} ${x.status?`<span class="status ${x.status==="OK"?"ok":x.status==="UWAGA"?"warn":"alarm"}">${x.status}</span>`:""}<br>Podpis: <b>${x.user}</b>${x.done?`<br>Wykonano: ${x.done.join(", ")}`:""}${x.note?`<br>Uwagi: ${x.note}`:""}</div>`).join("")||"Brak wpisów"}function renderAllLogs(){
   const tl=document.getElementById("tempLoc")?.value;
   const td=document.getElementById("tempDev")?.value;
@@ -2779,6 +3383,7 @@ function escapeHtml(s){return String(s??"").replace(/[&<>"']/g,function(m){retur
 function showCellInfoById(id,title){
   const r=logs.find(x=>x.id===id);
   if(!r)return;
+  if(title==="Uwagi")return showOnlyNoteById(id);
   const rows=[
     ["Data",r.date?plDate(r.date):""],
     ["Godzina",r.time||""],
@@ -2793,14 +3398,78 @@ function showCellInfoById(id,title){
   cellModal.className="modalOverlay";
   cellModal.innerHTML='<div class="modalBox"><h3>'+escapeHtml(title||"Szczegóły wpisu")+'</h3>'+rows.map(x=>'<p><b>'+escapeHtml(x[0])+':</b> '+escapeHtml(x[1])+'</p>').join("")+'<button class="btn primary" onclick="closeCellInfo()">Zamknij</button></div>';
 }
+function showOnlyNoteById(id){
+  const r=logs.find(x=>x.id===id);
+  if(!r)return;
+  cellModal.className="modalOverlay";
+  cellModal.innerHTML='<div class="modalBox"><h3>Uwaga</h3><p>'+escapeHtml(r.note||"Brak treści uwagi.")+'</p><button class="btn primary" onclick="closeCellInfo()">Zamknij</button></div>';
+}
+function showDayNotes(kind,loc,ym,day){
+  const dt=ym+"-"+pad(day);
+  const items=logs.filter(x=>x.kind===kind&&x.loc===loc&&x.date===dt&&x.note);
+  if(!items.length)return;
+  cellModal.className="modalOverlay";
+  cellModal.innerHTML='<div class="modalBox"><h3>Uwagi</h3>'+items.map(r=>'<p><b>'+escapeHtml((r.time||"")+(r.val?" • "+r.val+"°C":""))+':</b> '+escapeHtml(r.note||"")+'</p>').join("")+'<button class="btn primary" onclick="closeCellInfo()">Zamknij</button></div>';
+}
 function closeCellInfo(){cellModal.className="hidden";cellModal.innerHTML=""}
 
-function buildTable(l,type,ym){let n=monthLabel(ym),days=daysInMonth(ym);if(type==="temp"){let d=state.devices[l],cols=[...d.chlodnie,...d.mroznie];return `<table><tr><th colspan="${cols.length+3}">KARTA TEMPERATUR — ${l} — ${n}</th></tr><tr><th>Data</th>${cols.map(c=>`<th>${c}</th>`).join("")}<th>Podpis</th><th>Uwagi</th></tr>${Array.from({length:days},(_,i)=>{let day=i+1;let dayLogs=logs.filter(x=>x.kind==="temp"&&x.loc===l&&x.date===ym+"-"+pad(day));let user=dayLogs.map(x=>x.user).filter(Boolean).filter((v,i,a)=>a.indexOf(v)===i).join(" / ");let note=dayLogs.map(x=>x.note).filter(Boolean).join("; ");return `<tr><th>${day}</th>${cols.map(c=>{let r=latestLog("temp",l,c,day,ym);return r?`<td class="${statusClass(r.status)} clickableCell" onclick="showCellInfoById('${r.id}','${c}')">${r.val}°C</td>`:`<td></td>`}).join("")}<td>${user}</td><td>${note?`<span class="clickableCell" onclick="showCellInfoById('${dayLogs[0]?.id}','Uwagi')">Uwagi</span>`:""}</td></tr>`}).join("")}</table>`}
-if(type==="clean"){let groups=getShifts(l);let cols=groups.flatMap(g=>getCleaning(l,g).map(x=>g+": "+x+" ["+freqLabel(getCleanFreq(l,g,x))+"]"));return `<table><tr><th colspan="${cols.length+3}">KARTA KONTROLI CZYSTOŚCI — ${l} — ${n}</th></tr><tr><th>Data</th>${cols.map(c=>`<th><div class="vert">${c}</div></th>`).join("")}<th>Podpis</th><th>Uwagi</th></tr>${Array.from({length:days},(_,i)=>{let day=i+1;let dayLogs=logs.filter(x=>x.kind==="clean"&&x.loc===l&&x.date===ym+"-"+pad(day));let user=dayLogs.map(x=>x.user).filter(Boolean).filter((v,i,a)=>a.indexOf(v)===i).join(" / ");let note=dayLogs.map(x=>x.note).filter(Boolean).join("; ");return `<tr><th>${day}</th>${cols.map(c=>{let [g,...rest]=c.split(": ");let raw=rest.join(": ");let item=raw.replace(/ \[.*\]$/,"");let rs=logs.filter(x=>x.kind==="clean"&&x.loc===l&&x.date===ym+"-"+pad(day)&&x.shift===g);let r=rs.find(x=>x.done?.includes(item));return r?`<td class="clickableCell" onclick="showCellInfoById('${r.id}','${item}')">X</td>`:`<td></td>`}).join("")}<td>${user}</td><td>${note?`<span class="clickableCell" onclick="showCellInfoById('${dayLogs[0]?.id}','Uwagi')">Uwagi</span>`:""}</td></tr>`}).join("")}</table>`}
-let cols=getHaccpItemsForLoc(l);return `<table><tr><th colspan="${cols.length+3}">HACCP OGÓLNE / DATY — ${l} — ${n}</th></tr><tr><th>Data</th>${cols.map(c=>`<th>${c}</th>`).join("")}<th>Podpis</th><th>Uwagi</th></tr>${Array.from({length:days},(_,i)=>{let day=i+1,r=latestLog("haccp",l,null,day,ym);return `<tr><th>${day}</th>${cols.map(c=>`${r?.done?.includes(c)?`<td class="clickableCell" onclick="showCellInfoById('${r.id}','${c}')">X</td>`:`<td></td>`}`).join("")}<td>${r?r.user:""}</td><td>${r?.note?`<span class="clickableCell" onclick="showCellInfoById('${r.id}','Uwagi')">Uwagi</span>`:""}</td></tr>`}).join("")}</table>`}
-function renderMonth(){monthTable.innerHTML=buildTable(monthLoc.value||state.locations[0],monthType.value,monthPick.value||currentMonth())}function renderSanepid(){sanTable.innerHTML=buildTable(sanLoc.value||state.locations[0],sanType.value,sanMonth.value||currentMonth())}function printReport(){renderMonth();const old=document.title;document.title=`Kitchen Control - ${monthLoc.value} - ${monthType.value} - ${monthPick.value}`;setTimeout(()=>{window.print();document.title=old},100)}function printSanepid(){renderSanepid();const old=document.title;document.title=`Kitchen Control Sanepid - ${sanLoc.value} - ${sanType.value} - ${sanMonth.value}`;setTimeout(()=>{window.print();document.title=old},100)}
+function cellStamp(r){return r?`<div class="printMeta">${(r.date||"").slice(8,10)}.${(r.date||"").slice(5,7)} ${r.time||""}</div>`:""}
+function notesFor(l,type,ym){
+  return logs.filter(x=>x.kind===type&&x.loc===l&&x.date?.startsWith(ym)&&x.note)
+    .sort((a,b)=>(a.date+(a.time||"")).localeCompare(b.date+(b.time||"")));
+}
+function notesTableHtml(items,title="Spis uwag"){
+  if(!items.length)return "";
+  return `<h3>${title}</h3><table><tr><th>Data</th><th>Lokal</th><th>Urządzenie / część</th><th>Temp.</th><th>Uwaga</th></tr>${items.map(x=>`<tr><td>${(x.date?plDate(x.date).slice(0,5):"")} ${x.time||""}</td><td>${escapeHtml(x.loc||"")}</td><td>${escapeHtml(x.dev||x.shift||"")}</td><td>${x.val?escapeHtml(x.val)+"°C":""}</td><td>${escapeHtml(x.note||"")}</td></tr>`).join("")}</table>`;
+}
+function buildTable(l,type,ym){let n=monthLabel(ym),days=daysInMonth(ym);if(type==="temp"){let d=state.devices[l],cols=[...d.chlodnie,...d.mroznie];return `<table><tr><th colspan="${cols.length+3}">KARTA TEMPERATUR — ${l} — ${n}</th></tr><tr><th>Data</th>${cols.map(c=>`<th>${c}</th>`).join("")}<th>Podpis</th><th>Uwagi</th></tr>${Array.from({length:days},(_,i)=>{let day=i+1;let dayLogs=logs.filter(x=>x.kind==="temp"&&x.loc===l&&x.date===ym+"-"+pad(day));let noteLogs=dayLogs.filter(x=>x.note);let user=dayLogs.map(x=>x.user).filter(Boolean).filter((v,i,a)=>a.indexOf(v)===i).join(" / ");return `<tr><th>${day}</th>${cols.map(c=>{let r=latestLog("temp",l,c,day,ym);return r?`<td class="${statusClass(r.status)} clickableCell" onclick="showCellInfoById('${r.id}','${c}')"><b>${r.val}°C</b>${cellStamp(r)}</td>`:`<td></td>`}).join("")}<td>${user}</td><td>${noteLogs.length?`<span class="clickableCell" onclick="showDayNotes('temp','${l}','${ym}',${day})">Uwagi${noteLogs.length>1?" ("+noteLogs.length+")":""}</span>`:""}</td></tr>`}).join("")}</table>`}
+if(type==="clean"){let groups=getShifts(l);let cols=groups.flatMap(g=>getCleaning(l,g).map(x=>g+": "+x+" ["+freqLabel(getCleanFreq(l,g,x))+"]"));return `<table><tr><th colspan="${cols.length+3}">KARTA KONTROLI CZYSTOŚCI — ${l} — ${n}</th></tr><tr><th>Data</th>${cols.map(c=>`<th><div class="vert">${c}</div></th>`).join("")}<th>Podpis</th><th>Uwagi</th></tr>${Array.from({length:days},(_,i)=>{let day=i+1;let dayLogs=logs.filter(x=>x.kind==="clean"&&x.loc===l&&x.date===ym+"-"+pad(day));let noteLogs=dayLogs.filter(x=>x.note);let user=dayLogs.map(x=>x.user).filter(Boolean).filter((v,i,a)=>a.indexOf(v)===i).join(" / ");return `<tr><th>${day}</th>${cols.map(c=>{let [g,...rest]=c.split(": ");let raw=rest.join(": ");let item=raw.replace(/ \[.*\]$/," ").trim();let rs=logs.filter(x=>x.kind==="clean"&&x.loc===l&&x.date===ym+"-"+pad(day)&&x.shift===g);let r=rs.find(x=>x.done?.includes(item));return r?`<td class="clickableCell" onclick="showCellInfoById('${r.id}','${item}')">X${cellStamp(r)}</td>`:`<td></td>`}).join("")}<td>${user}</td><td>${noteLogs.length?`<span class="clickableCell" onclick="showDayNotes('clean','${l}','${ym}',${day})">Uwagi${noteLogs.length>1?" ("+noteLogs.length+")":""}</span>`:""}</td></tr>`}).join("")}</table>`}
+let cols=getHaccpItemsForLoc(l);return `<table><tr><th colspan="${cols.length+3}">HACCP OGÓLNE / DATY — ${l} — ${n}</th></tr><tr><th>Data</th>${cols.map(c=>`<th>${c}</th>`).join("")}<th>Podpis</th><th>Uwagi</th></tr>${Array.from({length:days},(_,i)=>{let day=i+1,r=latestLog("haccp",l,null,day,ym);return `<tr><th>${day}</th>${cols.map(c=>`${r?.done?.includes(c)?`<td class="clickableCell" onclick="showCellInfoById('${r.id}','${c}')">X${cellStamp(r)}</td>`:`<td></td>`}`).join("")}<td>${r?r.user:""}</td><td>${r?.note?`<span class="clickableCell" onclick="showCellInfoById('${r.id}','Uwagi')">Uwagi</span>`:""}</td></tr>`}).join("")}</table>`}
+function renderMonth(){const l=monthLoc.value||state.locations[0],t=monthType.value,ym=monthPick.value||currentMonth();monthTable.innerHTML=buildTable(l,t,ym);printNotesBox.innerHTML=notesTableHtml(notesFor(l,t,ym),"Spis uwag");printEntriesBox.innerHTML=""}
+function renderSanepid(){sanTable.innerHTML=buildTable(sanLoc.value||state.locations[0],sanType.value,sanMonth.value||currentMonth())}
+function safeFileName(x){return String(x||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-zA-Z0-9_-]+/g,"_").replace(/^_+|_+$/g,"")}
+function printReport(){document.body.classList.remove("kcPrintEntries");renderMonth();const old=document.title;document.title=`Kitchen Control - ${monthLoc.value} - ${monthType.value} - ${monthPick.value}`;setTimeout(()=>{window.print();document.title=old},100)}
+function pdfReport(){document.body.classList.remove("kcPrintEntries");renderMonth();const l=monthLoc.value||state.locations[0],t=monthType.value,ym=monthPick.value||currentMonth();const old=document.title;document.title=`Rejestr_temperatur_${safeFileName(l)}_${safeFileName(t)}_${ym}.pdf`;setTimeout(()=>{window.print();document.title=old},100)}
+function printEntriesReport(){const l=monthLoc.value||state.locations[0],t=monthType.value,ym=monthPick.value||currentMonth();const items=notesFor(l,t,ym);monthTable.innerHTML="";printNotesBox.innerHTML="";printEntriesBox.innerHTML=items.length?notesTableHtml(items,"Raport wpisów — uwagi"):"<h3>Raport wpisów — uwagi</h3><p>Brak wpisanych uwag w wybranym okresie.</p>";document.body.classList.add("kcPrintEntries");const old=document.title;document.title=`Kitchen Control - raport wpisow - ${l} - ${t} - ${ym}`;setTimeout(()=>{window.print();document.body.classList.remove("kcPrintEntries");document.title=old;renderMonth()},100)}
+function pdfEntriesReport(){const l=monthLoc.value||state.locations[0],t=monthType.value,ym=monthPick.value||currentMonth();const items=notesFor(l,t,ym);monthTable.innerHTML="";printNotesBox.innerHTML="";printEntriesBox.innerHTML=items.length?notesTableHtml(items,"Raport wpisów — uwagi"):"<h3>Raport wpisów — uwagi</h3><p>Brak wpisanych uwag w wybranym okresie.</p>";document.body.classList.add("kcPrintEntries");const old=document.title;document.title=`Raport_wpisow_${safeFileName(l)}_${safeFileName(t)}_${ym}.pdf`;setTimeout(()=>{window.print();document.body.classList.remove("kcPrintEntries");document.title=old;renderMonth()},100)}
+function printSanepid(){renderSanepid();const old=document.title;document.title=`Kitchen Control Sanepid - ${sanLoc.value} - ${sanType.value} - ${sanMonth.value}`;setTimeout(()=>{window.print();document.title=old},100)}
 function exportCSV(){let csv="typ;data;godzina;lokalizacja;czesc;urzadzenie;wartosc;status;osoba;uwagi;wykonano\n"+logs.map(x=>[x.kind,x.date,x.time,x.loc,x.shift||"",x.dev||"",x.val||"",x.status||"",x.user||"",x.note||"",x.done?x.done.join(", "):""].map(v=>`"${String(v).replaceAll('"','""')}"`).join(";")).join("\n");let blob=new Blob([csv],{type:"text/csv;charset=utf-8"});let a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="kitchen-control-eksport.csv";a.click()}
-function addDevice(){if(!isAdmin())return denyAdmin();let l=adminLoc.value,t=adminType.value,n=adminName.value.trim();if(!n)return;state.devices[l][t].push(n);adminName.value="";save();fillDev();renderDevList();renderMonth();renderSanepid()}function renderDevList(){let l=adminLoc.value||state.locations[0],d=state.devices[l];devList.innerHTML=`<h3>${l}</h3><h4>Chłodnie</h4>${d.chlodnie.map((x,i)=>`<span class="pill">${x}<button onclick="removeDev('${l}','chlodnie',${i})">×</button></span>`).join("")}<h4>Mroźnie</h4>${d.mroznie.map((x,i)=>`<span class="pill">${x}<button onclick="removeDev('${l}','mroznie',${i})">×</button></span>`).join("")}`}function removeDev(l,t,i){if(!isAdmin())return denyAdmin();state.devices[l][t].splice(i,1);save();fillDev();renderDevList();renderMonth();renderSanepid()}
+
+function rangeLine(type,label){
+  const r=getTempRange(type);
+  return `<div class="editBox"><h3>${label}</h3><div class="row">
+    <label>Minimum °C<input type="number" id="${type}Min" value="${r.min}"></label>
+    <label>Maksimum °C<input type="number" id="${type}Max" value="${r.max}"></label>
+    <label>OK do °C<input type="number" id="${type}Ok" value="${r.okMax}"></label>
+    <label>UWAGA do °C<input type="number" id="${type}Warn" value="${r.warnMax}"></label>
+  </div><p class="small">OK: do ${r.okMax}°C · UWAGA: do ${r.warnMax}°C · ALARM: powyżej ${r.warnMax}°C</p></div>`;
+}
+function renderRangeAdmin(){
+  if(!document.getElementById('rangeAdminBox'))return;
+  ensureTempRanges();
+  rangeAdminBox.innerHTML=rangeLine('chlodnia','Chłodnie')+rangeLine('mroznia','Mroźnie')+`<div class="row"><button class="btn primary" onclick="saveTempRanges()">Zapisz zakresy</button><button class="btn primary" onclick="resetTempRanges()">Przywróć domyślne</button></div><div id="rangeMsg"></div>`;
+}
+function saveTempRanges(){
+  if(!isAdmin())return denyAdmin();
+  function read(type){return {min:parseInt(document.getElementById(type+'Min').value),max:parseInt(document.getElementById(type+'Max').value),okMax:parseInt(document.getElementById(type+'Ok').value),warnMax:parseInt(document.getElementById(type+'Warn').value)}}
+  const nr={chlodnia:read('chlodnia'),mroznia:read('mroznia')};
+  for(const t of ['chlodnia','mroznia']){
+    const r=nr[t];
+    if([r.min,r.max,r.okMax,r.warnMax].some(Number.isNaN)){msg('rangeMsg','Uzupełnij wszystkie pola zakresów.');return;}
+    if(r.min>r.max){msg('rangeMsg','Minimum nie może być większe niż maksimum.');return;}
+    if(r.okMax>r.warnMax){msg('rangeMsg','Zakres OK musi kończyć się przed zakresem UWAGA.');return;}
+  }
+  state.tempRanges=nr;
+  logs.forEach(x=>{if(x.kind==='temp')x.status=calcStatusForLog(x)});
+  save();fillVals();renderRangeAdmin();renderMonth();renderSanepid();renderPanel();msg('rangeMsg','Zapisano zakresy temperatur ✅',true);
+}
+function resetTempRanges(){
+  if(!isAdmin())return denyAdmin();
+  state.tempRanges={chlodnia:{min:0,max:10,okMax:4,warnMax:7},mroznia:{min:-25,max:-5,okMax:-18,warnMax:-15}};
+  logs.forEach(x=>{if(x.kind==='temp')x.status=calcStatusForLog(x)});
+  save();fillVals();renderRangeAdmin();renderMonth();renderSanepid();renderPanel();msg('rangeMsg','Przywrócono domyślne zakresy ✅',true);
+}
+function addDevice(){if(!isAdmin())return denyAdmin();let l=adminLoc.value,t=adminType.value,n=adminName.value.trim();if(!n)return;state.devices[l][t].push(n);adminName.value="";save();fillDev();renderDevList();renderMonth();renderSanepid()}function renderDevList(){let l=adminLoc.value||state.locations[0],d=state.devices[l]||{chlodnie:[],mroznie:[]};devList.innerHTML=`<div class="adminListTitle">${l}</div><div class="adminListSub">Chłodnie</div>${d.chlodnie.map((x,i)=>`<div class="adminListRow"><div class="row"><input value="${escAttr(x)}" onchange="renameDev('${l}','chlodnie',${i},this.value)"><button class="btn danger" onclick="removeDev('${l}','chlodnie',${i})">Usuń</button></div></div>`).join("")}<div class="adminListSub">Mroźnie</div>${d.mroznie.map((x,i)=>`<div class="adminListRow"><div class="row"><input value="${escAttr(x)}" onchange="renameDev('${l}','mroznie',${i},this.value)"><button class="btn danger" onclick="removeDev('${l}','mroznie',${i})">Usuń</button></div></div>`).join("")}`}function renameDev(l,t,i,value){if(!isAdmin())return denyAdmin();value=value.trim();if(!value)return;let old=state.devices[l][t][i];state.devices[l][t][i]=value;logs.forEach(x=>{if(x.kind==="temp"&&x.loc===l&&x.dev===old)x.dev=value});save();fillDev();renderDevList();renderMonth();renderSanepid();renderPanel()}function removeDev(l,t,i){if(!isAdmin())return denyAdmin();state.devices[l][t].splice(i,1);save();fillDev();renderDevList();renderMonth();renderSanepid()}
 
 
 function renderDoneCheckboxes(id, kind, shift){
@@ -2850,7 +3519,7 @@ function renderHistoryPage(){
     if(x.kind==="haccp"){
       extra=`${renderDoneCheckboxes(x.id,"haccp",null)}`;
     }
-    return `<div class="editBox"><b>${x.kind}</b> — ${x.loc} ${x.dev||""} ${x.shift||""}<div class="row"><input type="date" value="${x.date}" onchange="editLog('${x.id}','date',this.value)"><input type="time" value="${x.time||''}" onchange="editLog('${x.id}','time',this.value)">${locSelect}${extra}${userSelectHtml(x.user||"",x.id)}<input value="${x.note||""}" placeholder="uwagi" onchange="editLog('${x.id}','note',this.value)"><button class="btn danger" onclick="deleteLog('${x.id}')">Usuń</button></div></div>`;
+    return `<div class="editBox kcHistoryEditBox"><b>${x.kind}</b> — ${x.loc} ${x.dev||""} ${x.shift||""}<div class="row"><input type="date" value="${x.date}" onchange="editLog('${x.id}','date',this.value)"><input type="time" value="${x.time||''}" onchange="editLog('${x.id}','time',this.value)">${locSelect}${extra}${userSelectHtml(x.user||"",x.id)}<input value="${x.note||""}" placeholder="uwagi" onchange="editLog('${x.id}','note',this.value)"><button class="btn danger" onclick="deleteLog('${x.id}')">Usuń</button></div></div>`;
   }).join("") || "Brak wpisów";
 }
 
@@ -2872,7 +3541,7 @@ function renderEditList(){
     if(x.kind==="haccp"){
       extra=`${renderDoneCheckboxes(x.id,"haccp",null)}`;
     }
-    return `<div class="editBox"><b>${x.kind}</b> — ${x.loc} ${x.dev||""} ${x.shift||""}<div class="row"><input type="date" value="${x.date}" onchange="editLog('${x.id}','date',this.value)"><input type="time" value="${x.time||''}" onchange="editLog('${x.id}','time',this.value)">${locSelect}${extra}${userSelectHtml(x.user||"",x.id)}<input value="${x.note||""}" placeholder="uwagi" onchange="editLog('${x.id}','note',this.value)"><button class="btn danger" onclick="deleteLog('${x.id}')">Usuń</button></div></div>`;
+    return `<div class="editBox kcHistoryEditBox"><b>${x.kind}</b> — ${x.loc} ${x.dev||""} ${x.shift||""}<div class="row"><input type="date" value="${x.date}" onchange="editLog('${x.id}','date',this.value)"><input type="time" value="${x.time||''}" onchange="editLog('${x.id}','time',this.value)">${locSelect}${extra}${userSelectHtml(x.user||"",x.id)}<input value="${x.note||""}" placeholder="uwagi" onchange="editLog('${x.id}','note',this.value)"><button class="btn danger" onclick="deleteLog('${x.id}')">Usuń</button></div></div>`;
   }).join("")||"Brak wpisów";
 }
 function editDone(id,value){
@@ -2881,15 +3550,16 @@ function editDone(id,value){
   x.done=value.split(",").map(v=>v.trim()).filter(Boolean);
   save();refresh();
 }
-function calcStatusForLog(x){let devType="chlodnia";for(const loc of state.locations){let d=state.devices[loc];if(d.mroznie.includes(x.dev))devType="mroznia"}let v=parseInt(x.val);if(devType==="chlodnia")return v<=4?"OK":v<=7?"UWAGA":"ALARM";return v<=-18?"OK":v<=-15?"UWAGA":"ALARM"}
+function calcStatusForLog(x){return tempStatusName(x.val,deviceTypeFor(x.loc,x.dev))}
 function editLog(id,field,value,isTemp=false){if(!canEditEntries())return denyAdmin();let x=logs.find(a=>a.id===id);if(!x)return;x[field]=value;if(isTemp){x.status=calcStatusForLog(x)}save();refresh()}
 function deleteLog(id){if(!canEditEntries())return denyAdmin();if(confirm("Usunąć wpis?")){logs=logs.filter(x=>x.id!==id);save();refresh()}}
 
 
 
+function escAttr(v){return String(v??"").replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
 function renderLocationAdmin(){
   if(!document.getElementById("locationList")) return;
-  locationList.innerHTML = state.locations.map((l,i)=>`<span class="pill">${l}<button onclick="removeLocation(${i})">×</button></span>`).join("");
+  locationList.innerHTML = `<div class="adminListTitle">Lokalizacje</div>` + state.locations.map((l,i)=>`<div class="adminListRow"><div class="row"><input value="${escAttr(l)}" onchange="renameLocation(${i},this.value)"><button class="btn danger" onclick="removeLocation(${i})">Usuń</button></div></div>`).join("");
 }
 function addLocation(){
   if(!isAdmin())return denyAdmin();
@@ -2909,6 +3579,23 @@ function addLocation(){
   renderMonth();
   renderSanepid();
 }
+function renameLocation(i,newName){
+  if(!isAdmin())return denyAdmin();
+  newName=newName.trim();
+  if(!newName)return;
+  const oldName=state.locations[i];
+  if(oldName===newName)return;
+  if(state.locations.includes(newName)){alert("Taka lokalizacja już istnieje.");renderLocationAdmin();return}
+  state.locations[i]=newName;
+  if(state.devices[oldName]){state.devices[newName]=state.devices[oldName];delete state.devices[oldName]}
+  if(state.locationShifts&&state.locationShifts[oldName]){state.locationShifts[newName]=state.locationShifts[oldName];delete state.locationShifts[oldName]}
+  if(state.locationCleaning&&state.locationCleaning[oldName]){state.locationCleaning[newName]=state.locationCleaning[oldName];delete state.locationCleaning[oldName]}
+  if(state.locationHaccpItems&&state.locationHaccpItems[oldName]){state.locationHaccpItems[newName]=state.locationHaccpItems[oldName];delete state.locationHaccpItems[oldName]}
+  users=users.map(u=>({...u,locations:u.locations.map(l=>l===oldName?newName:l)}));
+  logs.forEach(x=>{if(x.loc===oldName)x.loc=newName});
+  save();fill();renderLocationAdmin();renderUserAdmin();renderDevList();renderPanel();renderMonth();renderSanepid();renderHistoryPage();
+}
+
 function removeLocation(i){
   if(!isAdmin())return denyAdmin();
   const name = state.locations[i];
@@ -2940,7 +3627,7 @@ function renderShiftSelects(){
 function renderShiftAdmin(){
   if(!document.getElementById("shiftAdminList")) return;
   let loc=shiftAdminLoc?.value || state.locations[0];
-  shiftAdminList.innerHTML=`<h3>${loc}</h3>`+getShifts(loc).map((s,i)=>`<div class="editBox"><div class="row"><input value="${s}" onchange="renameShift('${loc}',${i},this.value)"><button class="btn danger" onclick="removeShift('${loc}',${i})">Usuń</button></div></div>`).join("");
+  shiftAdminList.innerHTML=`<div class="adminListTitle">${loc}</div>`+getShifts(loc).map((s,i)=>`<div class="adminListRow"><div class="row"><input value="${escAttr(s)}" onchange="renameShift('${loc}',${i},this.value)"><button class="btn danger" onclick="removeShift('${loc}',${i})">Usuń</button></div></div>`).join("");
 }
 function addShift(){
   if(!isAdmin())return denyAdmin();
@@ -2986,8 +3673,20 @@ function renderCleanAdmin(){
   if(!document.getElementById("cleanAdminList")) return;
   let loc=cleanAdminLoc?.value||state.locations[0];
   let shift=cleanAdminShift.value;
-  cleanAdminList.innerHTML=`<h3>${loc} — ${shift}</h3>`+getCleaning(loc,shift).map((x,i)=>`<div class="editBox"><div class="row"><b>${x}</b><select class="freqSelect" onchange="setCleanFreq('${loc}','${shift}','${x.replace(/'/g,"&#39;")}',this.value);save();renderCleanAdmin();renderPanel();"><option value="daily" ${getCleanFreq(loc,shift,x)==="daily"?"selected":""}>Codziennie</option><option value="7" ${getCleanFreq(loc,shift,x)==="7"?"selected":""}>Co 7 dni</option><option value="14" ${getCleanFreq(loc,shift,x)==="14"?"selected":""}>Co 14 dni</option><option value="30" ${getCleanFreq(loc,shift,x)==="30"?"selected":""}>Co 30 dni</option></select><button class="btn danger" onclick="removeCleanItem('${loc}','${shift}',${i})">Usuń</button></div></div>`).join("");
+  cleanAdminList.innerHTML=`<div class="adminListTitle">${loc} — ${shift}</div>`+getCleaning(loc,shift).map((x,i)=>`<div class="adminListRow"><div class="row"><input value="${escAttr(x)}" onchange="renameCleanItem('${loc}','${shift}',${i},this.value)"><select class="freqSelect" onchange="setCleanFreq('${loc}','${shift}','${x.replace(/'/g,"&#39;")}',this.value);save();renderCleanAdmin();renderPanel();"><option value="daily" ${getCleanFreq(loc,shift,x)==="daily"?"selected":""}>Codziennie</option><option value="7" ${getCleanFreq(loc,shift,x)==="7"?"selected":""}>Co 7 dni</option><option value="14" ${getCleanFreq(loc,shift,x)==="14"?"selected":""}>Co 14 dni</option><option value="30" ${getCleanFreq(loc,shift,x)==="30"?"selected":""}>Co 30 dni</option></select><button class="btn danger" onclick="removeCleanItem('${loc}','${shift}',${i})">Usuń</button></div></div>`).join("");
 }
+function renameCleanItem(loc,shift,i,value){
+  if(!isAdmin())return denyAdmin();
+  value=value.trim(); if(!value)return;
+  let arr=[...getCleaning(loc,shift)];
+  let old=arr[i];
+  arr[i]=value; setCleaning(loc,shift,arr);
+  const oldKey=cleanKey(loc,shift,old), newKey=cleanKey(loc,shift,value);
+  if(state.cleaningFreq&&state.cleaningFreq[oldKey]){state.cleaningFreq[newKey]=state.cleaningFreq[oldKey];delete state.cleaningFreq[oldKey]}
+  logs.forEach(x=>{if(x.kind==="clean"&&x.loc===loc&&x.shift===shift&&Array.isArray(x.done))x.done=x.done.map(v=>v===old?value:v)});
+  save();renderCleanAdmin();renderCleanItems();renderMonth();renderSanepid();renderPanel();
+}
+
 function addCleanItem(){
   if(!isAdmin())return denyAdmin();
   let loc=cleanAdminLoc?.value||state.locations[0], shift=cleanAdminShift.value, name=newCleanItem.value.trim();
@@ -3011,8 +3710,17 @@ function removeCleanItem(loc,shift,i){
 function renderHaccpAdmin(){
   if(!document.getElementById("haccpAdminList")) return;
   let loc=haccpAdminLoc?.value||state.locations[0];
-  haccpAdminList.innerHTML=`<h3>${loc}</h3>`+getHaccpItemsForLoc(loc).map((x,i)=>`<span class="pill">${x}<button onclick="removeHaccpItem('${loc}',${i})">×</button></span>`).join("");
+  haccpAdminList.innerHTML=`<div class="adminListTitle">${loc}</div>`+getHaccpItemsForLoc(loc).map((x,i)=>`<div class="adminListRow"><div class="row"><input value="${escAttr(x)}" onchange="renameHaccpItem('${loc}',${i},this.value)"><button class="btn danger" onclick="removeHaccpItem('${loc}',${i})">Usuń</button></div></div>`).join("");
 }
+function renameHaccpItem(loc,i,value){
+  if(!isAdmin())return denyAdmin();
+  value=value.trim(); if(!value)return;
+  let arr=[...getHaccpItemsForLoc(loc)];
+  let old=arr[i]; arr[i]=value; setHaccpItemsForLoc(loc,arr);
+  logs.forEach(x=>{if(x.kind==="haccp"&&x.loc===loc&&Array.isArray(x.done))x.done=x.done.map(v=>v===old?value:v)});
+  save();renderHaccpAdmin();renderHaccpItems();renderMonth();renderSanepid();renderPanel();
+}
+
 function addHaccpItem(){
   if(!isAdmin())return denyAdmin();
   let loc=haccpAdminLoc?.value||state.locations[0], name=newHaccpItem.value.trim();
@@ -3071,7 +3779,7 @@ function renderBackupSummary(){
   backupSummary.innerHTML=`
   <div class="summaryLine"><b>Temperatury</b><span>${temp}</span></div>
   <div class="summaryLine"><b>Sprzątanie</b><span>${clean}</span></div>
-  <div class="summaryLine"><b>HACCP / daty</b><span>${haccp}</span></div>
+  <div class="summaryLine"><b>HACCP</b><span>${haccp}</span></div>
   <div class="summaryLine"><b>Użytkownicy</b><span>${users.length}</span></div>
   <div class="summaryLine"><b>Lokalizacje</b><span>${state.locations.length}</span></div>
   <p class="small" style="color:#6b7280;margin-top:10px">Backup zawiera konfigurację, użytkowników, urządzenia, checklisty i historię wpisów.</p>`;
@@ -3123,7 +3831,7 @@ function kcApplyDarkFix(){
 const kcOldShow = typeof show==="function" ? show : null;
 if(kcOldShow && !window.__kcShowPatched){
   window.__kcShowPatched=true;
-  show=function(id){ kcOldShow(id); setTimeout(kcApplyDarkFix,0); setTimeout(kcApplyDarkFix,80); setTimeout(kcAdminDarkNormalize,120); setTimeout(kcPanelFinalCleanup,120); setTimeout(kcPeriodFinalCleanup,160); setTimeout(kcPanelLocationCleanup,160); setTimeout(kcPeriodFinalCleanup,180); };
+  show=function(id){ kcOldShow(id); kcResetBackupLightTheme(); setTimeout(kcResetBackupLightTheme,30); setTimeout(kcApplyDarkFix,0); setTimeout(kcApplyDarkFix,80); setTimeout(kcPanelFinalCleanup,120); setTimeout(kcPeriodFinalCleanup,160); setTimeout(kcPanelLocationCleanup,160); setTimeout(kcPeriodFinalCleanup,180); };
 }
 document.addEventListener("DOMContentLoaded",()=>setTimeout(kcApplyDarkFix,80));
 
@@ -3254,40 +3962,618 @@ document.addEventListener("click",()=>setTimeout(kcV937OptionCleanup,50));
 document.addEventListener("DOMContentLoaded",()=>setTimeout(kcV937OptionCleanup,150));
 
 
-function kcAdminDarkNormalize(){
+function kcBackupCardGraphite(){
   if(!document.body.classList.contains("theme-dark") || document.body.classList.contains("loginMode")) return;
   const admin=document.getElementById("admin");
-  if(!admin) return;
-
-  // Dynamic blocks / list items / rows in admin
-  admin.querySelectorAll("div, li, label").forEach(el=>{
-    const txt=(el.textContent||"").trim();
-    const st=(el.getAttribute("style")||"").toLowerCase().replace(/\s/g,"");
-    if(st.includes("background:#fff") || st.includes("background:white") || st.includes("background:#ffffff") ||
-       st.includes("background-color:#fff") || st.includes("background-color:white") || st.includes("background-color:#ffffff")){
-      el.classList.add("kcAdminLightChip");
-    }
-
-    // Items with delete buttons are usually added location/device/task chips.
-    if(el.querySelector("button") && txt.length>0 && txt.length<160 && !el.closest(".controls") && !el.classList.contains("row")){
-      el.classList.add("kcAdminItem");
-    }
-  });
-
-  // Inputs/selects/textareas
-  admin.querySelectorAll("input,select,textarea").forEach(el=>el.classList.add("kcAdminInput"));
-
-  // Buttons
-  admin.querySelectorAll("button").forEach(btn=>{
-    const t=(btn.textContent||"").trim();
-    if(t==="✕" || t==="×" || t==="X" || t==="x" || t.includes("Usuń")){
-      btn.classList.add("kcAdminDeleteBtn");
-    }else{
-      btn.classList.add("kcAdminBtn");
+  if(!admin)return;
+  admin.querySelectorAll(".card").forEach(card=>{
+    const txt=(card.textContent||"").toLowerCase();
+    if(txt.includes("backup") || txt.includes("migracja") || txt.includes("import") || txt.includes("eksport") || txt.includes("firebase")){
+      card.classList.add("kcBackupCardDark");
     }
   });
 }
-document.addEventListener("click",()=>setTimeout(kcAdminDarkNormalize,80));
-document.addEventListener("DOMContentLoaded",()=>setTimeout(kcAdminDarkNormalize,180));
+document.addEventListener("click",()=>setTimeout(kcBackupCardGraphite,80));
+document.addEventListener("DOMContentLoaded",()=>setTimeout(kcBackupCardGraphite,180));
 
-</script></body></html>
+
+function kcSection7BackupGraphite(){
+  if(!document.body.classList.contains("theme-dark") || document.body.classList.contains("loginMode")) return;
+  const admin = document.getElementById("admin");
+  if(!admin) return;
+
+  admin.querySelectorAll(".card").forEach(card=>{
+    const header = card.querySelector("h2");
+    const title = (header?.textContent || "").toLowerCase();
+    if(title.includes("backup") || title.includes("migracja")) {
+      card.classList.add("kcSection7Backup");
+      card.style.background = "#1f2937";
+      card.style.backgroundColor = "#1f2937";
+      card.style.borderColor = "#374151";
+      card.style.color = "#f8fafc";
+
+      card.querySelectorAll("div").forEach(el=>{
+        const st=(el.getAttribute("style")||"").toLowerCase().replace(/\s/g,"");
+        const txt=(el.textContent||"").toLowerCase();
+        if(
+          st.includes("background:#fff") || st.includes("background:white") || st.includes("background:#ffffff") ||
+          st.includes("background-color:#fff") || st.includes("background-color:white") || st.includes("background-color:#ffffff") ||
+          txt.includes("backup") || txt.includes("import") || txt.includes("eksport") || txt.includes("firebase")
+        ){
+          el.style.background = "#1f2937";
+          el.style.backgroundColor = "#1f2937";
+          el.style.borderColor = "#374151";
+          el.style.color = "#f8fafc";
+        }
+      });
+    }
+  });
+}
+document.addEventListener("click",()=>setTimeout(kcSection7BackupGraphite,80));
+document.addEventListener("DOMContentLoaded",()=>setTimeout(kcSection7BackupGraphite,180));
+
+
+function kcV943BackupButtonsUserRole(){
+  if(!document.body.classList.contains("theme-dark") || document.body.classList.contains("loginMode")) return;
+  const admin = document.getElementById("admin");
+  if(!admin) return;
+
+  // Oznacz sekcję backup, jeśli poprzednia klasa nie załapała
+  admin.querySelectorAll(".card").forEach(card=>{
+    const title=(card.querySelector("h2")?.textContent || card.textContent || "").toLowerCase();
+    if(title.includes("backup") || title.includes("migracja") || title.includes("import") || title.includes("eksport")){
+      card.classList.add("kcSection7Backup");
+      card.querySelectorAll("button,.btn,label").forEach(el=>{
+        const t=(el.textContent||"").toLowerCase();
+        if(t.includes("import") || t.includes("eksport") || t.includes("backup") || t.includes("csv") || t.includes("json") || t.includes("pobierz")){
+          el.classList.add("kcBackupActionButton");
+        }
+      });
+    }
+  });
+
+  // Sekcja 6 — znajdź teksty roli przy pracowniku i nadaj czytelny badge
+  const roles=["admin","manager","pracownik"];
+  document.querySelectorAll("#userList .editBox span, #userList .editBox div, #userList .editBox strong").forEach(el=>{
+    const t=(el.textContent||"").trim().toLowerCase();
+    if(roles.includes(t)){
+      el.classList.add("kcUserRoleBadge");
+    }
+  });
+}
+document.addEventListener("click",()=>setTimeout(kcV943BackupButtonsUserRole,80));
+document.addEventListener("DOMContentLoaded",()=>setTimeout(kcV943BackupButtonsUserRole,180));
+
+</script>
+<style>
+#rangeAdminBox label{font-weight:800;display:flex;flex-direction:column;gap:6px}
+#rangeAdminBox input{min-width:120px}
+body.theme-dark:not(.loginMode) select{color-scheme:dark!important}
+
+/* v9.63 — uporządkowany Admin */
+.adminIntro{margin-bottom:12px}
+.adminSection{padding:13px 14px!important;margin:9px 0!important}
+.adminSection h2{font-size:18px;margin:0 0 6px 0}
+.adminSection p{margin:0 0 10px 0;line-height:1.35}
+.adminSection details{margin-top:8px}
+.adminSection summary{list-style:none;cursor:pointer;border-radius:12px;padding:12px 14px;font-weight:900;background:#2563eb;color:#fff;box-shadow:0 2px 8px #0001;display:flex;justify-content:space-between;align-items:center}
+.adminSection summary::-webkit-details-marker{display:none}
+.adminSection summary:after{content:'⌄';font-size:18px;line-height:1;opacity:.95}
+.adminSection details[open] summary:after{content:'⌃'}
+.adminAddRow{margin:12px 0}
+.adminListRow{display:flex;align-items:center;gap:8px;justify-content:space-between;border:1px solid #d8dee8;background:#f8fafc;border-radius:12px;padding:10px;margin:8px 0}
+.adminListRow b{font-size:15px}.adminListRow .row{flex:1}.adminListTitle{margin:14px 0 6px;font-weight:900}.adminListSub{margin:10px 0 4px;font-weight:900;color:#475569}
+.adminListRow input{flex:1;min-width:160px}
+body.theme-dark:not(.loginMode) .adminSection summary{background:#2563eb!important;color:#fff!important;border:1px solid rgba(96,165,250,.35)!important}
+body.theme-dark:not(.loginMode) .adminListRow{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
+body.theme-dark:not(.loginMode) .adminListRow *:not(button){color:#f8fafc!important}
+body.theme-dark:not(.loginMode) .adminListSub{color:#cbd5e1!important}
+body.theme-dark:not(.loginMode) #rangeAdminBox .btn:not(.danger){background:#2563eb!important;color:#fff!important;border-color:#2563eb!important}
+@media(max-width:520px){.adminSection h2{font-size:17px}.adminListRow{align-items:stretch;flex-direction:column}.adminListRow .row>*{width:100%}}
+</style>
+</body></html>
+<!-- v9.56 dark select arrows + status chips fix -->
+<style>
+/* Strzałki selectów: widoczne w jasnym i ciemnym motywie, bez kwadratu po lewej */
+.kcSelectWrap{position:relative;display:inline-block;vertical-align:middle;width:auto;max-width:100%;}
+.kcSelectWrap select{
+  width:100%;
+  appearance:none!important;
+  -webkit-appearance:none!important;
+  padding-left:10px!important;
+  padding-right:38px!important;
+  color:#172033!important;
+  background-color:#fff!important;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23172033' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E")!important;
+  background-repeat:no-repeat!important;
+  background-position:right 12px center!important;
+  background-size:16px 16px!important;
+}
+body.theme-dark:not(.loginMode) .kcSelectWrap select{
+  color:#f8fafc!important;
+  background-color:#111827!important;
+  border-color:#334155!important;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23f8fafc' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E")!important;
+}
+.kcSelectWrap::before,.kcSelectWrap::after{display:none!important;content:none!important;}
+
+/* Statusy w Temperaturach i Sprzątaniu na ciemnym motywie jak w Panelu */
+body.theme-dark:not(.loginMode) #temp .status,
+body.theme-dark:not(.loginMode) #clean .status,
+body.theme-dark:not(.loginMode) #haccp .status{
+  color:#111827!important;
+  font-weight:950!important;
+  border:1px solid rgba(0,0,0,.16)!important;
+  text-shadow:none!important;
+  border-radius:999px!important;
+  padding:4px 9px!important;
+}
+body.theme-dark:not(.loginMode) #temp .status.ok,
+body.theme-dark:not(.loginMode) #clean .status.ok,
+body.theme-dark:not(.loginMode) #haccp .status.ok,
+body.theme-dark:not(.loginMode) #temp .ok,
+body.theme-dark:not(.loginMode) #clean .ok,
+body.theme-dark:not(.loginMode) #haccp .ok{background:#22c55e!important;color:#111827!important;}
+body.theme-dark:not(.loginMode) #temp .status.warn,
+body.theme-dark:not(.loginMode) #clean .status.warn,
+body.theme-dark:not(.loginMode) #haccp .status.warn,
+body.theme-dark:not(.loginMode) #temp .warn,
+body.theme-dark:not(.loginMode) #clean .warn,
+body.theme-dark:not(.loginMode) #haccp .warn{background:#facc15!important;color:#111827!important;}
+body.theme-dark:not(.loginMode) #temp .status.alarm,
+body.theme-dark:not(.loginMode) #clean .status.alarm,
+body.theme-dark:not(.loginMode) #haccp .status.alarm,
+body.theme-dark:not(.loginMode) #temp .alarm,
+body.theme-dark:not(.loginMode) #clean .alarm,
+body.theme-dark:not(.loginMode) #haccp .alarm{background:#ef4444!important;color:#111827!important;}
+
+/* Historia w zakładkach temp/sprzątanie — status też czytelny */
+body.theme-dark:not(.loginMode) #tempLog .status,
+body.theme-dark:not(.loginMode) #cleanLog .status{
+  color:#111827!important;
+  font-weight:950!important;
+  border:1px solid rgba(0,0,0,.16)!important;
+}
+
+/* v9.63 — uporządkowany Admin */
+.adminIntro{margin-bottom:12px}
+.adminSection{padding:13px 14px!important;margin:9px 0!important}
+.adminSection h2{font-size:18px;margin:0 0 6px 0}
+.adminSection p{margin:0 0 10px 0;line-height:1.35}
+.adminSection details{margin-top:8px}
+.adminSection summary{list-style:none;cursor:pointer;border-radius:12px;padding:12px 14px;font-weight:900;background:#2563eb;color:#fff;box-shadow:0 2px 8px #0001;display:flex;justify-content:space-between;align-items:center}
+.adminSection summary::-webkit-details-marker{display:none}
+.adminSection summary:after{content:'⌄';font-size:18px;line-height:1;opacity:.95}
+.adminSection details[open] summary:after{content:'⌃'}
+.adminAddRow{margin:12px 0}
+.adminListRow{display:flex;align-items:center;gap:8px;justify-content:space-between;border:1px solid #d8dee8;background:#f8fafc;border-radius:12px;padding:10px;margin:8px 0}
+.adminListRow b{font-size:15px}.adminListRow .row{flex:1}.adminListTitle{margin:14px 0 6px;font-weight:900}.adminListSub{margin:10px 0 4px;font-weight:900;color:#475569}
+.adminListRow input{flex:1;min-width:160px}
+body.theme-dark:not(.loginMode) .adminSection summary{background:#2563eb!important;color:#fff!important;border:1px solid rgba(96,165,250,.35)!important}
+body.theme-dark:not(.loginMode) .adminListRow{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
+body.theme-dark:not(.loginMode) .adminListRow *:not(button){color:#f8fafc!important}
+body.theme-dark:not(.loginMode) .adminListSub{color:#cbd5e1!important}
+body.theme-dark:not(.loginMode) #rangeAdminBox .btn:not(.danger){background:#2563eb!important;color:#fff!important;border-color:#2563eb!important}
+@media(max-width:520px){.adminSection h2{font-size:17px}.adminListRow{align-items:stretch;flex-direction:column}.adminListRow .row>*{width:100%}}
+</style>
+
+<!-- v9.57 final select arrow fix + HACCP chips -->
+<style>
+/* v9.57: strzałka jako osobny element, nie jako tło selecta — usuwa powielanie na iOS/dark */
+.kcSelectWrap{
+  position:relative!important;
+  display:inline-block!important;
+  vertical-align:middle!important;
+  max-width:100%!important;
+}
+.kcSelectWrap select{
+  appearance:none!important;
+  -webkit-appearance:none!important;
+  background-image:none!important;
+  background-repeat:no-repeat!important;
+  background-size:0 0!important;
+  padding-left:10px!important;
+  padding-right:42px!important;
+}
+.kcSelectWrap::before{display:none!important;content:none!important;}
+.kcSelectWrap::after{
+  content:"⌄"!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  position:absolute!important;
+  right:13px!important;
+  top:50%!important;
+  transform:translateY(-54%)!important;
+  width:18px!important;
+  height:18px!important;
+  font-size:30px!important;
+  line-height:18px!important;
+  font-weight:900!important;
+  color:#172033!important;
+  pointer-events:none!important;
+  z-index:2!important;
+}
+body.theme-dark:not(.loginMode) .kcSelectWrap select{
+  background:#111827!important;
+  color:#f8fafc!important;
+  border-color:#334155!important;
+}
+body.theme-dark:not(.loginMode) .kcSelectWrap::after{
+  color:#f8fafc!important;
+}
+@media(max-width:850px){.row>.kcSelectWrap{width:100%!important}}
+
+/* Status/chmurki także w HACCP / daty — jak w Panelu */
+body.theme-dark:not(.loginMode) #haccp .status,
+body.theme-dark:not(.loginMode) #haccp .badge,
+body.theme-dark:not(.loginMode) #haccp .pill,
+body.theme-dark:not(.loginMode) #haccp .notice,
+body.theme-dark:not(.loginMode) #haccpMsg .status,
+body.theme-dark:not(.loginMode) #haccpMsg .badge,
+body.theme-dark:not(.loginMode) #haccpMsg .pill,
+body.theme-dark:not(.loginMode) #haccpMsg .notice{
+  color:#111827!important;
+  font-weight:950!important;
+  text-shadow:none!important;
+  border-radius:999px!important;
+  border:1px solid rgba(0,0,0,.16)!important;
+}
+body.theme-dark:not(.loginMode) #haccp .ok,
+body.theme-dark:not(.loginMode) #haccpMsg .ok,
+body.theme-dark:not(.loginMode) #haccp .success,
+body.theme-dark:not(.loginMode) #haccpMsg .success{background:#22c55e!important;color:#111827!important;}
+body.theme-dark:not(.loginMode) #haccp .warn,
+body.theme-dark:not(.loginMode) #haccpMsg .warn,
+body.theme-dark:not(.loginMode) #haccp .notice,
+body.theme-dark:not(.loginMode) #haccpMsg .notice{background:#facc15!important;color:#111827!important;}
+body.theme-dark:not(.loginMode) #haccp .alarm,
+body.theme-dark:not(.loginMode) #haccpMsg .alarm,
+body.theme-dark:not(.loginMode) #haccp .danger,
+body.theme-dark:not(.loginMode) #haccpMsg .danger{background:#ef4444!important;color:#111827!important;}
+.versionFooter::after{content:"";}
+
+/* v9.63 — uporządkowany Admin */
+.adminIntro{margin-bottom:12px}
+.adminSection{padding:13px 14px!important;margin:9px 0!important}
+.adminSection h2{font-size:18px;margin:0 0 6px 0}
+.adminSection p{margin:0 0 10px 0;line-height:1.35}
+.adminSection details{margin-top:8px}
+.adminSection summary{list-style:none;cursor:pointer;border-radius:12px;padding:12px 14px;font-weight:900;background:#2563eb;color:#fff;box-shadow:0 2px 8px #0001;display:flex;justify-content:space-between;align-items:center}
+.adminSection summary::-webkit-details-marker{display:none}
+.adminSection summary:after{content:'⌄';font-size:18px;line-height:1;opacity:.95}
+.adminSection details[open] summary:after{content:'⌃'}
+.adminAddRow{margin:12px 0}
+.adminListRow{display:flex;align-items:center;gap:8px;justify-content:space-between;border:1px solid #d8dee8;background:#f8fafc;border-radius:12px;padding:10px;margin:8px 0}
+.adminListRow b{font-size:15px}.adminListRow .row{flex:1}.adminListTitle{margin:14px 0 6px;font-weight:900}.adminListSub{margin:10px 0 4px;font-weight:900;color:#475569}
+.adminListRow input{flex:1;min-width:160px}
+body.theme-dark:not(.loginMode) .adminSection summary{background:#2563eb!important;color:#fff!important;border:1px solid rgba(96,165,250,.35)!important}
+body.theme-dark:not(.loginMode) .adminListRow{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
+body.theme-dark:not(.loginMode) .adminListRow *:not(button){color:#f8fafc!important}
+body.theme-dark:not(.loginMode) .adminListSub{color:#cbd5e1!important}
+body.theme-dark:not(.loginMode) #rangeAdminBox .btn:not(.danger){background:#2563eb!important;color:#fff!important;border-color:#2563eb!important}
+@media(max-width:520px){.adminSection h2{font-size:17px}.adminListRow{align-items:stretch;flex-direction:column}.adminListRow .row>*{width:100%}}
+</style>
+
+
+<!-- v9.58 nicer select chevrons + unified status chips in light/dark -->
+<style>
+/* Ładniejsza pojedyncza strzałka rozwijania — bez wzorków i bez kwadratu po lewej */
+.kcSelectWrap select{
+  appearance:none!important;
+  -webkit-appearance:none!important;
+  background-image:none!important;
+  padding-left:10px!important;
+  padding-right:42px!important;
+}
+.kcSelectWrap::before{display:none!important;content:none!important;}
+.kcSelectWrap::after{
+  content:"⌄"!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  position:absolute!important;
+  right:13px!important;
+  top:50%!important;
+  transform:translateY(-58%)!important;
+  width:20px!important;
+  height:20px!important;
+  font-size:28px!important;
+  line-height:20px!important;
+  font-family:Arial,sans-serif!important;
+  font-weight:800!important;
+  color:#475569!important;
+  opacity:.95!important;
+  pointer-events:none!important;
+  z-index:3!important;
+}
+body.theme-dark:not(.loginMode) .kcSelectWrap::after{
+  color:#f8fafc!important;
+  text-shadow:0 1px 4px rgba(0,0,0,.35)!important;
+}
+
+/* Chmurki statusu jak w Panelu — jasny i ciemny motyw */
+#temp .status,
+#clean .status,
+#haccp .status,
+#temp .badge,
+#clean .badge,
+#haccp .badge,
+#temp .pctAlarm,
+#clean .pctAlarm,
+#haccp .pctAlarm,
+#temp .pctWarn,
+#clean .pctWarn,
+#haccp .pctWarn,
+#temp .pctMid,
+#clean .pctMid,
+#haccp .pctMid,
+#temp .pctOk,
+#clean .pctOk,
+#haccp .pctOk{
+  color:#111827!important;
+  font-weight:950!important;
+  border:1px solid rgba(0,0,0,.16)!important;
+  text-shadow:none!important;
+  border-radius:999px!important;
+  padding:4px 9px!important;
+  box-shadow:none!important;
+}
+#temp .status.ok,#clean .status.ok,#haccp .status.ok,
+#temp .ok,#clean .ok,#haccp .ok,
+#temp .pctOk,#clean .pctOk,#haccp .pctOk{
+  background:#22c55e!important;
+  color:#111827!important;
+}
+#temp .status.warn,#clean .status.warn,#haccp .status.warn,
+#temp .warn,#clean .warn,#haccp .warn,
+#temp .pctWarn,#clean .pctWarn,#haccp .pctWarn{
+  background:#facc15!important;
+  color:#111827!important;
+}
+#temp .pctMid,#clean .pctMid,#haccp .pctMid{
+  background:#fb923c!important;
+  color:#111827!important;
+}
+#temp .status.alarm,#clean .status.alarm,#haccp .status.alarm,
+#temp .alarm,#clean .alarm,#haccp .alarm,
+#temp .pctAlarm,#clean .pctAlarm,#haccp .pctAlarm{
+  background:#ef4444!important;
+  color:#111827!important;
+}
+
+/* Historia wewnątrz zakładek też ma identyczne statusy */
+#tempLog .status,
+#cleanLog .status,
+#haccpLog .status{
+  color:#111827!important;
+  font-weight:950!important;
+  border:1px solid rgba(0,0,0,.16)!important;
+  border-radius:999px!important;
+  padding:4px 9px!important;
+}
+
+/* v9.63 — uporządkowany Admin */
+.adminIntro{margin-bottom:12px}
+.adminSection{padding:13px 14px!important;margin:9px 0!important}
+.adminSection h2{font-size:18px;margin:0 0 6px 0}
+.adminSection p{margin:0 0 10px 0;line-height:1.35}
+.adminSection details{margin-top:8px}
+.adminSection summary{list-style:none;cursor:pointer;border-radius:12px;padding:12px 14px;font-weight:900;background:#2563eb;color:#fff;box-shadow:0 2px 8px #0001;display:flex;justify-content:space-between;align-items:center}
+.adminSection summary::-webkit-details-marker{display:none}
+.adminSection summary:after{content:'⌄';font-size:18px;line-height:1;opacity:.95}
+.adminSection details[open] summary:after{content:'⌃'}
+.adminAddRow{margin:12px 0}
+.adminListRow{display:flex;align-items:center;gap:8px;justify-content:space-between;border:1px solid #d8dee8;background:#f8fafc;border-radius:12px;padding:10px;margin:8px 0}
+.adminListRow b{font-size:15px}.adminListRow .row{flex:1}.adminListTitle{margin:14px 0 6px;font-weight:900}.adminListSub{margin:10px 0 4px;font-weight:900;color:#475569}
+.adminListRow input{flex:1;min-width:160px}
+body.theme-dark:not(.loginMode) .adminSection summary{background:#2563eb!important;color:#fff!important;border:1px solid rgba(96,165,250,.35)!important}
+body.theme-dark:not(.loginMode) .adminListRow{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
+body.theme-dark:not(.loginMode) .adminListRow *:not(button){color:#f8fafc!important}
+body.theme-dark:not(.loginMode) .adminListSub{color:#cbd5e1!important}
+body.theme-dark:not(.loginMode) #rangeAdminBox .btn:not(.danger){background:#2563eb!important;color:#fff!important;border-color:#2563eb!important}
+@media(max-width:520px){.adminSection h2{font-size:17px}.adminListRow{align-items:stretch;flex-direction:column}.adminListRow .row>*{width:100%}}
+</style>
+
+
+<!-- v9.59 iOS-style double chevrons for select fields -->
+<style>
+/* Strzałki jak w jasnym przykładzie: dwie proste kreskowe strzałki góra/dół */
+.kcSelectWrap select{
+  appearance:none!important;
+  -webkit-appearance:none!important;
+  background-image:none!important;
+  padding-right:48px!important;
+}
+.kcSelectWrap::before,
+.kcSelectWrap::after{
+  content:""!important;
+  display:block!important;
+  position:absolute!important;
+  right:18px!important;
+  width:11px!important;
+  height:11px!important;
+  border-right:4px solid #111827!important;
+  border-bottom:4px solid #111827!important;
+  border-radius:2px!important;
+  background:transparent!important;
+  pointer-events:none!important;
+  z-index:5!important;
+  opacity:1!important;
+  font-size:0!important;
+  line-height:0!important;
+}
+.kcSelectWrap::before{
+  top:calc(50% - 10px)!important;
+  transform:rotate(-135deg)!important;
+}
+.kcSelectWrap::after{
+  top:calc(50% + 2px)!important;
+  transform:rotate(45deg)!important;
+}
+body.theme-dark:not(.loginMode) .kcSelectWrap::before,
+body.theme-dark:not(.loginMode) .kcSelectWrap::after{
+  border-right-color:#f8fafc!important;
+  border-bottom-color:#f8fafc!important;
+}
+@media(max-width:850px){
+  .kcSelectWrap::before,
+  .kcSelectWrap::after{right:20px!important;}
+}
+
+/* v9.63 — uporządkowany Admin */
+.adminIntro{margin-bottom:12px}
+.adminSection{padding:13px 14px!important;margin:9px 0!important}
+.adminSection h2{font-size:18px;margin:0 0 6px 0}
+.adminSection p{margin:0 0 10px 0;line-height:1.35}
+.adminSection details{margin-top:8px}
+.adminSection summary{list-style:none;cursor:pointer;border-radius:12px;padding:12px 14px;font-weight:900;background:#2563eb;color:#fff;box-shadow:0 2px 8px #0001;display:flex;justify-content:space-between;align-items:center}
+.adminSection summary::-webkit-details-marker{display:none}
+.adminSection summary:after{content:'⌄';font-size:18px;line-height:1;opacity:.95}
+.adminSection details[open] summary:after{content:'⌃'}
+.adminAddRow{margin:12px 0}
+.adminListRow{display:flex;align-items:center;gap:8px;justify-content:space-between;border:1px solid #d8dee8;background:#f8fafc;border-radius:12px;padding:10px;margin:8px 0}
+.adminListRow b{font-size:15px}.adminListRow .row{flex:1}.adminListTitle{margin:14px 0 6px;font-weight:900}.adminListSub{margin:10px 0 4px;font-weight:900;color:#475569}
+.adminListRow input{flex:1;min-width:160px}
+body.theme-dark:not(.loginMode) .adminSection summary{background:#2563eb!important;color:#fff!important;border:1px solid rgba(96,165,250,.35)!important}
+body.theme-dark:not(.loginMode) .adminListRow{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
+body.theme-dark:not(.loginMode) .adminListRow *:not(button){color:#f8fafc!important}
+body.theme-dark:not(.loginMode) .adminListSub{color:#cbd5e1!important}
+body.theme-dark:not(.loginMode) #rangeAdminBox .btn:not(.danger){background:#2563eb!important;color:#fff!important;border-color:#2563eb!important}
+@media(max-width:520px){.adminSection h2{font-size:17px}.adminListRow{align-items:stretch;flex-direction:column}.adminListRow .row>*{width:100%}}
+</style>
+
+
+<!-- v9.60 restore native select arrows from v9.55 -->
+<style>
+/* Przywrócenie idealnych natywnych strzałek z v9.55 — bez rysowanych dużych ikon */
+.kcSelectWrap{
+  position:relative!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  max-width:100%!important;
+}
+.kcSelectWrap select{
+  width:100%!important;
+  padding-left:10px!important;
+  padding-right:34px!important;
+  appearance:auto!important;
+  -webkit-appearance:auto!important;
+  background-image:none!important;
+  background-repeat:initial!important;
+  background-size:initial!important;
+  background-position:initial!important;
+}
+.kcSelectWrap::before,
+.kcSelectWrap::after{
+  display:none!important;
+  content:none!important;
+  border:0!important;
+  width:0!important;
+  height:0!important;
+}
+body.theme-light:not(.loginMode) .kcSelectWrap select{
+  color:#172033!important;
+  background-color:#fff!important;
+}
+body.theme-dark:not(.loginMode) .kcSelectWrap select{
+  color:#f8fafc!important;
+  background-color:#111827!important;
+  border-color:#334155!important;
+  color-scheme:dark!important;
+}
+@media(max-width:850px){.row>.kcSelectWrap{width:100%!important}}
+
+/* v9.63 — uporządkowany Admin */
+.adminIntro{margin-bottom:12px}
+.adminSection{padding:13px 14px!important;margin:9px 0!important}
+.adminSection h2{font-size:18px;margin:0 0 6px 0}
+.adminSection p{margin:0 0 10px 0;line-height:1.35}
+.adminSection details{margin-top:8px}
+.adminSection summary{list-style:none;cursor:pointer;border-radius:12px;padding:12px 14px;font-weight:900;background:#2563eb;color:#fff;box-shadow:0 2px 8px #0001;display:flex;justify-content:space-between;align-items:center}
+.adminSection summary::-webkit-details-marker{display:none}
+.adminSection summary:after{content:'⌄';font-size:18px;line-height:1;opacity:.95}
+.adminSection details[open] summary:after{content:'⌃'}
+.adminAddRow{margin:12px 0}
+.adminListRow{display:flex;align-items:center;gap:8px;justify-content:space-between;border:1px solid #d8dee8;background:#f8fafc;border-radius:12px;padding:10px;margin:8px 0}
+.adminListRow b{font-size:15px}.adminListRow .row{flex:1}.adminListTitle{margin:14px 0 6px;font-weight:900}.adminListSub{margin:10px 0 4px;font-weight:900;color:#475569}
+.adminListRow input{flex:1;min-width:160px}
+body.theme-dark:not(.loginMode) .adminSection summary{background:#2563eb!important;color:#fff!important;border:1px solid rgba(96,165,250,.35)!important}
+body.theme-dark:not(.loginMode) .adminListRow{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
+body.theme-dark:not(.loginMode) .adminListRow *:not(button){color:#f8fafc!important}
+body.theme-dark:not(.loginMode) .adminListSub{color:#cbd5e1!important}
+body.theme-dark:not(.loginMode) #rangeAdminBox .btn:not(.danger){background:#2563eb!important;color:#fff!important;border-color:#2563eb!important}
+@media(max-width:520px){.adminSection h2{font-size:17px}.adminListRow{align-items:stretch;flex-direction:column}.adminListRow .row>*{width:100%}}
+</style>
+
+<!-- v9.62 admin temperature ranges dark theme polish -->
+<style>
+/* Admin — Zakresy temperatur: spójny ciemny motyw jak reszta aplikacji */
+body.theme-dark:not(.loginMode) #rangeAdminBox .editBox{
+  background:linear-gradient(180deg,#132238,#0d1b2f)!important;
+  color:#f8fafc!important;
+  border:1px solid rgba(148,163,184,.28)!important;
+  border-radius:14px!important;
+  box-shadow:0 12px 28px rgba(0,0,0,.22)!important;
+}
+body.theme-dark:not(.loginMode) #rangeAdminBox .editBox h3,
+body.theme-dark:not(.loginMode) #rangeAdminBox .editBox label{
+  color:#f8fafc!important;
+}
+body.theme-dark:not(.loginMode) #rangeAdminBox .editBox .small,
+body.theme-dark:not(.loginMode) #rangeAdminBox .editBox p{
+  color:#cbd5e1!important;
+}
+body.theme-dark:not(.loginMode) #rangeAdminBox input{
+  background:#111827!important;
+  color:#f8fafc!important;
+  border:1px solid #334155!important;
+  border-radius:10px!important;
+  box-shadow:none!important;
+}
+body.theme-dark:not(.loginMode) #rangeAdminBox .row{
+  gap:10px!important;
+}
+body.theme-dark:not(.loginMode) #rangeAdminBox + .row,
+body.theme-dark:not(.loginMode) #rangeAdminBox .row:last-child{
+  background:transparent!important;
+}
+body.theme-dark:not(.loginMode) #rangeMsg.notice{
+  background:#fef3c7!important;
+  color:#92400e!important;
+  border:1px solid #fde68a!important;
+}
+body.theme-dark:not(.loginMode) #rangeMsg.notice.success,
+body.theme-dark:not(.loginMode) #rangeMsg.success{
+  background:#dcfce7!important;
+  color:#166534!important;
+  border:1px solid #86efac!important;
+}
+/* Jasny motyw zostaje czysty i czytelny */
+body.theme-light:not(.loginMode) #rangeAdminBox .editBox{
+  background:#f8fafc!important;
+  border:1px solid #d8dee8!important;
+  color:#172033!important;
+}
+
+/* v9.63 — uporządkowany Admin */
+.adminIntro{margin-bottom:12px}
+.adminSection{padding:13px 14px!important;margin:9px 0!important}
+.adminSection h2{font-size:18px;margin:0 0 6px 0}
+.adminSection p{margin:0 0 10px 0;line-height:1.35}
+.adminSection details{margin-top:8px}
+.adminSection summary{list-style:none;cursor:pointer;border-radius:12px;padding:12px 14px;font-weight:900;background:#2563eb;color:#fff;box-shadow:0 2px 8px #0001;display:flex;justify-content:space-between;align-items:center}
+.adminSection summary::-webkit-details-marker{display:none}
+.adminSection summary:after{content:'⌄';font-size:18px;line-height:1;opacity:.95}
+.adminSection details[open] summary:after{content:'⌃'}
+.adminAddRow{margin:12px 0}
+.adminListRow{display:flex;align-items:center;gap:8px;justify-content:space-between;border:1px solid #d8dee8;background:#f8fafc;border-radius:12px;padding:10px;margin:8px 0}
+.adminListRow b{font-size:15px}.adminListRow .row{flex:1}.adminListTitle{margin:14px 0 6px;font-weight:900}.adminListSub{margin:10px 0 4px;font-weight:900;color:#475569}
+.adminListRow input{flex:1;min-width:160px}
+body.theme-dark:not(.loginMode) .adminSection summary{background:#2563eb!important;color:#fff!important;border:1px solid rgba(96,165,250,.35)!important}
+body.theme-dark:not(.loginMode) .adminListRow{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
+body.theme-dark:not(.loginMode) .adminListRow *:not(button){color:#f8fafc!important}
+body.theme-dark:not(.loginMode) .adminListSub{color:#cbd5e1!important}
+body.theme-dark:not(.loginMode) #rangeAdminBox .btn:not(.danger){background:#2563eb!important;color:#fff!important;border-color:#2563eb!important}
+@media(max-width:520px){.adminSection h2{font-size:17px}.adminListRow{align-items:stretch;flex-direction:column}.adminListRow .row>*{width:100%}}
+</style>
