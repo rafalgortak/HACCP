@@ -3265,7 +3265,7 @@ body:not(.loginMode) table{
   <button class="btn primary adminOnly kcMenuBackup" onclick="exportBackup();closeUserMenu()">Backup JSON</button>
   <button class="btn danger" onclick="logout();closeUserMenu()">Wyloguj</button>
 </div>
-<div id="cellModal" class="hidden"></div><div class="versionFooter noPrint">v9.82</div></div></main><script>
+<div id="cellModal" class="hidden"></div><div class="versionFooter noPrint">v9.87</div></div></main><script>
 const defaults={locations:["Asian Street Food Mokotów","Asian Street Food Wola","Food Truck","Kuchnia Mokotów"],devices:{"Asian Street Food Mokotów":{chlodnie:["Chłodnia 1","Chłodnia 2","Chłodnia 3"],mroznie:["Mroźnia 1"]},"Asian Street Food Wola":{chlodnie:["Chłodnia 1","Chłodnia 2"],mroznie:["Mroźnia 1"]},"Food Truck":{chlodnie:["Chłodnia 1","Chłodnia 2"],mroznie:["Mroźnia 1"]},"Kuchnia Mokotów":{chlodnie:["Chłodnia 1","Chłodnia 2","Chłodnia 3","Chłodnia 4"],mroznie:["Mroźnia 1","Mroźnia 2"]}},cleaning:{"Rozpoczęcie zmiany":["Obecność szkodników","Stan lodówek / brak wycieków","Czystość blatów startowa"],"Podczas zmiany":["Frytury","Wymiana frytury","Zlewy","Bieżące blaty"],"Zamknięcie zmiany":["Pow. robocze / blaty","Kuchenki","Ściany i podłogi","Schładzarka","Chłodnie","Mroźnie","Mycie okapu"]},haccpItems:["Kontrola dat przydatności","Kontrola chłodni tygodniowa","Magazyn suchy miesięcznie","Zamrażarki miesięcznie"]};
 let state=JSON.parse(localStorage.getItem("kc_state_v7")||"null")||defaults;
 let logs=JSON.parse(localStorage.getItem("kc_logs_v7")||"[]");
@@ -5854,16 +5854,7 @@ body.theme-dark:not(.loginMode) .docEmpty{color:#cbd5e1!important}
 
 
 <style>
-
-/* v9.86 — kontrola układu po fixed header/nav */
-@media(min-width:800px){
-  #history .historyFilters{top:112px!important;}
-  #admin .adminDetailPanel,.adminDetailPanel{max-height:calc(100vh - 135px);overflow:auto;}
-  #month .wrap,#sanepid .wrap{max-width:100%;overflow:auto;}
-}
-body:not(.loginMode) .modalOverlay{z-index:10020!important;}
-
-/* v9.86 — responsywny PDF preview bar: iPhone/tablet */
+/* v9.85 — PDF preview bar: Zamknij + title + share only */
 .kcPdfOverlay{position:fixed;inset:0;z-index:9999;background:#0b1220;display:flex;flex-direction:column;}
 .kcPdfTopbar{height:54px;min-height:54px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;padding:0 12px;background:#ffffff;color:#111827;border-bottom:1px solid #d8dee8;box-shadow:0 2px 10px rgba(0,0,0,.12)}
 .kcPdfClose,.kcPdfShare{border:0;background:transparent;color:#2563eb;font-weight:900;font-size:16px;display:flex;align-items:center;justify-content:center;gap:6px;min-height:42px;padding:8px 10px;border-radius:10px}
@@ -5875,9 +5866,7 @@ body.theme-dark:not(.loginMode) .kcPdfTopbar{background:#0f172a;color:#f8fafc;bo
 body.theme-dark:not(.loginMode) .kcPdfTitle{color:#f8fafc}
 body.theme-dark:not(.loginMode) .kcPdfClose,body.theme-dark:not(.loginMode) .kcPdfShare{color:#60a5fa}
 body.theme-dark:not(.loginMode) .kcPdfClose:active,body.theme-dark:not(.loginMode) .kcPdfShare:active{background:#1e293b}
-@media(max-width:520px){.kcPdfOverlay{top:max(12px,env(safe-area-inset-top));bottom:max(12px,env(safe-area-inset-bottom));left:10px;right:10px;inset:auto;max-height:calc(100vh - 24px);border-radius:18px;overflow:hidden;box-shadow:0 18px 60px rgba(0,0,0,.42)}.kcPdfTopbar{height:48px;min-height:48px;padding:0 8px}.kcPdfTitle{font-size:14px}.kcPdfClose{font-size:14px;padding:7px 8px}.kcPdfShare{padding:7px 8px}.kcPdfShareIcon{width:22px;height:22px}.kcPdfFrame{height:calc(100vh - 86px)}}
-@media(min-width:700px){.kcPdfOverlay{top:8px;bottom:8px;left:8px;right:8px;inset:auto;border-radius:16px;overflow:hidden;box-shadow:0 22px 70px rgba(0,0,0,.45)}.kcPdfTopbar{height:56px;min-height:56px}.kcPdfFrame{height:calc(100vh - 72px)}}
-@media(min-width:1100px){.kcPdfOverlay{top:10px;bottom:10px;left:10px;right:10px;border-radius:18px}}
+@media(max-width:520px){.kcPdfTopbar{height:50px;min-height:50px;padding:0 8px}.kcPdfTitle{font-size:14px}.kcPdfClose{font-size:15px;padding:7px 8px}.kcPdfShare{padding:7px 8px}.kcPdfShareIcon{width:23px;height:23px}}
 </style>
 <script>
 /* v9.85 — wspólny podgląd PDF w aplikacji + tylko ikona Udostępnij */
@@ -5936,9 +5925,236 @@ body.theme-dark:not(.loginMode) .kcPdfClose:active,body.theme-dark:not(.loginMod
   window.openHaccpDoc=function(loc,name){try{const f=(JSON.parse(localStorage.getItem('kc_haccp_docs_v1')||'{}')[loc]||{})[name]; preview(name,f&&f.data);}catch(e){alert('Brak dodanego pliku PDF.')}};
   window.openProcedureDocV2=function(loc,cat,name){try{const f=(((JSON.parse(localStorage.getItem('kc_proc_files_v1')||'{}')[loc]||{})[cat]||{})[name]); preview(name,f&&f.data);}catch(e){alert('Brak dodanego pliku PDF.')}};
   window.openStaffPdf=function(pid,section,name){try{const f=(((JSON.parse(localStorage.getItem('kc_staff_files_v1')||'{}')[pid]||{})[section]||{})[name]); preview(name,f&&f.data);}catch(e){alert('Brak dodanego pliku PDF.')}};
-  setTimeout(()=>{const vf=document.querySelector('.versionFooter'); if(vf)vf.textContent='v9.86';},0);
+  setTimeout(()=>{const vf=document.querySelector('.versionFooter'); if(vf)vf.textContent='v9.87';},0);
 })();
 </script>
+
+
+<style>
+/* v9.87 — FIX po v9.86: stabilny podgląd PDF + telefon/header/login */
+
+/* Telefon: górny pasek bez zawijania Kitchen Control i bez nachodzenia na zakładki */
+@media(max-width:640px){
+  body:not(.loginMode){
+    --kc-fixed-header-h:62px!important;
+    --kc-fixed-nav-h:56px!important;
+  }
+  body:not(.loginMode) header.appHeader{
+    min-height:62px!important;
+    height:62px!important;
+    padding:7px 10px!important;
+    display:flex!important;
+    align-items:center!important;
+    overflow:visible!important;
+  }
+  body:not(.loginMode) .headerLeft{
+    min-width:0!important;
+    flex:1 1 auto!important;
+    gap:8px!important;
+    overflow:hidden!important;
+  }
+  body:not(.loginMode) .headerLogoImg{
+    width:42px!important;
+    height:42px!important;
+    border-radius:11px!important;
+    flex:0 0 42px!important;
+  }
+  body:not(.loginMode) header h1,
+  body:not(.loginMode) .headerLeft h1{
+    font-size:23px!important;
+    line-height:1!important;
+    white-space:nowrap!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+    max-width:100%!important;
+    margin:0!important;
+  }
+  body:not(.loginMode) .headerActions{
+    flex:0 0 auto!important;
+    gap:6px!important;
+    margin-left:8px!important;
+  }
+  body:not(.loginMode) .themeMiniBtn,
+  body:not(.loginMode) .powerBtn{
+    width:38px!important;
+    height:38px!important;
+    min-width:38px!important;
+    min-height:38px!important;
+    border-radius:12px!important;
+    font-size:18px!important;
+    padding:0!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+  }
+  body:not(.loginMode) #appArea>.nav.controls{
+    top:62px!important;
+    height:56px!important;
+    min-height:56px!important;
+    padding:8px 10px!important;
+    align-items:center!important;
+  }
+  body:not(.loginMode) main{
+    padding-top:132px!important;
+  }
+}
+
+/* Android/iOS: przycisk użytkownika/wylogowania zawsze dostępny i nie zamienia się wizualnie w inną ikonę */
+body:not(.loginMode) .powerBtn{
+  position:relative!important;
+  overflow:hidden!important;
+  text-indent:-999px!important;
+  line-height:0!important;
+}
+body:not(.loginMode) .powerBtn::before{
+  content:'⏻'!important;
+  position:absolute!important;
+  inset:0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-indent:0!important;
+  line-height:1!important;
+  font-size:21px!important;
+  font-weight:900!important;
+}
+body:not(.loginMode) #userMenu.userMenu{
+  top:calc(var(--kc-fixed-header-h,62px) + 8px)!important;
+  right:10px!important;
+  z-index:20000!important;
+}
+body:not(.loginMode) .menuBackdrop{z-index:19990!important;}
+
+/* Ekran logowania na telefonie: mniejszy o ok. 10-15%, z tłem po bokach */
+@media(max-width:640px){
+  body.loginMode{
+    background:
+      radial-gradient(circle at 50% 20%, rgba(37,99,235,.12), transparent 34%),
+      linear-gradient(180deg,#eef5fd 0%,#e6eef8 100%)!important;
+  }
+  body.loginMode.theme-dark{
+    background:
+      radial-gradient(circle at 50% 16%, rgba(37,99,235,.18), transparent 34%),
+      linear-gradient(135deg,#020617 0%,#071426 48%,#0f172a 100%)!important;
+  }
+  body.loginMode #loginScreen.kcLoginScreen{
+    padding:14px 22px!important;
+    gap:8px!important;
+    justify-content:center!important;
+    align-items:center!important;
+  }
+  body.loginMode .kcLoginCard{
+    width:100%!important;
+    max-width:345px!important;
+    padding:17px 16px 16px!important;
+    border-radius:22px!important;
+    transform:scale(.94)!important;
+    transform-origin:center center!important;
+  }
+  body.loginMode .kcLoginIcon{
+    width:62px!important;
+    height:62px!important;
+    border-radius:17px!important;
+    margin-bottom:8px!important;
+  }
+  body.loginMode .kcLoginCard h2{
+    font-size:29px!important;
+    line-height:1!important;
+  }
+  body.loginMode .kcLoginSub{
+    font-size:9px!important;
+    letter-spacing:1px!important;
+    margin:6px 0 10px!important;
+  }
+  body.loginMode .kcInputWrap{
+    height:44px!important;
+    margin:7px 0!important;
+    border-radius:13px!important;
+  }
+  body.loginMode .kcInputWrap input{
+    font-size:16px!important;
+  }
+  body.loginMode .kcLoginBtn{
+    min-height:47px!important;
+    font-size:18px!important;
+    margin-top:9px!important;
+    border-radius:13px!important;
+  }
+  body.loginMode .kcSecureLine{
+    margin-top:11px!important;
+    gap:8px!important;
+  }
+  body.loginMode .kcSecureLine span{width:42px!important;}
+  body.loginMode .kcSecureLine b{font-size:12px!important;}
+  body.loginMode .kcThemeSwitch{
+    transform:scale(.82)!important;
+    margin-top:-4px!important;
+  }
+}
+@media(max-width:640px) and (max-height:700px){
+  body.loginMode .kcLoginCard{transform:scale(.88)!important;}
+  body.loginMode .kcLoginSub{display:none!important;}
+  body.loginMode .kcSecureLine{display:none!important;}
+}
+
+/* Podgląd PDF: wracamy do stabilnego pełnoekranowego działania z v9.85 */
+.kcPdfOverlay{
+  position:fixed!important;
+  inset:0!important;
+  z-index:30000!important;
+  background:#0b1220!important;
+  display:flex!important;
+  flex-direction:column!important;
+  width:100vw!important;
+  height:100dvh!important;
+}
+.kcPdfTopbar{
+  height:52px!important;
+  min-height:52px!important;
+  display:grid!important;
+  grid-template-columns:auto minmax(0,1fr) auto!important;
+  align-items:center!important;
+  gap:8px!important;
+  padding:0 10px!important;
+}
+.kcPdfFrame{
+  flex:1 1 auto!important;
+  width:100%!important;
+  min-height:0!important;
+  height:auto!important;
+  border:0!important;
+  background:#fff!important;
+}
+@media(max-width:640px){
+  .kcPdfOverlay{height:100dvh!important;}
+  .kcPdfTopbar{height:50px!important;min-height:50px!important;}
+  .kcPdfClose{font-size:14px!important;padding:6px 7px!important;white-space:nowrap!important;}
+  .kcPdfTitle{font-size:13px!important;min-width:0!important;}
+  .kcPdfShareIcon{width:22px!important;height:22px!important;}
+}
+
+/* Android tablet: menu kategorii ma być niezależne od treści */
+body:not(.loginMode) #appArea>.nav.controls{
+  contain:layout paint!important;
+  transform:translateZ(0)!important;
+}
+body:not(.loginMode) section,
+body:not(.loginMode) .wrap{
+  -webkit-overflow-scrolling:touch;
+}
+</style>
+<script>
+/* v9.87 — numer wersji i bezpieczne wymuszenie ikon/podglądu po renderze */
+(function(){
+  function fixV87(){
+    var vf=document.querySelector('.versionFooter'); if(vf)vf.textContent='v9.87';
+    var p=document.getElementById('headerMenuBtn'); if(p){p.setAttribute('aria-label','Menu użytkownika / wylogowanie');}
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',fixV87); else fixV87();
+  setTimeout(fixV87,300);
+})();
+</script>
+
 </body></html>
 <!-- v9.56 dark select arrows + status chips fix -->
 <style>
