@@ -2944,6 +2944,81 @@ body.theme-dark:not(.loginMode) #staff .staffDetails summary:after{color:#f8fafc
 body.theme-dark:not(.loginMode) #staff .staffSubBox{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
 body.theme-dark:not(.loginMode) #staff .docRow{background:#111827!important;color:#f8fafc!important;border-color:rgba(148,163,184,.28)!important}
 </style>
+
+<style>
+/* v9.85 — Android tablet: header + category bar pinned like iOS */
+html,body{
+  width:100%!important;
+  max-width:100%!important;
+  overflow-x:hidden!important;
+}
+body:not(.loginMode){
+  overscroll-behavior-x:none;
+}
+body:not(.loginMode) header.appHeader{
+  position:fixed!important;
+  top:0!important;
+  left:0!important;
+  right:0!important;
+  width:100vw!important;
+  max-width:100vw!important;
+  transform:translate3d(0,0,0)!important;
+  -webkit-transform:translate3d(0,0,0)!important;
+  backface-visibility:hidden!important;
+  -webkit-backface-visibility:hidden!important;
+  z-index:5000!important;
+}
+body:not(.loginMode) #appArea>.nav.controls{
+  position:fixed!important;
+  top:var(--kc-fixed-header-h,82px)!important;
+  left:0!important;
+  right:auto!important;
+  width:100vw!important;
+  max-width:100vw!important;
+  transform:translate3d(0,0,0)!important;
+  -webkit-transform:translate3d(0,0,0)!important;
+  backface-visibility:hidden!important;
+  -webkit-backface-visibility:hidden!important;
+  z-index:4990!important;
+  contain:paint;
+}
+body:not(.loginMode) main{
+  max-width:1200px!important;
+  width:100%!important;
+  box-sizing:border-box!important;
+  overflow-x:visible!important;
+}
+body:not(.loginMode) #appArea{
+  width:100%!important;
+  max-width:1200px!important;
+  margin:0 auto!important;
+  box-sizing:border-box!important;
+}
+body:not(.loginMode) .wrap{
+  overflow:auto!important;
+  max-width:100%!important;
+  -webkit-overflow-scrolling:touch;
+}
+/* elementy szerokie przewijają się wewnątrz, a nie razem z górnym paskiem */
+body:not(.loginMode) table{
+  width:max-content;
+  min-width:100%;
+}
+@media(max-width:899px){
+  body:not(.loginMode) main{max-width:none!important;}
+  body:not(.loginMode) #appArea{max-width:none!important;}
+}
+@media print{
+  html,body{overflow-x:visible!important;}
+  body:not(.loginMode) header.appHeader,
+  body:not(.loginMode) #appArea>.nav.controls{
+    position:static!important;
+    width:auto!important;
+    max-width:none!important;
+    transform:none!important;
+  }
+}
+</style>
 </head><body><header class="appHeader"><div class="headerLeft" onclick="show('panel')"><img class="headerLogoImg" src="./icons/icon-180.png?v=946" alt="Kitchen Control"><h1>Kitchen Control</h1></div><div class="headerActions"><button type="button" id="themeToggleBtn" class="themeMiniBtn" onclick="toggleAppTheme()" aria-label="Zmień motyw">🌙</button><button id="headerMenuBtn" class="powerBtn hidden" onclick="toggleUserMenu(event)">⏻</button></div></header><main>
 
 <section id="loginScreen" class="loginBox kcLoginScreen">
@@ -5779,7 +5854,16 @@ body.theme-dark:not(.loginMode) .docEmpty{color:#cbd5e1!important}
 
 
 <style>
-/* v9.84 — PDF preview bar: Zamknij + title + share only */
+
+/* v9.86 — kontrola układu po fixed header/nav */
+@media(min-width:800px){
+  #history .historyFilters{top:112px!important;}
+  #admin .adminDetailPanel,.adminDetailPanel{max-height:calc(100vh - 135px);overflow:auto;}
+  #month .wrap,#sanepid .wrap{max-width:100%;overflow:auto;}
+}
+body:not(.loginMode) .modalOverlay{z-index:10020!important;}
+
+/* v9.86 — responsywny PDF preview bar: iPhone/tablet */
 .kcPdfOverlay{position:fixed;inset:0;z-index:9999;background:#0b1220;display:flex;flex-direction:column;}
 .kcPdfTopbar{height:54px;min-height:54px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;padding:0 12px;background:#ffffff;color:#111827;border-bottom:1px solid #d8dee8;box-shadow:0 2px 10px rgba(0,0,0,.12)}
 .kcPdfClose,.kcPdfShare{border:0;background:transparent;color:#2563eb;font-weight:900;font-size:16px;display:flex;align-items:center;justify-content:center;gap:6px;min-height:42px;padding:8px 10px;border-radius:10px}
@@ -5791,10 +5875,12 @@ body.theme-dark:not(.loginMode) .kcPdfTopbar{background:#0f172a;color:#f8fafc;bo
 body.theme-dark:not(.loginMode) .kcPdfTitle{color:#f8fafc}
 body.theme-dark:not(.loginMode) .kcPdfClose,body.theme-dark:not(.loginMode) .kcPdfShare{color:#60a5fa}
 body.theme-dark:not(.loginMode) .kcPdfClose:active,body.theme-dark:not(.loginMode) .kcPdfShare:active{background:#1e293b}
-@media(max-width:520px){.kcPdfTopbar{height:50px;min-height:50px;padding:0 8px}.kcPdfTitle{font-size:14px}.kcPdfClose{font-size:15px;padding:7px 8px}.kcPdfShare{padding:7px 8px}.kcPdfShareIcon{width:23px;height:23px}}
+@media(max-width:520px){.kcPdfOverlay{top:max(12px,env(safe-area-inset-top));bottom:max(12px,env(safe-area-inset-bottom));left:10px;right:10px;inset:auto;max-height:calc(100vh - 24px);border-radius:18px;overflow:hidden;box-shadow:0 18px 60px rgba(0,0,0,.42)}.kcPdfTopbar{height:48px;min-height:48px;padding:0 8px}.kcPdfTitle{font-size:14px}.kcPdfClose{font-size:14px;padding:7px 8px}.kcPdfShare{padding:7px 8px}.kcPdfShareIcon{width:22px;height:22px}.kcPdfFrame{height:calc(100vh - 86px)}}
+@media(min-width:700px){.kcPdfOverlay{top:8px;bottom:8px;left:8px;right:8px;inset:auto;border-radius:16px;overflow:hidden;box-shadow:0 22px 70px rgba(0,0,0,.45)}.kcPdfTopbar{height:56px;min-height:56px}.kcPdfFrame{height:calc(100vh - 72px)}}
+@media(min-width:1100px){.kcPdfOverlay{top:10px;bottom:10px;left:10px;right:10px;border-radius:18px}}
 </style>
 <script>
-/* v9.84 — wspólny podgląd PDF w aplikacji + tylko ikona Udostępnij */
+/* v9.85 — wspólny podgląd PDF w aplikacji + tylko ikona Udostępnij */
 (function(){
   let currentPdf={title:'Dokument PDF', data:'', url:''};
   function safeTitle(t){return String(t||'Dokument PDF').replace(/[<>]/g,'').trim()||'Dokument PDF'}
@@ -5850,7 +5936,7 @@ body.theme-dark:not(.loginMode) .kcPdfClose:active,body.theme-dark:not(.loginMod
   window.openHaccpDoc=function(loc,name){try{const f=(JSON.parse(localStorage.getItem('kc_haccp_docs_v1')||'{}')[loc]||{})[name]; preview(name,f&&f.data);}catch(e){alert('Brak dodanego pliku PDF.')}};
   window.openProcedureDocV2=function(loc,cat,name){try{const f=(((JSON.parse(localStorage.getItem('kc_proc_files_v1')||'{}')[loc]||{})[cat]||{})[name]); preview(name,f&&f.data);}catch(e){alert('Brak dodanego pliku PDF.')}};
   window.openStaffPdf=function(pid,section,name){try{const f=(((JSON.parse(localStorage.getItem('kc_staff_files_v1')||'{}')[pid]||{})[section]||{})[name]); preview(name,f&&f.data);}catch(e){alert('Brak dodanego pliku PDF.')}};
-  setTimeout(()=>{const vf=document.querySelector('.versionFooter'); if(vf)vf.textContent='v9.84';},0);
+  setTimeout(()=>{const vf=document.querySelector('.versionFooter'); if(vf)vf.textContent='v9.86';},0);
 })();
 </script>
 </body></html>
