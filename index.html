@@ -2881,6 +2881,27 @@ body.theme-light:not(.loginMode) #rangeAdminBox button[onclick="resetTempRanges(
   #admin .adminSection summary:after{content:'⌄'!important;}
 }
 
+
+
+/* v9.70 fix2 — HACCP documents */
+.docsGrid{display:grid;gap:10px}.docRow{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;border:1px solid #d8dee8;border-radius:12px;padding:12px;background:#f8fafc}.docTitle{font-weight:900}.docActions{display:flex;gap:6px;align-items:center;justify-content:flex-end;flex-wrap:wrap}.previewPdfBtn,.addPdfBtn{background:#2563eb!important;color:#fff!important}.docRemoveBtn{background:#dc2626!important;color:#fff!important}.docEmpty{color:#64748b;font-size:13px}.docFileInput{display:none!important}body.theme-dark:not(.loginMode) .docRow{background:linear-gradient(180deg,#132238,#0d1b2f)!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}body.theme-dark:not(.loginMode) .docTitle{color:#f8fafc!important}body.theme-dark:not(.loginMode) .docEmpty{color:#cbd5e1!important}
+
+/* v9.77 — Kadry */
+#staff .staffDetails{border:1px solid #d8dee8;border-radius:14px;margin:10px 0;background:#f8fafc;overflow:hidden}
+#staff .staffDetails summary{cursor:pointer;list-style:none;padding:13px 14px;font-weight:950;display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;background:white;color:#172033}
+#staff .staffDetails summary::-webkit-details-marker{display:none}
+#staff .staffDetails summary:after{content:'⌄';font-size:18px;color:#64748b}
+@media (orientation:landscape) and (min-width:800px){#staff .staffDetails summary:after{content:'›';font-size:28px;line-height:1}}
+#staff .staffDetails[open] summary:after{content:'⌃'}
+@media (orientation:landscape) and (min-width:800px){#staff .staffDetails[open] summary:after{content:'›'}}
+#staff .staffInside{padding:12px;display:grid;gap:12px}
+.staffExamDate{font-weight:900;white-space:nowrap}.staffGreen{color:#166534!important}.staffOrange{color:#d97706!important}.staffRed{color:#dc2626!important}
+.staffSubBox{border:1px solid #d8dee8;border-radius:14px;padding:12px;background:#fff}.staffSubBox h3{margin:0 0 10px 0}.staffDateRow{margin-bottom:10px}
+body.theme-dark:not(.loginMode) #staff .staffDetails{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .staffDetails summary{background:#111827!important;color:#f8fafc!important;border-color:rgba(148,163,184,.28)!important}
+body.theme-dark:not(.loginMode) #staff .staffDetails summary:after{color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .staffSubBox{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .docRow{background:#111827!important;color:#f8fafc!important;border-color:rgba(148,163,184,.28)!important}
 </style>
 <link rel="manifest" href="./manifest.json?v=946">
 <link rel="apple-touch-icon" sizes="180x180" href="./icons/icon-180.png?v=946">
@@ -2892,6 +2913,37 @@ body.theme-light:not(.loginMode) #rangeAdminBox button[onclick="resetTempRanges(
 <meta name="apple-mobile-web-app-title" content="Kitchen Control">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
+
+<style>
+/* v9.73 Procedury — niezależne rozwijanie */
+#procedures .procDetails{border:1px solid #d8dee8;border-radius:14px;margin:10px 0;background:#f8fafc;overflow:hidden}
+#procedures .procDetails summary{cursor:pointer;list-style:none;padding:13px 14px;font-weight:950;background:#2563eb;color:#fff;display:flex;justify-content:space-between;align-items:center}
+#procedures .procDetails summary::-webkit-details-marker{display:none}
+#procedures .procDetails summary:after{content:'⌄';font-size:18px}
+#procedures .procDetails[open] summary:after{content:'⌃'}
+#procedures .procInside{padding:12px}
+body.theme-dark:not(.loginMode) #procedures .procDetails{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #procedures .procInside,
+body.theme-dark:not(.loginMode) #procedures .docRow{background:#132238!important;color:#f8fafc!important;border-color:rgba(148,163,184,.28)!important}
+body.theme-dark:not(.loginMode) #procedures .docTitle{color:#f8fafc!important}
+
+/* v9.77 — Kadry */
+#staff .staffDetails{border:1px solid #d8dee8;border-radius:14px;margin:10px 0;background:#f8fafc;overflow:hidden}
+#staff .staffDetails summary{cursor:pointer;list-style:none;padding:13px 14px;font-weight:950;display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;background:white;color:#172033}
+#staff .staffDetails summary::-webkit-details-marker{display:none}
+#staff .staffDetails summary:after{content:'⌄';font-size:18px;color:#64748b}
+@media (orientation:landscape) and (min-width:800px){#staff .staffDetails summary:after{content:'›';font-size:28px;line-height:1}}
+#staff .staffDetails[open] summary:after{content:'⌃'}
+@media (orientation:landscape) and (min-width:800px){#staff .staffDetails[open] summary:after{content:'›'}}
+#staff .staffInside{padding:12px;display:grid;gap:12px}
+.staffExamDate{font-weight:900;white-space:nowrap}.staffGreen{color:#166534!important}.staffOrange{color:#d97706!important}.staffRed{color:#dc2626!important}
+.staffSubBox{border:1px solid #d8dee8;border-radius:14px;padding:12px;background:#fff}.staffSubBox h3{margin:0 0 10px 0}.staffDateRow{margin-bottom:10px}
+body.theme-dark:not(.loginMode) #staff .staffDetails{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .staffDetails summary{background:#111827!important;color:#f8fafc!important;border-color:rgba(148,163,184,.28)!important}
+body.theme-dark:not(.loginMode) #staff .staffDetails summary:after{color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .staffSubBox{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .docRow{background:#111827!important;color:#f8fafc!important;border-color:rgba(148,163,184,.28)!important}
+</style>
 </head><body><header class="appHeader"><div class="headerLeft" onclick="show('panel')"><img class="headerLogoImg" src="./icons/icon-180.png?v=946" alt="Kitchen Control"><h1>Kitchen Control</h1></div><div class="headerActions"><button type="button" id="themeToggleBtn" class="themeMiniBtn" onclick="toggleAppTheme()" aria-label="Zmień motyw">🌙</button><button id="headerMenuBtn" class="powerBtn hidden" onclick="toggleUserMenu(event)">⏻</button></div></header><main>
 
 <section id="loginScreen" class="loginBox kcLoginScreen">
@@ -2933,7 +2985,7 @@ body.theme-light:not(.loginMode) #rangeAdminBox button[onclick="resetTempRanges(
 
 <div id="appArea" class="hidden">
 <div class="userbar controls hidden"><span id="currentUserName"></span><span id="currentRole"></span></div>
-<div class="nav controls"><button onclick="show('panel')" id="t-panel" class="active">Panel</button><button onclick="show('temp')" id="t-temp">Temperatury</button><button onclick="show('clean')" id="t-clean">Sprzątanie</button><button onclick="show('haccp')" id="t-haccp">HACCP</button><button onclick="show('month')" id="t-month">Miesiąc</button><button onclick="show('admin')" id="t-admin" class="adminOnly">Admin</button><button onclick="show('history')" id="t-history" class="managerOnly">Historia wpisów</button></div>
+<div class="nav controls"><button onclick="show('panel')" id="t-panel" class="active">Panel</button><button onclick="show('temp')" id="t-temp">Temperatury</button><button onclick="show('clean')" id="t-clean">Sprzątanie</button><button onclick="show('haccp')" id="t-haccp">Daty</button><button onclick="show('docs')" id="t-docs">HACCP</button><button onclick="show('procedures')" id="t-procedures">Procedury</button><button onclick="show('staff')" id="t-staff" class="managerOnly">Kadry</button><button onclick="show('month')" id="t-month">Miesiąc</button><button onclick="show('admin')" id="t-admin" class="adminOnly">Admin</button><button onclick="show('history')" id="t-history" class="managerOnly">Historia wpisów</button></div>
 
 <section id="panel">
 <div class="card controls" id="panelControls">
@@ -2950,12 +3002,42 @@ body.theme-light:not(.loginMode) #rangeAdminBox button[onclick="resetTempRanges(
 
 <section id="clean" class="hidden"><div class="card controls"><h2>Sprzątanie</h2><div class="row"><select id="cleanLoc"></select><select id="cleanShift"></select><input type="date" id="cleanDate"><input type="time" id="cleanTime"><span class="authorBadge">👤 <span id="cleanUserLabel"></span></span><input id="cleanUser" type="hidden"><button class="btn primary" onclick="saveClean()">Zapisz</button></div><div id="cleanMsg"></div></div><div class="card"><div id="cleanItems"></div><textarea id="cleanNote" placeholder="Uwagi"></textarea></div><div class="card"><h2>Historia sprzątania</h2><p class="small" style="color:#6b7280">Historia dla wybranej lokalizacji i zmiany.</p><div id="cleanLog"></div></div></section>
 
-<section id="haccp" class="hidden"><div class="card controls"><h2>HACCP</h2><div class="row"><select id="haccpLoc"></select><input type="date" id="haccpDate"><input type="time" id="haccpTime"><span class="authorBadge">👤 <span id="haccpUserLabel"></span></span><input id="haccpUser" type="hidden"><button class="btn primary" onclick="saveHaccp()">Zapisz</button></div><div id="haccpMsg"></div></div><div class="card">
-<div id="haccpItems"></div><textarea id="haccpNote" placeholder="Uwagi / produkty do usunięcia"></textarea></div><div class="card"><h2>Historia HACCP</h2><p class="small" style="color:#6b7280">Historia dla wybranej lokalizacji.</p><div id="haccpLog"></div></div></section>
+<section id="haccp" class="hidden"><div class="card controls"><h2>Daty</h2><div class="row"><select id="haccpLoc"></select><input type="date" id="haccpDate"><input type="time" id="haccpTime"><span class="authorBadge">👤 <span id="haccpUserLabel"></span></span><input id="haccpUser" type="hidden"><button class="btn primary" onclick="saveHaccp()">Zapisz</button></div><div id="haccpMsg"></div></div><div class="card">
+<div id="haccpItems"></div><textarea id="haccpNote" placeholder="Uwagi / produkty do usunięcia"></textarea></div><div class="card"><h2>Historia dat</h2><p class="small" style="color:#6b7280">Historia kontroli dat dla wybranej lokalizacji.</p><div id="haccpLog"></div></div></section>
 
-<section id="month" class="hidden"><div class="card controls"><h2>Raport miesięczny</h2><div class="row"><select id="monthLoc"></select><select id="monthType"><option value="temp">Temperatury</option><option value="clean">Sprzątanie</option><option value="haccp">HACCP</option></select><input type="month" id="monthPick"><button class="btn primary" onclick="renderMonth()">Odśwież</button><div class="printPdfActions"><div class="printPdfRow"><button class="btn" onclick="printReport()">Drukuj rejestr</button><button class="btn pdfBtn" onclick="pdfReport()">PDF</button></div><div class="printPdfRow"><button class="btn" onclick="printEntriesReport()">Drukuj raport wpisów</button><button class="btn pdfBtn" onclick="pdfEntriesReport()">PDF</button></div></div><button class="btn managerOnly" onclick="exportCSV()">Eksport CSV</button></div></div><div class="card"><div class="sanepidHeader" id="printTitle"></div><div class="wrap" id="monthTable"></div><div id="printNotesBox" class="kcPrintSection"></div><div id="printEntriesBox" class="kcPrintSection"></div><div class="cellHint noPrint">Kliknij temperaturę albo X, żeby zobaczyć szczegóły wpisu.</div></div></section>
+<section id="docs" class="hidden">
+  <div class="card controls">
+    <h2>HACCP</h2>
+    <p class="small" style="color:#6b7280">Dokumenty widoczne dla wszystkich użytkowników. Pliki PDF może dodawać i aktualizować tylko Admin.</p>
+    <div class="row"><select id="docsLoc"></select></div>
+  </div>
+  <div class="card">
+    <div id="docsList"></div>
+  </div>
+</section>
 
-<section id="sanepid" class="hidden"><div class="card controls"><h2>Widok do pokazania Sanepidowi <span class="readonlyBadge">TYLKO PODGLĄD</span></h2><div class="row"><select id="sanLoc"></select><select id="sanType"><option value="temp">Temperatury</option><option value="clean">Sprzątanie</option><option value="haccp">HACCP</option></select><input type="month" id="sanMonth"><button class="btn primary" onclick="renderSanepid()">Pokaż</button><button class="btn" onclick="printSanepid()">Drukuj / PDF</button></div></div><div class="card"><div class="sanepidHeader" id="sanTitle"></div><div class="wrap" id="sanTable"></div><div class="cellHint noPrint">Kliknij temperaturę albo X, żeby zobaczyć szczegóły wpisu.</div></div></section>
+<section id="procedures" class="hidden">
+  <div class="card controls">
+    <h2>Procedury</h2>
+    <p class="small" style="color:#6b7280">Procedury, szkolenia i instrukcje w PDF. Podgląd widoczny dla wszystkich, dodawanie i usuwanie dla Managera i Admina.</p>
+    <div class="row"><select id="procLoc"></select></div>
+  </div>
+  <div class="card">
+    <div id="procList"></div>
+  </div>
+</section>
+
+
+<section id="staff" class="hidden">
+  <div class="card">
+    <h2>Kadry</h2>
+    <p class="small" style="color:#6b7280">Badania i dokumenty pracowników. Widok dostępny dla Managera i Admina.</p>
+    <div id="staffList"></div>
+  </div>
+</section>
+<section id="month" class="hidden"><div class="card controls"><h2>Raport miesięczny</h2><div class="row"><select id="monthLoc"></select><select id="monthType"><option value="temp">Temperatury</option><option value="clean">Sprzątanie</option><option value="haccp">Daty</option></select><input type="month" id="monthPick"><button class="btn primary" onclick="renderMonth()">Odśwież</button><div class="printPdfActions"><div class="printPdfRow"><button class="btn" onclick="printReport()">Drukuj rejestr</button><button class="btn pdfBtn" onclick="pdfReport()">PDF</button></div><div class="printPdfRow"><button class="btn" onclick="printEntriesReport()">Drukuj raport wpisów</button><button class="btn pdfBtn" onclick="pdfEntriesReport()">PDF</button></div></div><button class="btn managerOnly" onclick="exportCSV()">Eksport CSV</button></div></div><div class="card"><div class="sanepidHeader" id="printTitle"></div><div class="wrap" id="monthTable"></div><div id="printNotesBox" class="kcPrintSection"></div><div id="printEntriesBox" class="kcPrintSection"></div><div class="cellHint noPrint">Kliknij temperaturę albo X, żeby zobaczyć szczegóły wpisu.</div></div></section>
+
+<section id="sanepid" class="hidden"><div class="card controls"><h2>Widok do pokazania Sanepidowi <span class="readonlyBadge">TYLKO PODGLĄD</span></h2><div class="row"><select id="sanLoc"></select><select id="sanType"><option value="temp">Temperatury</option><option value="clean">Sprzątanie</option><option value="haccp">Daty</option></select><input type="month" id="sanMonth"><button class="btn primary" onclick="renderSanepid()">Pokaż</button><button class="btn" onclick="printSanepid()">Drukuj / PDF</button></div></div><div class="card"><div class="sanepidHeader" id="sanTitle"></div><div class="wrap" id="sanTable"></div><div class="cellHint noPrint">Kliknij temperaturę albo X, żeby zobaczyć szczegóły wpisu.</div></div></section>
 
 <section id="admin" class="hidden">
 <div class="card adminIntro"><h2>Admin</h2><p>Konfiguracja aplikacji. Sekcje są zwinięte, żeby panel był krótszy i wygodniejszy na telefonie.</p></div>
@@ -2995,10 +3077,10 @@ body.theme-light:not(.loginMode) #rangeAdminBox button[onclick="resetTempRanges(
 </details>
 </div>
 
-<div class="card adminSection"><h2>HACCP</h2>
-<p>Dodajesz kontrole HACCP, które pracownicy będą zaznaczać w codziennych wpisach.</p>
+<div class="card adminSection"><h2>Daty</h2>
+<p>Dodajesz kontrole dat i przeglądy okresowe, np. etykiety, magazyn suchy, zamrażarki lub alergeny.</p>
 <details><summary>Dodaj / Edytuj</summary>
-<div class="row adminAddRow"><select id="haccpAdminLoc"></select><input id="newHaccpItem" placeholder="np. Kontrola etykiet / alergeny / chemia"><button class="btn primary" onclick="addHaccpItem()">Dodaj kontrolę</button></div>
+<div class="row adminAddRow"><select id="haccpAdminLoc"></select><input id="newHaccpItem" placeholder="np. Kontrola etykiet / magazyn suchy / zamrażarki"><select id="newHaccpFreq" class="freqSelect"><option value="7">Co 7 dni</option><option value="14">Co 14 dni</option><option value="30">Co 30 dni</option><option value="90" selected>Co 90 dni</option></select><button class="btn primary" onclick="addHaccpItem()">Dodaj kontrolę</button></div>
 <div id="haccpAdminList"></div>
 </details>
 </div>
@@ -3024,6 +3106,50 @@ body.theme-light:not(.loginMode) #rangeAdminBox button[onclick="resetTempRanges(
 <details><summary>Dodaj / Edytuj</summary><div id="rangeAdminBox"></div></details>
 </div>
 
+<div class="card adminSection"><h2>HACCP</h2>
+<p>Edytujesz listę dokumentów widocznych w zakładce HACCP, np. Księga HACCP, GHP, GMP, Decyzja Sanepid lub Plan kuchni.</p>
+<details><summary>Dodaj / Edytuj</summary>
+<div class="row adminAddRow"><input id="newHaccpDocType" placeholder="np. Rejestr dostaw / Deratyzacja"><button class="btn primary" onclick="addHaccpDocType()">Dodaj pozycję</button></div>
+<div id="haccpDocsAdminList"></div>
+</details>
+</div>
+
+
+
+<div class="card adminSection"><h2>Procedury</h2>
+<p>Edytujesz listy dokumentów w zakładce Procedury: Procedury, Szkolenia i Instrukcje. Każda pozycja ma osobny plik PDF.</p>
+<details><summary>Dodaj / Edytuj</summary>
+<div class="row adminAddRow">
+<select id="newProcDocCategory" onchange="renderProcedureDocsAdmin()"><option>Procedury</option><option>Szkolenia</option><option>Instrukcje</option></select>
+<input id="newProcDocType" placeholder="np. Mycie rąk / Szkolenie HACCP / Instrukcja dezynfekcji">
+<button class="btn primary" onclick="addProcedureDocType()">Dodaj pozycję</button>
+</div>
+<div id="procDocsAdminList"></div>
+</details>
+</div>
+
+
+
+<div class="card adminSection"><h2>Kadry</h2>
+<p>Edytujesz pracowników widocznych w zakładce Kadry oraz listy dokumentów w sekcjach Badania i Dokumenty.</p>
+<details><summary>Dodaj / Edytuj</summary>
+<h3>Pracownicy</h3>
+<div class="row adminAddRow">
+<input id="newStaffName" placeholder="Imię i nazwisko">
+<input id="newStaffExamDate" type="date" title="Data kolejnego badania">
+<button class="btn primary" onclick="addStaffPerson()">Dodaj pracownika</button>
+</div>
+<div id="staffAdminList"></div>
+<h3 style="margin-top:16px">Rodzaje dokumentów</h3>
+<div class="row adminAddRow">
+<select id="newStaffDocSection" onchange="renderStaffAdmin()"><option>Badania</option><option>Dokumenty</option></select>
+<input id="newStaffDocType" placeholder="np. Badanie okresowe / Umowa / Szkolenie BHP">
+<button class="btn primary" onclick="addStaffDocType()">Dodaj pozycję</button>
+</div>
+<div id="staffDocTypesAdminList"></div>
+</details>
+</div>
+
 <div class="card adminSection"><h2>Backup</h2>
 <p>Tworzysz kopię danych i eksportujesz historię przed większymi zmianami albo migracją do Firebase.</p>
 <details><summary>Importuj / Eksportuj</summary>
@@ -3047,7 +3173,7 @@ body.theme-light:not(.loginMode) #rangeAdminBox button[onclick="resetTempRanges(
 <option value="all">Wszystko</option>
 <option value="temp">Temperatury</option>
 <option value="clean">Sprzątanie</option>
-<option value="haccp">HACCP</option>
+<option value="haccp">Daty</option>
 </select>
 <input type="date" id="histFrom">
 <input type="date" id="histTo">
@@ -3064,7 +3190,7 @@ body.theme-light:not(.loginMode) #rangeAdminBox button[onclick="resetTempRanges(
   <button class="btn primary adminOnly kcMenuBackup" onclick="exportBackup();closeUserMenu()">Backup JSON</button>
   <button class="btn danger" onclick="logout();closeUserMenu()">Wyloguj</button>
 </div>
-<div id="cellModal" class="hidden"></div><div class="versionFooter noPrint">v9.68</div></div></main><script>
+<div id="cellModal" class="hidden"></div><div class="versionFooter noPrint">v9.82</div></div></main><script>
 const defaults={locations:["Asian Street Food Mokotów","Asian Street Food Wola","Food Truck","Kuchnia Mokotów"],devices:{"Asian Street Food Mokotów":{chlodnie:["Chłodnia 1","Chłodnia 2","Chłodnia 3"],mroznie:["Mroźnia 1"]},"Asian Street Food Wola":{chlodnie:["Chłodnia 1","Chłodnia 2"],mroznie:["Mroźnia 1"]},"Food Truck":{chlodnie:["Chłodnia 1","Chłodnia 2"],mroznie:["Mroźnia 1"]},"Kuchnia Mokotów":{chlodnie:["Chłodnia 1","Chłodnia 2","Chłodnia 3","Chłodnia 4"],mroznie:["Mroźnia 1","Mroźnia 2"]}},cleaning:{"Rozpoczęcie zmiany":["Obecność szkodników","Stan lodówek / brak wycieków","Czystość blatów startowa"],"Podczas zmiany":["Frytury","Wymiana frytury","Zlewy","Bieżące blaty"],"Zamknięcie zmiany":["Pow. robocze / blaty","Kuchenki","Ściany i podłogi","Schładzarka","Chłodnie","Mroźnie","Mycie okapu"]},haccpItems:["Kontrola dat przydatności","Kontrola chłodni tygodniowa","Magazyn suchy miesięcznie","Zamrażarki miesięcznie"]};
 let state=JSON.parse(localStorage.getItem("kc_state_v7")||"null")||defaults;
 let logs=JSON.parse(localStorage.getItem("kc_logs_v7")||"[]");
@@ -3287,8 +3413,8 @@ function filterLocationsForSelect(id){
   document.getElementById(id).innerHTML=locs.map(l=>`<option>${l}</option>`).join("");
 }
 function denyAdmin(){alert("Brak uprawnień. Tylko Admin może to zrobić.");return false}
-function show(id){["panel","temp","clean","haccp","month","admin","history"].forEach(x=>{document.getElementById(x).classList.toggle("hidden",x!==id);document.getElementById("t-"+x).classList.toggle("active",x===id)});if(id==="admin"&&!isAdmin()){alert("Panel Admin tylko dla administratora.");id="panel"}if(id==="history"&&!canEditEntries()){alert("Historia tylko dla Managera lub Admina.");id="panel"}if(id==="sanepid"){id="month"}if(id==="month")renderMonth();if(id==="admin"){renderLocationAdmin();renderDevList();renderUserAdmin();renderShiftAdmin();renderCleanAdmin();renderHaccpAdmin();renderRangeAdmin();renderBackupSummary()}if(id==="history"){renderHistoryPage()}renderPanel();renderAllLogs()}
-function fill(){["tempLoc","cleanLoc","haccpLoc","monthLoc","sanLoc","histLoc"].forEach(id=>filterLocationsForSelect(id)); if(isAdmin()){document.getElementById("adminLoc").innerHTML=state.locations.map(l=>`<option>${l}</option>`).join("");if(document.getElementById("cleanAdminLoc"))cleanAdminLoc.innerHTML=state.locations.map(l=>`<option>${l}</option>`).join("");if(document.getElementById("haccpAdminLoc"))haccpAdminLoc.innerHTML=state.locations.map(l=>`<option>${l}</option>`).join("");if(document.getElementById("shiftAdminLoc"))shiftAdminLoc.innerHTML=state.locations.map(l=>`<option>${l}</option>`).join("");} renderUserAdmin();renderShiftSelects();monthPick.value=currentMonth();sanMonth.value=currentMonth();if(document.getElementById("histFrom"))histFrom.value=currentMonth()+"-01";if(document.getElementById("histTo"))histTo.value=isoDate();if(document.getElementById("panelDate")){panelDate.value=isoDate();panelControls.style.display=canViewAll()?"block":"none";}tempDate.value=isoDate();cleanDate.value=isoDate();haccpDate.value=isoDate();tempTime.value=time();cleanTime.value=time();haccpTime.value=time(); if(currentUser){tempUser.value=currentUser.name;cleanUser.value=currentUser.name;haccpUser.value=currentUser.name;if(document.getElementById("tempUserLabel"))tempUserLabel.innerText=currentUser.name;if(document.getElementById("cleanUserLabel"))cleanUserLabel.innerText=currentUser.name;if(document.getElementById("haccpUserLabel"))haccpUserLabel.innerText=currentUser.name;} fillDev();renderCleanItems();renderHaccpItems();renderRangeAdmin();applyRoleRestrictions()}
+function show(id){["panel","temp","clean","haccp","docs","procedures","staff","month","admin","history"].forEach(x=>{document.getElementById(x).classList.toggle("hidden",x!==id);document.getElementById("t-"+x).classList.toggle("active",x===id)});if(id==="admin"&&!isAdmin()){alert("Panel Admin tylko dla administratora.");id="panel"}if(id==="history"&&!canEditEntries()){alert("Historia tylko dla Managera lub Admina.");id="panel"}if(id==="staff"&&!canEditEntries()){alert("Kadry tylko dla Managera lub Admina.");id="panel"}if(id==="sanepid"){id="month"}if(id==="month")renderMonth();if(id==="admin"){renderLocationAdmin();renderDevList();renderUserAdmin();renderShiftAdmin();renderCleanAdmin();renderHaccpAdmin();renderHaccpDocsAdmin();renderRangeAdmin();renderBackupSummary()}if(id==="history"){renderHistoryPage()}if(id==="docs"){renderHaccpDocs()}if(id==="procedures"){renderProcedureDocs()}if(id==="staff"){renderStaff()}renderPanel();renderAllLogs()}
+function fill(){["tempLoc","cleanLoc","haccpLoc","docsLoc","procLoc","monthLoc","sanLoc","histLoc"].forEach(id=>filterLocationsForSelect(id)); if(isAdmin()){document.getElementById("adminLoc").innerHTML=state.locations.map(l=>`<option>${l}</option>`).join("");if(document.getElementById("cleanAdminLoc"))cleanAdminLoc.innerHTML=state.locations.map(l=>`<option>${l}</option>`).join("");if(document.getElementById("haccpAdminLoc"))haccpAdminLoc.innerHTML=state.locations.map(l=>`<option>${l}</option>`).join("");if(document.getElementById("shiftAdminLoc"))shiftAdminLoc.innerHTML=state.locations.map(l=>`<option>${l}</option>`).join("");} renderUserAdmin();renderShiftSelects();monthPick.value=currentMonth();sanMonth.value=currentMonth();if(document.getElementById("histFrom"))histFrom.value=currentMonth()+"-01";if(document.getElementById("histTo"))histTo.value=isoDate();if(document.getElementById("panelDate")){panelDate.value=isoDate();panelControls.style.display=canViewAll()?"block":"none";}tempDate.value=isoDate();cleanDate.value=isoDate();haccpDate.value=isoDate();tempTime.value=time();cleanTime.value=time();haccpTime.value=time(); if(currentUser){tempUser.value=currentUser.name;cleanUser.value=currentUser.name;haccpUser.value=currentUser.name;if(document.getElementById("tempUserLabel"))tempUserLabel.innerText=currentUser.name;if(document.getElementById("cleanUserLabel"))cleanUserLabel.innerText=currentUser.name;if(document.getElementById("haccpUserLabel"))haccpUserLabel.innerText=currentUser.name;} fillDev();renderCleanItems();renderHaccpItems();renderRangeAdmin();applyRoleRestrictions()}
 function fillDev(){let l=tempLoc.value||state.locations[0],d=state.devices[l],a=[];d.chlodnie.forEach(x=>a.push([x,"chlodnia"]));d.mroznie.forEach(x=>a.push([x,"mroznia"]));tempDev.innerHTML=a.map(x=>`<option data-type="${x[1]}">${x[0]}</option>`).join("");fillVals()}
 function fillVals(){let type=tempDev.options[tempDev.selectedIndex]?.dataset.type||"chlodnia";let vals=tempValuesForType(type);tempVal.innerHTML=`<option value="">Wybierz temperaturę</option>`+vals.map(v=>`<option value="${v}">${v}°C</option>`).join("");status()}function status(){if(tempVal.value===""){tempStatus.innerHTML=`Status: <span class="status warn">wybierz temperaturę</span>`;return ""}let type=tempDev.options[tempDev.selectedIndex]?.dataset.type||"chlodnia",s=tempStatusName(tempVal.value,type),c=tempStatusChipClass(s);tempStatus.innerHTML=`Status: <span class="status ${c}">${s}</span>`;return s}function statusClass(s){return s==="OK"?"filled-ok":s==="UWAGA"?"filled-warn":"filled-alarm"}
 function saveTemp(){let user=requireUser("tempUser","tempMsg");if(!user)return;if(tempVal.value===""){msg("tempMsg","Wybierz temperaturę przed zapisem.");return}let loc=tempLoc.value,dev=tempDev.value,dt=tempDate.value;if(hasEntry("temp",loc,dt,dev,null)){msg("tempMsg",`Ten dzień ma już wpis dla ${dev}. Poprawisz go w Admin → Edycja.`);return}logs.unshift({id:crypto.randomUUID(),kind:"temp",date:dt,time:tempTime.value||time(),loc,dev,val:tempVal.value,user,note:tempNote.value,status:status()});tempNote.value="";save();refresh();savedGoPanel("tempMsg","Zapisano temperaturę ✅")}
@@ -3398,7 +3524,7 @@ function saveClean(){
   document.querySelectorAll(".cleanCheck").forEach(x=>x.checked=false);cleanNote.value="";
   save();refresh();savedGoPanel("cleanMsg","Zapisano sprzątanie ✅")
 }
-function saveHaccp(){let user=requireUser("haccpUser","haccpMsg");if(!user)return;let loc=haccpLoc.value,dt=haccpDate.value;if(hasEntry("haccp",loc,dt,null,null)){msg("haccpMsg",`Ten dzień ma już wpis HACCP. Poprawisz go w historii wpisów.`);return}let haccpDone=[...document.querySelectorAll(".haccpCheck:checked")].map(x=>x.value);if(!haccpDone.length){msg("haccpMsg","Zaznacz przynajmniej jedną kontrolę przed zapisem.");return}logs.unshift({id:crypto.randomUUID(),kind:"haccp",date:dt,time:haccpTime.value||time(),loc,user,done:haccpDone,note:haccpNote.value});document.querySelectorAll(".haccpCheck").forEach(x=>x.checked=false);haccpNote.value="";save();refresh();savedGoPanel("haccpMsg","Zapisano HACCP ✅")}
+function saveHaccp(){let user=requireUser("haccpUser","haccpMsg");if(!user)return;let loc=haccpLoc.value,dt=haccpDate.value;if(hasEntry("haccp",loc,dt,null,null)){msg("haccpMsg",`Ten dzień ma już wpis dat. Poprawisz go w historii wpisów.`);return}let haccpDone=[...document.querySelectorAll(".haccpCheck:checked")].map(x=>x.value);if(!haccpDone.length){msg("haccpMsg","Zaznacz przynajmniej jedną kontrolę dat przed zapisem.");return}logs.unshift({id:crypto.randomUUID(),kind:"haccp",date:dt,time:haccpTime.value||time(),loc,user,done:haccpDone,note:haccpNote.value});document.querySelectorAll(".haccpCheck").forEach(x=>x.checked=false);haccpNote.value="";save();refresh();savedGoPanel("haccpMsg","Zapisano daty ✅")}
 function refresh(){ensureTempRanges();renderAllLogs();renderPanel();renderCleanItems();renderMonth();renderSanepid();renderLocationAdmin();renderShiftAdmin();renderShiftSelects();renderCleanAdmin();renderHaccpAdmin();renderHaccpItems();renderRangeAdmin();renderBackupSummary();renderHistoryPage()}
 function logHtml(items){return items.slice(0,20).map(x=>`<div class="historyItem"><b>${plDate(x.date)} ${x.time}</b> — ${x.loc}${x.dev?", "+x.dev:""}${x.shift?", "+x.shift:""} ${x.val?": "+x.val+"°C":""} ${x.status?`<span class="status ${x.status==="OK"?"ok":x.status==="UWAGA"?"warn":"alarm"}">${x.status}</span>`:""}<br>Podpis: <b>${x.user}</b>${x.done?`<br>Wykonano: ${x.done.join(", ")}`:""}${x.note?`<br>Uwagi: ${x.note}`:""}</div>`).join("")||"Brak wpisów"}function renderAllLogs(){
   const tl=document.getElementById("tempLoc")?.value;
@@ -3563,14 +3689,14 @@ function renderPanel(){
       <div class="metricGrid">
         <div class="metricRow">🌡️ Temperatury <span class="status ${dashStatus(temp.done,temp.total)}">${temp.done}/${temp.total}</span></div>
         <div class="metricRow">🧹 Sprzątanie <span class="status ${dashStatus(clean.done,clean.total)}">${clean.done}/${clean.total}</span></div>
-        <div class="metricRow">📋 HACCP <span class="status ${dashStatus(haccp.done,haccp.total)}">${haccp.done}/${haccp.total}</span></div>
+        <div class="metricRow">📋 Daty <span class="status ${dashStatus(haccp.done,haccp.total)}">${haccp.done}/${haccp.total}</span></div>
       </div>
       <div class="toggleHint">Kliknij, aby rozwinąć szczegóły</div>
 
       <div class="locDetails" onclick="event.stopPropagation()">
         <div class="detailSection"><h4>🌡️ Temperatury <span class="status ${dashStatus(temp.done,temp.total)}">${temp.done}/${temp.total}</span></h4>${tempHtml||'<p class="small" style="color:#64748b">Brak urządzeń.</p>'}</div>
         ${cleanHtml}
-        <div class="detailSection"><h4>📋 HACCP / daty <span class="status ${dashStatus(haccp.done,haccp.total)}">${haccp.done}/${haccp.total}</span></h4>${haccpHtml||'<p class="small" style="color:#64748b">Brak kontroli HACCP.</p>'}</div>
+        <div class="detailSection"><h4>📋 Daty <span class="status ${dashStatus(haccp.done,haccp.total)}">${haccp.done}/${haccp.total}</span></h4>${haccpHtml||'<p class="small" style="color:#64748b">Brak kontroli dat.</p>'}</div>
       </div>
     </div>`;
   }).join("");
@@ -3622,7 +3748,7 @@ function notesTableHtml(items,title="Spis uwag"){
 }
 function buildTable(l,type,ym){let n=monthLabel(ym),days=daysInMonth(ym);if(type==="temp"){let d=state.devices[l],cols=[...d.chlodnie,...d.mroznie];return `<table><tr><th colspan="${cols.length+3}">KARTA TEMPERATUR — ${l} — ${n}</th></tr><tr><th>Data</th>${cols.map(c=>`<th>${c}</th>`).join("")}<th>Podpis</th><th>Uwagi</th></tr>${Array.from({length:days},(_,i)=>{let day=i+1;let dayLogs=logs.filter(x=>x.kind==="temp"&&x.loc===l&&x.date===ym+"-"+pad(day));let noteLogs=dayLogs.filter(x=>x.note);let user=dayLogs.map(x=>x.user).filter(Boolean).filter((v,i,a)=>a.indexOf(v)===i).join(" / ");return `<tr><th>${day}</th>${cols.map(c=>{let r=latestLog("temp",l,c,day,ym);return r?`<td class="${statusClass(r.status)} clickableCell" onclick="showCellInfoById('${r.id}','${c}')"><b>${r.val}°C</b>${cellStamp(r)}</td>`:`<td></td>`}).join("")}<td>${user}</td><td>${noteLogs.length?`<span class="clickableCell" onclick="showDayNotes('temp','${l}','${ym}',${day})">Uwagi${noteLogs.length>1?" ("+noteLogs.length+")":""}</span>`:""}</td></tr>`}).join("")}</table>`}
 if(type==="clean"){let groups=getShifts(l);let cols=groups.flatMap(g=>getCleaning(l,g).map(x=>g+": "+x+" ["+freqLabel(getCleanFreq(l,g,x))+"]"));return `<table><tr><th colspan="${cols.length+3}">KARTA KONTROLI CZYSTOŚCI — ${l} — ${n}</th></tr><tr><th>Data</th>${cols.map(c=>`<th><div class="vert">${c}</div></th>`).join("")}<th>Podpis</th><th>Uwagi</th></tr>${Array.from({length:days},(_,i)=>{let day=i+1;let dayLogs=logs.filter(x=>x.kind==="clean"&&x.loc===l&&x.date===ym+"-"+pad(day));let noteLogs=dayLogs.filter(x=>x.note);let user=dayLogs.map(x=>x.user).filter(Boolean).filter((v,i,a)=>a.indexOf(v)===i).join(" / ");return `<tr><th>${day}</th>${cols.map(c=>{let [g,...rest]=c.split(": ");let raw=rest.join(": ");let item=raw.replace(/ \[.*\]$/," ").trim();let rs=logs.filter(x=>x.kind==="clean"&&x.loc===l&&x.date===ym+"-"+pad(day)&&x.shift===g);let r=rs.find(x=>x.done?.includes(item));return r?`<td class="clickableCell" onclick="showCellInfoById('${r.id}','${item}')">X${cellStamp(r)}</td>`:`<td></td>`}).join("")}<td>${user}</td><td>${noteLogs.length?`<span class="clickableCell" onclick="showDayNotes('clean','${l}','${ym}',${day})">Uwagi${noteLogs.length>1?" ("+noteLogs.length+")":""}</span>`:""}</td></tr>`}).join("")}</table>`}
-let cols=getHaccpItemsForLoc(l);return `<table><tr><th colspan="${cols.length+3}">HACCP — ${l} — ${n}</th></tr><tr><th>Data</th>${cols.map(c=>`<th>${c}</th>`).join("")}<th>Podpis</th><th>Uwagi</th></tr>${Array.from({length:days},(_,i)=>{let day=i+1,r=latestLog("haccp",l,null,day,ym);return `<tr><th>${day}</th>${cols.map(c=>`${r?.done?.includes(c)?`<td class="clickableCell" onclick="showCellInfoById('${r.id}','${c}')">X${cellStamp(r)}</td>`:`<td></td>`}`).join("")}<td>${r?r.user:""}</td><td>${r?.note?`<span class="clickableCell" onclick="showCellInfoById('${r.id}','Uwagi')">Uwagi</span>`:""}</td></tr>`}).join("")}</table>`}
+let cols=getHaccpItemsForLoc(l);return `<table><tr><th colspan="${cols.length+3}">Daty — ${l} — ${n}</th></tr><tr><th>Data</th>${cols.map(c=>`<th>${c}</th>`).join("")}<th>Podpis</th><th>Uwagi</th></tr>${Array.from({length:days},(_,i)=>{let day=i+1,r=latestLog("haccp",l,null,day,ym);return `<tr><th>${day}</th>${cols.map(c=>`${r?.done?.includes(c)?`<td class="clickableCell" onclick="showCellInfoById('${r.id}','${c}')">X${cellStamp(r)}</td>`:`<td></td>`}`).join("")}<td>${r?r.user:""}</td><td>${r?.note?`<span class="clickableCell" onclick="showCellInfoById('${r.id}','Uwagi')">Uwagi</span>`:""}</td></tr>`}).join("")}</table>`}
 function renderMonth(){const l=monthLoc.value||state.locations[0],t=monthType.value,ym=monthPick.value||currentMonth();monthTable.innerHTML=buildTable(l,t,ym);printNotesBox.innerHTML=notesTableHtml(notesFor(l,t,ym),"Spis uwag");printEntriesBox.innerHTML=""}
 function renderSanepid(){sanTable.innerHTML=buildTable(sanLoc.value||state.locations[0],sanType.value,sanMonth.value||currentMonth())}
 function safeFileName(x){return String(x||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-zA-Z0-9_-]+/g,"_").replace(/^_+|_+$/g,"")}
@@ -3977,7 +4103,7 @@ function renderBackupSummary(){
   backupSummary.innerHTML=`
   <div class="summaryLine"><b>Temperatury</b><span>${temp}</span></div>
   <div class="summaryLine"><b>Sprzątanie</b><span>${clean}</span></div>
-  <div class="summaryLine"><b>HACCP</b><span>${haccp}</span></div>
+  <div class="summaryLine"><b>Daty</b><span>${haccp}</span></div>
   <div class="summaryLine"><b>Użytkownicy</b><span>${users.length}</span></div>
   <div class="summaryLine"><b>Lokalizacje</b><span>${state.locations.length}</span></div>
   <p class="small" style="color:#6b7280;margin-top:10px">Backup zawiera konfigurację, użytkowników, urządzenia, checklisty i historię wpisów.</p>`;
@@ -4009,7 +4135,7 @@ function importBackup(event){
   reader.readAsText(file);
 }
 
-document.addEventListener("change",e=>{if(e.target.id==="tempLoc"){fillDev();renderAllLogs();}if(e.target.id==="tempDev"){fillVals();renderAllLogs();}if(e.target.id==="tempVal")status();if(e.target.id==="cleanShift"){renderCleanItems();renderAllLogs();}if(e.target.id==="shiftAdminLoc"){renderShiftAdmin();renderShiftSelects();renderCleanAdmin();}if(e.target.id==="cleanAdminLoc"){renderShiftSelects();renderCleanAdmin();}if(e.target.id==="cleanAdminShift")renderCleanAdmin();if(e.target.id==="haccpAdminLoc")renderHaccpAdmin();if(e.target.id==="cleanLoc"){renderShiftSelects();renderCleanItems();renderAllLogs();}if(e.target.id==="cleanDate")renderCleanItems();if(e.target.id==="panelDate")renderPanel();if(e.target.id==="haccpLoc"){renderHaccpItems();renderAllLogs();}if(["histLoc","histKind","histFrom","histTo"].includes(e.target.id))renderHistoryPage();if(e.target.id==="adminLoc")renderDevList();if(["monthLoc","monthType","monthPick"].includes(e.target.id))renderMonth();if(["sanLoc","sanType","sanMonth"].includes(e.target.id))renderSanepid()});
+document.addEventListener("change",e=>{if(e.target.id==="tempLoc"){fillDev();renderAllLogs();}if(e.target.id==="tempDev"){fillVals();renderAllLogs();}if(e.target.id==="tempVal")status();if(e.target.id==="cleanShift"){renderCleanItems();renderAllLogs();}if(e.target.id==="shiftAdminLoc"){renderShiftAdmin();renderShiftSelects();renderCleanAdmin();}if(e.target.id==="cleanAdminLoc"){renderShiftSelects();renderCleanAdmin();}if(e.target.id==="cleanAdminShift")renderCleanAdmin();if(e.target.id==="haccpAdminLoc")renderHaccpAdmin();if(e.target.id==="cleanLoc"){renderShiftSelects();renderCleanItems();renderAllLogs();}if(e.target.id==="cleanDate")renderCleanItems();if(e.target.id==="panelDate")renderPanel();if(e.target.id==="haccpLoc"){renderHaccpItems();renderAllLogs();}if(e.target.id==="docsLoc"){renderHaccpDocs();}if(e.target.id==="procLoc"){renderProcedureDocs();}if(["histLoc","histKind","histFrom","histTo"].includes(e.target.id))renderHistoryPage();if(e.target.id==="adminLoc")renderDevList();if(["monthLoc","monthType","monthPick"].includes(e.target.id))renderMonth();if(["sanLoc","sanType","sanMonth"].includes(e.target.id))renderSanepid()});
 
 function kcIsDark(){ return document.body.classList.contains("theme-dark") && !document.body.classList.contains("loginMode"); }
 function kcApplyDarkFix(){
@@ -4242,7 +4368,296 @@ function kcV943BackupButtonsUserRole(){
 document.addEventListener("click",()=>setTimeout(kcV943BackupButtonsUserRole,80));
 document.addEventListener("DOMContentLoaded",()=>setTimeout(kcV943BackupButtonsUserRole,180));
 
+
+
+/* v9.71 — HACCP dokumenty: podgląd bez oka, dodatkowe dokumenty, dodaj/usuń Manager+Admin */
+(function(){
+  const DOC_TYPES=['Księga HACCP','GHP','GMP','Decyzja Sanepid','Plan kuchni'];
+  function docsStore(){
+    try{return JSON.parse(localStorage.getItem('kc_haccp_docs_v1')||'{}')||{};}catch(e){return {};}
+  }
+  function saveDocsStore(data){localStorage.setItem('kc_haccp_docs_v1',JSON.stringify(data||{}));}
+  function escDoc(v){return String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+  function jsArg(v){return String(v??'').replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/\n/g,' ');}
+  function currentDocsLoc(){return document.getElementById('docsLoc')?.value || (state?.locations?.[0]||'');}
+  function canManageDocs(){return !!(currentUser && (currentUser.role==='Admin' || currentUser.role==='Manager'));}
+  window.renderHaccpDocs=function(){
+    const box=document.getElementById('docsList'); if(!box) return;
+    const loc=currentDocsLoc();
+    const data=docsStore();
+    const locDocs=data[loc]||{};
+    box.innerHTML=`<div class="docsGrid">${DOC_TYPES.map((name,idx)=>{
+      const doc=locDocs[name];
+      const inputId='docFile_'+idx;
+      const view=doc&&doc.data?`<button class="btn previewPdfBtn" onclick="openHaccpDoc('${jsArg(loc)}','${jsArg(name)}')">Podgląd</button>`:`<span class="docEmpty">Brak pliku</span>`;
+      const manage=canManageDocs()?`<button class="btn addPdfBtn" onclick="document.getElementById('${inputId}').click()">Dodaj</button>${doc&&doc.data?`<button class="btn docRemoveBtn" onclick="removeHaccpDoc('${jsArg(loc)}','${jsArg(name)}')">Usuń</button>`:''}<input class="docFileInput" type="file" id="${inputId}" accept="application/pdf" onchange="uploadHaccpDoc('${jsArg(loc)}','${jsArg(name)}',this)">`:'';
+      return `<div class="docRow"><div><div class="docTitle">${escDoc(name)}</div></div><div class="docActions">${view}${manage}</div></div>`;
+    }).join('')}</div>`;
+  };
+  window.uploadHaccpDoc=function(loc,name,input){
+    if(!canManageDocs()){alert('Dodawać dokumenty może tylko Manager lub Admin.'); return;}
+    const file=input?.files?.[0]; if(!file) return;
+    if(file.type && file.type!=='application/pdf'){alert('Dodaj plik PDF.'); input.value=''; return;}
+    const reader=new FileReader();
+    reader.onload=function(){
+      const data=docsStore(); if(!data[loc]) data[loc]={};
+      data[loc][name]={data:String(reader.result||''),addedAt:new Date().toISOString(),addedBy:(currentUser&&currentUser.name)||''};
+      saveDocsStore(data); input.value=''; renderHaccpDocs();
+    };
+    reader.readAsDataURL(file);
+  };
+  window.removeHaccpDoc=function(loc,name){
+    if(!canManageDocs()){alert('Usuwać dokumenty może tylko Manager lub Admin.'); return;}
+    if(!confirm('Usunąć dokument: '+name+'?')) return;
+    const data=docsStore();
+    if(data[loc] && data[loc][name]) delete data[loc][name];
+    saveDocsStore(data); renderHaccpDocs();
+  };
+  window.openHaccpDoc=function(loc,name){
+    const doc=(docsStore()[loc]||{})[name];
+    if(!doc||!doc.data){alert('Brak dodanego pliku PDF.'); return;}
+    const w=window.open('','_blank');
+    if(!w){alert('Przeglądarka zablokowała nowe okno.'); return;}
+    w.document.write(`<title>${escDoc(name)}</title><iframe src="${doc.data}" style="position:fixed;inset:0;width:100%;height:100%;border:0"></iframe>`);
+    w.document.close();
+  };
+  const oldFillDocs=window.fill;
+  if(typeof oldFillDocs==='function'){
+    window.fill=function(){ oldFillDocs.apply(this,arguments); if(document.getElementById('docsLoc')) filterLocationsForSelect('docsLoc'); renderHaccpDocs(); };
+  }
+})();
+
+
+
+
+/* v9.73 — FIX: Procedury niezależnie + Admin edycja listy HACCP */
+(function(){
+  const H_DEFAULT=['Księga HACCP','GHP','GMP','Decyzja Sanepid','Plan kuchni'];
+  const P_CATS=['Procedury','Szkolenia','Instrukcje'];
+  function esc(v){return String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+  function js(v){return String(v??'').replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/\n/g,' ');}
+  function hTypes(){try{const a=JSON.parse(localStorage.getItem('kc_haccp_doc_types_v1')||'null'); return Array.isArray(a)&&a.length?a:H_DEFAULT.slice();}catch(e){return H_DEFAULT.slice();}}
+  function saveHTypes(a){localStorage.setItem('kc_haccp_doc_types_v1',JSON.stringify((a||[]).filter(Boolean)));}
+  function docsStore(){try{return JSON.parse(localStorage.getItem('kc_haccp_docs_v1')||'{}')||{};}catch(e){return {};}}
+  function saveDocsStore(data){localStorage.setItem('kc_haccp_docs_v1',JSON.stringify(data||{}));}
+  function procStore(){try{return JSON.parse(localStorage.getItem('kc_proc_docs_v1')||'{}')||{};}catch(e){return {};}}
+  function saveProcStore(data){localStorage.setItem('kc_proc_docs_v1',JSON.stringify(data||{}));}
+  function canManage(){return !!(currentUser && (currentUser.role==='Admin' || currentUser.role==='Manager'));}
+  function isAdm(){return !!(currentUser && currentUser.role==='Admin');}
+  function curDocLoc(){return document.getElementById('docsLoc')?.value || state?.locations?.[0] || '';}
+  function curProcLoc(){return document.getElementById('procLoc')?.value || state?.locations?.[0] || '';}
+
+  window.renderHaccpDocs=function(){
+    const box=document.getElementById('docsList'); if(!box) return;
+    const loc=curDocLoc(); const data=docsStore(); const locDocs=data[loc]||{};
+    box.innerHTML='<div class="docsGrid">'+hTypes().map((name,idx)=>{
+      const doc=locDocs[name]; const inputId='docFileDyn_'+idx;
+      const view=doc&&doc.data?`<button class="btn previewPdfBtn" onclick="openHaccpDoc('${js(loc)}','${js(name)}')">Podgląd</button>`:`<span class="docEmpty">Brak pliku</span>`;
+      const manage=canManage()?`<button class="btn addPdfBtn" onclick="document.getElementById('${inputId}').click()">Dodaj</button>${doc&&doc.data?`<button class="btn docRemoveBtn" onclick="removeHaccpDoc('${js(loc)}','${js(name)}')">Usuń</button>`:''}<input class="docFileInput" type="file" id="${inputId}" accept="application/pdf" onchange="uploadHaccpDoc('${js(loc)}','${js(name)}',this)">`:'';
+      return `<div class="docRow"><div><div class="docTitle">${esc(name)}</div></div><div class="docActions">${view}${manage}</div></div>`;
+    }).join('')+'</div>';
+  };
+  window.uploadHaccpDoc=function(loc,name,input){
+    if(!canManage()){alert('Dodawać dokumenty może Manager lub Admin.'); return;}
+    const file=input?.files?.[0]; if(!file) return;
+    if(file.type && file.type!=='application/pdf'){alert('Dodaj plik PDF.'); input.value=''; return;}
+    const reader=new FileReader();
+    reader.onload=function(){const data=docsStore(); if(!data[loc]) data[loc]={}; data[loc][name]={data:String(reader.result||''),addedAt:new Date().toISOString(),addedBy:(currentUser&&currentUser.name)||''}; saveDocsStore(data); input.value=''; renderHaccpDocs();};
+    reader.readAsDataURL(file);
+  };
+  window.removeHaccpDoc=function(loc,name){
+    if(!canManage()){alert('Usuwać dokumenty może Manager lub Admin.'); return;}
+    if(!confirm('Usunąć dokument: '+name+'?')) return;
+    const data=docsStore(); if(data[loc]&&data[loc][name]) delete data[loc][name]; saveDocsStore(data); renderHaccpDocs();
+  };
+  window.openHaccpDoc=function(loc,name){
+    const doc=(docsStore()[loc]||{})[name]; if(!doc||!doc.data){alert('Brak dodanego pliku PDF.'); return;}
+    const w=window.open('','_blank'); if(!w){alert('Przeglądarka zablokowała nowe okno.'); return;}
+    w.document.write(`<title>${esc(name)}</title><iframe src="${doc.data}" style="position:fixed;inset:0;width:100%;height:100%;border:0"></iframe>`); w.document.close();
+  };
+  window.renderHaccpDocsAdmin=function(){
+    const box=document.getElementById('haccpDocsAdminList'); if(!box) return;
+    const arr=hTypes();
+    box.innerHTML='<div class="adminListTitle">Pozycje dokumentów HACCP</div>'+arr.map((x,i)=>`<div class="adminListRow"><div class="row"><input value="${esc(x)}" onchange="renameHaccpDocType(${i},this.value)"><button class="btn danger" onclick="removeHaccpDocType(${i})">Usuń</button></div></div>`).join('');
+  };
+  window.addHaccpDocType=function(){
+    if(!isAdm()){alert('Listę HACCP edytuje tylko Admin.'); return;}
+    const inp=document.getElementById('newHaccpDocType'); const name=(inp?.value||'').trim(); if(!name) return;
+    const arr=hTypes(); if(!arr.includes(name)) arr.push(name); saveHTypes(arr); if(inp) inp.value=''; renderHaccpDocsAdmin(); renderHaccpDocs();
+  };
+  window.renameHaccpDocType=function(i,value){
+    if(!isAdm()){alert('Listę HACCP edytuje tylko Admin.'); renderHaccpDocsAdmin(); return;}
+    const arr=hTypes(); const old=arr[i]; const val=String(value||'').trim(); if(!val) return renderHaccpDocsAdmin(); arr[i]=val; saveHTypes(arr);
+    const data=docsStore(); Object.keys(data).forEach(loc=>{ if(data[loc]&&data[loc][old]&&!data[loc][val]){data[loc][val]=data[loc][old]; delete data[loc][old];} }); saveDocsStore(data);
+    renderHaccpDocsAdmin(); renderHaccpDocs();
+  };
+  window.removeHaccpDocType=function(i){
+    if(!isAdm()){alert('Listę HACCP edytuje tylko Admin.'); return;}
+    const arr=hTypes(); const name=arr[i]; if(!confirm('Usunąć pozycję z listy HACCP: '+name+'? Pliki pod tą pozycją nie będą wyświetlane.')) return;
+    arr.splice(i,1); saveHTypes(arr); renderHaccpDocsAdmin(); renderHaccpDocs();
+  };
+
+  window.renderProcedureDocs=function(){
+    const box=document.getElementById('procList'); if(!box) return;
+    const loc=curProcLoc(); const data=procStore(); const locData=data[loc]||{};
+    box.innerHTML=P_CATS.map((cat,ci)=>{
+      const files=locData[cat]||[]; const inputId='procFile_'+ci;
+      const rows=files.length?files.map((f,fi)=>`<div class="docRow"><div class="docTitle">${esc(f.title||('Dokument '+(fi+1)))}</div><div class="docActions"><button class="btn previewPdfBtn" onclick="openProcedureDoc('${js(loc)}','${js(cat)}',${fi})">Podgląd</button>${canManage()?`<button class="btn docRemoveBtn" onclick="removeProcedureDoc('${js(loc)}','${js(cat)}',${fi})">Usuń</button>`:''}</div></div>`).join(''):'<p class="small docEmpty">Brak plików.</p>';
+      const add=canManage()?`<div class="row" style="margin-top:10px"><button class="btn addPdfBtn" onclick="document.getElementById('${inputId}').click()">Dodaj PDF</button><input class="docFileInput" type="file" id="${inputId}" accept="application/pdf" onchange="uploadProcedureDoc('${js(loc)}','${js(cat)}',this)"></div>`:'';
+      return `<details class="procDetails"><summary>${esc(cat)}</summary><div class="procInside">${rows}${add}</div></details>`;
+    }).join('');
+  };
+  window.uploadProcedureDoc=function(loc,cat,input){
+    if(!canManage()){alert('Dodawać dokumenty może Manager lub Admin.'); return;}
+    const file=input?.files?.[0]; if(!file) return;
+    if(file.type && file.type!=='application/pdf'){alert('Dodaj plik PDF.'); input.value=''; return;}
+    const title=(file.name||'Dokument PDF').replace(/\.pdf$/i,'');
+    const reader=new FileReader(); reader.onload=function(){const data=procStore(); if(!data[loc]) data[loc]={}; if(!data[loc][cat]) data[loc][cat]=[]; data[loc][cat].push({title,data:String(reader.result||''),addedAt:new Date().toISOString(),addedBy:(currentUser&&currentUser.name)||''}); saveProcStore(data); input.value=''; renderProcedureDocs();}; reader.readAsDataURL(file);
+  };
+  window.removeProcedureDoc=function(loc,cat,i){
+    if(!canManage()){alert('Usuwać dokumenty może Manager lub Admin.'); return;}
+    if(!confirm('Usunąć dokument?')) return; const data=procStore(); if(data[loc]&&data[loc][cat]) data[loc][cat].splice(i,1); saveProcStore(data); renderProcedureDocs();
+  };
+  window.openProcedureDoc=function(loc,cat,i){
+    const f=(((procStore()[loc]||{})[cat])||[])[i]; if(!f||!f.data){alert('Brak pliku PDF.'); return;}
+    const w=window.open('','_blank'); if(!w){alert('Przeglądarka zablokowała nowe okno.'); return;}
+    w.document.write(`<title>${esc(f.title||cat)}</title><iframe src="${f.data}" style="position:fixed;inset:0;width:100%;height:100%;border:0"></iframe>`); w.document.close();
+  };
+
+  const oldFill=window.fill;
+  if(typeof oldFill==='function'){
+    window.fill=function(){oldFill.apply(this,arguments); if(document.getElementById('procLoc')) filterLocationsForSelect('procLoc'); renderHaccpDocsAdmin(); renderProcedureDocs();};
+  }
+  const oldShow=window.show;
+  if(typeof oldShow==='function'){
+    window.show=function(id){oldShow.apply(this,arguments); if(id==='procedures') renderProcedureDocs(); if(id==='docs') renderHaccpDocs(); if(id==='admin') renderHaccpDocsAdmin();};
+  }
+})();
+
+
+
+/* v9.77 — Kadry: badania i dokumenty pracowników */
+(function(){
+  const DEF_STAFF_DOCS={
+    'Badania':['Okresowe','Sanitarne'],
+    'Dokumenty':['Umowy','Szkolenia BHP','Szkolenia HACCP','Uprawnienia','Oświadczenia','Inne dokumenty']
+  };
+  function esc2(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+  function js2(s){return String(s??'').replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/\n/g,' ');}
+  function canStaffManage(){return currentUser && (currentUser.role==='Manager'||currentUser.role==='Admin');}
+  function isStaffAdmin(){return currentUser && currentUser.role==='Admin';}
+  function staffTypes(){try{return JSON.parse(localStorage.getItem('kc_staff_doc_types_v1')||'null')||JSON.parse(JSON.stringify(DEF_STAFF_DOCS));}catch(e){return JSON.parse(JSON.stringify(DEF_STAFF_DOCS));}}
+  function saveStaffTypes(v){localStorage.setItem('kc_staff_doc_types_v1',JSON.stringify(v||DEF_STAFF_DOCS));}
+  function staffPeople(){
+    try{const saved=JSON.parse(localStorage.getItem('kc_staff_people_v1')||'null'); if(saved&&saved.length)return saved;}catch(e){}
+    const base=(typeof users!=='undefined'?users:[]).map(u=>({id:u.id||('p_'+u.name),name:u.name||'',nextExam:''}));
+    return base.length?base:[{id:'p1',name:'Rafał Gortak',nextExam:''}];
+  }
+  function saveStaffPeople(v){localStorage.setItem('kc_staff_people_v1',JSON.stringify(v||[]));}
+  function staffFiles(){try{return JSON.parse(localStorage.getItem('kc_staff_files_v1')||'{}')||{};}catch(e){return {};}}
+  function saveStaffFiles(v){localStorage.setItem('kc_staff_files_v1',JSON.stringify(v||{}));}
+  function dateLabel(v){if(!v)return 'Brak daty'; const [y,m,d]=String(v).split('-'); return d&&m&&y?`${d}.${m}.${y}r`:v;}
+  function dateClass(v){if(!v)return ''; const today=new Date(); today.setHours(0,0,0,0); const d=new Date(v+'T00:00:00'); const diff=(d-today)/(1000*60*60*24); if(diff<0)return 'staffRed'; if(diff<61)return 'staffOrange'; return 'staffGreen';}
+  function renderDocRows(personId,section){
+    const types=staffTypes(); const files=staffFiles(); const personFiles=((files[personId]||{})[section]||{});
+    return (types[section]||[]).map(name=>{
+      const f=personFiles[name]; const inputId='staff_pdf_'+section.replace(/\W/g,'_')+'_'+personId.replace(/\W/g,'_')+'_'+name.replace(/\W/g,'_');
+      const view=f&&f.data?`<button class="btn previewPdfBtn" onclick="openStaffPdf('${js2(personId)}','${js2(section)}','${js2(name)}')">Podgląd</button>`:`<span class="docEmpty">Brak pliku</span>`;
+      const manage=canStaffManage()?`<button class="btn addPdfBtn" onclick="document.getElementById('${inputId}').click()">+ PDF</button>${f&&f.data?`<button class="btn docRemoveBtn" onclick="removeStaffPdf('${js2(personId)}','${js2(section)}','${js2(name)}')">Usuń</button>`:''}<input class="docFileInput" type="file" id="${inputId}" accept="application/pdf" onchange="uploadStaffPdf('${js2(personId)}','${js2(section)}','${js2(name)}',this)">`:'';
+      return `<div class="docRow"><div class="docTitle">${esc2(name)}</div><div class="docActions">${view}${manage}</div></div>`;
+    }).join('') || '<p class="small docEmpty">Brak pozycji. Dodaj je w Admin → Kadry.</p>';
+  }
+  window.renderStaff=function(){
+    const box=document.getElementById('staffList'); if(!box) return;
+    if(!canStaffManage()){box.innerHTML='<div class="notice">Kadry widzi tylko Manager i Admin.</div>'; return;}
+    const people=staffPeople();
+    box.innerHTML=people.map(p=>`<details class="staffDetails"><summary><span>${esc2(p.name)}</span><span class="staffExamDate ${dateClass(p.nextExam)}">${dateLabel(p.nextExam)}</span></summary><div class="staffInside">
+      <div class="staffSubBox"><h3>Badania</h3><div class="staffDateRow"><label>Data kolejnego badania</label><input type="date" value="${esc2(p.nextExam||'')}" onchange="setStaffNextExam('${js2(p.id)}',this.value)"></div><div class="docsGrid">${renderDocRows(p.id,'Badania')}</div></div>
+      <div class="staffSubBox"><h3>Dokumenty</h3><div class="docsGrid">${renderDocRows(p.id,'Dokumenty')}</div></div>
+    </div></details>`).join('') || '<p class="small">Brak pracowników. Dodaj ich w Admin → Kadry.</p>';
+  };
+  window.setStaffNextExam=function(id,value){const people=staffPeople(); const p=people.find(x=>x.id===id); if(p){p.nextExam=value; saveStaffPeople(people); renderStaff(); renderStaffAdmin();}};
+  window.uploadStaffPdf=function(personId,section,name,input){
+    if(!canStaffManage()){alert('Dodawać pliki może Manager lub Admin.'); return;} const file=input.files&&input.files[0]; if(!file)return; if(file.type && file.type!=='application/pdf'){alert('Dodaj plik PDF.'); input.value=''; return;}
+    const reader=new FileReader(); reader.onload=function(){const data=staffFiles(); if(!data[personId])data[personId]={}; if(!data[personId][section])data[personId][section]={}; data[personId][section][name]={data:String(reader.result||''),addedAt:new Date().toISOString(),addedBy:(currentUser&&currentUser.name)||''}; saveStaffFiles(data); input.value=''; renderStaff();}; reader.readAsDataURL(file);
+  };
+  window.removeStaffPdf=function(personId,section,name){if(!canStaffManage()){alert('Usuwać pliki może Manager lub Admin.'); return;} if(!confirm('Usunąć plik PDF?'))return; const data=staffFiles(); if(data[personId]&&data[personId][section])delete data[personId][section][name]; saveStaffFiles(data); renderStaff();};
+  window.openStaffPdf=function(personId,section,name){const f=(((staffFiles()[personId]||{})[section]||{})[name]); if(!f||!f.data){alert('Brak dodanego pliku PDF.'); return;} const w=window.open('','_blank'); if(w){w.document.write(`<iframe src="${f.data}" style="border:0;width:100%;height:100vh"></iframe>`);w.document.close();}else alert('Przeglądarka zablokowała podgląd.');};
+  window.renderStaffAdmin=function(){
+    const peopleBox=document.getElementById('staffAdminList'); const typesBox=document.getElementById('staffDocTypesAdminList'); if(!peopleBox||!typesBox)return;
+    const people=staffPeople();
+    peopleBox.innerHTML=people.map((p,i)=>`<div class="adminListRow"><div class="row"><input value="${esc2(p.name)}" onchange="renameStaffPerson(${i},this.value)"><input type="date" value="${esc2(p.nextExam||'')}" onchange="setStaffNextExam('${js2(p.id)}',this.value)"><button class="btn danger" onclick="removeStaffPerson(${i})">Usuń</button></div></div>`).join('') || '<p class="small">Brak pracowników.</p>';
+    const section=document.getElementById('newStaffDocSection')?.value || 'Badania'; const types=staffTypes();
+    typesBox.innerHTML=(types[section]||[]).map((name,i)=>`<div class="adminListRow"><div class="row"><input value="${esc2(name)}" onchange="renameStaffDocType('${js2(section)}',${i},this.value)"><button class="btn danger" onclick="removeStaffDocType('${js2(section)}',${i})">Usuń</button></div></div>`).join('') || '<p class="small">Brak pozycji.</p>';
+  };
+  window.addStaffPerson=function(){if(!isStaffAdmin()){alert('Pracowników w Kadrach edytuje tylko Admin.'); return;} const inp=document.getElementById('newStaffName'); const name=(inp?.value||'').trim(); if(!name)return; const people=staffPeople(); people.push({id:'p_'+Date.now(),name,nextExam:''}); saveStaffPeople(people); if(inp)inp.value=''; renderStaffAdmin(); renderStaff();};
+  window.renameStaffPerson=function(i,value){if(!isStaffAdmin()){alert('Pracowników w Kadrach edytuje tylko Admin.'); renderStaffAdmin(); return;} const people=staffPeople(); const val=(value||'').trim(); if(people[i]&&val){people[i].name=val; saveStaffPeople(people);} renderStaff();};
+  window.removeStaffPerson=function(i){if(!isStaffAdmin()){alert('Pracowników w Kadrach edytuje tylko Admin.'); return;} if(!confirm('Usunąć pracownika z Kadr?'))return; const people=staffPeople(); const removed=people.splice(i,1)[0]; saveStaffPeople(people); if(removed){const f=staffFiles(); delete f[removed.id]; saveStaffFiles(f);} renderStaffAdmin(); renderStaff();};
+  window.addStaffDocType=function(){if(!isStaffAdmin()){alert('Rodzaje dokumentów edytuje tylko Admin.'); return;} const sec=document.getElementById('newStaffDocSection')?.value||'Badania'; const inp=document.getElementById('newStaffDocType'); const name=(inp?.value||'').trim(); if(!name)return; const types=staffTypes(); if(!types[sec])types[sec]=[]; if(!types[sec].includes(name))types[sec].push(name); saveStaffTypes(types); if(inp)inp.value=''; renderStaffAdmin(); renderStaff();};
+  window.renameStaffDocType=function(sec,i,value){if(!isStaffAdmin()){alert('Rodzaje dokumentów edytuje tylko Admin.'); renderStaffAdmin(); return;} const types=staffTypes(); const old=(types[sec]||[])[i]; const val=(value||'').trim(); if(old&&val){types[sec][i]=val; const files=staffFiles(); Object.keys(files).forEach(pid=>{ if(files[pid]&&files[pid][sec]&&files[pid][sec][old]&&!files[pid][sec][val]){files[pid][sec][val]=files[pid][sec][old]; delete files[pid][sec][old];} }); saveStaffTypes(types); saveStaffFiles(files);} renderStaffAdmin(); renderStaff();};
+  window.removeStaffDocType=function(sec,i){if(!isStaffAdmin()){alert('Rodzaje dokumentów edytuje tylko Admin.'); return;} if(!confirm('Usunąć typ dokumentu?'))return; const types=staffTypes(); const old=(types[sec]||[])[i]; if(old){types[sec].splice(i,1); const files=staffFiles(); Object.keys(files).forEach(pid=>{ if(files[pid]&&files[pid][sec])delete files[pid][sec][old]; }); saveStaffTypes(types); saveStaffFiles(files);} renderStaffAdmin(); renderStaff();};
+  const oldShowStaff=window.show; if(typeof oldShowStaff==='function'){window.show=function(id){oldShowStaff.apply(this,arguments); if(id==='staff')renderStaff(); if(id==='admin')renderStaffAdmin();};}
+  const oldFillStaff=window.fill; if(typeof oldFillStaff==='function'){window.fill=function(){oldFillStaff.apply(this,arguments); renderStaff(); renderStaffAdmin();};}
+})();
 </script>
+
+<script>
+/* v9.82 — Kadry: accordion + poprawiona edycja w Adminie */
+(function(){
+  // Na telefonie/tablecie po otwarciu kolejnego pracownika poprzedni się zwija.
+  document.addEventListener('toggle', function(e){
+    const d=e.target;
+    if(!d || !d.classList || !d.classList.contains('staffDetails') || !d.open) return;
+    document.querySelectorAll('#staffList details.staffDetails').forEach(x=>{ if(x!==d) x.open=false; });
+  }, true);
+
+  // Uzupełnienie: data przy dodawaniu pracownika w Admin → Kadry.
+  const oldAddStaffPerson = window.addStaffPerson;
+  window.addStaffPerson=function(){
+    if(typeof isStaffAdmin==='function' && !isStaffAdmin()){alert('Pracowników w Kadrach edytuje tylko Admin.'); return;}
+    const inp=document.getElementById('newStaffName');
+    const dateInp=document.getElementById('newStaffExamDate');
+    const name=(inp && inp.value ? inp.value : '').trim();
+    if(!name){alert('Wpisz imię i nazwisko.'); return;}
+    let people=[];
+    try{ people=JSON.parse(localStorage.getItem('kc_staff_people_v1')||'[]')||[]; }catch(e){ people=[]; }
+    // Jeśli lista była pusta, nie dubluj demo — dodaj realny wpis.
+    people.push({id:'p_'+Date.now(),name:name,nextExam:(dateInp&&dateInp.value)||''});
+    localStorage.setItem('kc_staff_people_v1',JSON.stringify(people));
+    if(inp) inp.value='';
+    if(dateInp) dateInp.value='';
+    if(typeof renderStaffAdmin==='function') renderStaffAdmin();
+    if(typeof renderStaff==='function') renderStaff();
+  };
+
+  // Widok Admin → Kadry: czytelniejsze paski i wybór Badania/Dokumenty jak w Procedurach.
+  const oldRenderStaffAdmin = window.renderStaffAdmin;
+  window.renderStaffAdmin=function(){
+    if(typeof oldRenderStaffAdmin==='function') oldRenderStaffAdmin();
+    const peopleBox=document.getElementById('staffAdminList');
+    const typesBox=document.getElementById('staffDocTypesAdminList');
+    if(!peopleBox || !typesBox) return;
+    let people=[];
+    try{ people=JSON.parse(localStorage.getItem('kc_staff_people_v1')||'[]')||[]; }catch(e){ people=[]; }
+    if(!people.length && typeof users!=='undefined'){
+      people=(users||[]).map(u=>({id:u.id||('p_'+(u.name||'')),name:u.name||'',nextExam:''}));
+    }
+    const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+    peopleBox.innerHTML=people.map((p,i)=>`<div class="adminListRow staffAdminPersonRow"><div class="row"><input value="${esc(p.name)}" onchange="renameStaffPerson(${i},this.value)" placeholder="Imię i nazwisko"><input type="date" value="${esc(p.nextExam||'')}" onchange="setStaffNextExam('${String(p.id).replace(/'/g,"\\'")}',this.value)"><button class="btn danger" onclick="removeStaffPerson(${i})">Usuń</button></div></div>`).join('') || '<p class="small">Brak pracowników.</p>';
+  };
+
+  // Dopilnuj renderowania przy wejściu do Admina.
+  const oldShow = window.show;
+  if(typeof oldShow==='function'){
+    window.show=function(id){
+      oldShow.apply(this,arguments);
+      if(id==='admin' && typeof renderStaffAdmin==='function') renderStaffAdmin();
+      if(id==='staff' && typeof renderStaff==='function') renderStaff();
+    };
+  }
+})();
+</script>
+
 <style>
 #rangeAdminBox label{font-weight:800;display:flex;flex-direction:column;gap:6px}
 #rangeAdminBox input{min-width:120px}
@@ -4268,6 +4683,23 @@ body.theme-dark:not(.loginMode) .adminListRow *:not(button){color:#f8fafc!import
 body.theme-dark:not(.loginMode) .adminListSub{color:#cbd5e1!important}
 body.theme-dark:not(.loginMode) #rangeAdminBox .btn:not(.danger){background:#2563eb!important;color:#fff!important;border-color:#2563eb!important}
 @media(max-width:520px){.adminSection h2{font-size:17px}.adminListRow{align-items:stretch;flex-direction:column}.adminListRow .row>*{width:100%}}
+
+/* v9.77 — Kadry */
+#staff .staffDetails{border:1px solid #d8dee8;border-radius:14px;margin:10px 0;background:#f8fafc;overflow:hidden}
+#staff .staffDetails summary{cursor:pointer;list-style:none;padding:13px 14px;font-weight:950;display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;background:white;color:#172033}
+#staff .staffDetails summary::-webkit-details-marker{display:none}
+#staff .staffDetails summary:after{content:'⌄';font-size:18px;color:#64748b}
+@media (orientation:landscape) and (min-width:800px){#staff .staffDetails summary:after{content:'›';font-size:28px;line-height:1}}
+#staff .staffDetails[open] summary:after{content:'⌃'}
+@media (orientation:landscape) and (min-width:800px){#staff .staffDetails[open] summary:after{content:'›'}}
+#staff .staffInside{padding:12px;display:grid;gap:12px}
+.staffExamDate{font-weight:900;white-space:nowrap}.staffGreen{color:#166534!important}.staffOrange{color:#d97706!important}.staffRed{color:#dc2626!important}
+.staffSubBox{border:1px solid #d8dee8;border-radius:14px;padding:12px;background:#fff}.staffSubBox h3{margin:0 0 10px 0}.staffDateRow{margin-bottom:10px}
+body.theme-dark:not(.loginMode) #staff .staffDetails{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .staffDetails summary{background:#111827!important;color:#f8fafc!important;border-color:rgba(148,163,184,.28)!important}
+body.theme-dark:not(.loginMode) #staff .staffDetails summary:after{color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .staffSubBox{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .docRow{background:#111827!important;color:#f8fafc!important;border-color:rgba(148,163,184,.28)!important}
 </style>
 
 
@@ -4306,6 +4738,71 @@ body.theme-dark:not(.loginMode) #rangeAdminBox .btn:not(.danger){background:#256
   }
   window.kcPrepareAdminSplit=prepareAdminSplit;
 })();
+
+
+/* v9.77 — Kadry: badania i dokumenty pracowników */
+(function(){
+  const DEF_STAFF_DOCS={
+    'Badania':['Okresowe','Sanitarne'],
+    'Dokumenty':['Umowy','Szkolenia BHP','Szkolenia HACCP','Uprawnienia','Oświadczenia','Inne dokumenty']
+  };
+  function esc2(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+  function js2(s){return String(s??'').replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/\n/g,' ');}
+  function canStaffManage(){return currentUser && (currentUser.role==='Manager'||currentUser.role==='Admin');}
+  function isStaffAdmin(){return currentUser && currentUser.role==='Admin';}
+  function staffTypes(){try{return JSON.parse(localStorage.getItem('kc_staff_doc_types_v1')||'null')||JSON.parse(JSON.stringify(DEF_STAFF_DOCS));}catch(e){return JSON.parse(JSON.stringify(DEF_STAFF_DOCS));}}
+  function saveStaffTypes(v){localStorage.setItem('kc_staff_doc_types_v1',JSON.stringify(v||DEF_STAFF_DOCS));}
+  function staffPeople(){
+    try{const saved=JSON.parse(localStorage.getItem('kc_staff_people_v1')||'null'); if(saved&&saved.length)return saved;}catch(e){}
+    const base=(typeof users!=='undefined'?users:[]).map(u=>({id:u.id||('p_'+u.name),name:u.name||'',nextExam:''}));
+    return base.length?base:[{id:'p1',name:'Rafał Gortak',nextExam:''}];
+  }
+  function saveStaffPeople(v){localStorage.setItem('kc_staff_people_v1',JSON.stringify(v||[]));}
+  function staffFiles(){try{return JSON.parse(localStorage.getItem('kc_staff_files_v1')||'{}')||{};}catch(e){return {};}}
+  function saveStaffFiles(v){localStorage.setItem('kc_staff_files_v1',JSON.stringify(v||{}));}
+  function dateLabel(v){if(!v)return 'Brak daty'; const [y,m,d]=String(v).split('-'); return d&&m&&y?`${d}.${m}.${y}r`:v;}
+  function dateClass(v){if(!v)return ''; const today=new Date(); today.setHours(0,0,0,0); const d=new Date(v+'T00:00:00'); const diff=(d-today)/(1000*60*60*24); if(diff<0)return 'staffRed'; if(diff<61)return 'staffOrange'; return 'staffGreen';}
+  function renderDocRows(personId,section){
+    const types=staffTypes(); const files=staffFiles(); const personFiles=((files[personId]||{})[section]||{});
+    return (types[section]||[]).map(name=>{
+      const f=personFiles[name]; const inputId='staff_pdf_'+section.replace(/\W/g,'_')+'_'+personId.replace(/\W/g,'_')+'_'+name.replace(/\W/g,'_');
+      const view=f&&f.data?`<button class="btn previewPdfBtn" onclick="openStaffPdf('${js2(personId)}','${js2(section)}','${js2(name)}')">Podgląd</button>`:`<span class="docEmpty">Brak pliku</span>`;
+      const manage=canStaffManage()?`<button class="btn addPdfBtn" onclick="document.getElementById('${inputId}').click()">+ PDF</button>${f&&f.data?`<button class="btn docRemoveBtn" onclick="removeStaffPdf('${js2(personId)}','${js2(section)}','${js2(name)}')">Usuń</button>`:''}<input class="docFileInput" type="file" id="${inputId}" accept="application/pdf" onchange="uploadStaffPdf('${js2(personId)}','${js2(section)}','${js2(name)}',this)">`:'';
+      return `<div class="docRow"><div class="docTitle">${esc2(name)}</div><div class="docActions">${view}${manage}</div></div>`;
+    }).join('') || '<p class="small docEmpty">Brak pozycji. Dodaj je w Admin → Kadry.</p>';
+  }
+  window.renderStaff=function(){
+    const box=document.getElementById('staffList'); if(!box) return;
+    if(!canStaffManage()){box.innerHTML='<div class="notice">Kadry widzi tylko Manager i Admin.</div>'; return;}
+    const people=staffPeople();
+    box.innerHTML=people.map(p=>`<details class="staffDetails"><summary><span>${esc2(p.name)}</span><span class="staffExamDate ${dateClass(p.nextExam)}">${dateLabel(p.nextExam)}</span></summary><div class="staffInside">
+      <div class="staffSubBox"><h3>Badania</h3><div class="staffDateRow"><label>Data kolejnego badania</label><input type="date" value="${esc2(p.nextExam||'')}" onchange="setStaffNextExam('${js2(p.id)}',this.value)"></div><div class="docsGrid">${renderDocRows(p.id,'Badania')}</div></div>
+      <div class="staffSubBox"><h3>Dokumenty</h3><div class="docsGrid">${renderDocRows(p.id,'Dokumenty')}</div></div>
+    </div></details>`).join('') || '<p class="small">Brak pracowników. Dodaj ich w Admin → Kadry.</p>';
+  };
+  window.setStaffNextExam=function(id,value){const people=staffPeople(); const p=people.find(x=>x.id===id); if(p){p.nextExam=value; saveStaffPeople(people); renderStaff(); renderStaffAdmin();}};
+  window.uploadStaffPdf=function(personId,section,name,input){
+    if(!canStaffManage()){alert('Dodawać pliki może Manager lub Admin.'); return;} const file=input.files&&input.files[0]; if(!file)return; if(file.type && file.type!=='application/pdf'){alert('Dodaj plik PDF.'); input.value=''; return;}
+    const reader=new FileReader(); reader.onload=function(){const data=staffFiles(); if(!data[personId])data[personId]={}; if(!data[personId][section])data[personId][section]={}; data[personId][section][name]={data:String(reader.result||''),addedAt:new Date().toISOString(),addedBy:(currentUser&&currentUser.name)||''}; saveStaffFiles(data); input.value=''; renderStaff();}; reader.readAsDataURL(file);
+  };
+  window.removeStaffPdf=function(personId,section,name){if(!canStaffManage()){alert('Usuwać pliki może Manager lub Admin.'); return;} if(!confirm('Usunąć plik PDF?'))return; const data=staffFiles(); if(data[personId]&&data[personId][section])delete data[personId][section][name]; saveStaffFiles(data); renderStaff();};
+  window.openStaffPdf=function(personId,section,name){const f=(((staffFiles()[personId]||{})[section]||{})[name]); if(!f||!f.data){alert('Brak dodanego pliku PDF.'); return;} const w=window.open('','_blank'); if(w){w.document.write(`<iframe src="${f.data}" style="border:0;width:100%;height:100vh"></iframe>`);w.document.close();}else alert('Przeglądarka zablokowała podgląd.');};
+  window.renderStaffAdmin=function(){
+    const peopleBox=document.getElementById('staffAdminList'); const typesBox=document.getElementById('staffDocTypesAdminList'); if(!peopleBox||!typesBox)return;
+    const people=staffPeople();
+    peopleBox.innerHTML=people.map((p,i)=>`<div class="adminListRow"><div class="row"><input value="${esc2(p.name)}" onchange="renameStaffPerson(${i},this.value)"><input type="date" value="${esc2(p.nextExam||'')}" onchange="setStaffNextExam('${js2(p.id)}',this.value)"><button class="btn danger" onclick="removeStaffPerson(${i})">Usuń</button></div></div>`).join('') || '<p class="small">Brak pracowników.</p>';
+    const section=document.getElementById('newStaffDocSection')?.value || 'Badania'; const types=staffTypes();
+    typesBox.innerHTML=(types[section]||[]).map((name,i)=>`<div class="adminListRow"><div class="row"><input value="${esc2(name)}" onchange="renameStaffDocType('${js2(section)}',${i},this.value)"><button class="btn danger" onclick="removeStaffDocType('${js2(section)}',${i})">Usuń</button></div></div>`).join('') || '<p class="small">Brak pozycji.</p>';
+  };
+  window.addStaffPerson=function(){if(!isStaffAdmin()){alert('Pracowników w Kadrach edytuje tylko Admin.'); return;} const inp=document.getElementById('newStaffName'); const name=(inp?.value||'').trim(); if(!name)return; const people=staffPeople(); people.push({id:'p_'+Date.now(),name,nextExam:''}); saveStaffPeople(people); if(inp)inp.value=''; renderStaffAdmin(); renderStaff();};
+  window.renameStaffPerson=function(i,value){if(!isStaffAdmin()){alert('Pracowników w Kadrach edytuje tylko Admin.'); renderStaffAdmin(); return;} const people=staffPeople(); const val=(value||'').trim(); if(people[i]&&val){people[i].name=val; saveStaffPeople(people);} renderStaff();};
+  window.removeStaffPerson=function(i){if(!isStaffAdmin()){alert('Pracowników w Kadrach edytuje tylko Admin.'); return;} if(!confirm('Usunąć pracownika z Kadr?'))return; const people=staffPeople(); const removed=people.splice(i,1)[0]; saveStaffPeople(people); if(removed){const f=staffFiles(); delete f[removed.id]; saveStaffFiles(f);} renderStaffAdmin(); renderStaff();};
+  window.addStaffDocType=function(){if(!isStaffAdmin()){alert('Rodzaje dokumentów edytuje tylko Admin.'); return;} const sec=document.getElementById('newStaffDocSection')?.value||'Badania'; const inp=document.getElementById('newStaffDocType'); const name=(inp?.value||'').trim(); if(!name)return; const types=staffTypes(); if(!types[sec])types[sec]=[]; if(!types[sec].includes(name))types[sec].push(name); saveStaffTypes(types); if(inp)inp.value=''; renderStaffAdmin(); renderStaff();};
+  window.renameStaffDocType=function(sec,i,value){if(!isStaffAdmin()){alert('Rodzaje dokumentów edytuje tylko Admin.'); renderStaffAdmin(); return;} const types=staffTypes(); const old=(types[sec]||[])[i]; const val=(value||'').trim(); if(old&&val){types[sec][i]=val; const files=staffFiles(); Object.keys(files).forEach(pid=>{ if(files[pid]&&files[pid][sec]&&files[pid][sec][old]&&!files[pid][sec][val]){files[pid][sec][val]=files[pid][sec][old]; delete files[pid][sec][old];} }); saveStaffTypes(types); saveStaffFiles(files);} renderStaffAdmin(); renderStaff();};
+  window.removeStaffDocType=function(sec,i){if(!isStaffAdmin()){alert('Rodzaje dokumentów edytuje tylko Admin.'); return;} if(!confirm('Usunąć typ dokumentu?'))return; const types=staffTypes(); const old=(types[sec]||[])[i]; if(old){types[sec].splice(i,1); const files=staffFiles(); Object.keys(files).forEach(pid=>{ if(files[pid]&&files[pid][sec])delete files[pid][sec][old]; }); saveStaffTypes(types); saveStaffFiles(files);} renderStaffAdmin(); renderStaff();};
+  const oldShowStaff=window.show; if(typeof oldShowStaff==='function'){window.show=function(id){oldShowStaff.apply(this,arguments); if(id==='staff')renderStaff(); if(id==='admin')renderStaffAdmin();};}
+  const oldFillStaff=window.fill; if(typeof oldFillStaff==='function'){window.fill=function(){oldFillStaff.apply(this,arguments); renderStaff(); renderStaffAdmin();};}
+})();
 </script>
 
 
@@ -4322,6 +4819,23 @@ body.theme-dark:not(.loginMode) #rangeAdminBox .btn:not(.danger){background:#256
 body.theme-dark:not(.loginMode) .kcMonthCloseBtn{background:#2563eb!important;color:#fff!important;border-color:#2563eb!important}
 .kcInactiveCell{color:#94a3b8!important;background:#f8fafc!important;font-weight:700!important}
 body.theme-dark:not(.loginMode) #month .kcInactiveCell{background:#f8fafc!important;color:#64748b!important}
+
+/* v9.77 — Kadry */
+#staff .staffDetails{border:1px solid #d8dee8;border-radius:14px;margin:10px 0;background:#f8fafc;overflow:hidden}
+#staff .staffDetails summary{cursor:pointer;list-style:none;padding:13px 14px;font-weight:950;display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;background:white;color:#172033}
+#staff .staffDetails summary::-webkit-details-marker{display:none}
+#staff .staffDetails summary:after{content:'⌄';font-size:18px;color:#64748b}
+@media (orientation:landscape) and (min-width:800px){#staff .staffDetails summary:after{content:'›';font-size:28px;line-height:1}}
+#staff .staffDetails[open] summary:after{content:'⌃'}
+@media (orientation:landscape) and (min-width:800px){#staff .staffDetails[open] summary:after{content:'›'}}
+#staff .staffInside{padding:12px;display:grid;gap:12px}
+.staffExamDate{font-weight:900;white-space:nowrap}.staffGreen{color:#166534!important}.staffOrange{color:#d97706!important}.staffRed{color:#dc2626!important}
+.staffSubBox{border:1px solid #d8dee8;border-radius:14px;padding:12px;background:#fff}.staffSubBox h3{margin:0 0 10px 0}.staffDateRow{margin-bottom:10px}
+body.theme-dark:not(.loginMode) #staff .staffDetails{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .staffDetails summary{background:#111827!important;color:#f8fafc!important;border-color:rgba(148,163,184,.28)!important}
+body.theme-dark:not(.loginMode) #staff .staffDetails summary:after{color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .staffSubBox{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .docRow{background:#111827!important;color:#f8fafc!important;border-color:rgba(148,163,184,.28)!important}
 </style>
 <script>
 /* v9.68 — logika: element ważny od daty dodania, po usunięciu zostaje w raporcie miesiąca jeśli miał wpisy */
@@ -4500,7 +5014,7 @@ body.theme-dark:not(.loginMode) #month .kcInactiveCell{background:#f8fafc!import
       Array.from({length:days},(_,i)=>{let day=i+1,date=ym+'-'+pad(day);let dayLogs=logs.filter(x=>x.kind==='clean'&&x.loc===l&&x.date===date);let noteLogs=dayLogs.filter(x=>x.note);let user=dayLogs.map(x=>x.user).filter(Boolean).filter((v,i,a)=>a.indexOf(v)===i).join(' / ');return `<tr><th>${day}</th>`+life.map(meta=>{if(!lifeActiveOn(meta,date)) return cellInactive(); let rs=logs.filter(x=>x.kind==='clean'&&x.loc===l&&x.date===date&&x.shift===meta.shift);let r=rs.find(x=>(x.done||[]).includes(meta.name));return r?`<td class="clickableCell" onclick="showCellInfoById('${r.id}','${esc(meta.name)}')">X${cellStamp(r)}</td>`:`<td></td>`}).join('')+`<td>${esc(user)}</td><td>${noteLogs.length?`<span class="clickableCell" onclick="showDayNotes('clean','${esc(l)}','${ym}',${day})">Uwagi${noteLogs.length>1?' ('+noteLogs.length+')':''}</span>`:''}</td></tr>`}).join('')+`</table>`;
     }
     let life=state.kcLifecycle.haccp.filter(x=>x.loc===l && lifeVisibleMonth(x,ym,hadHaccpThisMonth(l,x.name,ym)));
-    return `<table><tr><th colspan="${life.length+3}">HACCP — ${esc(l)} — ${esc(n)}</th></tr><tr><th>Data</th>${life.map(x=>`<th>${esc(x.name)}</th>`).join('')}<th>Podpis</th><th>Uwagi</th></tr>`+
+    return `<table><tr><th colspan="${life.length+3}">Daty — ${esc(l)} — ${esc(n)}</th></tr><tr><th>Data</th>${life.map(x=>`<th>${esc(x.name)}</th>`).join('')}<th>Podpis</th><th>Uwagi</th></tr>`+
     Array.from({length:days},(_,i)=>{let day=i+1,date=ym+'-'+pad(day),r=latestLog('haccp',l,null,day,ym);return `<tr><th>${day}</th>`+life.map(meta=>{if(!lifeActiveOn(meta,date)) return cellInactive();return r?.done?.includes(meta.name)?`<td class="clickableCell" onclick="showCellInfoById('${r.id}','${esc(meta.name)}')">X${cellStamp(r)}</td>`:`<td></td>`}).join('')+`<td>${r?esc(r.user):''}</td><td>${r?.note?`<span class="clickableCell" onclick="showCellInfoById('${r.id}','Uwagi')">Uwagi</span>`:''}</td></tr>`}).join('')+`</table>`;
   };
 
@@ -4509,6 +5023,71 @@ body.theme-dark:not(.loginMode) #month .kcInactiveCell{background:#f8fafc!import
 
   // Start
   document.addEventListener('DOMContentLoaded',()=>{ensureLife(); setTimeout(()=>{try{save(); insertCloseBtn(); if(typeof renderMonth==='function') renderMonth();}catch(e){}},120)});
+})();
+
+
+/* v9.77 — Kadry: badania i dokumenty pracowników */
+(function(){
+  const DEF_STAFF_DOCS={
+    'Badania':['Okresowe','Sanitarne'],
+    'Dokumenty':['Umowy','Szkolenia BHP','Szkolenia HACCP','Uprawnienia','Oświadczenia','Inne dokumenty']
+  };
+  function esc2(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+  function js2(s){return String(s??'').replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/\n/g,' ');}
+  function canStaffManage(){return currentUser && (currentUser.role==='Manager'||currentUser.role==='Admin');}
+  function isStaffAdmin(){return currentUser && currentUser.role==='Admin';}
+  function staffTypes(){try{return JSON.parse(localStorage.getItem('kc_staff_doc_types_v1')||'null')||JSON.parse(JSON.stringify(DEF_STAFF_DOCS));}catch(e){return JSON.parse(JSON.stringify(DEF_STAFF_DOCS));}}
+  function saveStaffTypes(v){localStorage.setItem('kc_staff_doc_types_v1',JSON.stringify(v||DEF_STAFF_DOCS));}
+  function staffPeople(){
+    try{const saved=JSON.parse(localStorage.getItem('kc_staff_people_v1')||'null'); if(saved&&saved.length)return saved;}catch(e){}
+    const base=(typeof users!=='undefined'?users:[]).map(u=>({id:u.id||('p_'+u.name),name:u.name||'',nextExam:''}));
+    return base.length?base:[{id:'p1',name:'Rafał Gortak',nextExam:''}];
+  }
+  function saveStaffPeople(v){localStorage.setItem('kc_staff_people_v1',JSON.stringify(v||[]));}
+  function staffFiles(){try{return JSON.parse(localStorage.getItem('kc_staff_files_v1')||'{}')||{};}catch(e){return {};}}
+  function saveStaffFiles(v){localStorage.setItem('kc_staff_files_v1',JSON.stringify(v||{}));}
+  function dateLabel(v){if(!v)return 'Brak daty'; const [y,m,d]=String(v).split('-'); return d&&m&&y?`${d}.${m}.${y}r`:v;}
+  function dateClass(v){if(!v)return ''; const today=new Date(); today.setHours(0,0,0,0); const d=new Date(v+'T00:00:00'); const diff=(d-today)/(1000*60*60*24); if(diff<0)return 'staffRed'; if(diff<61)return 'staffOrange'; return 'staffGreen';}
+  function renderDocRows(personId,section){
+    const types=staffTypes(); const files=staffFiles(); const personFiles=((files[personId]||{})[section]||{});
+    return (types[section]||[]).map(name=>{
+      const f=personFiles[name]; const inputId='staff_pdf_'+section.replace(/\W/g,'_')+'_'+personId.replace(/\W/g,'_')+'_'+name.replace(/\W/g,'_');
+      const view=f&&f.data?`<button class="btn previewPdfBtn" onclick="openStaffPdf('${js2(personId)}','${js2(section)}','${js2(name)}')">Podgląd</button>`:`<span class="docEmpty">Brak pliku</span>`;
+      const manage=canStaffManage()?`<button class="btn addPdfBtn" onclick="document.getElementById('${inputId}').click()">+ PDF</button>${f&&f.data?`<button class="btn docRemoveBtn" onclick="removeStaffPdf('${js2(personId)}','${js2(section)}','${js2(name)}')">Usuń</button>`:''}<input class="docFileInput" type="file" id="${inputId}" accept="application/pdf" onchange="uploadStaffPdf('${js2(personId)}','${js2(section)}','${js2(name)}',this)">`:'';
+      return `<div class="docRow"><div class="docTitle">${esc2(name)}</div><div class="docActions">${view}${manage}</div></div>`;
+    }).join('') || '<p class="small docEmpty">Brak pozycji. Dodaj je w Admin → Kadry.</p>';
+  }
+  window.renderStaff=function(){
+    const box=document.getElementById('staffList'); if(!box) return;
+    if(!canStaffManage()){box.innerHTML='<div class="notice">Kadry widzi tylko Manager i Admin.</div>'; return;}
+    const people=staffPeople();
+    box.innerHTML=people.map(p=>`<details class="staffDetails"><summary><span>${esc2(p.name)}</span><span class="staffExamDate ${dateClass(p.nextExam)}">${dateLabel(p.nextExam)}</span></summary><div class="staffInside">
+      <div class="staffSubBox"><h3>Badania</h3><div class="staffDateRow"><label>Data kolejnego badania</label><input type="date" value="${esc2(p.nextExam||'')}" onchange="setStaffNextExam('${js2(p.id)}',this.value)"></div><div class="docsGrid">${renderDocRows(p.id,'Badania')}</div></div>
+      <div class="staffSubBox"><h3>Dokumenty</h3><div class="docsGrid">${renderDocRows(p.id,'Dokumenty')}</div></div>
+    </div></details>`).join('') || '<p class="small">Brak pracowników. Dodaj ich w Admin → Kadry.</p>';
+  };
+  window.setStaffNextExam=function(id,value){const people=staffPeople(); const p=people.find(x=>x.id===id); if(p){p.nextExam=value; saveStaffPeople(people); renderStaff(); renderStaffAdmin();}};
+  window.uploadStaffPdf=function(personId,section,name,input){
+    if(!canStaffManage()){alert('Dodawać pliki może Manager lub Admin.'); return;} const file=input.files&&input.files[0]; if(!file)return; if(file.type && file.type!=='application/pdf'){alert('Dodaj plik PDF.'); input.value=''; return;}
+    const reader=new FileReader(); reader.onload=function(){const data=staffFiles(); if(!data[personId])data[personId]={}; if(!data[personId][section])data[personId][section]={}; data[personId][section][name]={data:String(reader.result||''),addedAt:new Date().toISOString(),addedBy:(currentUser&&currentUser.name)||''}; saveStaffFiles(data); input.value=''; renderStaff();}; reader.readAsDataURL(file);
+  };
+  window.removeStaffPdf=function(personId,section,name){if(!canStaffManage()){alert('Usuwać pliki może Manager lub Admin.'); return;} if(!confirm('Usunąć plik PDF?'))return; const data=staffFiles(); if(data[personId]&&data[personId][section])delete data[personId][section][name]; saveStaffFiles(data); renderStaff();};
+  window.openStaffPdf=function(personId,section,name){const f=(((staffFiles()[personId]||{})[section]||{})[name]); if(!f||!f.data){alert('Brak dodanego pliku PDF.'); return;} const w=window.open('','_blank'); if(w){w.document.write(`<iframe src="${f.data}" style="border:0;width:100%;height:100vh"></iframe>`);w.document.close();}else alert('Przeglądarka zablokowała podgląd.');};
+  window.renderStaffAdmin=function(){
+    const peopleBox=document.getElementById('staffAdminList'); const typesBox=document.getElementById('staffDocTypesAdminList'); if(!peopleBox||!typesBox)return;
+    const people=staffPeople();
+    peopleBox.innerHTML=people.map((p,i)=>`<div class="adminListRow"><div class="row"><input value="${esc2(p.name)}" onchange="renameStaffPerson(${i},this.value)"><input type="date" value="${esc2(p.nextExam||'')}" onchange="setStaffNextExam('${js2(p.id)}',this.value)"><button class="btn danger" onclick="removeStaffPerson(${i})">Usuń</button></div></div>`).join('') || '<p class="small">Brak pracowników.</p>';
+    const section=document.getElementById('newStaffDocSection')?.value || 'Badania'; const types=staffTypes();
+    typesBox.innerHTML=(types[section]||[]).map((name,i)=>`<div class="adminListRow"><div class="row"><input value="${esc2(name)}" onchange="renameStaffDocType('${js2(section)}',${i},this.value)"><button class="btn danger" onclick="removeStaffDocType('${js2(section)}',${i})">Usuń</button></div></div>`).join('') || '<p class="small">Brak pozycji.</p>';
+  };
+  window.addStaffPerson=function(){if(!isStaffAdmin()){alert('Pracowników w Kadrach edytuje tylko Admin.'); return;} const inp=document.getElementById('newStaffName'); const name=(inp?.value||'').trim(); if(!name)return; const people=staffPeople(); people.push({id:'p_'+Date.now(),name,nextExam:''}); saveStaffPeople(people); if(inp)inp.value=''; renderStaffAdmin(); renderStaff();};
+  window.renameStaffPerson=function(i,value){if(!isStaffAdmin()){alert('Pracowników w Kadrach edytuje tylko Admin.'); renderStaffAdmin(); return;} const people=staffPeople(); const val=(value||'').trim(); if(people[i]&&val){people[i].name=val; saveStaffPeople(people);} renderStaff();};
+  window.removeStaffPerson=function(i){if(!isStaffAdmin()){alert('Pracowników w Kadrach edytuje tylko Admin.'); return;} if(!confirm('Usunąć pracownika z Kadr?'))return; const people=staffPeople(); const removed=people.splice(i,1)[0]; saveStaffPeople(people); if(removed){const f=staffFiles(); delete f[removed.id]; saveStaffFiles(f);} renderStaffAdmin(); renderStaff();};
+  window.addStaffDocType=function(){if(!isStaffAdmin()){alert('Rodzaje dokumentów edytuje tylko Admin.'); return;} const sec=document.getElementById('newStaffDocSection')?.value||'Badania'; const inp=document.getElementById('newStaffDocType'); const name=(inp?.value||'').trim(); if(!name)return; const types=staffTypes(); if(!types[sec])types[sec]=[]; if(!types[sec].includes(name))types[sec].push(name); saveStaffTypes(types); if(inp)inp.value=''; renderStaffAdmin(); renderStaff();};
+  window.renameStaffDocType=function(sec,i,value){if(!isStaffAdmin()){alert('Rodzaje dokumentów edytuje tylko Admin.'); renderStaffAdmin(); return;} const types=staffTypes(); const old=(types[sec]||[])[i]; const val=(value||'').trim(); if(old&&val){types[sec][i]=val; const files=staffFiles(); Object.keys(files).forEach(pid=>{ if(files[pid]&&files[pid][sec]&&files[pid][sec][old]&&!files[pid][sec][val]){files[pid][sec][val]=files[pid][sec][old]; delete files[pid][sec][old];} }); saveStaffTypes(types); saveStaffFiles(files);} renderStaffAdmin(); renderStaff();};
+  window.removeStaffDocType=function(sec,i){if(!isStaffAdmin()){alert('Rodzaje dokumentów edytuje tylko Admin.'); return;} if(!confirm('Usunąć typ dokumentu?'))return; const types=staffTypes(); const old=(types[sec]||[])[i]; if(old){types[sec].splice(i,1); const files=staffFiles(); Object.keys(files).forEach(pid=>{ if(files[pid]&&files[pid][sec])delete files[pid][sec][old]; }); saveStaffTypes(types); saveStaffFiles(files);} renderStaffAdmin(); renderStaff();};
+  const oldShowStaff=window.show; if(typeof oldShowStaff==='function'){window.show=function(id){oldShowStaff.apply(this,arguments); if(id==='staff')renderStaff(); if(id==='admin')renderStaffAdmin();};}
+  const oldFillStaff=window.fill; if(typeof oldFillStaff==='function'){window.fill=function(){oldFillStaff.apply(this,arguments); renderStaff(); renderStaffAdmin();};}
 })();
 </script>
 
@@ -4524,6 +5103,23 @@ body.theme-dark:not(.loginMode) #month .kcInactiveCell{background:#f8fafc!import
 .kcLockedNote{font-size:12px;font-weight:800;color:#166534;margin-top:8px}
 body.theme-dark:not(.loginMode) .kcMonthStatus{background:#14532d!important;color:#dcfce7!important;border-color:#22c55e!important}
 body.theme-dark:not(.loginMode) .kcMonthStatus.kcUnlocked{background:#713f12!important;color:#fef3c7!important;border-color:#facc15!important}
+
+/* v9.77 — Kadry */
+#staff .staffDetails{border:1px solid #d8dee8;border-radius:14px;margin:10px 0;background:#f8fafc;overflow:hidden}
+#staff .staffDetails summary{cursor:pointer;list-style:none;padding:13px 14px;font-weight:950;display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;background:white;color:#172033}
+#staff .staffDetails summary::-webkit-details-marker{display:none}
+#staff .staffDetails summary:after{content:'⌄';font-size:18px;color:#64748b}
+@media (orientation:landscape) and (min-width:800px){#staff .staffDetails summary:after{content:'›';font-size:28px;line-height:1}}
+#staff .staffDetails[open] summary:after{content:'⌃'}
+@media (orientation:landscape) and (min-width:800px){#staff .staffDetails[open] summary:after{content:'›'}}
+#staff .staffInside{padding:12px;display:grid;gap:12px}
+.staffExamDate{font-weight:900;white-space:nowrap}.staffGreen{color:#166534!important}.staffOrange{color:#d97706!important}.staffRed{color:#dc2626!important}
+.staffSubBox{border:1px solid #d8dee8;border-radius:14px;padding:12px;background:#fff}.staffSubBox h3{margin:0 0 10px 0}.staffDateRow{margin-bottom:10px}
+body.theme-dark:not(.loginMode) #staff .staffDetails{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .staffDetails summary{background:#111827!important;color:#f8fafc!important;border-color:rgba(148,163,184,.28)!important}
+body.theme-dark:not(.loginMode) #staff .staffDetails summary:after{color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .staffSubBox{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .docRow{background:#111827!important;color:#f8fafc!important;border-color:rgba(148,163,184,.28)!important}
 </style>
 <script>
 (function(){
@@ -4540,11 +5136,9 @@ body.theme-dark:not(.loginMode) .kcMonthStatus.kcUnlocked{background:#713f12!imp
   }
   function isMonthClosed(ym){return !!closedRec(ym)}
   function isCorrectionOpen(ym){return !!(state.monthCorrections && state.monthCorrections[ym] && state.monthCorrections[ym].unlocked)}
+  function canUnlockMonth(){return !!(currentUser && currentUser.role==='Admin')}
   function requirePin(txt){
-    if(!canApproveMonth()){alert('Tylko manager lub admin może wykonać tę operację.');return false}
-    const pin=prompt(txt||'Podaj PIN:');
-    if(pin===null) return false;
-    if(String(pin)!==String(currentUser.pin||'')){alert('Nieprawidłowy PIN.');return false}
+    // v9.69: prototyp bez PIN-u. Zatwierdza Manager/Admin, odblokowuje tylko Admin.
     return true;
   }
   function guardClosedEntry(date, action){
@@ -4556,10 +5150,10 @@ body.theme-dark:not(.loginMode) .kcMonthStatus.kcUnlocked{background:#713f12!imp
       return false;
     }
     if(action==='add'){
-      alert('Ten miesiąc jest zatwierdzony. Nie można dodawać nowych wpisów do zamkniętego miesiąca. Można poprawić istniejące wpisy po odblokowaniu PIN-em.');
+      alert('Ten miesiąc jest zatwierdzony. Nie można dodawać nowych wpisów do zamkniętego miesiąca. Admin może odblokować miesiąc do korekty.');
       return false;
     }
-    alert('Ten miesiąc jest zatwierdzony. Kliknij zielony przycisk „Zatwierdzono” w zakładce Miesiąc i podaj PIN, aby odblokować korektę wpisów.');
+    alert('Ten miesiąc jest zatwierdzony. Edycję może odblokować tylko Admin w zakładce Miesiąc.');
     return false;
   }
   window.kcIsMonthClosed=isMonthClosed;
@@ -4577,15 +5171,15 @@ body.theme-dark:not(.loginMode) .kcMonthStatus.kcUnlocked{background:#713f12!imp
         }
         return;
       }
-      if(!requirePin('Miesiąc '+ym+' jest zatwierdzony. Podaj PIN, aby odblokować tylko korektę wpisów:')) return;
+      if(!canUnlockMonth()){alert('Tylko Admin może odblokować zatwierdzony miesiąc.');return;}
+      if(!confirm('Odblokować miesiąc '+ymLabel(ym)+' tylko do korekty wpisów? Układ raportu pozostaje zamrożony.')) return;
       state.monthCorrections=state.monthCorrections||{};
       state.monthCorrections[ym]={unlocked:true,by:currentUser.name,at:nowIso()};
       save(); alert('Odblokowano korektę wpisów dla miesiąca '+ym+'. Układ raportu pozostaje zamrożony.'); renderMonth();
       return;
     }
     if(!canApproveMonth()){alert('Tylko manager lub admin może zatwierdzić miesiąc.');return}
-    if(!confirm('Zatwierdzić miesiąc '+ymLabel(ym)+'? Po zatwierdzeniu nie będzie można zmieniać układu ani historii bez PIN-u.')) return;
-    if(!requirePin('Podaj PIN, aby zatwierdzić miesiąc '+ym+':')) return;
+    if(!confirm('Zatwierdzić miesiąc '+ymLabel(ym)+'? Po zatwierdzeniu historia wpisów zostanie zablokowana.')) return;
     state.closedMonths=state.closedMonths||{};
     state.closedMonths[ym]={closed:true,by:currentUser.name,role:currentUser.role,at:nowIso()};
     if(state.monthCorrections) delete state.monthCorrections[ym];
@@ -4610,10 +5204,10 @@ body.theme-dark:not(.loginMode) .kcMonthStatus.kcUnlocked{background:#713f12!imp
     if(rec){
       if(isCorrectionOpen(ym)){
         const c=state.monthCorrections[ym];
-        b.classList.add('kcCorrection'); b.textContent='Korekta aktywna';
+        b.classList.add('kcCorrection'); b.textContent=(currentUser&&currentUser.role==='Admin')?'Zamknij korektę':'Korekta aktywna';
         s.className='kcMonthStatus kcUnlocked'; s.innerHTML='🔓 Korekta odblokowana: '+(c.by||'')+(c.at?' · '+fmtAt(c.at):'');
       }else{
-        b.textContent='Zatwierdzono';
+        b.textContent=(currentUser&&currentUser.role==='Admin')?'Odblokuj miesiąc':'Zatwierdzono';
         s.className='kcMonthStatus'; s.innerHTML='✅ Zatwierdzony: '+(rec.by||'')+(rec.at?' · '+fmtAt(rec.at):'');
       }
     }else{
@@ -4649,14 +5243,540 @@ body.theme-dark:not(.loginMode) .kcMonthStatus.kcUnlocked{background:#713f12!imp
       const dateInput=box.querySelector('input[type="date"]'); const ym=dateInput?ymFromDate(dateInput.value):'';
       if(ym && isMonthClosed(ym) && !isCorrectionOpen(ym)){
         box.classList.add('kcLockedField');
-        if(!box.querySelector('.kcLockedNote')) box.insertAdjacentHTML('beforeend','<div class="kcLockedNote">✅ Miesiąc zatwierdzony — edycja tylko po PIN-ie w zakładce Miesiąc.</div>');
+        if(!box.querySelector('.kcLockedNote')) box.insertAdjacentHTML('beforeend','<div class="kcLockedNote">✅ Miesiąc zatwierdzony — edycję może odblokować tylko Admin w zakładce Miesiąc.</div>');
       }
     });
   },0); };
 
   document.addEventListener('DOMContentLoaded',()=>setTimeout(()=>{try{window.kcUpdateMonthApprovalUi();}catch(e){}},200));
 })();
+
+
+/* v9.77 — Kadry: badania i dokumenty pracowników */
+(function(){
+  const DEF_STAFF_DOCS={
+    'Badania':['Okresowe','Sanitarne'],
+    'Dokumenty':['Umowy','Szkolenia BHP','Szkolenia HACCP','Uprawnienia','Oświadczenia','Inne dokumenty']
+  };
+  function esc2(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+  function js2(s){return String(s??'').replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/\n/g,' ');}
+  function canStaffManage(){return currentUser && (currentUser.role==='Manager'||currentUser.role==='Admin');}
+  function isStaffAdmin(){return currentUser && currentUser.role==='Admin';}
+  function staffTypes(){try{return JSON.parse(localStorage.getItem('kc_staff_doc_types_v1')||'null')||JSON.parse(JSON.stringify(DEF_STAFF_DOCS));}catch(e){return JSON.parse(JSON.stringify(DEF_STAFF_DOCS));}}
+  function saveStaffTypes(v){localStorage.setItem('kc_staff_doc_types_v1',JSON.stringify(v||DEF_STAFF_DOCS));}
+  function staffPeople(){
+    try{const saved=JSON.parse(localStorage.getItem('kc_staff_people_v1')||'null'); if(saved&&saved.length)return saved;}catch(e){}
+    const base=(typeof users!=='undefined'?users:[]).map(u=>({id:u.id||('p_'+u.name),name:u.name||'',nextExam:''}));
+    return base.length?base:[{id:'p1',name:'Rafał Gortak',nextExam:''}];
+  }
+  function saveStaffPeople(v){localStorage.setItem('kc_staff_people_v1',JSON.stringify(v||[]));}
+  function staffFiles(){try{return JSON.parse(localStorage.getItem('kc_staff_files_v1')||'{}')||{};}catch(e){return {};}}
+  function saveStaffFiles(v){localStorage.setItem('kc_staff_files_v1',JSON.stringify(v||{}));}
+  function dateLabel(v){if(!v)return 'Brak daty'; const [y,m,d]=String(v).split('-'); return d&&m&&y?`${d}.${m}.${y}r`:v;}
+  function dateClass(v){if(!v)return ''; const today=new Date(); today.setHours(0,0,0,0); const d=new Date(v+'T00:00:00'); const diff=(d-today)/(1000*60*60*24); if(diff<0)return 'staffRed'; if(diff<61)return 'staffOrange'; return 'staffGreen';}
+  function renderDocRows(personId,section){
+    const types=staffTypes(); const files=staffFiles(); const personFiles=((files[personId]||{})[section]||{});
+    return (types[section]||[]).map(name=>{
+      const f=personFiles[name]; const inputId='staff_pdf_'+section.replace(/\W/g,'_')+'_'+personId.replace(/\W/g,'_')+'_'+name.replace(/\W/g,'_');
+      const view=f&&f.data?`<button class="btn previewPdfBtn" onclick="openStaffPdf('${js2(personId)}','${js2(section)}','${js2(name)}')">Podgląd</button>`:`<span class="docEmpty">Brak pliku</span>`;
+      const manage=canStaffManage()?`<button class="btn addPdfBtn" onclick="document.getElementById('${inputId}').click()">+ PDF</button>${f&&f.data?`<button class="btn docRemoveBtn" onclick="removeStaffPdf('${js2(personId)}','${js2(section)}','${js2(name)}')">Usuń</button>`:''}<input class="docFileInput" type="file" id="${inputId}" accept="application/pdf" onchange="uploadStaffPdf('${js2(personId)}','${js2(section)}','${js2(name)}',this)">`:'';
+      return `<div class="docRow"><div class="docTitle">${esc2(name)}</div><div class="docActions">${view}${manage}</div></div>`;
+    }).join('') || '<p class="small docEmpty">Brak pozycji. Dodaj je w Admin → Kadry.</p>';
+  }
+  window.renderStaff=function(){
+    const box=document.getElementById('staffList'); if(!box) return;
+    if(!canStaffManage()){box.innerHTML='<div class="notice">Kadry widzi tylko Manager i Admin.</div>'; return;}
+    const people=staffPeople();
+    box.innerHTML=people.map(p=>`<details class="staffDetails"><summary><span>${esc2(p.name)}</span><span class="staffExamDate ${dateClass(p.nextExam)}">${dateLabel(p.nextExam)}</span></summary><div class="staffInside">
+      <div class="staffSubBox"><h3>Badania</h3><div class="staffDateRow"><label>Data kolejnego badania</label><input type="date" value="${esc2(p.nextExam||'')}" onchange="setStaffNextExam('${js2(p.id)}',this.value)"></div><div class="docsGrid">${renderDocRows(p.id,'Badania')}</div></div>
+      <div class="staffSubBox"><h3>Dokumenty</h3><div class="docsGrid">${renderDocRows(p.id,'Dokumenty')}</div></div>
+    </div></details>`).join('') || '<p class="small">Brak pracowników. Dodaj ich w Admin → Kadry.</p>';
+  };
+  window.setStaffNextExam=function(id,value){const people=staffPeople(); const p=people.find(x=>x.id===id); if(p){p.nextExam=value; saveStaffPeople(people); renderStaff(); renderStaffAdmin();}};
+  window.uploadStaffPdf=function(personId,section,name,input){
+    if(!canStaffManage()){alert('Dodawać pliki może Manager lub Admin.'); return;} const file=input.files&&input.files[0]; if(!file)return; if(file.type && file.type!=='application/pdf'){alert('Dodaj plik PDF.'); input.value=''; return;}
+    const reader=new FileReader(); reader.onload=function(){const data=staffFiles(); if(!data[personId])data[personId]={}; if(!data[personId][section])data[personId][section]={}; data[personId][section][name]={data:String(reader.result||''),addedAt:new Date().toISOString(),addedBy:(currentUser&&currentUser.name)||''}; saveStaffFiles(data); input.value=''; renderStaff();}; reader.readAsDataURL(file);
+  };
+  window.removeStaffPdf=function(personId,section,name){if(!canStaffManage()){alert('Usuwać pliki może Manager lub Admin.'); return;} if(!confirm('Usunąć plik PDF?'))return; const data=staffFiles(); if(data[personId]&&data[personId][section])delete data[personId][section][name]; saveStaffFiles(data); renderStaff();};
+  window.openStaffPdf=function(personId,section,name){const f=(((staffFiles()[personId]||{})[section]||{})[name]); if(!f||!f.data){alert('Brak dodanego pliku PDF.'); return;} const w=window.open('','_blank'); if(w){w.document.write(`<iframe src="${f.data}" style="border:0;width:100%;height:100vh"></iframe>`);w.document.close();}else alert('Przeglądarka zablokowała podgląd.');};
+  window.renderStaffAdmin=function(){
+    const peopleBox=document.getElementById('staffAdminList'); const typesBox=document.getElementById('staffDocTypesAdminList'); if(!peopleBox||!typesBox)return;
+    const people=staffPeople();
+    peopleBox.innerHTML=people.map((p,i)=>`<div class="adminListRow"><div class="row"><input value="${esc2(p.name)}" onchange="renameStaffPerson(${i},this.value)"><input type="date" value="${esc2(p.nextExam||'')}" onchange="setStaffNextExam('${js2(p.id)}',this.value)"><button class="btn danger" onclick="removeStaffPerson(${i})">Usuń</button></div></div>`).join('') || '<p class="small">Brak pracowników.</p>';
+    const section=document.getElementById('newStaffDocSection')?.value || 'Badania'; const types=staffTypes();
+    typesBox.innerHTML=(types[section]||[]).map((name,i)=>`<div class="adminListRow"><div class="row"><input value="${esc2(name)}" onchange="renameStaffDocType('${js2(section)}',${i},this.value)"><button class="btn danger" onclick="removeStaffDocType('${js2(section)}',${i})">Usuń</button></div></div>`).join('') || '<p class="small">Brak pozycji.</p>';
+  };
+  window.addStaffPerson=function(){if(!isStaffAdmin()){alert('Pracowników w Kadrach edytuje tylko Admin.'); return;} const inp=document.getElementById('newStaffName'); const name=(inp?.value||'').trim(); if(!name)return; const people=staffPeople(); people.push({id:'p_'+Date.now(),name,nextExam:''}); saveStaffPeople(people); if(inp)inp.value=''; renderStaffAdmin(); renderStaff();};
+  window.renameStaffPerson=function(i,value){if(!isStaffAdmin()){alert('Pracowników w Kadrach edytuje tylko Admin.'); renderStaffAdmin(); return;} const people=staffPeople(); const val=(value||'').trim(); if(people[i]&&val){people[i].name=val; saveStaffPeople(people);} renderStaff();};
+  window.removeStaffPerson=function(i){if(!isStaffAdmin()){alert('Pracowników w Kadrach edytuje tylko Admin.'); return;} if(!confirm('Usunąć pracownika z Kadr?'))return; const people=staffPeople(); const removed=people.splice(i,1)[0]; saveStaffPeople(people); if(removed){const f=staffFiles(); delete f[removed.id]; saveStaffFiles(f);} renderStaffAdmin(); renderStaff();};
+  window.addStaffDocType=function(){if(!isStaffAdmin()){alert('Rodzaje dokumentów edytuje tylko Admin.'); return;} const sec=document.getElementById('newStaffDocSection')?.value||'Badania'; const inp=document.getElementById('newStaffDocType'); const name=(inp?.value||'').trim(); if(!name)return; const types=staffTypes(); if(!types[sec])types[sec]=[]; if(!types[sec].includes(name))types[sec].push(name); saveStaffTypes(types); if(inp)inp.value=''; renderStaffAdmin(); renderStaff();};
+  window.renameStaffDocType=function(sec,i,value){if(!isStaffAdmin()){alert('Rodzaje dokumentów edytuje tylko Admin.'); renderStaffAdmin(); return;} const types=staffTypes(); const old=(types[sec]||[])[i]; const val=(value||'').trim(); if(old&&val){types[sec][i]=val; const files=staffFiles(); Object.keys(files).forEach(pid=>{ if(files[pid]&&files[pid][sec]&&files[pid][sec][old]&&!files[pid][sec][val]){files[pid][sec][val]=files[pid][sec][old]; delete files[pid][sec][old];} }); saveStaffTypes(types); saveStaffFiles(files);} renderStaffAdmin(); renderStaff();};
+  window.removeStaffDocType=function(sec,i){if(!isStaffAdmin()){alert('Rodzaje dokumentów edytuje tylko Admin.'); return;} if(!confirm('Usunąć typ dokumentu?'))return; const types=staffTypes(); const old=(types[sec]||[])[i]; if(old){types[sec].splice(i,1); const files=staffFiles(); Object.keys(files).forEach(pid=>{ if(files[pid]&&files[pid][sec])delete files[pid][sec][old]; }); saveStaffTypes(types); saveStaffFiles(files);} renderStaffAdmin(); renderStaff();};
+  const oldShowStaff=window.show; if(typeof oldShowStaff==='function'){window.show=function(id){oldShowStaff.apply(this,arguments); if(id==='staff')renderStaff(); if(id==='admin')renderStaffAdmin();};}
+  const oldFillStaff=window.fill; if(typeof oldFillStaff==='function'){window.fill=function(){oldFillStaff.apply(this,arguments); renderStaff(); renderStaffAdmin();};}
+})();
 </script>
+
+<script>
+(function(){
+  function kcEscAttr(s){return String(s??'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+  function haccpKey(loc,item){return String(loc||'')+'||'+String(item||'')}
+  function ensureHaccpFreq(){ if(!state.haccpFreq) state.haccpFreq={}; }
+  window.getHaccpFreq=function(loc,item){ ensureHaccpFreq(); return state.haccpFreq[haccpKey(loc,item)] || '90'; };
+  window.setHaccpFreq=function(loc,item,freq){ ensureHaccpFreq(); state.haccpFreq[haccpKey(loc,item)] = String(freq||'90'); save(); };
+  const freqOptions=function(val){return ['7','14','30','90'].map(v=>`<option value="${v}" ${String(val)===v?'selected':''}>Co ${v} dni</option>`).join('')};
+  window.renderHaccpAdmin=function(){
+    if(!document.getElementById('haccpAdminList')) return;
+    const loc=document.getElementById('haccpAdminLoc')?.value||state.locations[0];
+    const items=getHaccpItemsForLoc(loc);
+    haccpAdminList.innerHTML=`<div class="adminListTitle">${loc}</div>`+items.map((x,i)=>`<div class="adminListRow"><div class="row"><input value="${kcEscAttr(x)}" onchange="renameHaccpItem('${String(loc).replace(/'/g,'&#39;')}',${i},this.value)"><select class="freqSelect" onchange="setHaccpFreq('${String(loc).replace(/'/g,'&#39;')}','${String(x).replace(/'/g,'&#39;')}',this.value)">${freqOptions(getHaccpFreq(loc,x))}</select><button class="btn danger" onclick="removeHaccpItem('${String(loc).replace(/'/g,'&#39;')}',${i})">Usuń</button></div></div>`).join('');
+  };
+  const oldAddH=window.addHaccpItem;
+  window.addHaccpItem=function(){
+    const loc=document.getElementById('haccpAdminLoc')?.value||state.locations[0];
+    const name=document.getElementById('newHaccpItem')?.value.trim();
+    const freq=document.getElementById('newHaccpFreq')?.value||'90';
+    const before=(getHaccpItemsForLoc(loc)||[]).slice();
+    const r=oldAddH.apply(this,arguments);
+    const after=(getHaccpItemsForLoc(loc)||[]);
+    const added=name && after.includes(name) && (!before.includes(name) || !state.haccpFreq || !state.haccpFreq[haccpKey(loc,name)]);
+    if(added){ setHaccpFreq(loc,name,freq); }
+    renderHaccpAdmin();
+    return r;
+  };
+  const oldRenameH=window.renameHaccpItem;
+  window.renameHaccpItem=function(loc,i,value){
+    const old=(getHaccpItemsForLoc(loc)||[])[i];
+    const oldFreq=getHaccpFreq(loc,old);
+    const r=oldRenameH.apply(this,arguments);
+    if(old && value){ ensureHaccpFreq(); delete state.haccpFreq[haccpKey(loc,old)]; state.haccpFreq[haccpKey(loc,String(value).trim())]=oldFreq; save(); }
+    renderHaccpAdmin();
+    return r;
+  };
+})();
+
+
+/* v9.75 — Procedury jak HACCP: pozycje + Podgląd / + PDF / Usuń + Admin edycja */
+(function(){
+  const PROC_DEFAULT={
+    'Procedury':['Mycie rąk','Mycie i dezynfekcja powierzchni','Przyjęcie dostawy'],
+    'Szkolenia':['Szkolenie HACCP','Szkolenie stanowiskowe'],
+    'Instrukcje':['Instrukcja mycia rąk','Instrukcja dezynfekcji sprzętu']
+  };
+  const PROC_CATS=['Procedury','Szkolenia','Instrukcje'];
+  function esc(v){return String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+  function js(v){return String(v??'').replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/\n/g,' ');}
+  function canManageProc(){return !!(typeof currentUser!=='undefined' && currentUser && (currentUser.role==='Admin' || currentUser.role==='Manager'));}
+  function isAdminProc(){return !!(typeof currentUser!=='undefined' && currentUser && currentUser.role==='Admin');}
+  function procTypes(){
+    try{
+      const saved=JSON.parse(localStorage.getItem('kc_proc_doc_types_v2')||'null');
+      if(saved && typeof saved==='object'){
+        const out={}; PROC_CATS.forEach(c=>out[c]=Array.isArray(saved[c])&&saved[c].length?saved[c]:PROC_DEFAULT[c].slice()); return out;
+      }
+    }catch(e){}
+    return JSON.parse(JSON.stringify(PROC_DEFAULT));
+  }
+  function saveProcTypes(obj){localStorage.setItem('kc_proc_doc_types_v2',JSON.stringify(obj||{}));}
+  function procFiles(){try{return JSON.parse(localStorage.getItem('kc_proc_files_v2')||'{}')||{};}catch(e){return {};}}
+  function saveProcFiles(obj){localStorage.setItem('kc_proc_files_v2',JSON.stringify(obj||{}));}
+  function curProcLoc2(){return document.getElementById('procLoc')?.value || window.state?.locations?.[0] || '';}
+  function fileFor(loc,cat,name){return (((procFiles()[loc]||{})[cat]||{})[name]);}
+
+  window.renderProcedureDocs=function(){
+    const box=document.getElementById('procList'); if(!box) return;
+    const loc=curProcLoc2(); const types=procTypes();
+    box.innerHTML=PROC_CATS.map((cat)=>{
+      const rows=(types[cat]||[]).map((name,idx)=>{
+        const f=fileFor(loc,cat,name); const inputId='procPdf_'+cat.replace(/\W/g,'_')+'_'+idx;
+        const view=f&&f.data?`<button class="btn previewPdfBtn" onclick="openProcedureDocV2('${js(loc)}','${js(cat)}','${js(name)}')">Podgląd</button>`:`<span class="docEmpty">Brak pliku</span>`;
+        const manage=canManageProc()?`<button class="btn addPdfBtn" onclick="document.getElementById('${inputId}').click()">+ PDF</button>${f&&f.data?`<button class="btn docRemoveBtn" onclick="removeProcedurePdf('${js(loc)}','${js(cat)}','${js(name)}')">Usuń</button>`:''}<input class="docFileInput" type="file" id="${inputId}" accept="application/pdf" onchange="uploadProcedurePdf('${js(loc)}','${js(cat)}','${js(name)}',this)">`:'';
+        return `<div class="docRow"><div><div class="docTitle">${esc(name)}</div></div><div class="docActions">${view}${manage}</div></div>`;
+      }).join('') || '<p class="small docEmpty">Brak pozycji. Dodaj je w Admin → Procedury.</p>';
+      return `<details class="procDetails"><summary>${esc(cat)}</summary><div class="procInside"><div class="docsGrid">${rows}</div></div></details>`;
+    }).join('');
+  };
+
+  window.uploadProcedurePdf=function(loc,cat,name,input){
+    if(!canManageProc()){alert('Dodawać PDF może Manager lub Admin.'); return;}
+    const file=input?.files?.[0]; if(!file) return;
+    if(file.type && file.type!=='application/pdf'){alert('Dodaj plik PDF.'); input.value=''; return;}
+    const reader=new FileReader();
+    reader.onload=function(){const data=procFiles(); if(!data[loc]) data[loc]={}; if(!data[loc][cat]) data[loc][cat]={}; data[loc][cat][name]={data:String(reader.result||''),addedAt:new Date().toISOString(),addedBy:(currentUser&&currentUser.name)||''}; saveProcFiles(data); input.value=''; renderProcedureDocs();};
+    reader.readAsDataURL(file);
+  };
+  window.removeProcedurePdf=function(loc,cat,name){
+    if(!canManageProc()){alert('Usuwać PDF może Manager lub Admin.'); return;}
+    if(!confirm('Usunąć PDF dla pozycji: '+name+'?')) return;
+    const data=procFiles(); if(data[loc]&&data[loc][cat]&&data[loc][cat][name]) delete data[loc][cat][name]; saveProcFiles(data); renderProcedureDocs();
+  };
+  window.openProcedureDocV2=function(loc,cat,name){
+    const f=fileFor(loc,cat,name); if(!f||!f.data){alert('Brak dodanego pliku PDF.'); return;}
+    const w=window.open('','_blank'); if(!w){alert('Przeglądarka zablokowała nowe okno.'); return;}
+    w.document.write(`<title>${esc(name)}</title><iframe src="${f.data}" style="position:fixed;inset:0;width:100%;height:100%;border:0"></iframe>`); w.document.close();
+  };
+
+  window.renderProcedureDocsAdmin=function(){
+    const box=document.getElementById('procDocsAdminList'); if(!box) return;
+    const types=procTypes();
+    const cat=document.getElementById('newProcDocCategory')?.value || 'Procedury';
+    const rows=(types[cat]||[]).map((name,i)=>`<div class="adminListRow"><div class="row"><input value="${esc(name)}" onchange="renameProcedureDocType('${js(cat)}',${i},this.value)"><button class="btn danger" onclick="removeProcedureDocType('${js(cat)}',${i})">Usuń</button></div></div>`).join('') || '<p class="small">Brak pozycji.</p>';
+    box.innerHTML=`<div class="adminListTitle">${esc(cat)}</div>${rows}`;
+  };
+  window.addProcedureDocType=function(){
+    if(!isAdminProc()){alert('Listę Procedur edytuje tylko Admin.'); return;}
+    const cat=document.getElementById('newProcDocCategory')?.value || 'Procedury';
+    const inp=document.getElementById('newProcDocType'); const name=(inp?.value||'').trim(); if(!name) return;
+    const types=procTypes(); if(!types[cat]) types[cat]=[]; if(!types[cat].includes(name)) types[cat].push(name); saveProcTypes(types); if(inp) inp.value=''; renderProcedureDocsAdmin(); renderProcedureDocs();
+  };
+  window.renameProcedureDocType=function(cat,i,value){
+    if(!isAdminProc()){alert('Listę Procedur edytuje tylko Admin.'); renderProcedureDocsAdmin(); return;}
+    const types=procTypes(); const old=(types[cat]||[])[i]; const val=String(value||'').trim(); if(!old || !val){renderProcedureDocsAdmin(); return;}
+    types[cat][i]=val; saveProcTypes(types);
+    const data=procFiles(); Object.keys(data).forEach(loc=>{ if(data[loc]&&data[loc][cat]&&data[loc][cat][old]&&!data[loc][cat][val]){data[loc][cat][val]=data[loc][cat][old]; delete data[loc][cat][old];} }); saveProcFiles(data);
+    renderProcedureDocsAdmin(); renderProcedureDocs();
+  };
+  window.removeProcedureDocType=function(cat,i){
+    if(!isAdminProc()){alert('Listę Procedur edytuje tylko Admin.'); return;}
+    const types=procTypes(); const name=(types[cat]||[])[i]; if(!name) return;
+    if(!confirm('Usunąć pozycję z listy '+cat+': '+name+'? Plik nie będzie wyświetlany.')) return;
+    types[cat].splice(i,1); saveProcTypes(types); renderProcedureDocsAdmin(); renderProcedureDocs();
+  };
+
+  const oldFill2=window.fill;
+  if(typeof oldFill2==='function'){
+    window.fill=function(){oldFill2.apply(this,arguments); if(document.getElementById('procLoc')) filterLocationsForSelect('procLoc'); renderProcedureDocs(); renderProcedureDocsAdmin();};
+  }
+  const oldShow2=window.show;
+  if(typeof oldShow2==='function'){
+    window.show=function(id){oldShow2.apply(this,arguments); if(id==='procedures') renderProcedureDocs(); if(id==='admin') renderProcedureDocsAdmin();};
+  }
+})();
+
+
+
+/* v9.77 — Kadry: badania i dokumenty pracowników */
+(function(){
+  const DEF_STAFF_DOCS={
+    'Badania':['Okresowe','Sanitarne'],
+    'Dokumenty':['Umowy','Szkolenia BHP','Szkolenia HACCP','Uprawnienia','Oświadczenia','Inne dokumenty']
+  };
+  function esc2(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+  function js2(s){return String(s??'').replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/\n/g,' ');}
+  function canStaffManage(){return currentUser && (currentUser.role==='Manager'||currentUser.role==='Admin');}
+  function isStaffAdmin(){return currentUser && currentUser.role==='Admin';}
+  function staffTypes(){try{return JSON.parse(localStorage.getItem('kc_staff_doc_types_v1')||'null')||JSON.parse(JSON.stringify(DEF_STAFF_DOCS));}catch(e){return JSON.parse(JSON.stringify(DEF_STAFF_DOCS));}}
+  function saveStaffTypes(v){localStorage.setItem('kc_staff_doc_types_v1',JSON.stringify(v||DEF_STAFF_DOCS));}
+  function staffPeople(){
+    try{const saved=JSON.parse(localStorage.getItem('kc_staff_people_v1')||'null'); if(saved&&saved.length)return saved;}catch(e){}
+    const base=(typeof users!=='undefined'?users:[]).map(u=>({id:u.id||('p_'+u.name),name:u.name||'',nextExam:''}));
+    return base.length?base:[{id:'p1',name:'Rafał Gortak',nextExam:''}];
+  }
+  function saveStaffPeople(v){localStorage.setItem('kc_staff_people_v1',JSON.stringify(v||[]));}
+  function staffFiles(){try{return JSON.parse(localStorage.getItem('kc_staff_files_v1')||'{}')||{};}catch(e){return {};}}
+  function saveStaffFiles(v){localStorage.setItem('kc_staff_files_v1',JSON.stringify(v||{}));}
+  function dateLabel(v){if(!v)return 'Brak daty'; const [y,m,d]=String(v).split('-'); return d&&m&&y?`${d}.${m}.${y}r`:v;}
+  function dateClass(v){if(!v)return ''; const today=new Date(); today.setHours(0,0,0,0); const d=new Date(v+'T00:00:00'); const diff=(d-today)/(1000*60*60*24); if(diff<0)return 'staffRed'; if(diff<61)return 'staffOrange'; return 'staffGreen';}
+  function renderDocRows(personId,section){
+    const types=staffTypes(); const files=staffFiles(); const personFiles=((files[personId]||{})[section]||{});
+    return (types[section]||[]).map(name=>{
+      const f=personFiles[name]; const inputId='staff_pdf_'+section.replace(/\W/g,'_')+'_'+personId.replace(/\W/g,'_')+'_'+name.replace(/\W/g,'_');
+      const view=f&&f.data?`<button class="btn previewPdfBtn" onclick="openStaffPdf('${js2(personId)}','${js2(section)}','${js2(name)}')">Podgląd</button>`:`<span class="docEmpty">Brak pliku</span>`;
+      const manage=canStaffManage()?`<button class="btn addPdfBtn" onclick="document.getElementById('${inputId}').click()">+ PDF</button>${f&&f.data?`<button class="btn docRemoveBtn" onclick="removeStaffPdf('${js2(personId)}','${js2(section)}','${js2(name)}')">Usuń</button>`:''}<input class="docFileInput" type="file" id="${inputId}" accept="application/pdf" onchange="uploadStaffPdf('${js2(personId)}','${js2(section)}','${js2(name)}',this)">`:'';
+      return `<div class="docRow"><div class="docTitle">${esc2(name)}</div><div class="docActions">${view}${manage}</div></div>`;
+    }).join('') || '<p class="small docEmpty">Brak pozycji. Dodaj je w Admin → Kadry.</p>';
+  }
+  window.renderStaff=function(){
+    const box=document.getElementById('staffList'); if(!box) return;
+    if(!canStaffManage()){box.innerHTML='<div class="notice">Kadry widzi tylko Manager i Admin.</div>'; return;}
+    const people=staffPeople();
+    box.innerHTML=people.map(p=>`<details class="staffDetails"><summary><span>${esc2(p.name)}</span><span class="staffExamDate ${dateClass(p.nextExam)}">${dateLabel(p.nextExam)}</span></summary><div class="staffInside">
+      <div class="staffSubBox"><h3>Badania</h3><div class="staffDateRow"><label>Data kolejnego badania</label><input type="date" value="${esc2(p.nextExam||'')}" onchange="setStaffNextExam('${js2(p.id)}',this.value)"></div><div class="docsGrid">${renderDocRows(p.id,'Badania')}</div></div>
+      <div class="staffSubBox"><h3>Dokumenty</h3><div class="docsGrid">${renderDocRows(p.id,'Dokumenty')}</div></div>
+    </div></details>`).join('') || '<p class="small">Brak pracowników. Dodaj ich w Admin → Kadry.</p>';
+  };
+  window.setStaffNextExam=function(id,value){const people=staffPeople(); const p=people.find(x=>x.id===id); if(p){p.nextExam=value; saveStaffPeople(people); renderStaff(); renderStaffAdmin();}};
+  window.uploadStaffPdf=function(personId,section,name,input){
+    if(!canStaffManage()){alert('Dodawać pliki może Manager lub Admin.'); return;} const file=input.files&&input.files[0]; if(!file)return; if(file.type && file.type!=='application/pdf'){alert('Dodaj plik PDF.'); input.value=''; return;}
+    const reader=new FileReader(); reader.onload=function(){const data=staffFiles(); if(!data[personId])data[personId]={}; if(!data[personId][section])data[personId][section]={}; data[personId][section][name]={data:String(reader.result||''),addedAt:new Date().toISOString(),addedBy:(currentUser&&currentUser.name)||''}; saveStaffFiles(data); input.value=''; renderStaff();}; reader.readAsDataURL(file);
+  };
+  window.removeStaffPdf=function(personId,section,name){if(!canStaffManage()){alert('Usuwać pliki może Manager lub Admin.'); return;} if(!confirm('Usunąć plik PDF?'))return; const data=staffFiles(); if(data[personId]&&data[personId][section])delete data[personId][section][name]; saveStaffFiles(data); renderStaff();};
+  window.openStaffPdf=function(personId,section,name){const f=(((staffFiles()[personId]||{})[section]||{})[name]); if(!f||!f.data){alert('Brak dodanego pliku PDF.'); return;} const w=window.open('','_blank'); if(w){w.document.write(`<iframe src="${f.data}" style="border:0;width:100%;height:100vh"></iframe>`);w.document.close();}else alert('Przeglądarka zablokowała podgląd.');};
+  window.renderStaffAdmin=function(){
+    const peopleBox=document.getElementById('staffAdminList'); const typesBox=document.getElementById('staffDocTypesAdminList'); if(!peopleBox||!typesBox)return;
+    const people=staffPeople();
+    peopleBox.innerHTML=people.map((p,i)=>`<div class="adminListRow"><div class="row"><input value="${esc2(p.name)}" onchange="renameStaffPerson(${i},this.value)"><input type="date" value="${esc2(p.nextExam||'')}" onchange="setStaffNextExam('${js2(p.id)}',this.value)"><button class="btn danger" onclick="removeStaffPerson(${i})">Usuń</button></div></div>`).join('') || '<p class="small">Brak pracowników.</p>';
+    const section=document.getElementById('newStaffDocSection')?.value || 'Badania'; const types=staffTypes();
+    typesBox.innerHTML=(types[section]||[]).map((name,i)=>`<div class="adminListRow"><div class="row"><input value="${esc2(name)}" onchange="renameStaffDocType('${js2(section)}',${i},this.value)"><button class="btn danger" onclick="removeStaffDocType('${js2(section)}',${i})">Usuń</button></div></div>`).join('') || '<p class="small">Brak pozycji.</p>';
+  };
+  window.addStaffPerson=function(){if(!isStaffAdmin()){alert('Pracowników w Kadrach edytuje tylko Admin.'); return;} const inp=document.getElementById('newStaffName'); const name=(inp?.value||'').trim(); if(!name)return; const people=staffPeople(); people.push({id:'p_'+Date.now(),name,nextExam:''}); saveStaffPeople(people); if(inp)inp.value=''; renderStaffAdmin(); renderStaff();};
+  window.renameStaffPerson=function(i,value){if(!isStaffAdmin()){alert('Pracowników w Kadrach edytuje tylko Admin.'); renderStaffAdmin(); return;} const people=staffPeople(); const val=(value||'').trim(); if(people[i]&&val){people[i].name=val; saveStaffPeople(people);} renderStaff();};
+  window.removeStaffPerson=function(i){if(!isStaffAdmin()){alert('Pracowników w Kadrach edytuje tylko Admin.'); return;} if(!confirm('Usunąć pracownika z Kadr?'))return; const people=staffPeople(); const removed=people.splice(i,1)[0]; saveStaffPeople(people); if(removed){const f=staffFiles(); delete f[removed.id]; saveStaffFiles(f);} renderStaffAdmin(); renderStaff();};
+  window.addStaffDocType=function(){if(!isStaffAdmin()){alert('Rodzaje dokumentów edytuje tylko Admin.'); return;} const sec=document.getElementById('newStaffDocSection')?.value||'Badania'; const inp=document.getElementById('newStaffDocType'); const name=(inp?.value||'').trim(); if(!name)return; const types=staffTypes(); if(!types[sec])types[sec]=[]; if(!types[sec].includes(name))types[sec].push(name); saveStaffTypes(types); if(inp)inp.value=''; renderStaffAdmin(); renderStaff();};
+  window.renameStaffDocType=function(sec,i,value){if(!isStaffAdmin()){alert('Rodzaje dokumentów edytuje tylko Admin.'); renderStaffAdmin(); return;} const types=staffTypes(); const old=(types[sec]||[])[i]; const val=(value||'').trim(); if(old&&val){types[sec][i]=val; const files=staffFiles(); Object.keys(files).forEach(pid=>{ if(files[pid]&&files[pid][sec]&&files[pid][sec][old]&&!files[pid][sec][val]){files[pid][sec][val]=files[pid][sec][old]; delete files[pid][sec][old];} }); saveStaffTypes(types); saveStaffFiles(files);} renderStaffAdmin(); renderStaff();};
+  window.removeStaffDocType=function(sec,i){if(!isStaffAdmin()){alert('Rodzaje dokumentów edytuje tylko Admin.'); return;} if(!confirm('Usunąć typ dokumentu?'))return; const types=staffTypes(); const old=(types[sec]||[])[i]; if(old){types[sec].splice(i,1); const files=staffFiles(); Object.keys(files).forEach(pid=>{ if(files[pid]&&files[pid][sec])delete files[pid][sec][old]; }); saveStaffTypes(types); saveStaffFiles(files);} renderStaffAdmin(); renderStaff();};
+  const oldShowStaff=window.show; if(typeof oldShowStaff==='function'){window.show=function(id){oldShowStaff.apply(this,arguments); if(id==='staff')renderStaff(); if(id==='admin')renderStaffAdmin();};}
+  const oldFillStaff=window.fill; if(typeof oldFillStaff==='function'){window.fill=function(){oldFillStaff.apply(this,arguments); renderStaff(); renderStaffAdmin();};}
+})();
+</script>
+
+
+<!-- v9.82 — Historia edycji / dziennik audytu -->
+<script>
+(function(){
+  const AUDIT_KEY='kc_audit_log_v1';
+  const CAT={entries:'Wpisy',docs:'Dokumenty',admin:'Admin',month:'Miesiące'};
+  function safe(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+  function now(){return new Date().toISOString();}
+  function dlabel(iso){
+    const d=new Date(iso||Date.now());
+    const dd=String(d.getDate()).padStart(2,'0'), mm=String(d.getMonth()+1).padStart(2,'0'), yy=d.getFullYear();
+    const hh=String(d.getHours()).padStart(2,'0'), mi=String(d.getMinutes()).padStart(2,'0');
+    return `${dd}.${mm}.${yy} ${hh}:${mi}`;
+  }
+  function auditList(){try{return JSON.parse(localStorage.getItem(AUDIT_KEY)||'[]')||[]}catch(e){return []}}
+  function saveAuditList(v){localStorage.setItem(AUDIT_KEY,JSON.stringify((v||[]).slice(0,3000)));}
+  window.kcAudit=function(category, action, details, extra){
+    try{
+      const u=(typeof currentUser!=='undefined' && currentUser) ? currentUser : null;
+      const arr=auditList();
+      arr.unshift({id:'a_'+Date.now()+'_'+Math.random().toString(16).slice(2),at:now(),category,action,details,extra:extra||'',user:u?u.name:'System',role:u?u.role:'System'});
+      saveAuditList(arr);
+    }catch(e){}
+  };
+  function icon(cat,action){
+    if(action&&/usun/i.test(action))return '🔴';
+    if(cat==='month')return '🔵';
+    if(cat==='docs')return '📄';
+    if(cat==='admin')return '⚙️';
+    if(cat==='entries')return '📝';
+    return '🟢';
+  }
+  window.renderAuditLog=function(){
+    const box=document.getElementById('auditResult'); if(!box)return;
+    if(!(typeof currentUser!=='undefined' && currentUser && currentUser.role==='Admin')){box.innerHTML='<div class="notice">Historia edycji jest widoczna tylko dla Admina.</div>';return;}
+    const cat=document.getElementById('auditCat')?.value||'all';
+    const q=(document.getElementById('auditSearch')?.value||'').trim().toLowerCase();
+    const from=document.getElementById('auditFrom')?.value||'';
+    const to=document.getElementById('auditTo')?.value||'';
+    let arr=auditList();
+    if(cat!=='all') arr=arr.filter(x=>x.category===cat);
+    if(from) arr=arr.filter(x=>String(x.at).slice(0,10)>=from);
+    if(to) arr=arr.filter(x=>String(x.at).slice(0,10)<=to);
+    if(q) arr=arr.filter(x=>[x.user,x.role,x.action,x.details,x.extra,CAT[x.category]].join(' ').toLowerCase().includes(q));
+    box.innerHTML='<div class="historyCount">Znaleziono: '+arr.length+' wpisów</div>'+ (arr.map(x=>`
+      <div class="auditItem">
+        <div class="auditTop"><b>${dlabel(x.at)}</b><span class="auditBadge">${safe(CAT[x.category]||x.category)}</span></div>
+        <div class="auditWho">${icon(x.category,x.action)} <b>${safe(x.user)}</b> <span>${safe(x.role)}</span></div>
+        <div class="auditAction">${safe(x.action)}</div>
+        <div class="auditDetails">${safe(x.details)}</div>
+        ${x.extra?`<div class="auditExtra">${safe(x.extra)}</div>`:''}
+      </div>`).join('') || '<p class="small">Brak wpisów audytu.</p>');
+  };
+  function ensureAuditUI(){
+    const nav=document.querySelector('#appArea .nav');
+    if(nav && !document.getElementById('t-audit')){
+      const b=document.createElement('button'); b.id='t-audit'; b.className='adminOnly'; b.textContent='Historia edycji'; b.onclick=function(){show('audit')}; nav.appendChild(b);
+    }
+    const app=document.getElementById('appArea');
+    if(app && !document.getElementById('audit')){
+      const sec=document.createElement('section'); sec.id='audit'; sec.className='hidden'; sec.innerHTML=`
+      <div class="card">
+        <div class="historyFilters"><h2>Historia edycji</h2>
+        <p>Audyt działań: wpisy, dokumenty, ustawienia Admina i zatwierdzanie miesięcy.</p>
+        <div class="row">
+          <select id="auditCat" onchange="renderAuditLog()">
+            <option value="all">Wszystko</option>
+            <option value="entries">Wpisy</option>
+            <option value="docs">Dokumenty</option>
+            <option value="admin">Admin</option>
+            <option value="month">Miesiące</option>
+          </select>
+          <input id="auditSearch" placeholder="Szukaj: Rafał, PDF, Chłodnia..." oninput="renderAuditLog()">
+          <input type="date" id="auditFrom" onchange="renderAuditLog()">
+          <input type="date" id="auditTo" onchange="renderAuditLog()">
+          <button class="btn primary" onclick="renderAuditLog()">Pokaż</button>
+        </div></div>
+        <div id="auditResult"></div>
+      </div>`;
+      const hist=document.getElementById('history');
+      if(hist) hist.insertAdjacentElement('afterend',sec); else app.appendChild(sec);
+    }
+  }
+  ensureAuditUI();
+  const oldShow=window.show;
+  window.show=function(id){
+    ensureAuditUI();
+    if(id==='audit'){
+      if(!(typeof currentUser!=='undefined' && currentUser && currentUser.role==='Admin')){alert('Historia edycji tylko dla Admina.'); id='panel';}
+    }
+    if(typeof oldShow==='function') oldShow.apply(this,arguments);
+    const a=document.getElementById('audit'), tb=document.getElementById('t-audit');
+    if(a){
+      const on=id==='audit';
+      a.classList.toggle('hidden',!on);
+      if(on){['panel','temp','clean','haccp','docs','procedures','staff','month','admin','history'].forEach(x=>{document.getElementById(x)?.classList.add('hidden');document.getElementById('t-'+x)?.classList.remove('active')});renderAuditLog();}
+    }
+    if(tb) tb.classList.toggle('active',id==='audit');
+  };
+  function wrap(name,category,action,detailFn){
+    const old=window[name]; if(typeof old!=='function')return;
+    window[name]=function(){
+      let before=''; try{before=detailFn?detailFn.apply(this,arguments):''}catch(e){}
+      const res=old.apply(this,arguments);
+      try{kcAudit(category,action, before||name);}catch(e){}
+      return res;
+    }
+  }
+  // Wpisy i ich edycja
+  wrap('saveTemp','entries','Dodano wpis temperatury',()=>`${document.getElementById('tempLoc')?.value||''} → ${document.getElementById('tempDev')?.value||''}, ${document.getElementById('tempVal')?.value||''}°C`);
+  wrap('saveClean','entries','Dodano wpis sprzątania',()=>`${document.getElementById('cleanLoc')?.value||''} → ${document.getElementById('cleanShift')?.value||''}`);
+  wrap('saveHaccp','entries','Dodano wpis dat',()=>`${document.getElementById('haccpLoc')?.value||''}`);
+  const oldEdit=window.editLog; if(typeof oldEdit==='function') window.editLog=function(id,field,value,isTemp){const x=(typeof logs!=='undefined'?logs:[]).find(a=>a.id===id); const oldVal=x?x[field]:''; const r=oldEdit.apply(this,arguments); kcAudit('entries','Edytowano wpis',`${x?x.kind:''} ${x?x.loc:''} ${x?(x.dev||x.shift||''):''}`,`${field}: ${oldVal||''} → ${value||''}`); return r;};
+  const oldDel=window.deleteLog; if(typeof oldDel==='function') window.deleteLog=function(id){const x=(typeof logs!=='undefined'?logs:[]).find(a=>a.id===id); const r=oldDel.apply(this,arguments); kcAudit('entries','Usunięto wpis',x?`${x.kind} ${x.loc} ${x.dev||x.shift||''} ${x.date||''}`:id); return r;};
+  // Dokumenty PDF
+  wrap('uploadHaccpPdf','docs','Dodano / podmieniono PDF HACCP',(loc,name)=>`HACCP → ${loc} → ${name}`);
+  wrap('removeHaccpPdf','docs','Usunięto PDF HACCP',(loc,name)=>`HACCP → ${loc} → ${name}`);
+  wrap('uploadProcedurePdf','docs','Dodano / podmieniono PDF Procedury',(loc,cat,name)=>`Procedury → ${loc} → ${cat} → ${name}`);
+  wrap('removeProcedurePdf','docs','Usunięto PDF Procedury',(loc,cat,name)=>`Procedury → ${loc} → ${cat} → ${name}`);
+  wrap('uploadStaffPdf','docs','Dodano / podmieniono PDF Kadry',(pid,section,name)=>`Kadry → ${section} → ${name}`);
+  wrap('removeStaffPdf','docs','Usunięto PDF Kadry',(pid,section,name)=>`Kadry → ${section} → ${name}`);
+  // Admin i konfiguracja
+  ['addLocation','removeLocation','renameLocation','addDevice','removeDev','renameDev','addShift','removeShift','renameShift','addCleanItem','removeCleanItem','renameCleanItem','addHaccpItem','removeHaccpItem','renameHaccpItem','addUser','deleteUser','editUser','addHaccpDocType','removeHaccpDocType','renameHaccpDocType','addProcedureDocType','removeProcedureDocType','renameProcedureDocType','addStaffPerson','removeStaffPerson','renameStaffPerson','addStaffDocType','removeStaffDocType','renameStaffDocType'].forEach(fn=>wrap(fn,'admin','Zmiana w Adminie',function(){return fn+' '+Array.from(arguments).slice(0,3).join(' → ')}));
+  // Miesiące
+  wrap('approveMonth','month','Zatwierdzono / odblokowano miesiąc',()=>document.getElementById('monthPick')?.value||'');
+  const oldRefresh=window.refresh; if(typeof oldRefresh==='function') window.refresh=function(){const r=oldRefresh.apply(this,arguments); ensureAuditUI(); return r;};
+})();
+</script>
+<style>
+#audit .auditItem{border:1px solid #d8dee8;border-radius:14px;padding:12px;margin:10px 0;background:#fff;color:#172033}
+#audit .auditTop{display:flex;justify-content:space-between;gap:10px;align-items:center;border-bottom:1px solid #e5e7eb;padding-bottom:8px;margin-bottom:8px}
+#audit .auditBadge{font-size:12px;font-weight:900;background:#dbeafe;color:#1e40af;border-radius:999px;padding:5px 8px;white-space:nowrap}
+#audit .auditWho{font-size:16px;margin:4px 0}.auditWho span{color:#64748b;font-weight:800;margin-left:6px}
+#audit .auditAction{font-weight:950;font-size:18px;margin:6px 0;color:#172033}
+#audit .auditDetails{font-size:16px}.auditExtra{margin-top:6px;color:#64748b;font-weight:700}
+body.theme-dark:not(.loginMode) #audit .auditItem{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #audit .auditTop{border-bottom-color:rgba(148,163,184,.28)!important}
+body.theme-dark:not(.loginMode) #audit .auditAction,body.theme-dark:not(.loginMode) #audit .auditDetails{color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #audit .auditWho span,body.theme-dark:not(.loginMode) #audit .auditExtra{color:#cbd5e1!important}
+</style>
+
+
+
+<style>
+/* v9.82 — PDF actions restore */
+.docRow{display:flex;flex-direction:column;gap:10px;border:1px solid #d8dee8;border-radius:14px;padding:12px;margin:10px 0;background:#f8fafc}
+.docRowTop{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.docTitle{font-weight:950;font-size:16px;min-width:0}
+.docEmpty{color:#94a3b8!important;font-weight:900;white-space:nowrap}
+.docActions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.docFileInput{display:none!important}
+.previewPdfBtn,.addPdfBtn{background:#2563eb!important;color:#fff!important;border-color:#2563eb!important}
+.docRemoveBtn{background:#dc2626!important;color:#fff!important;border-color:#dc2626!important}
+body.theme-dark:not(.loginMode) .docRow{background:#111827!important;color:#f8fafc!important;border-color:rgba(148,163,184,.32)!important}
+body.theme-dark:not(.loginMode) .docTitle{color:#f8fafc!important}
+body.theme-dark:not(.loginMode) .docEmpty{color:#cbd5e1!important}
+</style>
+<script>
+/* v9.82 — przywrócenie akcji PDF i roli Manager/Admin */
+(function(){
+  const VERSION='v9.82';
+  function role(){try{return String((currentUser&&currentUser.role)||'').toLowerCase()}catch(e){return ''}}
+  function canManageAll(){return role()==='admin'||role()==='manager'}
+  function isAdm(){return role()==='admin'}
+  function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+  function js(s){return String(s??'').replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/\n/g,' ');}
+  function openDataUrl(title,data){
+    if(!data){alert('Brak dodanego pliku PDF.');return;}
+    const w=window.open('','_blank');
+    if(!w){alert('Przeglądarka zablokowała podgląd.');return;}
+    w.document.write('<title>'+esc(title)+'</title><iframe src="'+data+'" style="position:fixed;inset:0;width:100%;height:100%;border:0"></iframe>');
+    w.document.close();
+  }
+  function readPdf(input,cb){
+    const file=input.files&&input.files[0];
+    if(!file)return;
+    if(file.type && file.type!=='application/pdf'){alert('Dodaj plik PDF.');input.value='';return;}
+    const r=new FileReader();
+    r.onload=()=>{cb(String(r.result||''),file.name||'Dokument PDF'); input.value='';};
+    r.readAsDataURL(file);
+  }
+  function docRow(title, hasFile, inputId, onPreview, onUpload, onRemove, canManage, canRemove){
+    return `<div class="docRow"><div class="docRowTop"><div class="docTitle">${esc(title)}</div><div class="docEmpty">${hasFile?'Plik dodany':'Brak pliku'}</div></div><div class="docActions">${hasFile?`<button class="btn previewPdfBtn" onclick="${onPreview}">Podgląd</button>`:''}${canManage?`<button class="btn addPdfBtn" onclick="document.getElementById('${inputId}').click()">Dodaj PDF</button><input class="docFileInput" id="${inputId}" type="file" accept="application/pdf" onchange="${onUpload}">`:''}${hasFile&&canRemove?`<button class="btn docRemoveBtn" onclick="${onRemove}">Usuń</button>`:''}</div></div>`;
+  }
+
+  // HACCP documents
+  const DEF_HACCP=['Księga HACCP','GHP','GMP','Decyzja Sanepid','Plan kuchni'];
+  function hTypes(){try{return JSON.parse(localStorage.getItem('kc_haccp_doc_types_v1')||'null')||DEF_HACCP.slice()}catch(e){return DEF_HACCP.slice()}}
+  function hFiles(){try{return JSON.parse(localStorage.getItem('kc_haccp_docs_v1')||'{}')||{}}catch(e){return {}}}
+  function saveHFiles(v){localStorage.setItem('kc_haccp_docs_v1',JSON.stringify(v||{}));}
+  window.renderHaccpDocs=function(){
+    const box=document.getElementById('docsList'); if(!box)return;
+    const loc=document.getElementById('docsLoc')?.value || (state.locations&&state.locations[0]) || 'Domyślna lokalizacja';
+    const data=hFiles(); const locData=data[loc]||{};
+    box.innerHTML=hTypes().map(name=>{
+      const f=locData[name]; const id='haccp_file_'+btoa(unescape(encodeURIComponent(loc+'|'+name))).replace(/=/g,'');
+      return docRow(name,!!(f&&f.data),id,`openHaccpPdf82('${js(loc)}','${js(name)}')`,`uploadHaccpPdf82('${js(loc)}','${js(name)}',this)`,`removeHaccpPdf82('${js(loc)}','${js(name)}')`,canManageAll(),canManageAll());
+    }).join('') || '<p class="small">Brak pozycji.</p>';
+  };
+  window.uploadHaccpPdf82=function(loc,name,input){if(!canManageAll()){alert('Dodawać pliki może Manager lub Admin.');return;} readPdf(input,(data,fileName)=>{const s=hFiles(); if(!s[loc])s[loc]={}; s[loc][name]={data,addedAt:new Date().toISOString(),addedBy:(currentUser&&currentUser.name)||'',fileName}; saveHFiles(s); renderHaccpDocs();});}
+  window.removeHaccpPdf82=function(loc,name){if(!canManageAll())return; if(!confirm('Usunąć plik PDF?'))return; const s=hFiles(); if(s[loc])delete s[loc][name]; saveHFiles(s); renderHaccpDocs();}
+  window.openHaccpPdf82=function(loc,name){const f=(hFiles()[loc]||{})[name]; openDataUrl(name,f&&f.data);}
+
+  // Procedures documents
+  const DEF_PROC={'Procedury':['Mycie rąk','Mycie i dezynfekcja powierzchni','Przyjęcie dostawy'],'Szkolenia':['Szkolenie HACCP'],'Instrukcje':['Instrukcja mycia rąk']};
+  function pTypes(){try{return JSON.parse(localStorage.getItem('kc_proc_doc_types_v1')||'null')||DEF_PROC}catch(e){return DEF_PROC}}
+  function pFiles(){try{return JSON.parse(localStorage.getItem('kc_proc_files_v1')||'{}')||{}}catch(e){return {}}}
+  function savePFiles(v){localStorage.setItem('kc_proc_files_v1',JSON.stringify(v||{}));}
+  window.renderProcedureDocs=function(){
+    const box=document.getElementById('procList'); if(!box)return;
+    const loc=document.getElementById('procLoc')?.value || (state.locations&&state.locations[0]) || 'Domyślna lokalizacja';
+    const types=pTypes(); const files=pFiles(); const locData=files[loc]||{};
+    box.innerHTML=Object.keys(types).map(cat=>{
+      const rows=(types[cat]||[]).map(name=>{
+        const f=((locData[cat]||{})[name]); const id='proc_file_'+btoa(unescape(encodeURIComponent(loc+'|'+cat+'|'+name))).replace(/=/g,'');
+        return docRow(name,!!(f&&f.data),id,`openProcedurePdf82('${js(loc)}','${js(cat)}','${js(name)}')`,`uploadProcedurePdf82('${js(loc)}','${js(cat)}','${js(name)}',this)`,`removeProcedurePdf82('${js(loc)}','${js(cat)}','${js(name)}')`,canManageAll(),canManageAll());
+      }).join('') || '<p class="small">Brak pozycji.</p>';
+      return `<details class="procGroup" ${cat==='Procedury'?'open':''}><summary>${esc(cat)}</summary><div>${rows}</div></details>`;
+    }).join('');
+  };
+  window.uploadProcedurePdf82=function(loc,cat,name,input){if(!canManageAll()){alert('Dodawać pliki może Manager lub Admin.');return;} readPdf(input,(data,fileName)=>{const s=pFiles(); if(!s[loc])s[loc]={}; if(!s[loc][cat])s[loc][cat]={}; s[loc][cat][name]={data,addedAt:new Date().toISOString(),addedBy:(currentUser&&currentUser.name)||'',fileName}; savePFiles(s); renderProcedureDocs();});}
+  window.removeProcedurePdf82=function(loc,cat,name){if(!canManageAll())return; if(!confirm('Usunąć plik PDF?'))return; const s=pFiles(); if(s[loc]&&s[loc][cat])delete s[loc][cat][name]; savePFiles(s); renderProcedureDocs();}
+  window.openProcedurePdf82=function(loc,cat,name){const f=(((pFiles()[loc]||{})[cat]||{})[name]); openDataUrl(name,f&&f.data);}
+
+  // Staff / Kadry
+  const DEF_STAFF={'Badania':['Okresowe','Sanitarne'],'Dokumenty':['Umowy','Szkolenia BHP','Szkolenia HACCP','Uprawnienia','Oświadczenia','Inne dokumenty']};
+  function sTypes(){try{return JSON.parse(localStorage.getItem('kc_staff_doc_types_v1')||'null')||DEF_STAFF}catch(e){return DEF_STAFF}}
+  function people(){try{const a=JSON.parse(localStorage.getItem('kc_staff_people_v1')||'null'); if(a&&a.length)return a}catch(e){} const u=(typeof users!=='undefined'?users:[]).map(x=>({id:x.id||('p_'+x.name),name:x.name||'',nextExam:''})); return u.length?u:[{id:'p1',name:'Rafał Gortak',nextExam:''}];}
+  function savePeople(v){localStorage.setItem('kc_staff_people_v1',JSON.stringify(v||[]));}
+  function sFiles(){try{return JSON.parse(localStorage.getItem('kc_staff_files_v1')||'{}')||{}}catch(e){return {}}}
+  function saveSFiles(v){localStorage.setItem('kc_staff_files_v1',JSON.stringify(v||{}));}
+  function dateLabel(v){if(!v)return 'Brak daty'; const a=String(v).split('-'); return a.length===3?`${a[2]}.${a[1]}.${a[0]}r`:v}
+  function dateClass(v){if(!v)return ''; const d=new Date(v+'T00:00:00'), t=new Date(); t.setHours(0,0,0,0); const diff=(d-t)/(86400000); if(diff<0)return 'staffRed'; if(diff<61)return 'staffOrange'; return 'staffGreen'}
+  function renderStaffRows(pid,section){
+    const types=sTypes(); const files=sFiles(); const pfiles=((files[pid]||{})[section]||{});
+    return (types[section]||[]).map(name=>{
+      const f=pfiles[name]; const id='staff_file_'+btoa(unescape(encodeURIComponent(pid+'|'+section+'|'+name))).replace(/=/g,'');
+      return docRow(name,!!(f&&f.data),id,`openStaffPdf82('${js(pid)}','${js(section)}','${js(name)}')`,`uploadStaffPdf82('${js(pid)}','${js(section)}','${js(name)}',this)`,`removeStaffPdf82('${js(pid)}','${js(section)}','${js(name)}')`,canManageAll(),canManageAll());
+    }).join('') || '<p class="small">Brak pozycji. Dodaj w Admin → Kadry.</p>';
+  }
+  window.renderStaff=function(){
+    const box=document.getElementById('staffList'); if(!box)return;
+    if(!canManageAll()){box.innerHTML='<div class="notice">Kadry widzi tylko Manager i Admin.</div>';return;}
+    box.innerHTML=people().map(p=>`<details class="staffDetails"><summary><span>${esc(p.name)}</span><span class="staffExamDate ${dateClass(p.nextExam)}">${dateLabel(p.nextExam)}</span></summary><div class="staffInside"><div class="staffSubBox"><h3>Badania</h3><div class="staffDateRow"><label>Data kolejnego badania</label><input type="date" value="${esc(p.nextExam||'')}" onchange="setStaffNextExam82('${js(p.id)}',this.value)"></div>${renderStaffRows(p.id,'Badania')}</div><div class="staffSubBox"><h3>Dokumenty</h3>${renderStaffRows(p.id,'Dokumenty')}</div></div></details>`).join('') || '<p class="small">Brak pracowników. Dodaj w Admin → Kadry.</p>';
+  };
+  window.setStaffNextExam82=function(id,val){const ps=people(); const p=ps.find(x=>x.id===id); if(p){p.nextExam=val; savePeople(ps); renderStaff(); if(typeof renderStaffAdmin==='function')renderStaffAdmin();}}
+  window.uploadStaffPdf82=function(pid,section,name,input){if(!canManageAll()){alert('Dodawać pliki może Manager lub Admin.');return;} readPdf(input,(data,fileName)=>{const s=sFiles(); if(!s[pid])s[pid]={}; if(!s[pid][section])s[pid][section]={}; s[pid][section][name]={data,addedAt:new Date().toISOString(),addedBy:(currentUser&&currentUser.name)||'',fileName}; saveSFiles(s); renderStaff();});}
+  window.removeStaffPdf82=function(pid,section,name){if(!canManageAll())return; if(!confirm('Usunąć plik PDF?'))return; const s=sFiles(); if(s[pid]&&s[pid][section])delete s[pid][section][name]; saveSFiles(s); renderStaff();}
+  window.openStaffPdf82=function(pid,section,name){const f=(((sFiles()[pid]||{})[section]||{})[name]); openDataUrl(name,f&&f.data);}
+
+  // Hook refresh/show
+  const oldShow=window.show; if(typeof oldShow==='function'){window.show=function(id){oldShow.apply(this,arguments); if(id==='docs')renderHaccpDocs(); if(id==='procedures')renderProcedureDocs(); if(id==='staff')renderStaff();}}
+  const oldFill=window.fill; if(typeof oldFill==='function'){window.fill=function(){oldFill.apply(this,arguments); setTimeout(()=>{renderHaccpDocs();renderProcedureDocs();renderStaff();},0);}}
+  setTimeout(()=>{const vf=document.querySelector('.versionFooter'); if(vf)vf.textContent=VERSION; renderHaccpDocs(); renderProcedureDocs(); renderStaff();},0);
+})();
+</script>
+
 </body></html>
 <!-- v9.56 dark select arrows + status chips fix -->
 <style>
@@ -4741,6 +5861,23 @@ body.theme-dark:not(.loginMode) .adminListRow *:not(button){color:#f8fafc!import
 body.theme-dark:not(.loginMode) .adminListSub{color:#cbd5e1!important}
 body.theme-dark:not(.loginMode) #rangeAdminBox .btn:not(.danger){background:#2563eb!important;color:#fff!important;border-color:#2563eb!important}
 @media(max-width:520px){.adminSection h2{font-size:17px}.adminListRow{align-items:stretch;flex-direction:column}.adminListRow .row>*{width:100%}}
+
+/* v9.77 — Kadry */
+#staff .staffDetails{border:1px solid #d8dee8;border-radius:14px;margin:10px 0;background:#f8fafc;overflow:hidden}
+#staff .staffDetails summary{cursor:pointer;list-style:none;padding:13px 14px;font-weight:950;display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;background:white;color:#172033}
+#staff .staffDetails summary::-webkit-details-marker{display:none}
+#staff .staffDetails summary:after{content:'⌄';font-size:18px;color:#64748b}
+@media (orientation:landscape) and (min-width:800px){#staff .staffDetails summary:after{content:'›';font-size:28px;line-height:1}}
+#staff .staffDetails[open] summary:after{content:'⌃'}
+@media (orientation:landscape) and (min-width:800px){#staff .staffDetails[open] summary:after{content:'›'}}
+#staff .staffInside{padding:12px;display:grid;gap:12px}
+.staffExamDate{font-weight:900;white-space:nowrap}.staffGreen{color:#166534!important}.staffOrange{color:#d97706!important}.staffRed{color:#dc2626!important}
+.staffSubBox{border:1px solid #d8dee8;border-radius:14px;padding:12px;background:#fff}.staffSubBox h3{margin:0 0 10px 0}.staffDateRow{margin-bottom:10px}
+body.theme-dark:not(.loginMode) #staff .staffDetails{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .staffDetails summary{background:#111827!important;color:#f8fafc!important;border-color:rgba(148,163,184,.28)!important}
+body.theme-dark:not(.loginMode) #staff .staffDetails summary:after{color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .staffSubBox{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .docRow{background:#111827!important;color:#f8fafc!important;border-color:rgba(148,163,184,.28)!important}
 </style>
 
 <!-- v9.57 final select arrow fix + HACCP chips -->
@@ -4839,6 +5976,23 @@ body.theme-dark:not(.loginMode) .adminListRow *:not(button){color:#f8fafc!import
 body.theme-dark:not(.loginMode) .adminListSub{color:#cbd5e1!important}
 body.theme-dark:not(.loginMode) #rangeAdminBox .btn:not(.danger){background:#2563eb!important;color:#fff!important;border-color:#2563eb!important}
 @media(max-width:520px){.adminSection h2{font-size:17px}.adminListRow{align-items:stretch;flex-direction:column}.adminListRow .row>*{width:100%}}
+
+/* v9.77 — Kadry */
+#staff .staffDetails{border:1px solid #d8dee8;border-radius:14px;margin:10px 0;background:#f8fafc;overflow:hidden}
+#staff .staffDetails summary{cursor:pointer;list-style:none;padding:13px 14px;font-weight:950;display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;background:white;color:#172033}
+#staff .staffDetails summary::-webkit-details-marker{display:none}
+#staff .staffDetails summary:after{content:'⌄';font-size:18px;color:#64748b}
+@media (orientation:landscape) and (min-width:800px){#staff .staffDetails summary:after{content:'›';font-size:28px;line-height:1}}
+#staff .staffDetails[open] summary:after{content:'⌃'}
+@media (orientation:landscape) and (min-width:800px){#staff .staffDetails[open] summary:after{content:'›'}}
+#staff .staffInside{padding:12px;display:grid;gap:12px}
+.staffExamDate{font-weight:900;white-space:nowrap}.staffGreen{color:#166534!important}.staffOrange{color:#d97706!important}.staffRed{color:#dc2626!important}
+.staffSubBox{border:1px solid #d8dee8;border-radius:14px;padding:12px;background:#fff}.staffSubBox h3{margin:0 0 10px 0}.staffDateRow{margin-bottom:10px}
+body.theme-dark:not(.loginMode) #staff .staffDetails{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .staffDetails summary{background:#111827!important;color:#f8fafc!important;border-color:rgba(148,163,184,.28)!important}
+body.theme-dark:not(.loginMode) #staff .staffDetails summary:after{color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .staffSubBox{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .docRow{background:#111827!important;color:#f8fafc!important;border-color:rgba(148,163,184,.28)!important}
 </style>
 
 
@@ -4959,6 +6113,23 @@ body.theme-dark:not(.loginMode) .adminListRow *:not(button){color:#f8fafc!import
 body.theme-dark:not(.loginMode) .adminListSub{color:#cbd5e1!important}
 body.theme-dark:not(.loginMode) #rangeAdminBox .btn:not(.danger){background:#2563eb!important;color:#fff!important;border-color:#2563eb!important}
 @media(max-width:520px){.adminSection h2{font-size:17px}.adminListRow{align-items:stretch;flex-direction:column}.adminListRow .row>*{width:100%}}
+
+/* v9.77 — Kadry */
+#staff .staffDetails{border:1px solid #d8dee8;border-radius:14px;margin:10px 0;background:#f8fafc;overflow:hidden}
+#staff .staffDetails summary{cursor:pointer;list-style:none;padding:13px 14px;font-weight:950;display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;background:white;color:#172033}
+#staff .staffDetails summary::-webkit-details-marker{display:none}
+#staff .staffDetails summary:after{content:'⌄';font-size:18px;color:#64748b}
+@media (orientation:landscape) and (min-width:800px){#staff .staffDetails summary:after{content:'›';font-size:28px;line-height:1}}
+#staff .staffDetails[open] summary:after{content:'⌃'}
+@media (orientation:landscape) and (min-width:800px){#staff .staffDetails[open] summary:after{content:'›'}}
+#staff .staffInside{padding:12px;display:grid;gap:12px}
+.staffExamDate{font-weight:900;white-space:nowrap}.staffGreen{color:#166534!important}.staffOrange{color:#d97706!important}.staffRed{color:#dc2626!important}
+.staffSubBox{border:1px solid #d8dee8;border-radius:14px;padding:12px;background:#fff}.staffSubBox h3{margin:0 0 10px 0}.staffDateRow{margin-bottom:10px}
+body.theme-dark:not(.loginMode) #staff .staffDetails{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .staffDetails summary{background:#111827!important;color:#f8fafc!important;border-color:rgba(148,163,184,.28)!important}
+body.theme-dark:not(.loginMode) #staff .staffDetails summary:after{color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .staffSubBox{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .docRow{background:#111827!important;color:#f8fafc!important;border-color:rgba(148,163,184,.28)!important}
 </style>
 
 
@@ -5027,6 +6198,23 @@ body.theme-dark:not(.loginMode) .adminListRow *:not(button){color:#f8fafc!import
 body.theme-dark:not(.loginMode) .adminListSub{color:#cbd5e1!important}
 body.theme-dark:not(.loginMode) #rangeAdminBox .btn:not(.danger){background:#2563eb!important;color:#fff!important;border-color:#2563eb!important}
 @media(max-width:520px){.adminSection h2{font-size:17px}.adminListRow{align-items:stretch;flex-direction:column}.adminListRow .row>*{width:100%}}
+
+/* v9.77 — Kadry */
+#staff .staffDetails{border:1px solid #d8dee8;border-radius:14px;margin:10px 0;background:#f8fafc;overflow:hidden}
+#staff .staffDetails summary{cursor:pointer;list-style:none;padding:13px 14px;font-weight:950;display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;background:white;color:#172033}
+#staff .staffDetails summary::-webkit-details-marker{display:none}
+#staff .staffDetails summary:after{content:'⌄';font-size:18px;color:#64748b}
+@media (orientation:landscape) and (min-width:800px){#staff .staffDetails summary:after{content:'›';font-size:28px;line-height:1}}
+#staff .staffDetails[open] summary:after{content:'⌃'}
+@media (orientation:landscape) and (min-width:800px){#staff .staffDetails[open] summary:after{content:'›'}}
+#staff .staffInside{padding:12px;display:grid;gap:12px}
+.staffExamDate{font-weight:900;white-space:nowrap}.staffGreen{color:#166534!important}.staffOrange{color:#d97706!important}.staffRed{color:#dc2626!important}
+.staffSubBox{border:1px solid #d8dee8;border-radius:14px;padding:12px;background:#fff}.staffSubBox h3{margin:0 0 10px 0}.staffDateRow{margin-bottom:10px}
+body.theme-dark:not(.loginMode) #staff .staffDetails{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .staffDetails summary{background:#111827!important;color:#f8fafc!important;border-color:rgba(148,163,184,.28)!important}
+body.theme-dark:not(.loginMode) #staff .staffDetails summary:after{color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .staffSubBox{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .docRow{background:#111827!important;color:#f8fafc!important;border-color:rgba(148,163,184,.28)!important}
 </style>
 
 
@@ -5090,6 +6278,23 @@ body.theme-dark:not(.loginMode) .adminListRow *:not(button){color:#f8fafc!import
 body.theme-dark:not(.loginMode) .adminListSub{color:#cbd5e1!important}
 body.theme-dark:not(.loginMode) #rangeAdminBox .btn:not(.danger){background:#2563eb!important;color:#fff!important;border-color:#2563eb!important}
 @media(max-width:520px){.adminSection h2{font-size:17px}.adminListRow{align-items:stretch;flex-direction:column}.adminListRow .row>*{width:100%}}
+
+/* v9.77 — Kadry */
+#staff .staffDetails{border:1px solid #d8dee8;border-radius:14px;margin:10px 0;background:#f8fafc;overflow:hidden}
+#staff .staffDetails summary{cursor:pointer;list-style:none;padding:13px 14px;font-weight:950;display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;background:white;color:#172033}
+#staff .staffDetails summary::-webkit-details-marker{display:none}
+#staff .staffDetails summary:after{content:'⌄';font-size:18px;color:#64748b}
+@media (orientation:landscape) and (min-width:800px){#staff .staffDetails summary:after{content:'›';font-size:28px;line-height:1}}
+#staff .staffDetails[open] summary:after{content:'⌃'}
+@media (orientation:landscape) and (min-width:800px){#staff .staffDetails[open] summary:after{content:'›'}}
+#staff .staffInside{padding:12px;display:grid;gap:12px}
+.staffExamDate{font-weight:900;white-space:nowrap}.staffGreen{color:#166534!important}.staffOrange{color:#d97706!important}.staffRed{color:#dc2626!important}
+.staffSubBox{border:1px solid #d8dee8;border-radius:14px;padding:12px;background:#fff}.staffSubBox h3{margin:0 0 10px 0}.staffDateRow{margin-bottom:10px}
+body.theme-dark:not(.loginMode) #staff .staffDetails{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .staffDetails summary{background:#111827!important;color:#f8fafc!important;border-color:rgba(148,163,184,.28)!important}
+body.theme-dark:not(.loginMode) #staff .staffDetails summary:after{color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .staffSubBox{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .docRow{background:#111827!important;color:#f8fafc!important;border-color:rgba(148,163,184,.28)!important}
 </style>
 
 <!-- v9.62 admin temperature ranges dark theme polish -->
@@ -5162,4 +6367,36 @@ body.theme-dark:not(.loginMode) .adminListRow *:not(button){color:#f8fafc!import
 body.theme-dark:not(.loginMode) .adminListSub{color:#cbd5e1!important}
 body.theme-dark:not(.loginMode) #rangeAdminBox .btn:not(.danger){background:#2563eb!important;color:#fff!important;border-color:#2563eb!important}
 @media(max-width:520px){.adminSection h2{font-size:17px}.adminListRow{align-items:stretch;flex-direction:column}.adminListRow .row>*{width:100%}}
+
+/* v9.77 — Kadry */
+#staff .staffDetails{border:1px solid #d8dee8;border-radius:14px;margin:10px 0;background:#f8fafc;overflow:hidden}
+#staff .staffDetails summary{cursor:pointer;list-style:none;padding:13px 14px;font-weight:950;display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;background:white;color:#172033}
+#staff .staffDetails summary::-webkit-details-marker{display:none}
+#staff .staffDetails summary:after{content:'⌄';font-size:18px;color:#64748b}
+@media (orientation:landscape) and (min-width:800px){#staff .staffDetails summary:after{content:'›';font-size:28px;line-height:1}}
+#staff .staffDetails[open] summary:after{content:'⌃'}
+@media (orientation:landscape) and (min-width:800px){#staff .staffDetails[open] summary:after{content:'›'}}
+#staff .staffInside{padding:12px;display:grid;gap:12px}
+.staffExamDate{font-weight:900;white-space:nowrap}.staffGreen{color:#166534!important}.staffOrange{color:#d97706!important}.staffRed{color:#dc2626!important}
+.staffSubBox{border:1px solid #d8dee8;border-radius:14px;padding:12px;background:#fff}.staffSubBox h3{margin:0 0 10px 0}.staffDateRow{margin-bottom:10px}
+body.theme-dark:not(.loginMode) #staff .staffDetails{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .staffDetails summary{background:#111827!important;color:#f8fafc!important;border-color:rgba(148,163,184,.28)!important}
+body.theme-dark:not(.loginMode) #staff .staffDetails summary:after{color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .staffSubBox{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
+body.theme-dark:not(.loginMode) #staff .docRow{background:#111827!important;color:#f8fafc!important;border-color:rgba(148,163,184,.28)!important}
+</style>
+
+<style>
+/* v9.82 — Kadry admin polish */
+.staffAdminPersonRow input[type="date"]{max-width:210px}
+#admin .adminSection h3{font-size:15px;margin:12px 0 8px;font-weight:900}
+#staffList details.staffDetails summary{cursor:pointer}
+@media (min-width:900px) and (orientation:landscape){
+  #staffList details.staffDetails summary::after{content:'›';font-size:28px;font-weight:900;margin-left:auto}
+  #staffList details.staffDetails[open] summary::after{content:'›'}
+}
+@media (max-width:899px){
+  #staffList details.staffDetails summary::after{content:'⌄';font-size:22px;font-weight:900;margin-left:auto}
+  #staffList details.staffDetails[open] summary::after{content:'⌃'}
+}
 </style>
