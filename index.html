@@ -3190,7 +3190,7 @@ body.theme-dark:not(.loginMode) #staff .docRow{background:#111827!important;colo
   <button class="btn primary adminOnly kcMenuBackup" onclick="exportBackup();closeUserMenu()">Backup JSON</button>
   <button class="btn danger" onclick="logout();closeUserMenu()">Wyloguj</button>
 </div>
-<div id="cellModal" class="hidden"></div><div class="versionFooter noPrint">v9.82</div></div></main><script>
+<div id="cellModal" class="hidden"></div><div class="versionFooter noPrint">v9.83</div></div></main><script>
 const defaults={locations:["Asian Street Food Mokotów","Asian Street Food Wola","Food Truck","Kuchnia Mokotów"],devices:{"Asian Street Food Mokotów":{chlodnie:["Chłodnia 1","Chłodnia 2","Chłodnia 3"],mroznie:["Mroźnia 1"]},"Asian Street Food Wola":{chlodnie:["Chłodnia 1","Chłodnia 2"],mroznie:["Mroźnia 1"]},"Food Truck":{chlodnie:["Chłodnia 1","Chłodnia 2"],mroznie:["Mroźnia 1"]},"Kuchnia Mokotów":{chlodnie:["Chłodnia 1","Chłodnia 2","Chłodnia 3","Chłodnia 4"],mroznie:["Mroźnia 1","Mroźnia 2"]}},cleaning:{"Rozpoczęcie zmiany":["Obecność szkodników","Stan lodówek / brak wycieków","Czystość blatów startowa"],"Podczas zmiany":["Frytury","Wymiana frytury","Zlewy","Bieżące blaty"],"Zamknięcie zmiany":["Pow. robocze / blaty","Kuchenki","Ściany i podłogi","Schładzarka","Chłodnie","Mroźnie","Mycie okapu"]},haccpItems:["Kontrola dat przydatności","Kontrola chłodni tygodniowa","Magazyn suchy miesięcznie","Zamrażarki miesięcznie"]};
 let state=JSON.parse(localStorage.getItem("kc_state_v7")||"null")||defaults;
 let logs=JSON.parse(localStorage.getItem("kc_logs_v7")||"[]");
@@ -4602,7 +4602,7 @@ document.addEventListener("DOMContentLoaded",()=>setTimeout(kcV943BackupButtonsU
 </script>
 
 <script>
-/* v9.82 — Kadry: accordion + poprawiona edycja w Adminie */
+/* v9.83 — Kadry: accordion + poprawiona edycja w Adminie */
 (function(){
   // Na telefonie/tablecie po otwarciu kolejnego pracownika poprzedni się zwija.
   document.addEventListener('toggle', function(e){
@@ -5521,7 +5521,7 @@ body.theme-dark:not(.loginMode) #staff .docRow{background:#111827!important;colo
 </script>
 
 
-<!-- v9.82 — Historia edycji / dziennik audytu -->
+<!-- v9.83 — Historia edycji / dziennik audytu -->
 <script>
 (function(){
   const AUDIT_KEY='kc_audit_log_v1';
@@ -5664,7 +5664,7 @@ body.theme-dark:not(.loginMode) #audit .auditWho span,body.theme-dark:not(.login
 
 
 <style>
-/* v9.82 — PDF actions restore */
+/* v9.83 — PDF actions restore */
 .docRow{display:flex;flex-direction:column;gap:10px;border:1px solid #d8dee8;border-radius:14px;padding:12px;margin:10px 0;background:#f8fafc}
 .docRowTop{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .docTitle{font-weight:950;font-size:16px;min-width:0}
@@ -5678,9 +5678,9 @@ body.theme-dark:not(.loginMode) .docTitle{color:#f8fafc!important}
 body.theme-dark:not(.loginMode) .docEmpty{color:#cbd5e1!important}
 </style>
 <script>
-/* v9.82 — przywrócenie akcji PDF i roli Manager/Admin */
+/* v9.83 — przywrócenie akcji PDF i roli Manager/Admin */
 (function(){
-  const VERSION='v9.82';
+  const VERSION='v9.83';
   function role(){try{return String((currentUser&&currentUser.role)||'').toLowerCase()}catch(e){return ''}}
   function canManageAll(){return role()==='admin'||role()==='manager'}
   function isAdm(){return role()==='admin'}
@@ -5777,6 +5777,96 @@ body.theme-dark:not(.loginMode) .docEmpty{color:#cbd5e1!important}
 })();
 </script>
 
+
+
+<!-- v9.83 — PDF preview inside app with close/action bar -->
+<style>
+.kcPdfOverlay{position:fixed;inset:0;background:#0f172a;z-index:10000;display:none;flex-direction:column;color:#0f172a}
+.kcPdfOverlay.open{display:flex}
+.kcPdfBar{height:56px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:8px;padding:8px 10px;background:#ffffff;border-bottom:1px solid #d8dee8;box-shadow:0 2px 12px rgba(0,0,0,.12);z-index:2}
+.kcPdfClose,.kcPdfMenuBtn{border:0;border-radius:12px;background:#eef2ff;color:#1e3a8a;font-weight:950;padding:10px 12px;font-size:15px}
+.kcPdfTitle{text-align:center;font-weight:950;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#172033;font-size:15px}
+.kcPdfFrame{flex:1;width:100%;border:0;background:#f8fafc}
+.kcPdfMenu{position:absolute;right:10px;top:58px;background:white;border:1px solid #d8dee8;border-radius:14px;box-shadow:0 12px 32px rgba(0,0,0,.22);padding:8px;display:none;min-width:190px;z-index:10002}
+.kcPdfMenu.open{display:block}.kcPdfMenu button{display:block;width:100%;text-align:left;margin:3px 0;border:0;border-radius:10px;background:#f8fafc;color:#172033;font-weight:850;padding:10px 12px}
+.kcPdfEmpty{flex:1;display:flex;align-items:center;justify-content:center;background:#f8fafc;color:#64748b;text-align:center;padding:20px;font-weight:850}
+body.theme-dark:not(.loginMode) .kcPdfBar{background:#111827;border-bottom-color:#334155;color:#f8fafc}
+body.theme-dark:not(.loginMode) .kcPdfTitle{color:#f8fafc}body.theme-dark:not(.loginMode) .kcPdfClose,body.theme-dark:not(.loginMode) .kcPdfMenuBtn{background:#2563eb;color:#fff}
+body.theme-dark:not(.loginMode) .kcPdfMenu{background:#111827;border-color:#334155}body.theme-dark:not(.loginMode) .kcPdfMenu button{background:#132238;color:#f8fafc}
+</style>
+<div id="kcPdfOverlay" class="kcPdfOverlay" aria-hidden="true">
+  <div class="kcPdfBar">
+    <button class="kcPdfClose" onclick="closePdfPreview()">✕ Zamknij</button>
+    <div id="kcPdfTitle" class="kcPdfTitle">Podgląd PDF</div>
+    <button class="kcPdfMenuBtn" onclick="togglePdfMenu(event)">⋮</button>
+  </div>
+  <div id="kcPdfMenu" class="kcPdfMenu">
+    <button onclick="shareCurrentPdf()">📤 Udostępnij</button>
+    <button onclick="downloadCurrentPdf()">⬇️ Pobierz</button>
+    <button onclick="printCurrentPdf()">🖨️ Drukuj</button>
+  </div>
+  <iframe id="kcPdfFrame" class="kcPdfFrame"></iframe>
+</div>
+<script>
+(function(){
+  const VERSION='v9.83';
+  let currentPdf={title:'Dokument PDF',data:''};
+  function esc(s){return String(s??'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));}
+  function safeFileName(s){return String(s||'dokument').replace(/\.pdf$/i,'').replace(/[\\/:*?"<>|]+/g,'_').trim()||'dokument';}
+  function dataUrlToBlob(dataUrl){
+    const parts=String(dataUrl||'').split(','); const meta=parts[0]||''; const b64=parts[1]||'';
+    const mime=(meta.match(/data:([^;]+)/)||[])[1]||'application/pdf';
+    const bin=atob(b64); const len=bin.length; const arr=new Uint8Array(len);
+    for(let i=0;i<len;i++)arr[i]=bin.charCodeAt(i); return new Blob([arr],{type:mime});
+  }
+  window.openPdfPreview=function(title,data){
+    if(!data){alert('Brak dodanego pliku PDF.');return;}
+    currentPdf={title:title||'Dokument PDF',data:data};
+    const ov=document.getElementById('kcPdfOverlay'), fr=document.getElementById('kcPdfFrame'), tt=document.getElementById('kcPdfTitle'), menu=document.getElementById('kcPdfMenu');
+    if(!ov||!fr||!tt){return;}
+    tt.textContent=currentPdf.title; fr.src=currentPdf.data; if(menu)menu.classList.remove('open');
+    ov.classList.add('open'); ov.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';
+  };
+  window.closePdfPreview=function(){
+    const ov=document.getElementById('kcPdfOverlay'), fr=document.getElementById('kcPdfFrame'), menu=document.getElementById('kcPdfMenu');
+    if(fr)fr.src='about:blank'; if(menu)menu.classList.remove('open'); if(ov){ov.classList.remove('open'); ov.setAttribute('aria-hidden','true');}
+    document.body.style.overflow='';
+  };
+  window.togglePdfMenu=function(ev){ev&&ev.stopPropagation&&ev.stopPropagation(); const m=document.getElementById('kcPdfMenu'); if(m)m.classList.toggle('open');};
+  window.downloadCurrentPdf=function(){
+    if(!currentPdf.data)return; const a=document.createElement('a'); a.href=currentPdf.data; a.download=safeFileName(currentPdf.title)+'.pdf'; document.body.appendChild(a); a.click(); a.remove();
+  };
+  window.printCurrentPdf=function(){
+    const fr=document.getElementById('kcPdfFrame'); if(fr&&fr.contentWindow){try{fr.contentWindow.focus(); fr.contentWindow.print();}catch(e){alert('Drukowanie może być niedostępne w tej przeglądarce. Użyj Pobierz PDF.');}}
+  };
+  window.shareCurrentPdf=async function(){
+    try{
+      if(!currentPdf.data)return;
+      const file=new File([dataUrlToBlob(currentPdf.data)],safeFileName(currentPdf.title)+'.pdf',{type:'application/pdf'});
+      if(navigator.canShare && navigator.canShare({files:[file]})){await navigator.share({title:currentPdf.title,files:[file]});}
+      else {downloadCurrentPdf(); alert('Udostępnianie nie jest dostępne. Plik został pobrany.');}
+    }catch(e){downloadCurrentPdf();}
+  };
+  document.addEventListener('click',e=>{const m=document.getElementById('kcPdfMenu'); if(m && !e.target.closest('.kcPdfMenu') && !e.target.closest('.kcPdfMenuBtn'))m.classList.remove('open');});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closePdfPreview();});
+
+  function hFiles(){try{return JSON.parse(localStorage.getItem('kc_haccp_docs_v1')||'{}')||{}}catch(e){return {}}}
+  function pFiles1(){try{return JSON.parse(localStorage.getItem('kc_proc_files_v1')||'{}')||{}}catch(e){return {}}}
+  function pFiles2(){try{return JSON.parse(localStorage.getItem('kc_proc_files_v2')||'{}')||{}}catch(e){return {}}}
+  function sFiles(){try{return JSON.parse(localStorage.getItem('kc_staff_files_v1')||'{}')||{}}catch(e){return {}}}
+
+  window.openHaccpPdf82=function(loc,name){const f=(hFiles()[loc]||{})[name]; openPdfPreview(name,f&&f.data);};
+  window.openHaccpDoc=function(loc,name){const f=(hFiles()[loc]||{})[name]; openPdfPreview(name,f&&f.data);};
+  window.openProcedurePdf82=function(loc,cat,name){const f=(((pFiles1()[loc]||{})[cat]||{})[name]) || (((pFiles2()[loc]||{})[cat]||{})[name]); openPdfPreview(name,f&&f.data);};
+  window.openProcedureDocV2=function(loc,cat,name){const f=(((pFiles1()[loc]||{})[cat]||{})[name]) || (((pFiles2()[loc]||{})[cat]||{})[name]); openPdfPreview(name,f&&f.data);};
+  window.openProcedureDoc=function(loc,cat,i){
+    const arr=(((pFiles1()[loc]||{})[cat])||[]); const f=arr[i]; openPdfPreview((f&&f.title)||cat,f&&f.data);
+  };
+  window.openStaffPdf82=function(pid,section,name){const f=(((sFiles()[pid]||{})[section]||{})[name]); openPdfPreview(name,f&&f.data);};
+  window.openStaffPdf=function(pid,section,name){const f=(((sFiles()[pid]||{})[section]||{})[name]); openPdfPreview(name,f&&f.data);};
+  setTimeout(()=>{const vf=document.querySelector('.versionFooter'); if(vf)vf.textContent=VERSION;},0);
+})();
+</script>
 </body></html>
 <!-- v9.56 dark select arrows + status chips fix -->
 <style>
@@ -6387,7 +6477,7 @@ body.theme-dark:not(.loginMode) #staff .docRow{background:#111827!important;colo
 </style>
 
 <style>
-/* v9.82 — Kadry admin polish */
+/* v9.83 — Kadry admin polish */
 .staffAdminPersonRow input[type="date"]{max-width:210px}
 #admin .adminSection h3{font-size:15px;margin:12px 0 8px;font-weight:900}
 #staffList details.staffDetails summary{cursor:pointer}
