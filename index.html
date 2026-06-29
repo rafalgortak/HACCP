@@ -3064,7 +3064,7 @@ body.theme-light:not(.loginMode) #rangeAdminBox button[onclick="resetTempRanges(
   <button class="btn primary adminOnly kcMenuBackup" onclick="exportBackup();closeUserMenu()">Backup JSON</button>
   <button class="btn danger" onclick="logout();closeUserMenu()">Wyloguj</button>
 </div>
-<div id="cellModal" class="hidden"></div><div class="versionFooter noPrint">v9.65</div></div></main><script>
+<div id="cellModal" class="hidden"></div><div class="versionFooter noPrint">v9.68</div></div></main><script>
 const defaults={locations:["Asian Street Food Mokotów","Asian Street Food Wola","Food Truck","Kuchnia Mokotów"],devices:{"Asian Street Food Mokotów":{chlodnie:["Chłodnia 1","Chłodnia 2","Chłodnia 3"],mroznie:["Mroźnia 1"]},"Asian Street Food Wola":{chlodnie:["Chłodnia 1","Chłodnia 2"],mroznie:["Mroźnia 1"]},"Food Truck":{chlodnie:["Chłodnia 1","Chłodnia 2"],mroznie:["Mroźnia 1"]},"Kuchnia Mokotów":{chlodnie:["Chłodnia 1","Chłodnia 2","Chłodnia 3","Chłodnia 4"],mroznie:["Mroźnia 1","Mroźnia 2"]}},cleaning:{"Rozpoczęcie zmiany":["Obecność szkodników","Stan lodówek / brak wycieków","Czystość blatów startowa"],"Podczas zmiany":["Frytury","Wymiana frytury","Zlewy","Bieżące blaty"],"Zamknięcie zmiany":["Pow. robocze / blaty","Kuchenki","Ściany i podłogi","Schładzarka","Chłodnie","Mroźnie","Mycie okapu"]},haccpItems:["Kontrola dat przydatności","Kontrola chłodni tygodniowa","Magazyn suchy miesięcznie","Zamrażarki miesięcznie"]};
 let state=JSON.parse(localStorage.getItem("kc_state_v7")||"null")||defaults;
 let logs=JSON.parse(localStorage.getItem("kc_logs_v7")||"[]");
@@ -4308,6 +4308,355 @@ body.theme-dark:not(.loginMode) #rangeAdminBox .btn:not(.danger){background:#256
 })();
 </script>
 
+
+
+<!-- v9.68 — admin tablet scroll fix + lifecycle for month reports -->
+<style>
+/* Admin na tablecie: opis przewija się razem z listą, nie jest przyklejony */
+@media (orientation:landscape) and (min-width:900px){
+  #admin .adminIntro{position:static!important;top:auto!important;z-index:auto!important;}
+  #admin{align-items:start!important;}
+}
+/* Przycisk zatwierdzenia miesiąca */
+.kcMonthCloseBtn{background:#0f172a!important;color:#fff!important;border-color:#0f172a!important}
+body.theme-dark:not(.loginMode) .kcMonthCloseBtn{background:#2563eb!important;color:#fff!important;border-color:#2563eb!important}
+.kcInactiveCell{color:#94a3b8!important;background:#f8fafc!important;font-weight:700!important}
+body.theme-dark:not(.loginMode) #month .kcInactiveCell{background:#f8fafc!important;color:#64748b!important}
+</style>
+<script>
+/* v9.68 — logika: element ważny od daty dodania, po usunięciu zostaje w raporcie miesiąca jeśli miał wpisy */
+(function(){
+  const FAR='2000-01-01';
+  function today(){return (typeof isoDate==='function')?isoDate():new Date().toISOString().slice(0,10)}
+  function ymOf(d){return String(d||today()).slice(0,7)}
+  function monthStart(ym){return ym+'-01'}
+  function monthEnd(ym){return ym+'-'+String((typeof daysInMonth==='function'?daysInMonth(ym):31)).padStart(2,'0')}
+  function inYm(date,ym){return String(date||'').slice(0,7)===ym}
+  function ensureLife(){
+    if(!state.kcLifecycle) state.kcLifecycle={devices:[],clean:[],haccp:[]};
+    if(!state.kcLifecycle.devices) state.kcLifecycle.devices=[];
+    if(!state.kcLifecycle.clean) state.kcLifecycle.clean=[];
+    if(!state.kcLifecycle.haccp) state.kcLifecycle.haccp=[];
+    // urządzenia bazowe
+    Object.keys(state.devices||{}).forEach(loc=>{
+      ['chlodnie','mroznie'].forEach(typeKey=>{
+        ((state.devices[loc]&&state.devices[loc][typeKey])||[]).forEach(name=>{
+          if(!state.kcLifecycle.devices.some(x=>x.loc===loc&&x.typeKey===typeKey&&x.name===name&&!x.deletedFrom)){
+            state.kcLifecycle.devices.push({loc,typeKey,name,activeFrom:FAR});
+          }
+        });
+      });
+    });
+    // sprzątanie bazowe
+    if(typeof getShifts==='function' && typeof getCleaning==='function'){
+      (state.locations||[]).forEach(loc=>{
+        getShifts(loc).forEach(shift=>{
+          let arr=[];
+          try{ arr=(state.locationCleaning&&state.locationCleaning[loc]&&state.locationCleaning[loc][shift]) || (state.cleaning&&state.cleaning[shift]) || []; }catch(e){}
+          arr.forEach(name=>{
+            if(!state.kcLifecycle.clean.some(x=>x.loc===loc&&x.shift===shift&&x.name===name&&!x.deletedFrom)){
+              state.kcLifecycle.clean.push({loc,shift,name,activeFrom:FAR});
+            }
+          });
+        });
+      });
+    }
+    // HACCP bazowe
+    (state.locations||[]).forEach(loc=>{
+      let arr=(state.locationHaccpItems&&state.locationHaccpItems[loc]) || state.haccpItems || [];
+      arr.forEach(name=>{
+        if(!state.kcLifecycle.haccp.some(x=>x.loc===loc&&x.name===name&&!x.deletedFrom)){
+          state.kcLifecycle.haccp.push({loc,name,activeFrom:FAR});
+        }
+      });
+    });
+  }
+  function monthClosed(ym){ensureLife(); return !!(state.closedMonths&&state.closedMonths[ym]);}
+  function guardConfigChange(){
+    const ym=currentMonth();
+    if(monthClosed(ym)){alert('Ten miesiąc jest zatwierdzony. Nie można dodawać ani usuwać pozycji w zamkniętym miesiącu.');return false}
+    return true;
+  }
+  function hadTempThisMonth(loc,dev,ym){return logs.some(x=>x.kind==='temp'&&x.loc===loc&&x.dev===dev&&inYm(x.date,ym))}
+  function hadCleanThisMonth(loc,shift,item,ym){return logs.some(x=>x.kind==='clean'&&x.loc===loc&&x.shift===shift&&inYm(x.date,ym)&&(x.done||[]).includes(item))}
+  function hadHaccpThisMonth(loc,item,ym){return logs.some(x=>x.kind==='haccp'&&x.loc===loc&&inYm(x.date,ym)&&(x.done||[]).includes(item))}
+  function lifeActiveOn(x,date){return (!x.activeFrom||date>=x.activeFrom) && (!x.deletedFrom||date<=x.deletedFrom)}
+  function lifeVisibleMonth(x,ym,had){
+    if((x.activeFrom||FAR)>monthEnd(ym)) return false;
+    if(!x.deletedFrom) return true;
+    if(String(x.deletedFrom).slice(0,7)===ym) return true;
+    return !!had;
+  }
+  function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+  function cellInactive(){return '<td class="kcInactiveCell">-</td>'}
+
+  const oldSave=window.save;
+  window.kcEnsureLifecycle=ensureLife;
+  window.save=function(){ensureLife(); if(oldSave) oldSave(); else localStorage.setItem('kc_state_v7',JSON.stringify(state));};
+
+  // Przyciski zamknięcia miesiąca
+  window.closeSelectedMonth=function(){
+    const ym=(document.getElementById('monthPick')?.value)||currentMonth();
+    if(!isAdmin || !isAdmin()){alert('Tylko Admin może zatwierdzić miesiąc.');return}
+    const pin=prompt('Podaj PIN administratora, aby zatwierdzić miesiąc '+ym+':');
+    if(pin===null) return;
+    if(!currentUser || String(pin)!==String(currentUser.pin)){alert('Nieprawidłowy PIN.');return}
+    state.closedMonths=state.closedMonths||{};
+    state.closedMonths[ym]=true;
+    save();
+    alert('Miesiąc '+ym+' został zatwierdzony.');
+    if(typeof renderMonth==='function') renderMonth();
+  };
+  function insertCloseBtn(){
+    const host=document.querySelector('#month .controls .row');
+    if(host && !document.getElementById('closeMonthBtn')){
+      const b=document.createElement('button'); b.id='closeMonthBtn'; b.className='btn kcMonthCloseBtn managerOnly'; b.textContent='Zatwierdź miesiąc'; b.onclick=window.closeSelectedMonth; host.appendChild(b);
+    }
+  }
+  document.addEventListener('DOMContentLoaded',()=>setTimeout(insertCloseBtn,80));
+
+  // Nadpisanie add/remove urządzeń z datami ważności
+  window.addDevice=function(){
+    if(!isAdmin())return denyAdmin(); if(!guardConfigChange())return;
+    ensureLife(); let l=adminLoc.value,t=adminType.value,n=adminName.value.trim(); if(!n)return;
+    state.devices[l]=state.devices[l]||{chlodnie:[],mroznie:[]}; state.devices[l][t]=state.devices[l][t]||[];
+    if(!state.devices[l][t].includes(n)) state.devices[l][t].push(n);
+    state.kcLifecycle.devices.push({loc:l,typeKey:t,name:n,activeFrom:today()});
+    adminName.value=''; save(); fillDev(); renderDevList(); renderMonth(); renderSanepid(); renderPanel();
+  };
+  window.removeDev=function(l,t,i){
+    if(!isAdmin())return denyAdmin(); if(!guardConfigChange())return;
+    ensureLife(); const name=(state.devices[l]&&state.devices[l][t]||[])[i]; if(!name)return;
+    const ym=currentMonth();
+    const active=state.kcLifecycle.devices.find(x=>x.loc===l&&x.typeKey===t&&x.name===name&&!x.deletedFrom);
+    if(hadTempThisMonth(l,name,ym)){
+      if(active) active.deletedFrom=today();
+    } else {
+      state.kcLifecycle.devices=state.kcLifecycle.devices.filter(x=>!(x.loc===l&&x.typeKey===t&&x.name===name&&!x.deletedFrom));
+    }
+    state.devices[l][t].splice(i,1); save(); fillDev(); renderDevList(); renderMonth(); renderSanepid(); renderPanel();
+  };
+  const oldRenameDev=window.renameDev;
+  window.renameDev=function(l,t,i,value){ensureLife(); let old=(state.devices[l]&&state.devices[l][t]||[])[i]; if(oldRenameDev) oldRenameDev(l,t,i,value); let rec=state.kcLifecycle.devices.find(x=>x.loc===l&&x.typeKey===t&&x.name===old&&!x.deletedFrom); if(rec){rec.name=String(value).trim(); save();}};
+
+  // Sprzątanie z lifecycle
+  window.addCleanItem=function(){
+    if(!isAdmin())return denyAdmin(); if(!guardConfigChange())return;
+    ensureLife(); let loc=cleanAdminLoc?.value||state.locations[0], shift=cleanAdminShift.value, name=newCleanItem.value.trim(); if(!name)return;
+    let arr=[...getCleaning(loc,shift)]; if(!arr.includes(name)) arr.push(name); setCleaning(loc,shift,arr);
+    state.kcLifecycle.clean.push({loc,shift,name,activeFrom:today()});
+    if(typeof setCleanFreq==='function') setCleanFreq(loc,shift,name,newCleanFreq.value||'daily');
+    newCleanItem.value=''; save(); renderCleanAdmin(); renderCleanItems(); renderMonth(); renderSanepid(); renderPanel();
+  };
+  window.removeCleanItem=function(loc,shift,i){
+    if(!isAdmin())return denyAdmin(); if(!guardConfigChange())return;
+    ensureLife(); let arr=[...getCleaning(loc,shift)], name=arr[i]; if(!name)return;
+    const ym=currentMonth(); const active=state.kcLifecycle.clean.find(x=>x.loc===loc&&x.shift===shift&&x.name===name&&!x.deletedFrom);
+    if(hadCleanThisMonth(loc,shift,name,ym)){ if(active) active.deletedFrom=today(); }
+    else { state.kcLifecycle.clean=state.kcLifecycle.clean.filter(x=>!(x.loc===loc&&x.shift===shift&&x.name===name&&!x.deletedFrom)); }
+    arr.splice(i,1); setCleaning(loc,shift,arr); save(); renderCleanAdmin(); renderCleanItems(); renderMonth(); renderSanepid(); renderPanel();
+  };
+  const oldRenameClean=window.renameCleanItem;
+  window.renameCleanItem=function(loc,shift,i,value){ensureLife(); let old=[...getCleaning(loc,shift)][i]; if(oldRenameClean) oldRenameClean(loc,shift,i,value); let rec=state.kcLifecycle.clean.find(x=>x.loc===loc&&x.shift===shift&&x.name===old&&!x.deletedFrom); if(rec){rec.name=String(value).trim(); save();}};
+
+  // HACCP z lifecycle
+  window.addHaccpItem=function(){
+    if(!isAdmin())return denyAdmin(); if(!guardConfigChange())return;
+    ensureLife(); let loc=haccpAdminLoc?.value||state.locations[0], name=newHaccpItem.value.trim(); if(!name)return;
+    let arr=[...getHaccpItemsForLoc(loc)]; if(!arr.includes(name)) arr.push(name); setHaccpItemsForLoc(loc,arr);
+    state.kcLifecycle.haccp.push({loc,name,activeFrom:today()}); newHaccpItem.value=''; save(); renderHaccpAdmin(); renderHaccpItems(); renderMonth(); renderSanepid(); renderPanel();
+  };
+  window.removeHaccpItem=function(loc,i){
+    if(!isAdmin())return denyAdmin(); if(!guardConfigChange())return;
+    ensureLife(); let arr=[...getHaccpItemsForLoc(loc)], name=arr[i]; if(!name)return;
+    const ym=currentMonth(); const active=state.kcLifecycle.haccp.find(x=>x.loc===loc&&x.name===name&&!x.deletedFrom);
+    if(hadHaccpThisMonth(loc,name,ym)){ if(active) active.deletedFrom=today(); }
+    else { state.kcLifecycle.haccp=state.kcLifecycle.haccp.filter(x=>!(x.loc===loc&&x.name===name&&!x.deletedFrom)); }
+    arr.splice(i,1); setHaccpItemsForLoc(loc,arr); save(); renderHaccpAdmin(); renderHaccpItems(); renderMonth(); renderSanepid(); renderPanel();
+  };
+  const oldRenameH=window.renameHaccpItem;
+  window.renameHaccpItem=function(loc,i,value){ensureLife(); let old=[...getHaccpItemsForLoc(loc)][i]; if(oldRenameH) oldRenameH(loc,i,value); let rec=state.kcLifecycle.haccp.find(x=>x.loc===loc&&x.name===old&&!x.deletedFrom); if(rec){rec.name=String(value).trim(); save();}};
+
+  // Select urządzeń i listy na dzień dzisiejszy: usunięte nie wracają w nowych wpisach
+  window.fillDev=function(){
+    ensureLife(); let l=tempLoc.value||state.locations[0], date=tempDate?.value||today();
+    let devs=state.kcLifecycle.devices.filter(x=>x.loc===l&&lifeActiveOn(x,date));
+    tempDev.innerHTML=devs.map(x=>`<option data-type="${x.typeKey==='mroznie'?'mroznia':'chlodnia'}">${esc(x.name)}</option>`).join('');
+    if(typeof fillVals==='function') fillVals();
+  };
+
+  // Budowanie tabel z uwzględnieniem activeFrom/deletedFrom i minusów
+  window.buildTable=function(l,type,ym){
+    ensureLife(); let n=monthLabel(ym),days=daysInMonth(ym);
+    if(type==='temp'){
+      let life=state.kcLifecycle.devices.filter(x=>x.loc===l && lifeVisibleMonth(x,ym,hadTempThisMonth(l,x.name,ym)));
+      let cols=life.map(x=>x.name);
+      return `<table><tr><th colspan="${cols.length+3}">KARTA TEMPERATUR — ${esc(l)} — ${esc(n)}</th></tr><tr><th>Data</th>${cols.map(c=>`<th>${esc(c)}</th>`).join('')}<th>Podpis</th><th>Uwagi</th></tr>`+
+      Array.from({length:days},(_,i)=>{let day=i+1,date=ym+'-'+pad(day);let dayLogs=logs.filter(x=>x.kind==='temp'&&x.loc===l&&x.date===date);let noteLogs=dayLogs.filter(x=>x.note);let user=dayLogs.map(x=>x.user).filter(Boolean).filter((v,i,a)=>a.indexOf(v)===i).join(' / ');return `<tr><th>${day}</th>`+life.map(meta=>{if(!lifeActiveOn(meta,date)) return cellInactive(); let r=latestLog('temp',l,meta.name,day,ym);return r?`<td class="${statusClass(r.status)} clickableCell" onclick="showCellInfoById('${r.id}','${esc(meta.name)}')"><b>${esc(r.val)}°C</b>${cellStamp(r)}</td>`:`<td></td>`}).join('')+`<td>${esc(user)}</td><td>${noteLogs.length?`<span class="clickableCell" onclick="showDayNotes('temp','${esc(l)}','${ym}',${day})">Uwagi${noteLogs.length>1?' ('+noteLogs.length+')':''}</span>`:''}</td></tr>`}).join('')+`</table>`;
+    }
+    if(type==='clean'){
+      let life=state.kcLifecycle.clean.filter(x=>x.loc===l && lifeVisibleMonth(x,ym,hadCleanThisMonth(l,x.shift,x.name,ym)));
+      return `<table><tr><th colspan="${life.length+3}">KARTA KONTROLI CZYSTOŚCI — ${esc(l)} — ${esc(n)}</th></tr><tr><th>Data</th>${life.map(x=>`<th><div class="vert">${esc(x.shift+': '+x.name+' ['+freqLabel(getCleanFreq(l,x.shift,x.name))+']')}</div></th>`).join('')}<th>Podpis</th><th>Uwagi</th></tr>`+
+      Array.from({length:days},(_,i)=>{let day=i+1,date=ym+'-'+pad(day);let dayLogs=logs.filter(x=>x.kind==='clean'&&x.loc===l&&x.date===date);let noteLogs=dayLogs.filter(x=>x.note);let user=dayLogs.map(x=>x.user).filter(Boolean).filter((v,i,a)=>a.indexOf(v)===i).join(' / ');return `<tr><th>${day}</th>`+life.map(meta=>{if(!lifeActiveOn(meta,date)) return cellInactive(); let rs=logs.filter(x=>x.kind==='clean'&&x.loc===l&&x.date===date&&x.shift===meta.shift);let r=rs.find(x=>(x.done||[]).includes(meta.name));return r?`<td class="clickableCell" onclick="showCellInfoById('${r.id}','${esc(meta.name)}')">X${cellStamp(r)}</td>`:`<td></td>`}).join('')+`<td>${esc(user)}</td><td>${noteLogs.length?`<span class="clickableCell" onclick="showDayNotes('clean','${esc(l)}','${ym}',${day})">Uwagi${noteLogs.length>1?' ('+noteLogs.length+')':''}</span>`:''}</td></tr>`}).join('')+`</table>`;
+    }
+    let life=state.kcLifecycle.haccp.filter(x=>x.loc===l && lifeVisibleMonth(x,ym,hadHaccpThisMonth(l,x.name,ym)));
+    return `<table><tr><th colspan="${life.length+3}">HACCP — ${esc(l)} — ${esc(n)}</th></tr><tr><th>Data</th>${life.map(x=>`<th>${esc(x.name)}</th>`).join('')}<th>Podpis</th><th>Uwagi</th></tr>`+
+    Array.from({length:days},(_,i)=>{let day=i+1,date=ym+'-'+pad(day),r=latestLog('haccp',l,null,day,ym);return `<tr><th>${day}</th>`+life.map(meta=>{if(!lifeActiveOn(meta,date)) return cellInactive();return r?.done?.includes(meta.name)?`<td class="clickableCell" onclick="showCellInfoById('${r.id}','${esc(meta.name)}')">X${cellStamp(r)}</td>`:`<td></td>`}).join('')+`<td>${r?esc(r.user):''}</td><td>${r?.note?`<span class="clickableCell" onclick="showCellInfoById('${r.id}','Uwagi')">Uwagi</span>`:''}</td></tr>`}).join('')+`</table>`;
+  };
+
+  const oldRenderMonth=window.renderMonth;
+  window.renderMonth=function(){ensureLife(); insertCloseBtn(); const l=monthLoc.value||state.locations[0],t=monthType.value,ym=monthPick.value||currentMonth(); monthTable.innerHTML=buildTable(l,t,ym); printNotesBox.innerHTML=notesTableHtml(notesFor(l,t,ym),'Spis uwag'); printEntriesBox.innerHTML=''; const b=document.getElementById('closeMonthBtn'); if(b) b.textContent=monthClosed(ym)?'Miesiąc zatwierdzony':'Zatwierdź miesiąc';};
+
+  // Start
+  document.addEventListener('DOMContentLoaded',()=>{ensureLife(); setTimeout(()=>{try{save(); insertCloseBtn(); if(typeof renderMonth==='function') renderMonth();}catch(e){}},120)});
+})();
+</script>
+
+
+<!-- v9.68 — zatwierdzanie miesiąca: manager/admin, zielony status, odblokowanie PIN-em tylko do korekty wpisów -->
+<style>
+.kcMonthApproveBtn{background:#16a34a!important;color:#fff!important;border-color:#16a34a!important}
+.kcMonthApproveBtn.kcPending{background:#2563eb!important;border-color:#2563eb!important;color:#fff!important}
+.kcMonthApproveBtn.kcCorrection{background:#f59e0b!important;border-color:#f59e0b!important;color:#111827!important}
+.kcMonthStatus{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 12px;font-weight:900;margin:6px 0;background:#dcfce7;color:#166534;border:1px solid #86efac}
+.kcMonthStatus.kcUnlocked{background:#fef3c7;color:#92400e;border-color:#facc15}
+.kcLockedField{opacity:.55;filter:grayscale(.2)}
+.kcLockedNote{font-size:12px;font-weight:800;color:#166534;margin-top:8px}
+body.theme-dark:not(.loginMode) .kcMonthStatus{background:#14532d!important;color:#dcfce7!important;border-color:#22c55e!important}
+body.theme-dark:not(.loginMode) .kcMonthStatus.kcUnlocked{background:#713f12!important;color:#fef3c7!important;border-color:#facc15!important}
+</style>
+<script>
+(function(){
+  function nowIso(){return new Date().toISOString()}
+  function ymFromDate(d){return String(d||'').slice(0,7)}
+  function ymLabel(ym){try{return monthLabel(ym)}catch(e){return ym}}
+  function canApproveMonth(){return !!(currentUser && (currentUser.role==='Admin' || currentUser.role==='Manager'))}
+  function closedRec(ym){
+    if(!state.closedMonths) state.closedMonths={};
+    const v=state.closedMonths[ym];
+    if(!v) return null;
+    if(v===true){ state.closedMonths[ym]={closed:true,by:'Administrator',at:'',legacy:true}; save(); }
+    return state.closedMonths[ym];
+  }
+  function isMonthClosed(ym){return !!closedRec(ym)}
+  function isCorrectionOpen(ym){return !!(state.monthCorrections && state.monthCorrections[ym] && state.monthCorrections[ym].unlocked)}
+  function requirePin(txt){
+    if(!canApproveMonth()){alert('Tylko manager lub admin może wykonać tę operację.');return false}
+    const pin=prompt(txt||'Podaj PIN:');
+    if(pin===null) return false;
+    if(String(pin)!==String(currentUser.pin||'')){alert('Nieprawidłowy PIN.');return false}
+    return true;
+  }
+  function guardClosedEntry(date, action){
+    const ym=ymFromDate(date);
+    if(!ym || !isMonthClosed(ym)) return true;
+    if(action==='edit' && isCorrectionOpen(ym)) return true;
+    if(action==='delete'){
+      alert('Ten miesiąc jest zatwierdzony. Nie można usuwać wpisów z zamkniętego miesiąca.');
+      return false;
+    }
+    if(action==='add'){
+      alert('Ten miesiąc jest zatwierdzony. Nie można dodawać nowych wpisów do zamkniętego miesiąca. Można poprawić istniejące wpisy po odblokowaniu PIN-em.');
+      return false;
+    }
+    alert('Ten miesiąc jest zatwierdzony. Kliknij zielony przycisk „Zatwierdzono” w zakładce Miesiąc i podaj PIN, aby odblokować korektę wpisów.');
+    return false;
+  }
+  window.kcIsMonthClosed=isMonthClosed;
+  window.kcIsCorrectionOpen=isCorrectionOpen;
+  window.kcGuardClosedEntry=guardClosedEntry;
+
+  window.closeSelectedMonth=function(){
+    const ym=(document.getElementById('monthPick')?.value)||currentMonth();
+    const rec=closedRec(ym);
+    if(rec){
+      if(isCorrectionOpen(ym)){
+        if(confirm('Zamknąć tryb korekty dla miesiąca '+ym+'?')){
+          if(state.monthCorrections) delete state.monthCorrections[ym];
+          save(); renderMonth();
+        }
+        return;
+      }
+      if(!requirePin('Miesiąc '+ym+' jest zatwierdzony. Podaj PIN, aby odblokować tylko korektę wpisów:')) return;
+      state.monthCorrections=state.monthCorrections||{};
+      state.monthCorrections[ym]={unlocked:true,by:currentUser.name,at:nowIso()};
+      save(); alert('Odblokowano korektę wpisów dla miesiąca '+ym+'. Układ raportu pozostaje zamrożony.'); renderMonth();
+      return;
+    }
+    if(!canApproveMonth()){alert('Tylko manager lub admin może zatwierdzić miesiąc.');return}
+    if(!confirm('Zatwierdzić miesiąc '+ymLabel(ym)+'? Po zatwierdzeniu nie będzie można zmieniać układu ani historii bez PIN-u.')) return;
+    if(!requirePin('Podaj PIN, aby zatwierdzić miesiąc '+ym+':')) return;
+    state.closedMonths=state.closedMonths||{};
+    state.closedMonths[ym]={closed:true,by:currentUser.name,role:currentUser.role,at:nowIso()};
+    if(state.monthCorrections) delete state.monthCorrections[ym];
+    save(); alert('Miesiąc '+ym+' został zatwierdzony.'); renderMonth();
+  };
+
+  function fmtAt(iso){
+    if(!iso) return '';
+    try{const d=new Date(iso);return d.toLocaleDateString('pl-PL')+' '+d.toLocaleTimeString('pl-PL',{hour:'2-digit',minute:'2-digit'});}catch(e){return iso}
+  }
+  window.kcUpdateMonthApprovalUi=function(){
+    const host=document.querySelector('#month .controls .row');
+    if(!host) return;
+    let b=document.getElementById('closeMonthBtn');
+    if(!b){ b=document.createElement('button'); b.id='closeMonthBtn'; b.className='btn'; b.onclick=window.closeSelectedMonth; host.appendChild(b); }
+    let s=document.getElementById('monthApprovalStatus');
+    if(!s){ s=document.createElement('div'); s.id='monthApprovalStatus'; host.appendChild(s); }
+    const ym=(document.getElementById('monthPick')?.value)||currentMonth();
+    const rec=closedRec(ym);
+    b.classList.remove('kcPending','kcCorrection','kcMonthApproveBtn');
+    b.classList.add('kcMonthApproveBtn');
+    if(rec){
+      if(isCorrectionOpen(ym)){
+        const c=state.monthCorrections[ym];
+        b.classList.add('kcCorrection'); b.textContent='Korekta aktywna';
+        s.className='kcMonthStatus kcUnlocked'; s.innerHTML='🔓 Korekta odblokowana: '+(c.by||'')+(c.at?' · '+fmtAt(c.at):'');
+      }else{
+        b.textContent='Zatwierdzono';
+        s.className='kcMonthStatus'; s.innerHTML='✅ Zatwierdzony: '+(rec.by||'')+(rec.at?' · '+fmtAt(rec.at):'');
+      }
+    }else{
+      b.classList.add('kcPending'); b.textContent='Zatwierdź miesiąc';
+      s.className=''; s.innerHTML='';
+    }
+  };
+
+  const oldRenderMonth=window.renderMonth;
+  window.renderMonth=function(){ if(oldRenderMonth) oldRenderMonth(); setTimeout(window.kcUpdateMonthApprovalUi,0); };
+
+  // blokada dopisywania nowych wpisów w zatwierdzonym miesiącu
+  const oldSaveTemp=window.saveTemp;
+  window.saveTemp=function(){ const d=document.getElementById('tempDate')?.value; if(!guardClosedEntry(d,'add')) return; return oldSaveTemp.apply(this,arguments); };
+  const oldSaveClean=window.saveClean;
+  window.saveClean=function(){ const d=document.getElementById('cleanDate')?.value; if(!guardClosedEntry(d,'add')) return; return oldSaveClean.apply(this,arguments); };
+  const oldSaveHaccp=window.saveHaccp;
+  window.saveHaccp=function(){ const d=document.getElementById('haccpDate')?.value; if(!guardClosedEntry(d,'add')) return; return oldSaveHaccp.apply(this,arguments); };
+
+  const oldEditLog=window.editLog;
+  window.editLog=function(id,field,value,isTemp){ const x=logs.find(a=>a.id===id); if(x && !guardClosedEntry(x.date,'edit')){ refresh(); return; } return oldEditLog.apply(this,arguments); };
+  const oldEditDoneItem=window.editDoneItem;
+  window.editDoneItem=function(id,item,checked){ const x=logs.find(a=>a.id===id); if(x && !guardClosedEntry(x.date,'edit')){ refresh(); return; } return oldEditDoneItem.apply(this,arguments); };
+  const oldEditDone=window.editDone;
+  window.editDone=function(id,value){ const x=logs.find(a=>a.id===id); if(x && !guardClosedEntry(x.date,'edit')){ refresh(); return; } return oldEditDone.apply(this,arguments); };
+  const oldDeleteLog=window.deleteLog;
+  window.deleteLog=function(id){ const x=logs.find(a=>a.id===id); if(x && !guardClosedEntry(x.date,'delete')) return; return oldDeleteLog.apply(this,arguments); };
+
+  // po renderowaniu historii oznacz zablokowane wpisy jako readonly wizualnie
+  const oldRenderHistoryPage=window.renderHistoryPage;
+  window.renderHistoryPage=function(){ if(oldRenderHistoryPage) oldRenderHistoryPage(); setTimeout(()=>{
+    document.querySelectorAll('#historyResult .kcHistoryEditBox').forEach(box=>{
+      const dateInput=box.querySelector('input[type="date"]'); const ym=dateInput?ymFromDate(dateInput.value):'';
+      if(ym && isMonthClosed(ym) && !isCorrectionOpen(ym)){
+        box.classList.add('kcLockedField');
+        if(!box.querySelector('.kcLockedNote')) box.insertAdjacentHTML('beforeend','<div class="kcLockedNote">✅ Miesiąc zatwierdzony — edycja tylko po PIN-ie w zakładce Miesiąc.</div>');
+      }
+    });
+  },0); };
+
+  document.addEventListener('DOMContentLoaded',()=>setTimeout(()=>{try{window.kcUpdateMonthApprovalUi();}catch(e){}},200));
+})();
+</script>
 </body></html>
 <!-- v9.56 dark select arrows + status chips fix -->
 <style>
