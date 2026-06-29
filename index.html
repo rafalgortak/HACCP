@@ -2903,7 +2903,7 @@ body.theme-dark:not(.loginMode) #staff .staffDetails summary:after{color:#f8fafc
 body.theme-dark:not(.loginMode) #staff .staffSubBox{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
 body.theme-dark:not(.loginMode) #staff .docRow{background:#111827!important;color:#f8fafc!important;border-color:rgba(148,163,184,.28)!important}
 </style>
-<link rel="manifest" href="./manifest.json?v=946">
+<link rel="manifest" href="./manifest.json?v=991">
 <link rel="apple-touch-icon" sizes="180x180" href="./icons/icon-180.png?v=946">
 <link rel="apple-touch-icon" href="./icons/icon-180.png?v=946">
 <link rel="icon" type="image/png" sizes="32x32" href="./icons/icon-32.png?v=946">
@@ -6215,6 +6215,26 @@ body:not(.loginMode) .wrap{
 })();
 </script>
 
+
+<script>
+/* v9.91 — aktualizacja manifest/cache dla Android Chrome/PWA */
+(function(){
+  const KC_VERSION='v9.91';
+  function mark(){ const vf=document.querySelector('.versionFooter'); if(vf) vf.textContent=KC_VERSION; }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', mark); else mark();
+  setTimeout(mark,300); setTimeout(mark,1200);
+  try{
+    if('serviceWorker' in navigator){
+      navigator.serviceWorker.getRegistrations().then(regs=>{
+        regs.forEach(r=>r.update && r.update());
+      }).catch(()=>{});
+    }
+    if(window.caches && caches.keys){
+      caches.keys().then(keys=>keys.filter(k=>/^kitchen-control-|^kc-|KitchenControl/i.test(k)).forEach(k=>caches.delete(k))).catch(()=>{});
+    }
+  }catch(e){}
+})();
+</script>
 </body></html>
 <!-- v9.56 dark select arrows + status chips fix -->
 <style>
