@@ -1,4 +1,4 @@
-const CACHE_NAME = 'kitchen-control-v9.91';
+const CACHE_NAME = 'kitchen-control-v9.92';
 self.addEventListener('install', event => {
   self.skipWaiting();
 });
@@ -11,9 +11,9 @@ self.addEventListener('activate', event => {
 });
 self.addEventListener('fetch', event => {
   const req = event.request;
-  if (req.mode === 'navigate' || (req.destination === 'document')) {
+  if (req.mode === 'navigate' || req.destination === 'document') {
     event.respondWith(fetch(req, { cache: 'no-store' }).catch(() => caches.match(req)));
     return;
   }
-  event.respondWith(fetch(req).catch(() => caches.match(req)));
+  event.respondWith(fetch(req, { cache: 'reload' }).catch(() => caches.match(req)));
 });

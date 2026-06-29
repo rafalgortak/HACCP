@@ -2903,7 +2903,7 @@ body.theme-dark:not(.loginMode) #staff .staffDetails summary:after{color:#f8fafc
 body.theme-dark:not(.loginMode) #staff .staffSubBox{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
 body.theme-dark:not(.loginMode) #staff .docRow{background:#111827!important;color:#f8fafc!important;border-color:rgba(148,163,184,.28)!important}
 </style>
-<link rel="manifest" href="./manifest.json?v=991">
+<link rel="manifest" href="./manifest.json?v=992">
 <link rel="apple-touch-icon" sizes="180x180" href="./icons/icon-180.png?v=946">
 <link rel="apple-touch-icon" href="./icons/icon-180.png?v=946">
 <link rel="icon" type="image/png" sizes="32x32" href="./icons/icon-32.png?v=946">
@@ -6217,20 +6217,25 @@ body:not(.loginMode) .wrap{
 
 
 <script>
-/* v9.91 — aktualizacja manifest/cache dla Android Chrome/PWA */
+/* v9.92 — tylko odświeżenie manifest/cache, bez zmian układu panelu */
 (function(){
-  const KC_VERSION='v9.91';
-  function mark(){ const vf=document.querySelector('.versionFooter'); if(vf) vf.textContent=KC_VERSION; }
+  const KC_VERSION='v9.92';
+  function mark(){const vf=document.querySelector('.versionFooter'); if(vf) vf.textContent=KC_VERSION;}
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', mark); else mark();
   setTimeout(mark,300); setTimeout(mark,1200);
   try{
     if('serviceWorker' in navigator){
-      navigator.serviceWorker.getRegistrations().then(regs=>{
-        regs.forEach(r=>r.update && r.update());
-      }).catch(()=>{});
+      window.addEventListener('load', function(){
+        navigator.serviceWorker.register('./service-worker.js?v=992').then(function(reg){
+          if(reg && reg.update) reg.update();
+        }).catch(function(){});
+      });
+      navigator.serviceWorker.getRegistrations().then(function(regs){regs.forEach(function(r){ if(r && r.update) r.update(); });}).catch(function(){});
     }
     if(window.caches && caches.keys){
-      caches.keys().then(keys=>keys.filter(k=>/^kitchen-control-|^kc-|KitchenControl/i.test(k)).forEach(k=>caches.delete(k))).catch(()=>{});
+      caches.keys().then(function(keys){
+        keys.filter(function(k){return /^kitchen-control-|^kc-|KitchenControl/i.test(k);}).forEach(function(k){caches.delete(k);});
+      }).catch(function(){});
     }
   }catch(e){}
 })();
@@ -6944,95 +6949,5 @@ body.theme-dark:not(.loginMode) .kcPdfAndroidFallback{background:#0b1220;color:#
   window.openStaffPdf82=function(pid,section,name){window.openStaffPdf(pid,section,name)};
   function fixVersion(){var vf=document.querySelector('.versionFooter'); if(vf)vf.textContent='v9.89';}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',fixVersion); else fixVersion(); setTimeout(fixVersion,300);
-})();
-</script>
-
-<style>
-/* v9.90 — mocniejsza poprawka: panel scroll + sticky Data */
-body:not(.loginMode) #panel{
-  max-width:100vw!important;
-  overflow-x:auto!important;
-  overflow-y:visible!important;
-  -webkit-overflow-scrolling:touch!important;
-  touch-action:pan-x pan-y!important;
-}
-body:not(.loginMode) #panel #cards{
-  display:grid!important;
-}
-@media (orientation:landscape) and (min-width:700px) and (max-width:1199px){
-  body:not(.loginMode) #panel #cards{
-    width:max-content!important;
-    min-width:100%!important;
-    grid-template-columns:repeat(4,minmax(285px,285px))!important;
-  }
-}
-body:not(.loginMode) .wrap{overflow:auto!important;-webkit-overflow-scrolling:touch!important;}
-body:not(.loginMode) .wrap table{width:max-content!important;min-width:100%!important;}
-body:not(.loginMode) #monthTable table tr > th:first-child,
-body:not(.loginMode) #monthTable table tr > td:first-child{
-  position:sticky!important;left:0!important;z-index:20!important;background:#f8fafc!important;box-shadow:2px 0 0 rgba(15,23,42,.18)!important;
-}
-body.theme-dark:not(.loginMode) #monthTable table tr > th:first-child,
-body.theme-dark:not(.loginMode) #monthTable table tr > td:first-child{background:#0f172a!important;color:#f8fafc!important;}
-/* widoczny znacznik, żeby od razu było jasne, że wgrała się nowa wersja */
-.versionFooter{font-size:12px!important;}
-</style>
-<script>
-/* v9.90 — Android PDF bez martwego przycisku w ramce */
-(function(){
-  function isAndroid(){return /Android/i.test(navigator.userAgent||'');}
-  function toBlob(dataUrl){
-    var parts=String(dataUrl||'').split(','), meta=parts[0]||'', b64=parts[1]||'';
-    var mime=(meta.match(/data:([^;]+)/)||[])[1]||'application/pdf';
-    var bin=atob(b64), arr=new Uint8Array(bin.length);
-    for(var i=0;i<bin.length;i++)arr[i]=bin.charCodeAt(i);
-    return new Blob([arr],{type:mime});
-  }
-  function clean(t){return String(t||'Dokument PDF').replace(/[<>]/g,'').trim()||'Dokument PDF';}
-  function fname(t){return (clean(t).toLowerCase().endsWith('.pdf')?clean(t):clean(t)+'.pdf').replace(/[\\/:*?"<>|]/g,'_');}
-  function esc(t){return String(t||'').replace(/[&<>\"]/g,function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m];});}
-  var cur={title:'Dokument PDF',data:'',url:''};
-  window.closePdfPreview=function(){
-    var el=document.getElementById('kcPdfOverlay'); if(el)el.remove();
-    document.body.classList.remove('kcAndroidPdfMode');
-    if(cur.url && cur.url.indexOf('blob:')===0){try{URL.revokeObjectURL(cur.url);}catch(e){}}
-    cur={title:'Dokument PDF',data:'',url:''};
-  };
-  window.shareCurrentPdf=async function(){
-    try{
-      if(!cur.data)return;
-      var blob=toBlob(cur.data), fileName=fname(cur.title), file=new File([blob],fileName,{type:'application/pdf'});
-      if(navigator.canShare && navigator.canShare({files:[file]}) && navigator.share){await navigator.share({files:[file],title:clean(cur.title)});return;}
-      var a=document.createElement('a'); a.href=cur.url||URL.createObjectURL(blob); a.download=fileName; document.body.appendChild(a); a.click(); a.remove();
-    }catch(e){alert('Nie udało się udostępnić/pobrać PDF.');}
-  };
-  window.downloadCurrentPdf=function(){
-    try{
-      var blob=toBlob(cur.data), a=document.createElement('a');
-      a.href=cur.url||URL.createObjectURL(blob); a.download=fname(cur.title); document.body.appendChild(a); a.click(); a.remove();
-    }catch(e){alert('Nie udało się pobrać PDF.');}
-  };
-  function preview(title,data){
-    if(!data){alert('Brak dodanego pliku PDF.');return;}
-    window.closePdfPreview();
-    var t=clean(title), blob=toBlob(data), url=URL.createObjectURL(blob); cur={title:t,data:data,url:url};
-    var overlay=document.createElement('div'); overlay.id='kcPdfOverlay'; overlay.className='kcPdfOverlay';
-    if(isAndroid()){
-      document.body.classList.add('kcAndroidPdfMode');
-      overlay.innerHTML='<div class="kcPdfTopbar"><button class="kcPdfClose" onclick="closePdfPreview()">✕ Zamknij</button><div class="kcPdfTitle">'+esc(t)+'</div><button class="kcPdfShare" onclick="shareCurrentPdf()" aria-label="Udostępnij">↗</button></div><div class="kcPdfAndroidFallback" style="display:flex!important"><div class="kcPdfAndroidFallbackInner"><h3>PDF gotowy</h3><p>Android nie otwiera go poprawnie w ramce, więc użyj przycisku poniżej.</p><button class="btn primary" onclick="downloadCurrentPdf()">Pobierz / otwórz PDF</button><button class="btn" onclick="shareCurrentPdf()">Udostępnij</button></div></div>';
-    }else{
-      overlay.innerHTML='<div class="kcPdfTopbar"><button class="kcPdfClose" onclick="closePdfPreview()">✕ Zamknij</button><div class="kcPdfTitle">'+esc(t)+'</div><button class="kcPdfShare" onclick="shareCurrentPdf()" aria-label="Udostępnij">↗</button></div><iframe class="kcPdfFrame" src="'+url+'"></iframe>';
-    }
-    document.body.appendChild(overlay);
-  }
-  window.openHaccpDoc=function(loc,name){try{var f=(JSON.parse(localStorage.getItem('kc_haccp_docs_v1')||'{}')[loc]||{})[name]; preview(name,f&&f.data);}catch(e){alert('Brak dodanego pliku PDF.')}};
-  window.openHaccpPdf82=function(loc,name){window.openHaccpDoc(loc,name);};
-  window.openProcedureDoc=function(loc,cat,i){try{var f=(((JSON.parse(localStorage.getItem('kc_proc_docs_v1')||'{}')[loc]||{})[cat]||[])[i]); preview(f&&(f.title||cat),f&&f.data);}catch(e){alert('Brak dodanego pliku PDF.')}};
-  window.openProcedureDocV2=function(loc,cat,name){try{var f=(((JSON.parse(localStorage.getItem('kc_proc_files_v1')||'{}')[loc]||{})[cat]||{})[name]); preview(name,f&&f.data);}catch(e){alert('Brak dodanego pliku PDF.')}};
-  window.openProcedurePdf82=function(loc,cat,name){window.openProcedureDocV2(loc,cat,name);};
-  window.openStaffPdf=function(pid,section,name){try{var f=(((JSON.parse(localStorage.getItem('kc_staff_files_v1')||'{}')[pid]||{})[section]||{})[name]); preview(name,f&&f.data);}catch(e){alert('Brak dodanego pliku PDF.')}};
-  window.openStaffPdf82=function(pid,section,name){window.openStaffPdf(pid,section,name);};
-  function mark(){var vf=document.querySelector('.versionFooter'); if(vf)vf.textContent='v9.90';}
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mark); else mark(); setTimeout(mark,500); setTimeout(mark,1500);
 })();
 </script>
