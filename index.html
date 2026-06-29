@@ -3019,6 +3019,66 @@ body:not(.loginMode) table{
   }
 }
 </style>
+
+
+<style>
+/* v9.88 — mała poprawka: Android/tablet panel poziomo + pewna ikona wylogowania */
+
+/* Ikona użytkownika/wylogowania bez znaków emoji — Android nie podmienia jej już na kopertę */
+body:not(.loginMode) #headerMenuBtn.powerBtn{
+  position:relative!important;
+  overflow:hidden!important;
+  text-indent:0!important;
+  font-size:0!important;
+  line-height:0!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+body:not(.loginMode) #headerMenuBtn.powerBtn::before{
+  content:''!important;
+  position:static!important;
+  inset:auto!important;
+  display:block!important;
+  width:23px!important;
+  height:23px!important;
+  min-width:23px!important;
+  min-height:23px!important;
+  background:#0f172a!important;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M11 2h2v11h-2V2Zm6.83 3.17-1.42 1.42A7.94 7.94 0 0 1 20 13a8 8 0 1 1-12.41-6.7L6.17 4.88A10 10 0 1 0 22 13a9.92 9.92 0 0 0-4.17-7.83Z'/%3E%3C/svg%3E") center/contain no-repeat!important;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M11 2h2v11h-2V2Zm6.83 3.17-1.42 1.42A7.94 7.94 0 0 1 20 13a8 8 0 1 1-12.41-6.7L6.17 4.88A10 10 0 1 0 22 13a9.92 9.92 0 0 0-4.17-7.83Z'/%3E%3C/svg%3E") center/contain no-repeat!important;
+}
+body.theme-dark:not(.loginMode) #headerMenuBtn.powerBtn::before{
+  background:#f8fafc!important;
+}
+
+/* Android/tablet: przewijanie prawo-lewo dotyczy panelu, nie całej aplikacji */
+body:not(.loginMode) #panel{
+  max-width:100%!important;
+  overflow-x:auto!important;
+  overflow-y:visible!important;
+  -webkit-overflow-scrolling:touch!important;
+  overscroll-behavior-x:contain!important;
+  touch-action:pan-x pan-y!important;
+}
+body:not(.loginMode) #panel #cards{
+  width:max-content!important;
+  min-width:100%!important;
+}
+@media (orientation:landscape) and (min-width:700px) and (max-width:1199px){
+  body:not(.loginMode) #panel #cards{
+    grid-template-columns:repeat(4,minmax(265px,1fr))!important;
+  }
+}
+@media (max-width:699px){
+  body:not(.loginMode) #panel #cards{
+    width:100%!important;
+    min-width:100%!important;
+    grid-template-columns:1fr!important;
+  }
+}
+</style>
+
 </head><body><header class="appHeader"><div class="headerLeft" onclick="show('panel')"><img class="headerLogoImg" src="./icons/icon-180.png?v=946" alt="Kitchen Control"><h1>Kitchen Control</h1></div><div class="headerActions"><button type="button" id="themeToggleBtn" class="themeMiniBtn" onclick="toggleAppTheme()" aria-label="Zmień motyw">🌙</button><button id="headerMenuBtn" class="powerBtn hidden" onclick="toggleUserMenu(event)">⏻</button></div></header><main>
 
 <section id="loginScreen" class="loginBox kcLoginScreen">
@@ -5925,7 +5985,7 @@ body.theme-dark:not(.loginMode) .kcPdfClose:active,body.theme-dark:not(.loginMod
   window.openHaccpDoc=function(loc,name){try{const f=(JSON.parse(localStorage.getItem('kc_haccp_docs_v1')||'{}')[loc]||{})[name]; preview(name,f&&f.data);}catch(e){alert('Brak dodanego pliku PDF.')}};
   window.openProcedureDocV2=function(loc,cat,name){try{const f=(((JSON.parse(localStorage.getItem('kc_proc_files_v1')||'{}')[loc]||{})[cat]||{})[name]); preview(name,f&&f.data);}catch(e){alert('Brak dodanego pliku PDF.')}};
   window.openStaffPdf=function(pid,section,name){try{const f=(((JSON.parse(localStorage.getItem('kc_staff_files_v1')||'{}')[pid]||{})[section]||{})[name]); preview(name,f&&f.data);}catch(e){alert('Brak dodanego pliku PDF.')}};
-  setTimeout(()=>{const vf=document.querySelector('.versionFooter'); if(vf)vf.textContent='v9.87';},0);
+  setTimeout(()=>{const vf=document.querySelector('.versionFooter'); if(vf)vf.textContent='v9.88';},0);
 })();
 </script>
 
@@ -6147,7 +6207,7 @@ body:not(.loginMode) .wrap{
 /* v9.87 — numer wersji i bezpieczne wymuszenie ikon/podglądu po renderze */
 (function(){
   function fixV87(){
-    var vf=document.querySelector('.versionFooter'); if(vf)vf.textContent='v9.87';
+    var vf=document.querySelector('.versionFooter'); if(vf)vf.textContent='v9.88';
     var p=document.getElementById('headerMenuBtn'); if(p){p.setAttribute('aria-label','Menu użytkownika / wylogowanie');}
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',fixV87); else fixV87();
