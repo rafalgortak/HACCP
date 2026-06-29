@@ -6838,3 +6838,91 @@ body.theme-dark:not(.loginMode) #staff .docRow{background:#111827!important;colo
   #staffList details.staffDetails[open] summary::after{content:'⌃'}
 }
 </style>
+
+<style>
+/* v9.89 — Android/tablet: stała kolumna Data podczas przewijania tabel */
+body:not(.loginMode) .wrap table tr > th:first-child,
+body:not(.loginMode) .wrap table tr > td:first-child{
+  position:sticky!important;
+  left:0!important;
+  z-index:6!important;
+  background:#f8fafc!important;
+  box-shadow:2px 0 0 rgba(15,23,42,.12)!important;
+}
+body:not(.loginMode) .wrap table tr:first-child > th:first-child{
+  z-index:7!important;
+}
+body.theme-dark:not(.loginMode) .wrap table tr > th:first-child,
+body.theme-dark:not(.loginMode) .wrap table tr > td:first-child{
+  background:#0f172a!important;
+  color:#f8fafc!important;
+  box-shadow:2px 0 0 rgba(148,163,184,.25)!important;
+}
+@media print{
+  body:not(.loginMode) .wrap table tr > th:first-child,
+  body:not(.loginMode) .wrap table tr > td:first-child{
+    position:static!important;
+    box-shadow:none!important;
+  }
+}
+.kcPdfAndroidFallback{display:none;flex:1;align-items:center;justify-content:center;text-align:center;background:#fff;color:#111827;padding:22px;}
+.kcPdfAndroidFallbackInner{max-width:420px;margin:auto;}
+.kcPdfAndroidFallback .btn{display:inline-flex;margin:8px;align-items:center;justify-content:center;text-decoration:none;}
+body.kcAndroidPdfMode .kcPdfFrame{display:none!important;}
+body.kcAndroidPdfMode .kcPdfAndroidFallback{display:flex!important;}
+body.theme-dark:not(.loginMode) .kcPdfAndroidFallback{background:#0b1220;color:#f8fafc;}
+</style>
+<script>
+/* v9.89 — Android PDF: własny przycisk otwarcia/pobrania zamiast martwego przycisku Chrome w iframe */
+(function(){
+  function isAndroid(){return /Android/i.test(navigator.userAgent||'');}
+  function dataUrlToBlobV989(dataUrl){
+    const parts=String(dataUrl||'').split(',');
+    const meta=parts[0]||''; const b64=parts[1]||'';
+    const mime=(meta.match(/data:([^;]+)/)||[])[1]||'application/pdf';
+    const bin=atob(b64); const arr=new Uint8Array(bin.length);
+    for(let i=0;i<bin.length;i++)arr[i]=bin.charCodeAt(i);
+    return new Blob([arr],{type:mime});
+  }
+  function safePdfTitleV989(t){return String(t||'Dokument PDF').replace(/[<>]/g,'').trim()||'Dokument PDF'}
+  function makeBlobUrlV989(data){try{return URL.createObjectURL(dataUrlToBlobV989(data));}catch(e){return data;}}
+  let current={title:'Dokument PDF',data:'',url:''};
+  window.closePdfPreview=function(){
+    const el=document.getElementById('kcPdfOverlay'); if(el)el.remove();
+    document.body.classList.remove('kcAndroidPdfMode');
+    if(current.url && current.url.startsWith('blob:')){try{URL.revokeObjectURL(current.url)}catch(e){}}
+    current={title:'Dokument PDF',data:'',url:''};
+  };
+  window.shareCurrentPdf=async function(){
+    try{
+      if(!current.data)return;
+      const title=safePdfTitleV989(current.title);
+      const fileName=(title.toLowerCase().endsWith('.pdf')?title:title+'.pdf').replace(/[\\/:*?"<>|]/g,'_');
+      const blob=dataUrlToBlobV989(current.data);
+      const file=new File([blob],fileName,{type:'application/pdf'});
+      if(navigator.canShare && navigator.canShare({files:[file]}) && navigator.share){await navigator.share({files:[file],title});return;}
+      const a=document.createElement('a'); a.href=current.url||URL.createObjectURL(blob); a.download=fileName; document.body.appendChild(a); a.click(); a.remove();
+    }catch(e){}
+  };
+  function esc(t){return String(t||'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));}
+  function preview(title,data){
+    if(!data){alert('Brak dodanego pliku PDF.');return;}
+    window.closePdfPreview();
+    const t=safePdfTitleV989(title), url=makeBlobUrlV989(data);
+    current={title:t,data:data,url:url};
+    const overlay=document.createElement('div'); overlay.id='kcPdfOverlay'; overlay.className='kcPdfOverlay';
+    overlay.innerHTML=`<div class="kcPdfTopbar"><button class="kcPdfClose" onclick="closePdfPreview()">✕ Zamknij</button><div class="kcPdfTitle">${esc(t)}</div><button class="kcPdfShare" onclick="shareCurrentPdf()" aria-label="Udostępnij"><svg class="kcPdfShareIcon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3"></path><path d="M8 7l4-4 4 4"></path><path d="M5 11v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8"></path></svg></button></div><iframe class="kcPdfFrame" src="${url}"></iframe><div class="kcPdfAndroidFallback"><div class="kcPdfAndroidFallbackInner"><h3>Podgląd PDF</h3><p>Na Androidzie Chrome często blokuje PDF w ramce. Użyj przycisku poniżej — plik otworzy się w przeglądarce lub pobierze do otwarcia.</p><a class="btn primary" href="${url}" target="_blank" rel="noopener">Otwórz PDF</a><button class="btn" onclick="shareCurrentPdf()">Udostępnij / pobierz</button></div></div>`;
+    document.body.appendChild(overlay);
+    if(isAndroid())document.body.classList.add('kcAndroidPdfMode');
+  }
+  window.openHaccpDoc=function(loc,name){try{const f=(JSON.parse(localStorage.getItem('kc_haccp_docs_v1')||'{}')[loc]||{})[name]; preview(name,f&&f.data);}catch(e){alert('Brak dodanego pliku PDF.')}};
+  window.openHaccpPdf82=function(loc,name){window.openHaccpDoc(loc,name)};
+  window.openProcedureDoc=function(loc,cat,i){try{const f=(((JSON.parse(localStorage.getItem('kc_proc_docs_v1')||'{}')[loc]||{})[cat]||[])[i]); preview(f&&(f.title||cat),f&&f.data);}catch(e){alert('Brak dodanego pliku PDF.')}};
+  window.openProcedureDocV2=function(loc,cat,name){try{const f=(((JSON.parse(localStorage.getItem('kc_proc_files_v1')||'{}')[loc]||{})[cat]||{})[name]); preview(name,f&&f.data);}catch(e){alert('Brak dodanego pliku PDF.')}};
+  window.openProcedurePdf82=function(loc,cat,name){window.openProcedureDocV2(loc,cat,name)};
+  window.openStaffPdf=function(pid,section,name){try{const f=(((JSON.parse(localStorage.getItem('kc_staff_files_v1')||'{}')[pid]||{})[section]||{})[name]); preview(name,f&&f.data);}catch(e){alert('Brak dodanego pliku PDF.')}};
+  window.openStaffPdf82=function(pid,section,name){window.openStaffPdf(pid,section,name)};
+  function fixVersion(){var vf=document.querySelector('.versionFooter'); if(vf)vf.textContent='v9.89';}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',fixVersion); else fixVersion(); setTimeout(fixVersion,300);
+})();
+</script>
