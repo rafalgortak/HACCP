@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kitchen Control v9.64</title>
+<title>Kitchen Control v9.65</title>
 <style>
 body{margin:0;font-family:Arial,sans-serif;background:#eef3f8;color:#172033}header{background:linear-gradient(135deg,#dbeafe,#eff6ff);color:#172033;padding:12px 16px;position:sticky;top:0;z-index:5;border-bottom:1px solid #bfdbfe;cursor:pointer}h1{margin:0;font-size:22px}.small{color:#64748b}.appHeader{display:flex;align-items:center;justify-content:space-between;gap:10px}.headerLeft{display:flex;align-items:center;gap:10px}.headerLogo{width:42px;height:42px;border-radius:12px;background:#0f172a;color:white;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 2px 8px #0001}.powerBtn{border:0;background:white;color:#0f172a;border-radius:12px;width:44px;height:44px;font-size:22px;font-weight:900;box-shadow:0 1px 6px #0001}.userMenu{position:fixed;top:68px;right:14px;background:white;border:1px solid #d8dee8;border-radius:16px;box-shadow:0 10px 30px #0002;z-index:80;min-width:220px;padding:12px}.userMenuName{font-weight:900;font-size:17px}.userMenuRole{color:#64748b;margin:2px 0 10px}.userMenu button{width:100%;margin-top:8px}.menuBackdrop{position:fixed;inset:0;z-index:70;background:transparent}main{padding:14px;max-width:1200px;margin:auto}.nav{display:flex;gap:8px;overflow:auto;margin-bottom:10px}.nav button,.btn{border:0;border-radius:10px;padding:11px 14px;background:white;font-weight:700;box-shadow:0 1px 4px #0001}.nav button.active,.primary{background:#2563eb!important;color:white}.danger{background:#dc2626!important;color:white}.card{background:white;border-radius:14px;padding:14px;margin:10px 0;box-shadow:0 2px 10px #0001}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.loc{border:1px solid #d8dee8;border-radius:12px;padding:12px;background:#fafafa}.status{border-radius:99px;padding:4px 8px;font-size:12px;font-weight:800;display:inline-block}.ok{background:#dcfce7;color:#166534}.warn{background:#fef3c7;color:#92400e}.alarm{background:#fee2e2;color:#991b1b}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}select,input,textarea{border:1px solid #d8dee8;border-radius:10px;padding:10px;background:white;font-size:16px}textarea{width:100%;min-height:70px;margin-top:10px}table{border-collapse:collapse;width:100%;background:white}th,td{border:1px solid #111;padding:6px;text-align:center;font-size:13px;min-width:42px}th{background:#f3f4f6}.wrap{overflow:auto;border-radius:10px;border:1px solid #d8dee8}.vert{writing-mode:vertical-rl;transform:rotate(180deg);font-weight:800;white-space:nowrap}.pill{display:inline-flex;gap:6px;align-items:center;border:1px solid #d8dee8;padding:7px 9px;border-radius:99px;margin:4px;background:#f8fafc}.pill button{border:0;background:#fee2e2;border-radius:50%;width:22px;height:22px}.hidden{display:none}.filled-ok{background:#dcfce7}.filled-warn{background:#fef3c7}.filled-alarm{background:#fee2e2}.notice{padding:10px;border-radius:10px;background:#fef3c7;color:#92400e;font-weight:bold;margin-top:10px}.success{background:#dcfce7;color:#166534}.historyItem{border-bottom:1px solid #e5e7eb;padding:8px 0}.historyItem:last-child{border-bottom:0}.readonlyBadge{background:#e0e7ff;color:#3730a3;border-radius:99px;padding:4px 8px;font-size:12px;font-weight:800}.authorBadge{background:#eef2ff;color:#3730a3;border-radius:12px;padding:9px 11px;font-weight:800;display:inline-block}.sanepidHeader{display:none}.editBox{background:#f8fafc;border:1px solid #d8dee8;border-radius:12px;padding:10px;margin-top:10px}
 .userbar{display:none!important}
@@ -2767,6 +2767,120 @@ body.theme-light:not(.loginMode) #appArea>.nav.controls{
   body:not(.loginMode) main{padding-top:0!important}
 }
 
+
+
+/* v9.65 — poprawki Admin / menu / backup */
+body:not(.loginMode) #userMenu.userMenu{
+  top:calc(var(--kc-fixed-header-h,82px) + 10px)!important;
+  z-index:1305!important;
+}
+body:not(.loginMode) .menuBackdrop{z-index:1295!important;}
+body.theme-light:not(.loginMode) .themeMiniBtn,
+body.theme-light:not(.loginMode) .powerBtn{
+  background:#ffffff!important;
+  color:#0f172a!important;
+  border:1px solid rgba(203,213,225,.9)!important;
+}
+body.theme-dark:not(.loginMode) .themeMiniBtn,
+body.theme-dark:not(.loginMode) .powerBtn{
+  background:#020617!important;
+  color:#f8fafc!important;
+  border:1px solid rgba(148,163,184,.32)!important;
+}
+body.theme-dark:not(.loginMode) #userMenu .kcMenuBackup,
+body.theme-light:not(.loginMode) #userMenu .kcMenuBackup,
+body.theme-dark:not(.loginMode) .kcBackupBlue,
+body.theme-light:not(.loginMode) .kcBackupBlue,
+body.theme-dark:not(.loginMode) #admin .kcBackupBlue,
+body.theme-light:not(.loginMode) #admin .kcBackupBlue{
+  background:#2563eb!important;
+  color:#ffffff!important;
+  border-color:#2563eb!important;
+}
+body.theme-dark:not(.loginMode) #userMenu .kcMenuBackup *,
+body.theme-light:not(.loginMode) #userMenu .kcMenuBackup *,
+body.theme-dark:not(.loginMode) .kcBackupBlue *,
+body.theme-light:not(.loginMode) .kcBackupBlue *{color:#ffffff!important;}
+body.theme-dark:not(.loginMode) #userMenu button.danger,
+body.theme-light:not(.loginMode) #userMenu button.danger{
+  background:#dc2626!important;
+  color:#ffffff!important;
+  border-color:#dc2626!important;
+}
+/* przywróć domyślne w zakresach: niebieski pasek także w ciemnym motywie */
+body.theme-dark:not(.loginMode) #rangeAdminBox button[onclick="resetTempRanges()"],
+body.theme-light:not(.loginMode) #rangeAdminBox button[onclick="resetTempRanges()"]{
+  background:#2563eb!important;
+  color:#fff!important;
+  border-color:#2563eb!important;
+}
+
+
+/* v9.66 — Admin tablet split view + mobile auto-collapse */
+.adminDetailBody{margin-top:12px;}
+@media (orientation:landscape) and (min-width:900px){
+  #admin{
+    display:grid!important;
+    grid-template-columns:360px minmax(0,1fr);
+    gap:14px;
+    align-items:start;
+  }
+  #admin.hidden{display:none!important;}
+  #admin .adminIntro,
+  #admin .adminSection{
+    grid-column:1;
+    margin:0 0 10px 0!important;
+  }
+  #admin .adminIntro{position:sticky;top:calc(var(--kc-fixed-header-h) + var(--kc-fixed-nav-h) + 14px);z-index:10;}
+  #admin .adminSection summary:after,
+  #admin .adminSection details[open] summary:after{
+    content:'›'!important;
+    font-size:26px!important;
+    line-height:.8!important;
+    transform:none!important;
+  }
+  #admin .adminSection details[open] summary{
+    background:#1d4ed8!important;
+    box-shadow:0 10px 24px rgba(37,99,235,.22)!important;
+  }
+  #admin .adminDetailBody{
+    position:fixed!important;
+    top:calc(var(--kc-fixed-header-h) + var(--kc-fixed-nav-h) + 16px)!important;
+    right:14px!important;
+    bottom:14px!important;
+    left:calc(50% - 45px)!important;
+    max-width:760px!important;
+    overflow:auto!important;
+    -webkit-overflow-scrolling:touch;
+    margin:0!important;
+    padding:16px!important;
+    border-radius:16px!important;
+    background:#ffffff!important;
+    border:1px solid #d8dee8!important;
+    box-shadow:0 18px 46px rgba(15,23,42,.18)!important;
+    z-index:40!important;
+  }
+  body.theme-dark:not(.loginMode) #admin .adminDetailBody{
+    background:linear-gradient(180deg,#132238,#0d1b2f)!important;
+    border-color:rgba(148,163,184,.28)!important;
+    box-shadow:0 18px 46px rgba(0,0,0,.34)!important;
+    color:#f8fafc!important;
+  }
+  body.theme-dark:not(.loginMode) #admin .adminDetailBody h3,
+  body.theme-dark:not(.loginMode) #admin .adminDetailBody p,
+  body.theme-dark:not(.loginMode) #admin .adminDetailBody label,
+  body.theme-dark:not(.loginMode) #admin .adminDetailBody div:not(.status):not(.badge),
+  body.theme-dark:not(.loginMode) #admin .adminDetailBody span:not(.status):not(.badge){
+    color:#f8fafc!important;
+  }
+  #admin .adminSection details:not([open]) .adminDetailBody{display:none!important;}
+  #admin .adminSection details[open] .adminDetailBody{display:block!important;}
+}
+@media (max-width:899px), (orientation:portrait){
+  #admin .adminSection details[open] summary:after{content:'⌃'!important;}
+  #admin .adminSection summary:after{content:'⌄'!important;}
+}
+
 </style>
 <link rel="manifest" href="./manifest.json?v=946">
 <link rel="apple-touch-icon" sizes="180x180" href="./icons/icon-180.png?v=946">
@@ -2834,7 +2948,7 @@ body.theme-light:not(.loginMode) #appArea>.nav.controls{
 
 <section id="temp" class="hidden"><div class="card controls"><h2>Wpis temperatury</h2><div class="row"><select id="tempLoc"></select><select id="tempDev"></select><select id="tempVal"></select><input type="date" id="tempDate"><input type="time" id="tempTime"><span class="authorBadge">👤 <span id="tempUserLabel"></span></span><input id="tempUser" type="hidden"><button class="btn primary" onclick="saveTemp()">Zapisz</button></div><p id="tempStatus"></p><textarea id="tempNote" placeholder="Uwagi / działanie korygujące"></textarea><div id="tempMsg"></div></div><div class="card"><h2>Historia temperatur</h2><p class="small" style="color:#6b7280">Historia dla wybranej lokalizacji i urządzenia.</p><div id="tempLog"></div></div></section>
 
-<section id="clean" class="hidden"><div class="card controls"><h2>Sprzątanie</h2><div class="row"><select id="cleanLoc"></select><select id="cleanShift"></select><input type="date" id="cleanDate"><input type="time" id="cleanTime"><span class="authorBadge">👤 <span id="cleanUserLabel"></span></span><input id="cleanUser" type="hidden"><button class="btn primary" onclick="saveClean()">Zapisz</button></div><div id="cleanMsg"></div></div><div class="card"><div id="cleanItems"></div><textarea id="cleanNote" placeholder="Uwagi"></textarea></div><div class="card"><h2>Historia sprzątania</h2><p class="small" style="color:#6b7280">Historia dla wybranej lokalizacji i części dnia.</p><div id="cleanLog"></div></div></section>
+<section id="clean" class="hidden"><div class="card controls"><h2>Sprzątanie</h2><div class="row"><select id="cleanLoc"></select><select id="cleanShift"></select><input type="date" id="cleanDate"><input type="time" id="cleanTime"><span class="authorBadge">👤 <span id="cleanUserLabel"></span></span><input id="cleanUser" type="hidden"><button class="btn primary" onclick="saveClean()">Zapisz</button></div><div id="cleanMsg"></div></div><div class="card"><div id="cleanItems"></div><textarea id="cleanNote" placeholder="Uwagi"></textarea></div><div class="card"><h2>Historia sprzątania</h2><p class="small" style="color:#6b7280">Historia dla wybranej lokalizacji i zmiany.</p><div id="cleanLog"></div></div></section>
 
 <section id="haccp" class="hidden"><div class="card controls"><h2>HACCP</h2><div class="row"><select id="haccpLoc"></select><input type="date" id="haccpDate"><input type="time" id="haccpTime"><span class="authorBadge">👤 <span id="haccpUserLabel"></span></span><input id="haccpUser" type="hidden"><button class="btn primary" onclick="saveHaccp()">Zapisz</button></div><div id="haccpMsg"></div></div><div class="card">
 <div id="haccpItems"></div><textarea id="haccpNote" placeholder="Uwagi / produkty do usunięcia"></textarea></div><div class="card"><h2>Historia HACCP</h2><p class="small" style="color:#6b7280">Historia dla wybranej lokalizacji.</p><div id="haccpLog"></div></div></section>
@@ -2846,7 +2960,7 @@ body.theme-light:not(.loginMode) #appArea>.nav.controls{
 <section id="admin" class="hidden">
 <div class="card adminIntro"><h2>Admin</h2><p>Konfiguracja aplikacji. Sekcje są zwinięte, żeby panel był krótszy i wygodniejszy na telefonie.</p></div>
 
-<div class="card adminSection"><h2>Admin — lokalizacje</h2>
+<div class="card adminSection"><h2>Lokalizacje</h2>
 <p>Dodajesz nowe lokale, kuchnie lub punkty sprzedaży. Po dodaniu lokalizacja pojawi się w formularzach, raportach i uprawnieniach pracowników.</p>
 <details><summary>Dodaj / Edytuj</summary>
 <div class="row adminAddRow"><input id="newLocationName" placeholder="np. Asian Street Food Centrum"><button class="btn primary" onclick="addLocation()">Dodaj lokalizację</button></div>
@@ -2854,34 +2968,34 @@ body.theme-light:not(.loginMode) #appArea>.nav.controls{
 </details>
 </div>
 
-<div class="card adminSection"><h2>Admin — urządzenia</h2>
+<div class="card adminSection"><h2>Urządzenia</h2>
 <p>Dodajesz i edytujesz chłodnie oraz mroźnie przypisane do konkretnej lokalizacji.</p>
 <details><summary>Dodaj / Edytuj</summary>
 <div class="row adminAddRow"><select id="adminLoc"></select><select id="adminType"><option value="chlodnie">Chłodnia</option><option value="mroznie">Mroźnia</option></select><input id="adminName" placeholder="np. Chłodnia 4"><button class="btn primary" onclick="addDevice()">Dodaj</button></div><div id="devList"></div>
 </details>
 </div>
 
-<div class="card adminSection"><h2>Admin — pory dnia</h2>
-<p>Ustawiasz etapy pracy dla lokalizacji, np. otwarcie, w ciągu dnia lub zamknięcie zmiany.</p>
+<div class="card adminSection"><h2>Sprzątanie — podział na zmiany</h2>
+<p>Ustawiasz podział sprzątania na zmiany: rozpoczęcie, praca w trakcie zmiany i zamknięcie.</p>
 <details><summary>Dodaj / Edytuj</summary>
 <div class="row adminAddRow">
 <select id="shiftAdminLoc"></select>
-<input id="newShiftName" placeholder="np. Otwarcie / Zamknięcie zmiany">
-<button class="btn primary" onclick="addShift()">Dodaj porę dnia</button>
+<input id="newShiftName" placeholder="np. Rozpoczęcie zmiany">
+<button class="btn primary" onclick="addShift()">Dodaj zmianę</button>
 </div>
 <div id="shiftAdminList"></div>
 </details>
 </div>
 
-<div class="card adminSection"><h2>Admin — sprzątanie</h2>
-<p>Dodajesz czynności sprzątania osobno dla lokalizacji i pory dnia oraz ustawiasz częstotliwość wykonania.</p>
+<div class="card adminSection"><h2>Sprzątanie</h2>
+<p>Dodajesz czynności sprzątania osobno dla lokalizacji i zmiany oraz ustawiasz częstotliwość wykonania.</p>
 <details><summary>Dodaj / Edytuj</summary>
 <div class="row adminAddRow"><select id="cleanAdminLoc"></select><select id="cleanAdminShift"></select><input id="newCleanItem" placeholder="Nowa czynność sprzątania"><select id="newCleanFreq" class="freqSelect"><option value="daily">Codziennie</option><option value="7">Co 7 dni</option><option value="14">Co 14 dni</option><option value="30">Co 30 dni</option></select><button class="btn primary" onclick="addCleanItem()">Dodaj</button></div>
 <div id="cleanAdminList"></div>
 </details>
 </div>
 
-<div class="card adminSection"><h2>Admin — HACCP</h2>
+<div class="card adminSection"><h2>HACCP</h2>
 <p>Dodajesz kontrole HACCP, które pracownicy będą zaznaczać w codziennych wpisach.</p>
 <details><summary>Dodaj / Edytuj</summary>
 <div class="row adminAddRow"><select id="haccpAdminLoc"></select><input id="newHaccpItem" placeholder="np. Kontrola etykiet / alergeny / chemia"><button class="btn primary" onclick="addHaccpItem()">Dodaj kontrolę</button></div>
@@ -2889,7 +3003,7 @@ body.theme-light:not(.loginMode) #appArea>.nav.controls{
 </details>
 </div>
 
-<div class="card adminSection"><h2>Admin — pracownicy</h2>
+<div class="card adminSection"><h2>Pracownicy</h2>
 <p>Dodajesz pracownika, PIN, rolę oraz dostęp do wybranych lokalizacji.</p>
 <details><summary>Dodaj / Edytuj</summary>
 <div class="row adminAddRow">
@@ -2904,26 +3018,22 @@ body.theme-light:not(.loginMode) #appArea>.nav.controls{
 </details>
 </div>
 
-<div class="card adminSection"><h2>Admin — edycja wpisów</h2>
-<p>Przegląd i edycja zapisanych wpisów są w osobnej zakładce, żeby panel Admin działał szybciej.</p>
-<button class="btn primary" onclick="show('history')">Otwórz historię wpisów</button>
+
+<div class="card adminSection"><h2>Zakresy temperatur</h2>
+<p>Ręcznie ustawiasz zakresy dla chłodni i mroźni. Zmiana przelicza statusy zapisanych temperatur.</p>
+<details><summary>Dodaj / Edytuj</summary><div id="rangeAdminBox"></div></details>
 </div>
 
-<div class="card adminSection"><h2>Admin — backup</h2>
+<div class="card adminSection"><h2>Backup</h2>
 <p>Tworzysz kopię danych i eksportujesz historię przed większymi zmianami albo migracją do Firebase.</p>
-<details><summary>Dodaj / Edytuj</summary>
+<details><summary>Importuj / Eksportuj</summary>
 <div class="row adminAddRow">
-<button class="btn primary" onclick="exportBackup()">Pobierz backup JSON</button>
-<label class="btn primary">Importuj backup JSON<input type="file" accept=".json,application/json" style="display:none" onchange="importBackup(event)"></label>
-<button class="btn primary managerOnly" onclick="exportCSV()">Eksport CSV</button>
+<button class="btn primary kcBackupBlue" onclick="exportBackup()">Pobierz backup JSON</button>
+<label class="btn primary kcBackupBlue">Importuj backup JSON<input type="file" accept=".json,application/json" style="display:none" onchange="importBackup(event)"></label>
+<button class="btn primary managerOnly kcBackupBlue" onclick="exportCSV()">Eksport CSV</button>
 </div>
 <div class="backupBox" id="backupSummary"></div>
 </details>
-</div>
-
-<div class="card adminSection"><h2>Admin — zakresy temperatur</h2>
-<p>Ręcznie ustawiasz zakresy dla chłodni i mroźni. Zmiana przelicza statusy zapisanych temperatur.</p>
-<details><summary>Dodaj / Edytuj</summary><div id="rangeAdminBox"></div></details>
 </div>
 </section>
 
@@ -2951,11 +3061,11 @@ body.theme-light:not(.loginMode) #appArea>.nav.controls{
 <div id="userMenu" class="hidden userMenu">
   <div class="userMenuName" id="menuUserName">Użytkownik</div>
   <div class="userMenuRole" id="menuUserRole">Rola</div>
-  <button class="btn adminOnly" onclick="exportBackup();closeUserMenu()">Backup JSON</button>
+  <button class="btn primary adminOnly kcMenuBackup" onclick="exportBackup();closeUserMenu()">Backup JSON</button>
   <button class="btn danger" onclick="logout();closeUserMenu()">Wyloguj</button>
 </div>
-<div id="cellModal" class="hidden"></div><div class="versionFooter noPrint">v9.61</div></div></main><script>
-const defaults={locations:["Asian Street Food Mokotów","Asian Street Food Wola","Food Truck","Kuchnia Mokotów"],devices:{"Asian Street Food Mokotów":{chlodnie:["Chłodnia 1","Chłodnia 2","Chłodnia 3"],mroznie:["Mroźnia 1"]},"Asian Street Food Wola":{chlodnie:["Chłodnia 1","Chłodnia 2"],mroznie:["Mroźnia 1"]},"Food Truck":{chlodnie:["Chłodnia 1","Chłodnia 2"],mroznie:["Mroźnia 1"]},"Kuchnia Mokotów":{chlodnie:["Chłodnia 1","Chłodnia 2","Chłodnia 3","Chłodnia 4"],mroznie:["Mroźnia 1","Mroźnia 2"]}},cleaning:{Rano:["Obecność szkodników","Stan lodówek / brak wycieków","Czystość blatów startowa"],"W ciągu dnia":["Frytury","Wymiana frytury","Zlewy","Bieżące blaty"],Wieczór:["Pow. robocze / blaty","Kuchenki","Ściany i podłogi","Schładzarka","Chłodnie","Mroźnie","Mycie okapu"]},haccpItems:["Kontrola dat przydatności","Kontrola chłodni tygodniowa","Magazyn suchy miesięcznie","Zamrażarki miesięcznie"]};
+<div id="cellModal" class="hidden"></div><div class="versionFooter noPrint">v9.65</div></div></main><script>
+const defaults={locations:["Asian Street Food Mokotów","Asian Street Food Wola","Food Truck","Kuchnia Mokotów"],devices:{"Asian Street Food Mokotów":{chlodnie:["Chłodnia 1","Chłodnia 2","Chłodnia 3"],mroznie:["Mroźnia 1"]},"Asian Street Food Wola":{chlodnie:["Chłodnia 1","Chłodnia 2"],mroznie:["Mroźnia 1"]},"Food Truck":{chlodnie:["Chłodnia 1","Chłodnia 2"],mroznie:["Mroźnia 1"]},"Kuchnia Mokotów":{chlodnie:["Chłodnia 1","Chłodnia 2","Chłodnia 3","Chłodnia 4"],mroznie:["Mroźnia 1","Mroźnia 2"]}},cleaning:{"Rozpoczęcie zmiany":["Obecność szkodników","Stan lodówek / brak wycieków","Czystość blatów startowa"],"Podczas zmiany":["Frytury","Wymiana frytury","Zlewy","Bieżące blaty"],"Zamknięcie zmiany":["Pow. robocze / blaty","Kuchenki","Ściany i podłogi","Schładzarka","Chłodnie","Mroźnie","Mycie okapu"]},haccpItems:["Kontrola dat przydatności","Kontrola chłodni tygodniowa","Magazyn suchy miesięcznie","Zamrażarki miesięcznie"]};
 let state=JSON.parse(localStorage.getItem("kc_state_v7")||"null")||defaults;
 let logs=JSON.parse(localStorage.getItem("kc_logs_v7")||"[]");
 let users=JSON.parse(localStorage.getItem("kc_users_v7")||"null")||[
@@ -2976,6 +3086,19 @@ function ensureTempRanges(){
   });
 }
 ensureTempRanges();
+
+function migrateDefaultShiftNames(){
+  const map={"Rano":"Rozpoczęcie zmiany","W ciągu dnia":"Podczas zmiany","Wieczór":"Zamknięcie zmiany"};
+  function renameKeys(obj){
+    if(!obj)return;
+    Object.keys(map).forEach(old=>{if(obj[old] && !obj[map[old]]){obj[map[old]]=obj[old];delete obj[old];}});
+  }
+  renameKeys(state.cleaning);
+  if(state.locationShifts){Object.keys(state.locationShifts).forEach(loc=>{state.locationShifts[loc]=state.locationShifts[loc].map(x=>map[x]||x);});}
+  if(state.locationCleaning){Object.keys(state.locationCleaning).forEach(loc=>renameKeys(state.locationCleaning[loc]));}
+  logs.forEach(x=>{if(x.kind==='clean'&&map[x.shift])x.shift=map[x.shift];});
+}
+migrateDefaultShiftNames();
 function getTempRange(type){ensureTempRanges();return state.tempRanges[type]||state.tempRanges.chlodnia}
 function tempValuesForType(type){let r=getTempRange(type);let min=Math.min(r.min,r.max),max=Math.max(r.min,r.max);return Array.from({length:max-min+1},(_,i)=>min+i)}
 function tempStatusName(value,type){let v=parseInt(value),r=getTempRange(type);if(isNaN(v))return "";return v<=r.okMax?"OK":v<=r.warnMax?"UWAGA":"ALARM"}
@@ -3212,7 +3335,7 @@ function dueStatus(loc,shift,item,date){
   return {cls:"ok",txt:`zostało ${left} d`,last};
 }
 
-function defaultShifts(){return ["Rano","W ciągu dnia","Wieczór"]}
+function defaultShifts(){return ["Rozpoczęcie zmiany","Podczas zmiany","Zamknięcie zmiany"]}
 function getShifts(loc){
   if(state.locationShifts && state.locationShifts[loc]) return state.locationShifts[loc];
   if(state.cleaning) return Object.keys(state.cleaning);
@@ -3499,7 +3622,7 @@ function notesTableHtml(items,title="Spis uwag"){
 }
 function buildTable(l,type,ym){let n=monthLabel(ym),days=daysInMonth(ym);if(type==="temp"){let d=state.devices[l],cols=[...d.chlodnie,...d.mroznie];return `<table><tr><th colspan="${cols.length+3}">KARTA TEMPERATUR — ${l} — ${n}</th></tr><tr><th>Data</th>${cols.map(c=>`<th>${c}</th>`).join("")}<th>Podpis</th><th>Uwagi</th></tr>${Array.from({length:days},(_,i)=>{let day=i+1;let dayLogs=logs.filter(x=>x.kind==="temp"&&x.loc===l&&x.date===ym+"-"+pad(day));let noteLogs=dayLogs.filter(x=>x.note);let user=dayLogs.map(x=>x.user).filter(Boolean).filter((v,i,a)=>a.indexOf(v)===i).join(" / ");return `<tr><th>${day}</th>${cols.map(c=>{let r=latestLog("temp",l,c,day,ym);return r?`<td class="${statusClass(r.status)} clickableCell" onclick="showCellInfoById('${r.id}','${c}')"><b>${r.val}°C</b>${cellStamp(r)}</td>`:`<td></td>`}).join("")}<td>${user}</td><td>${noteLogs.length?`<span class="clickableCell" onclick="showDayNotes('temp','${l}','${ym}',${day})">Uwagi${noteLogs.length>1?" ("+noteLogs.length+")":""}</span>`:""}</td></tr>`}).join("")}</table>`}
 if(type==="clean"){let groups=getShifts(l);let cols=groups.flatMap(g=>getCleaning(l,g).map(x=>g+": "+x+" ["+freqLabel(getCleanFreq(l,g,x))+"]"));return `<table><tr><th colspan="${cols.length+3}">KARTA KONTROLI CZYSTOŚCI — ${l} — ${n}</th></tr><tr><th>Data</th>${cols.map(c=>`<th><div class="vert">${c}</div></th>`).join("")}<th>Podpis</th><th>Uwagi</th></tr>${Array.from({length:days},(_,i)=>{let day=i+1;let dayLogs=logs.filter(x=>x.kind==="clean"&&x.loc===l&&x.date===ym+"-"+pad(day));let noteLogs=dayLogs.filter(x=>x.note);let user=dayLogs.map(x=>x.user).filter(Boolean).filter((v,i,a)=>a.indexOf(v)===i).join(" / ");return `<tr><th>${day}</th>${cols.map(c=>{let [g,...rest]=c.split(": ");let raw=rest.join(": ");let item=raw.replace(/ \[.*\]$/," ").trim();let rs=logs.filter(x=>x.kind==="clean"&&x.loc===l&&x.date===ym+"-"+pad(day)&&x.shift===g);let r=rs.find(x=>x.done?.includes(item));return r?`<td class="clickableCell" onclick="showCellInfoById('${r.id}','${item}')">X${cellStamp(r)}</td>`:`<td></td>`}).join("")}<td>${user}</td><td>${noteLogs.length?`<span class="clickableCell" onclick="showDayNotes('clean','${l}','${ym}',${day})">Uwagi${noteLogs.length>1?" ("+noteLogs.length+")":""}</span>`:""}</td></tr>`}).join("")}</table>`}
-let cols=getHaccpItemsForLoc(l);return `<table><tr><th colspan="${cols.length+3}">HACCP OGÓLNE / DATY — ${l} — ${n}</th></tr><tr><th>Data</th>${cols.map(c=>`<th>${c}</th>`).join("")}<th>Podpis</th><th>Uwagi</th></tr>${Array.from({length:days},(_,i)=>{let day=i+1,r=latestLog("haccp",l,null,day,ym);return `<tr><th>${day}</th>${cols.map(c=>`${r?.done?.includes(c)?`<td class="clickableCell" onclick="showCellInfoById('${r.id}','${c}')">X${cellStamp(r)}</td>`:`<td></td>`}`).join("")}<td>${r?r.user:""}</td><td>${r?.note?`<span class="clickableCell" onclick="showCellInfoById('${r.id}','Uwagi')">Uwagi</span>`:""}</td></tr>`}).join("")}</table>`}
+let cols=getHaccpItemsForLoc(l);return `<table><tr><th colspan="${cols.length+3}">HACCP — ${l} — ${n}</th></tr><tr><th>Data</th>${cols.map(c=>`<th>${c}</th>`).join("")}<th>Podpis</th><th>Uwagi</th></tr>${Array.from({length:days},(_,i)=>{let day=i+1,r=latestLog("haccp",l,null,day,ym);return `<tr><th>${day}</th>${cols.map(c=>`${r?.done?.includes(c)?`<td class="clickableCell" onclick="showCellInfoById('${r.id}','${c}')">X${cellStamp(r)}</td>`:`<td></td>`}`).join("")}<td>${r?r.user:""}</td><td>${r?.note?`<span class="clickableCell" onclick="showCellInfoById('${r.id}','Uwagi')">Uwagi</span>`:""}</td></tr>`}).join("")}</table>`}
 function renderMonth(){const l=monthLoc.value||state.locations[0],t=monthType.value,ym=monthPick.value||currentMonth();monthTable.innerHTML=buildTable(l,t,ym);printNotesBox.innerHTML=notesTableHtml(notesFor(l,t,ym),"Spis uwag");printEntriesBox.innerHTML=""}
 function renderSanepid(){sanTable.innerHTML=buildTable(sanLoc.value||state.locations[0],sanType.value,sanMonth.value||currentMonth())}
 function safeFileName(x){return String(x||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-zA-Z0-9_-]+/g,"_").replace(/^_+|_+$/g,"")}
@@ -4146,6 +4269,45 @@ body.theme-dark:not(.loginMode) .adminListSub{color:#cbd5e1!important}
 body.theme-dark:not(.loginMode) #rangeAdminBox .btn:not(.danger){background:#2563eb!important;color:#fff!important;border-color:#2563eb!important}
 @media(max-width:520px){.adminSection h2{font-size:17px}.adminListRow{align-items:stretch;flex-direction:column}.adminListRow .row>*{width:100%}}
 </style>
+
+
+<script>
+/* v9.66 Admin behavior: one section open on phone/tablet portrait, side panel on landscape tablet */
+(function(){
+  function prepareAdminSplit(){
+    document.querySelectorAll('#admin .adminSection details').forEach(function(d){
+      if(d.dataset.kcPrepared==='1') return;
+      var summary=d.querySelector('summary');
+      var body=document.createElement('div');
+      body.className='adminDetailBody';
+      var nodes=[];
+      Array.from(d.childNodes).forEach(function(n){ if(n!==summary) nodes.push(n); });
+      nodes.forEach(function(n){ body.appendChild(n); });
+      d.appendChild(body);
+      d.dataset.kcPrepared='1';
+      d.addEventListener('toggle',function(){
+        if(!d.open) return;
+        document.querySelectorAll('#admin .adminSection details').forEach(function(other){
+          if(other!==d) other.open=false;
+        });
+      });
+    });
+  }
+  document.addEventListener('DOMContentLoaded',function(){setTimeout(prepareAdminSplit,60);});
+  document.addEventListener('click',function(e){
+    if(e.target.closest('#admin')) setTimeout(prepareAdminSplit,30);
+  });
+  var oldShow=window.show;
+  if(typeof oldShow==='function'){
+    window.show=function(id){
+      oldShow(id);
+      if(id==='admin') setTimeout(prepareAdminSplit,80);
+    };
+  }
+  window.kcPrepareAdminSplit=prepareAdminSplit;
+})();
+</script>
+
 </body></html>
 <!-- v9.56 dark select arrows + status chips fix -->
 <style>
