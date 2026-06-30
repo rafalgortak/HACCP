@@ -1,4 +1,10 @@
-<!DOCTYPE html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!DOCTYPE html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071426">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#071426">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#071426">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>Kitchen Control v9.65</title>
 <style>
 body{margin:0;font-family:Arial,sans-serif;background:#eef3f8;color:#172033}header{background:linear-gradient(135deg,#dbeafe,#eff6ff);color:#172033;padding:12px 16px;position:sticky;top:0;z-index:5;border-bottom:1px solid #bfdbfe;cursor:pointer}h1{margin:0;font-size:22px}.small{color:#64748b}.appHeader{display:flex;align-items:center;justify-content:space-between;gap:10px}.headerLeft{display:flex;align-items:center;gap:10px}.headerLogo{width:42px;height:42px;border-radius:12px;background:#0f172a;color:white;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 2px 8px #0001}.powerBtn{border:0;background:white;color:#0f172a;border-radius:12px;width:44px;height:44px;font-size:22px;font-weight:900;box-shadow:0 1px 6px #0001}.userMenu{position:fixed;top:68px;right:14px;background:white;border:1px solid #d8dee8;border-radius:16px;box-shadow:0 10px 30px #0002;z-index:80;min-width:220px;padding:12px}.userMenuName{font-weight:900;font-size:17px}.userMenuRole{color:#64748b;margin:2px 0 10px}.userMenu button{width:100%;margin-top:8px}.menuBackdrop{position:fixed;inset:0;z-index:70;background:transparent}main{padding:14px;max-width:1200px;margin:auto}.nav{display:flex;gap:8px;overflow:auto;margin-bottom:10px}.nav button,.btn{border:0;border-radius:10px;padding:11px 14px;background:white;font-weight:700;box-shadow:0 1px 4px #0001}.nav button.active,.primary{background:#2563eb!important;color:white}.danger{background:#dc2626!important;color:white}.card{background:white;border-radius:14px;padding:14px;margin:10px 0;box-shadow:0 2px 10px #0001}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.loc{border:1px solid #d8dee8;border-radius:12px;padding:12px;background:#fafafa}.status{border-radius:99px;padding:4px 8px;font-size:12px;font-weight:800;display:inline-block}.ok{background:#dcfce7;color:#166534}.warn{background:#fef3c7;color:#92400e}.alarm{background:#fee2e2;color:#991b1b}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}select,input,textarea{border:1px solid #d8dee8;border-radius:10px;padding:10px;background:white;font-size:16px}textarea{width:100%;min-height:70px;margin-top:10px}table{border-collapse:collapse;width:100%;background:white}th,td{border:1px solid #111;padding:6px;text-align:center;font-size:13px;min-width:42px}th{background:#f3f4f6}.wrap{overflow:auto;border-radius:10px;border:1px solid #d8dee8}.vert{writing-mode:vertical-rl;transform:rotate(180deg);font-weight:800;white-space:nowrap}.pill{display:inline-flex;gap:6px;align-items:center;border:1px solid #d8dee8;padding:7px 9px;border-radius:99px;margin:4px;background:#f8fafc}.pill button{border:0;background:#fee2e2;border-radius:50%;width:22px;height:22px}.hidden{display:none}.filled-ok{background:#dcfce7}.filled-warn{background:#fef3c7}.filled-alarm{background:#fee2e2}.notice{padding:10px;border-radius:10px;background:#fef3c7;color:#92400e;font-weight:bold;margin-top:10px}.success{background:#dcfce7;color:#166534}.historyItem{border-bottom:1px solid #e5e7eb;padding:8px 0}.historyItem:last-child{border-bottom:0}.readonlyBadge{background:#e0e7ff;color:#3730a3;border-radius:99px;padding:4px 8px;font-size:12px;font-weight:800}.authorBadge{background:#eef2ff;color:#3730a3;border-radius:12px;padding:9px 11px;font-weight:800;display:inline-block}.sanepidHeader{display:none}.editBox{background:#f8fafc;border:1px solid #d8dee8;border-radius:12px;padding:10px;margin-top:10px}
@@ -2903,7 +2909,7 @@ body.theme-dark:not(.loginMode) #staff .staffDetails summary:after{color:#f8fafc
 body.theme-dark:not(.loginMode) #staff .staffSubBox{background:#132238!important;border-color:rgba(148,163,184,.28)!important;color:#f8fafc!important}
 body.theme-dark:not(.loginMode) #staff .docRow{background:#111827!important;color:#f8fafc!important;border-color:rgba(148,163,184,.28)!important}
 </style>
-<link rel="manifest" href="./manifest.json?v=992">
+<link rel="manifest" href="./manifest.json?v=993">
 <link rel="apple-touch-icon" sizes="180x180" href="./icons/icon-180.png?v=946">
 <link rel="apple-touch-icon" href="./icons/icon-180.png?v=946">
 <link rel="icon" type="image/png" sizes="32x32" href="./icons/icon-32.png?v=946">
@@ -6226,7 +6232,7 @@ body:not(.loginMode) .wrap{
   try{
     if('serviceWorker' in navigator){
       window.addEventListener('load', function(){
-        navigator.serviceWorker.register('./service-worker.js?v=992').then(function(reg){
+        navigator.serviceWorker.register('./service-worker.js?v=993').then(function(reg){
           if(reg && reg.update) reg.update();
         }).catch(function(){});
       });
@@ -6238,6 +6244,31 @@ body:not(.loginMode) .wrap{
       }).catch(function(){});
     }
   }catch(e){}
+})();
+</script>
+
+<style id="kc-ios-top-color-v993">
+/* v9.93: kolor pod paskiem statusu iOS PWA, bez zmian układu panelu */
+:root{background:#071426;}
+html{background:#071426;}
+body.loginMode.theme-dark{background:
+  radial-gradient(circle at 50% 10%, rgba(59,130,246,.18), transparent 34%),
+  radial-gradient(circle at 50% 88%, rgba(239,68,68,.10), transparent 42%),
+  linear-gradient(135deg,#020617 0%,#071426 46%,#0f172a 100%) !important;}
+@supports (padding-top: env(safe-area-inset-top)){
+  body.loginMode #loginScreen.kcLoginScreen{
+    min-height:calc(100vh - env(safe-area-inset-top))!important;
+  }
+}
+</style>
+<script id="kc-version-v993">
+(function(){
+  var KC_VERSION='v9.93';
+  function mark(){var vf=document.querySelector('.versionFooter'); if(vf) vf.textContent=KC_VERSION;}
+  mark(); setTimeout(mark,0); setTimeout(mark,500); setTimeout(mark,1500);
+  if('serviceWorker' in navigator){
+    navigator.serviceWorker.register('./service-worker.js?v=993').then(function(reg){reg.update&&reg.update();}).catch(function(){});
+  }
 })();
 </script>
 </body></html>

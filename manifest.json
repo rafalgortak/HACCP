@@ -2,11 +2,11 @@
   "name": "Kitchen Control",
   "short_name": "Kitchen Control",
   "description": "Kitchen Control HACCP",
-  "start_url": "./index.html?v=992",
+  "start_url": "./index.html?v=993",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#0f172a",
-  "theme_color": "#0f172a",
+  "background_color": "#071426",
+  "theme_color": "#071426",
   "orientation": "any",
-  "id": "kitchen-control-v992"
+  "id": "kitchen-control-v993"
 }

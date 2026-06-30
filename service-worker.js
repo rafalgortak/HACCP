@@ -1,4 +1,4 @@
-const CACHE_NAME = 'kitchen-control-v9.92';
+const CACHE_NAME = 'kitchen-control-v9.93';
 self.addEventListener('install', event => {
   self.skipWaiting();
 });
